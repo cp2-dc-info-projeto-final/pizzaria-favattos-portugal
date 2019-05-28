@@ -10,6 +10,7 @@
     * [RF 04](#rf-04)
     * [RF 05](#rf-05)
     * [RF 06](#rf-06)
+    * [RF 07](#rf-07)
 
 - [Requisitos Não Funcionais](#requisitos-não-funcionais)
 
