@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+form{
+	width: 500px;
+	margin:auto;
+}
+
+input{
+	font-family: sans-serif;
+	font-weight: normal;
+	font-size:13pt;
+    background-color: rgb(255, 255, 255,.3);
+	margin: auto;
+	
+}
+
+input:hover{
+	background-color:#dddddd;
+}
+
+legend#lPrincipal{
+	font-weight: bold;
+	font-size: 15pt;
+	font-family: sans-serif;
+}
+
+fieldset{
+	border-color: #cecece;
+	margin:20px;
+	width: 400px;
+}
+
+fieldset#fSexo{
+    width: 120px;
+    margin-left:15px;
+}
+
+label{ 
+    margin-left: 15px;
+}
+
+#botao{
+    border-color: gray;
+	border-width: 4px;
+}
+
+
+
+
