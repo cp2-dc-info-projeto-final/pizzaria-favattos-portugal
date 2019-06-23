@@ -1,14 +1,13 @@
 <?php
 function CriarConexao(){
-$host ="127.0.0.1";
-    $port = 3306;
-    $user ="root";
-    $password = "";
-    $dbname = "favatto";
     
-    $mysqli = new mysqli ($host, $user, $password, $dbname, $port)
-    or die ('Não pôde conectar ao servidor' . mysqli_connect_error());
+    $con = new PDO('mysql:host=localhost;
+    dbname=favatto;charset=utf8',
+    'root',
+    ''
+    );
 
-    return $mysqli;
+    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $con;
 }
 ?>

@@ -13,20 +13,20 @@
 // RECEBENDO OS DADOS PREENCHIDOS DO FORMULÁRIO
     $login = $_POST ["emailLogin"];
     $senha = $_POST["senha"];
+
 //Testar se já é cadastrado
 
+$con = CriarConexao();
+$consulta = $con->prepare("SELECT * FROM cliente WHERE email = '$login' or logi = '$login'");
+$consulta->execute();
 
-$mysqli = CriarConexao();
-$consulta = mysqli_query ($mysqli,"SELECT * FROM cliente WHERE email = '$login' or logi = '$login'");
-$linha = mysqli_num_rows($consulta);
-if($linha==0){
-
-    // Usuário Cadastrado;
-
+if($consulta->rowCount()==0){
+ //Email ou senha incorretos;    
 }
 
 else{
     Echo "Usuário já cadastrado";
+    //Encaminhar ele para outra página
 }
 
 
