@@ -1,5 +1,6 @@
 <?php
 
+//Verifica se o email já foi cadastrado
 function MesmoEmail($email){
     $con = CriarConexao();
     $dados = $con->prepare('SELECT email FROM cliente WHERE email = :email');
@@ -13,6 +14,8 @@ function MesmoEmail($email){
     }
 }
 
+// verifica se o login já foi cadastrado
+
 function MesmoLogin($login){
     $con = CriarConexao();
     $dados = $con->prepare('SELECT logi FROM cliente WHERE logi = :logi');
@@ -25,6 +28,8 @@ function MesmoLogin($login){
     }       
 }
 
+//verifica se o cpf já foi cadastrado
+
 function MesmoCpf($cpf){
     $con = CriarConexao();
     $dados = $con->prepare('SELECT cpf FROM cliente WHERE cpf = :cpf');
@@ -36,7 +41,7 @@ function MesmoCpf($cpf){
         return 0;
     }
 }
-
+//validacao do cpf
 function CpfValido($cpf){
     if ($cpf == '00000000000' || 
 		$cpf == '11111111111' || 
