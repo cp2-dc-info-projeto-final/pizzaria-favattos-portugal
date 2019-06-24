@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="../css/form.css">
     <meta charset="UTF-8">
     <script>
+    
+    <!-- Verifica se há pelo menos um sexo selecionado -->
     function validate()
     {
     var i = 0, counter = 0, sexo;
@@ -20,7 +22,7 @@
     }
     return true; 		   
     }
-    
+    <!-- permite somente letras no input -->
     function letras(){ 
     tecla = event.keyCode; 
     if (tecla >= 33 && tecla <= 64 || tecla >= 91 && tecla <= 93 || tecla >= 123 && tecla <= 159 || tecla >= 162 && tecla <= 191 ){ 
@@ -29,7 +31,7 @@
         return true; 
          } 
     }
-
+    <!-- permite somente numeros no input -->
     function numeros(){ 
     tecla = event.keyCode; 
     if (tecla >= 48 && tecla <= 57){ 
@@ -38,7 +40,7 @@
         return false; 
          } 
     }
-
+    <!-- permite somente numeros e letras, sem caracteres especiais -->
     function letranum(){
         tecla = event.keyCode;
         if(tecla>=48 && tecla<=57 || tecla>=94 && tecla <=122){
@@ -52,7 +54,7 @@
 
 </head>
 
-<body>
+<body> <!-- Inicio de formulario -->
     <form method="POST" action="../php/Cadastro.php" onsubmit="return validate()">
     
     <fieldset><legend id="lPrincipal">Cadastro</legend>
@@ -92,7 +94,7 @@
 
     <input type ="submit" name ="cadastrar" value ="Cadastrar" id="botao">
     <input type="reset" name="apagar" value="Apagar" id="botao">
-
+<!-- fim de formulario -->
     </fieldset>
     </form>
 
