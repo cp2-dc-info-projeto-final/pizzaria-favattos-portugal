@@ -20,6 +20,7 @@
     $sexo = $_REQUEST["sexo"];
     $login = $_REQUEST["login"];
     $senha = md5($_REQUEST["senha"]);
+    $Csenha = md5($_REQUEST["Csenha"]);
 
 
     //Verificando dados
@@ -32,6 +33,10 @@
     }
     elseif(MesmoCpf($cpf) == 1){
         echo "Cpf já cadastrado";
+    }elseif(CpfValido($cpf)==false){
+        echo "Cpf invalido";
+    }elseif($senha != $Csenha){
+        echo "Senha diferente";
     }else{
     
 
