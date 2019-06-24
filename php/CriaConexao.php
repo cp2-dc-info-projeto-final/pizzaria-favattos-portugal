@@ -1,4 +1,5 @@
 <?php
+//Criando conexao
 function CriarConexao(){
     
     $con = new PDO('mysql:host=localhost;
