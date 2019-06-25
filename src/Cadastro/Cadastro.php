@@ -8,7 +8,7 @@
 
 <?php
 
-    require_once("CriaConexao.php");
+    require_once("../Funcoes/CriaConexao.php");
     require_once("ValidarCadastro.php");
     // RECEBENDO OS DADOS PREENCHIDOS DO FORMULÁRIO
     $nome = $_REQUEST["nome"];
