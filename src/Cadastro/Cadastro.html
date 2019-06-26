@@ -10,16 +10,18 @@
 
 <body> 
     <!-- Inicio de formulario -->
-    <form method="POST" action="Cadastro.php" onsubmit="return validate()">
+    <div class="container">
+    <form id= "cadastro" method="POST" action="Cadastro.php" onsubmit="return validate()" >
     
-    <fieldset><legend id="lPrincipal">Cadastro</legend>
+    <h3>Cadastro</h3>
+    <h4>Cadastre-se para ter acesso as delícias da Favatto's Portugal</h4>
     <label for ="nome"> Nome: </label>
     <input type = "text" name ="nome" id ="nome" placeholder="Nome Completo" minlength="10" maxlength="80" onkeypress="return letras();" required> <br> <br>
 
     <label for="datan">Data de Nascimento:</label>
     <input type ="date" name ="dataN" id="datan" min ="1919-06-24" max ="2015-01-01" required>  
 
-    <fieldset id="fSexo"><legend>Sexo </legend>
+    <fieldset id="fSexo"><legend>Sexo:</legend>
     <input type ="radio" name = "sexo" id="masc" value="Masculino">
     <label for="masc">Masculino</label> <br>
     <input type ="radio" name ="sexo" id="fem" value="Feminino">
@@ -29,7 +31,7 @@
     <label for="telefone"> Telefone:</label> 
     <input type ="text" name ="telefone" id="telefone" placeholder="Ex: (00)00000-0000" maxlength="11" size="17" onkeypress="return numeros();" required><br> <br>
 
-    <label for="cpf"> Cpf:</label> 
+    <label for="cpf"> CPF:</label> 
     <input type ="text" name ="cpf" id="cpf" placeholder="Ex: 000.000.000-00" maxlength="11" size="17" onkeypress="return numeros();" required> <br> <br>
 
     <label for="endereco">Endereço:</label>
@@ -47,11 +49,14 @@
     <label for="Csenha">Confirmar senha:</label> 
     <input type ="password" name="Csenha" id="Csenha" minlength="7" maxlength = "15" placeholder= "Confirme sua senha" onkeypress= "return endereco();" required> <br> <br>
 
-    <input type ="submit" name ="cadastrar" value ="Cadastrar" id="botao">
-    <input type="reset" name="apagar" value="Apagar" id="botao">
+    
+    <input type ="submit" name ="cadastrar" value ="Cadastrar" >
+    
     <!-- fim de formulario -->
-    </fieldset>
+    
     </form>
+    </div>    
+    
 
 </body>
 

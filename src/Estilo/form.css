@@ -1,21 +1,70 @@
 @charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
 
-form{
-	width: 500px;
-	margin:auto;
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	-o-font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
 }
 
-input{
-	font-family: sans-serif;
-	font-weight: normal;
-	font-size:13pt;
-    background-color: rgb(255, 255, 255,.3);
-	margin: auto;
-	
+body {
+	font-family:"Open Sans", Helvetica, Arial, sans-serif;
+	font-weight:300;
+	font-size: 12px;
+	line-height:30px;
+	color:#777;
+	background:#0CF;
 }
 
-input:hover{
-	background-color:#dddddd;
+.container {
+	max-width:400px;
+	width:100%;
+	margin:0 auto;
+	position:relative;
+}
+
+#cadastro input[type="text"], #cadastro input[type="email"],#cadastro button[type="submit"],#cadastro input[type="password"],#cadastro input[type="date"],#cadastro input[type="radio"] { 
+	 font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; }
+
+#cadastro {
+	background:#F9F9F9;
+	padding:25px;
+	margin:50px 0;
+}
+
+#cadastro input[type="text"], #cadastro input[type="email"],#cadastro input[type="password"],#cadastro input[type="date"] {
+	width:100%;
+	border:1px solid #CCC;
+	background:#FFF;
+	margin:0 0 5px;
+	padding:10px;
+}
+
+#cadastro h3 {
+	color: #F96;
+	display: block;
+	font-size: 30px;
+	font-weight: 400;
+}
+
+#cadastro h4 {
+	margin:5px 0 15px;
+	display:block;
+	font-size:13px;
+}	
+
+#cadastro input[type="text"]:hover, #cadastro input[type="email"]:hover,#cadastro input[type="password"]:hover,#cadastro input[type="date"]:hover,#cadastro input[type="radio"]:hover {
+	-webkit-transition:border-color 0.3s ease-in-out;
+	-moz-transition:border-color 0.3s ease-in-out;
+	transition:border-color 0.3s ease-in-out;
+	border:1.2px solid #AAA;
+	box-shadow: 0.5px 0.5px 0.5px rgb(204, 203, 203);
 }
 
 legend#lPrincipal{
@@ -24,13 +73,16 @@ legend#lPrincipal{
 	font-family: sans-serif;
 }
 
-fieldset{
-	border-color: #cecece;
-	margin:20px;
-	width: 400px;
+fieldset {
+	border: medium none !important;
+	margin: 0 0 10px;
+	min-width: 100%;
+	padding: 0;
+	width: 100%;
 }
 
 fieldset#fSexo{
+	border: black;
     width: 120px;
     margin-left:15px;
 }
@@ -39,10 +91,29 @@ label{
     margin-left: 15px;
 }
 
-#botao{
-    border-color: gray;
-	border-width: 4px;
+#cadastro input[type="submit"] {
+	cursor:pointer;
+	width:100%;
+	border:none;
+	background:#0CF;
+	color:#FFF;
+	margin:0 0 5px;
+	padding:10px;
+	font-size:15px;
 }
+
+#cadastro input[type="submit"]:hover {
+	background:#09C;
+	transition:background-color 0.3s ease-in-out;
+}
+
+#cadastro input[type="submit"]:active, :active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+#cadastro input:focus{
+	outline:0;
+	border:1px solid #999;
+}
+
 
 
 
