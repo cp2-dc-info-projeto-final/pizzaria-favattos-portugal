@@ -39,14 +39,15 @@
             return true;
         }else{
             return false;
-        }
+        }   
     }
     //permite somente numeros e letras, sem caracteres especiais --> para o endereço
     function endereco(){
         tecla = event.keyCode;
-        if(tecla>=8 && telca<=27 || tecla>=48 && tecla<=57 || tecla>=94 && tecla <=122){
+        if(tecla>=8 && tecla<=27 || tecla>=48 && tecla<=57 || tecla>=94 && tecla <=122){
             return true;
         }else{
             return false;
         }   
     }
+

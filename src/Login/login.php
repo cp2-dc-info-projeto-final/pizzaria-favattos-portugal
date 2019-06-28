@@ -36,7 +36,7 @@ else{
     unset ($_SESSION['logi']);
     unset ($_SESSION['senha']);
     echo "Falha no login tente novamente";
-    //header('location:login.php');
+    //header('location:login.html');
 }
 
 
