@@ -9,6 +9,35 @@
 </head>
 
 <body> 
+    <?php
+    if(count($_REQUEST) != 0){
+      echo ('
+        <br>
+        <style>
+        #Erros{
+          visibility:visible;
+          background-color: #ffff80;
+          width: 50%;
+          text-align: center;
+          border: solid 1px;
+          padding: 3px;
+          font-size: 18px;
+        }
+        </style>
+        ');
+    }
+    ?>
+
+    <center>
+    <div id='Erros'>
+    <?php
+      foreach($_REQUEST as $item){
+      print($item);
+      }
+    ?>
+    </div>
+    </center>
+    
     <!-- Inicio de formulario -->
     <div class="container">
     <form id= "cadastro" method="POST" action="Cadastro.php" onsubmit="return validate()" >

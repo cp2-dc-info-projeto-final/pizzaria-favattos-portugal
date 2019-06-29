@@ -24,20 +24,25 @@
 
 
     //Verificando dados
-    
+    $erros = [];
+
     if(MesmoEmail($email) == 1){
-        echo "Email já cadastrado";
+        $erros[]="Email já cadastrado";
     }
-    elseif(MesmoLogin($login) == 1){
-        echo "Login já cadastrado";
+    if(MesmoLogin($login) == 1){
+        $erros[]="Login já cadastrado";
     }
-    elseif(MesmoCpf($cpf) == 1){
-        echo "Cpf já cadastrado";
-    }elseif(CpfValido($cpf)==false){
-        echo "Cpf invalido";
-    }elseif($senha != $Csenha){
-        echo "Senha diferente";
-    }else{
+    if(MesmoCpf($cpf) == 1){
+        $erros[]="Cpf já cadastrado";
+    }
+    if(CpfValido($cpf)==false){
+        $erros[]="Cpf invalido";
+    }
+    if($senha != $Csenha){
+        $erros[]="Senha diferente";
+    }
+
+    if(count($erros)==0){
     
 
     //Inserindo usuário
@@ -61,10 +66,12 @@
     echo "Seu cadastro foi realizado com sucesso!<br>Agradecemos a atenção.";
     
     
+}else{
+    foreach ($erros as $erro){
+		$text = "$text $erro | ";
+		header('Location: PagCadastro.php?erros='.urlencode($text));
 }
-    //fechando conexão
-
-    //mysqli_close($con);
+}
 
 ?>
 
