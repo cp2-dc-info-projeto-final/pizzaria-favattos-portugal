@@ -25,7 +25,7 @@ $consulta->bindValue(':senha', $senha);
 $consulta->execute();
 
 //login válido
-if($consulta->rowCount() != 0){
+if($consulta->rowCount() == 1){
     $_SESSION['logi'] = $login;
     $_SESSION['senha'] = $senha;
     echo "Login efetuado com sucesso";
@@ -39,9 +39,6 @@ else{
     //header('location:login.html');
 }
 
-
-
-//Lembre-se de mim
 
 
 ?>
