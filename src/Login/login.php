@@ -40,8 +40,6 @@ else{
 }
 
 
-//Esqueceu a senha?
-
 
 //Lembre-se de mim
 
