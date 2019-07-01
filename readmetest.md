@@ -11,3 +11,5 @@
 ## Sumário
 
 - [Proposta](proposta.md)
+- [Casos de Uso](casosDeUso.md)
+- [Modelagem](CasosDeUso.png)
