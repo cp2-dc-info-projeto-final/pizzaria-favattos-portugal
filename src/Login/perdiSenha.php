@@ -26,8 +26,11 @@
     //link de recuperação sendo enviado por email
     if($consulta2->rowCount() == 1){
         $link = "http://127.0.0.1/edsa-favatto-portugal/src/Login/RecuperarSenha.php?email=$email&confirmacao=$chave";
+        $headers =  'MIME-Version: 1.0' . "\r\n"; 
+        $headers .= 'From: Your name <info@address.com>' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
 
-        if(mail($email,'Recuperar Senha:','Para recuperar a senha visite esse link: '.$link)){
+        if(mail($email,'Recuperar Senha:','Para recuperar a senha visite esse link: '.$link,$headers)){
             echo "<p>Foi enviado um e-mail para o seu endereço, onde poderá encontrar um link único para alterar a sua senha</p>";
         }
         else{
