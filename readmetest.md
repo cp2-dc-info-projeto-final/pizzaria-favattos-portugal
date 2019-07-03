@@ -12,8 +12,8 @@
 
 1. [Proposta](proposta.md)
 2. [Requisitos](requisitos.md)
- a. [Entrevista - áudio](entrevista.mp3)
- b. [Entrevista - documento](entrevista.md)
+ - [Entrevista - áudio](entrevista.mp3)
+ - [Entrevista - documento](entrevista.md)
 3. [Casos de Uso](casosDeUso.md)
 4. [Modelagem](CasosDeUso.png)
 5. [Manual]()
