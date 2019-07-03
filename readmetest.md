@@ -10,36 +10,38 @@
 
 ## Sumário
 
-- [Proposta](proposta.md)
-- [Casos de Uso](casosDeUso.md)
-- [Modelagem](CasosDeUso.png)
-- [Manual]()
+1. [Proposta](proposta.md)
+2. [Requisitos](requisitos.md)
+ a. [Entrevista - áudio](entrevista.mp3)
+ b. [Entrevista - documento](entrevista.md)
+3. [Casos de Uso](casosDeUso.md)
+4. [Modelagem](CasosDeUso.png)
+5. [Manual]()
 
-## Proposta de TCC - Trabalho de Conclusão de Curso
+# Proposta de TCC - Trabalho de Conclusão de Curso
 
-#### Descrição da Proposta
+## Proposta
+
+### Descrição da Proposta
 O projeto consiste em sistematizar o atendimento da pizzaria Favatto's Portugal, buscando agilizar e facilitar o trabalho no estabelecimento.
 
-#### Stakeholder(s)
+### Stakeholder(s)
 - Nome: Anderson dos Santos Favatto Portugal;
 - Profissão: Gerente;
 - Cargo: Gerente da Favatto's Portugal;
 
-#### Requisitos
-[Especificação de Requisitos](https://github.com/cp2-dc-info-projeto-final/pizzaria-favattos-portugal/blob/master/requisitos.md)
-
-#### Objetivos
+### Objetivos
 - Otimização do tempo ao facilitar o trabalho dos funcionários através de uma maior acessibilidade e praticidade; 
 - Facilitar a organização econômica e dos pedidos do estabelecimento.
 
-#### Funcionalidades
+### Funcionalidades
 Organização dos produtos e seus preços e armazenamento dos pedidos ao longo do expediente, para por fim gerar o total obtido naquele dia, e incluir dia após dia um somatório para que o admin veja o total gerado na semana ou num mês, mostrando ao admin qual semana e/ou mês foi mais ou menos efetiva; Cadastro pelo site ou opção de entrar pelo facebook; O sistema registrará informações referentes a clientes, funcionários, produtos, vendas, compras e pagamentos, e com base nessas informações, o sistema deve gerar informações estatísticas como o produto mais vendido, clientes mais féis, dia/horário de maior venda, % de lucro ( o admin entrará com o total gastos em produto e adicionará o total obtido gerado), sugerir promoções com base nas estatísticas ( como um alerta de baixo rendimento em determinado produto, horário ou dia), haverá um chat de comunicação entre funcionário e cliente, um limite de localidade e um sistema de avaliação de até 5 estrelas e caso o cliente queira, adicionar um comentário.
 
-### Requisitos
+## Requisitos
 
-#### Requisitos do Sistema
+### Requisitos do Sistema
 
-##### Sumário
+### Sumário
 
 - [Requisistos Funcionais](#requisitos-funcionais)
 
@@ -64,77 +66,77 @@ Organização dos produtos e seus preços e armazenamento dos pedidos ao longo d
     * [RNF 08](#rnf-08)
     * [RNF 09](#rnf-09)
 
-#### Requisitos Funcionais 
+### Requisitos Funcionais 
 
-##### RF 01
+### RF 01
 
 O software deve ser capaz de cadastrar usuários, a partir de dados como: nome completo, CPF, endereço, e-mail e nome de usuário.
 
-##### RF 02
+### RF 02
 
 O software deverá gerar estatísticas que devem mostrar o lucro, produto mais vendido, produto menos vendido e sugerir promoções.
 
-##### RF 03
+### RF 03
 
 O software conterá um menu, que funcionará como um cardápio para os clientes. Sendo assim, o programa irá anotar pedidos,incluindo o preço, e enviar para o administrador, criando uma comanda virtual.
 
-##### RF 04
+### RF 04
 
 As contas de administrador deverão ter acessos privados, para alteração de produtos, preços, visualizar pedidos e etc.
 
-##### RF 05
+### RF 05
 
 Os dados contidos no software, como produtos, usuários e pedidos deverão ser armazenados no banco de dados.
 
-##### RF 06
+### RF 06
 
 O software deverá conter um controle de estoque, que apontará os gastos de um determinado período de tempo.
 
-##### RF 07
+### RF 07
 
 O software deverá utilizar um sistema de mapa (como o Google) e mostrar rotas até os endereços selecionados.
 
-#### Requisitos Não Funcionais
+### Requisitos Não Funcionais
 
-##### RNF 01  
+### RNF 01  
 
 Os dados dos usuários devem ser privados, em relação aos outros usuários. Somente o administrador terá acesso a todas as informações.
 
-##### RNF 02
+### RNF 02
 
 O software deverá ter capacidade de aguentar vários acessos simultâneos.
 
-##### RNF 03
+### RNF 03
 
 O software deverá ter capacidade de aguentar vários cadastros simultâneos.
 
-##### RNF 04
+### RNF 04
 
 Em caso de falhas inesperadas ou erros fatais, o software deve ser desligado e reiniciado.
 
-##### RNF 05
+### RNF 05
 
 O Sistema web terá portabilidade para celular, se adaptando nos diferentes dispositivos.
 
-##### RNF 06
+### RNF 06
 
 O Sistema deverá mostrar mensagens, em casos de erro em login ou cadastros.
 
-##### RNF 07
+### RNF 07
 
 Com uma semana de treinamento, o administrador deveu ser capaz de utilizar todo o software. E no caso de usuários normais, o sistema será intuitivo para que em uma hora já se saiba como utilizar as principais funções.
 
-##### RNF 08
+### RNF 08
 
 O software deverá efetuar logins, cadastros e outros processos em menos de 5 segundos.
 
-##### RNF 09
+### RNF 09
 
 Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 
-### Casos de Uso
+## Casos de Uso
 
-#### Sumário
+## Sumário
 - [CDU 01 - Cadastro de usuários](#cdu-01---cadastro-de-usuários)
 - [CDU 02 - Login](#cdu-02---login)
 - [CDU 03 - Gerenciamento de cadastro](#cdu-03---gerenciamento-de-cadastro)
@@ -146,8 +148,8 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 - [CDU 09 - Dados pessoais](#cdu-09---dados-pessoais)
 - [CDU 10 - Acesso ao histórico de vendas](#cdu-10---acesso-ao-histórico-de-vendas)
 
-#### Descrição
-#### CDU 01 - Cadastro de usuários
+## Descrição
+### CDU 01 - Cadastro de usuários
 **Atores:** Clientes e Funcionários
 
 **Fluxo Principal:**
@@ -162,7 +164,7 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 
 2. Após a verificação do sistema, caso os dados fornecidos não corresponderem ao campo preenchido ou  e-mail já cadastrado, uma mensagem de erro será exibida na tela ou abaixo do campo errado.
 
-#### CDU 02 - Login 
+### CDU 02 - Login 
 
 **Atores:** Clientes e Funcionários 
 
@@ -177,7 +179,7 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 
 2. O usuário será levado para uma página de recuperação através do e-mail cadastrado.
 
-#### CDU 03 - Gerenciamento de cadastro 
+### CDU 03 - Gerenciamento de cadastro 
 
 **Atores:** Funcionários
  
@@ -186,7 +188,7 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 
 2. Um funcionário ( conta com permissão de admin) poderá dar permissão de admin a outros funcionários. O funcionário poderá alterar a situação da venda.
 
-#### CDU 04 - Listagem dos Alimentos 
+### CDU 04 - Listagem dos Alimentos 
 
 **Atores:** Clientes e Funcionários 
 
@@ -196,7 +198,7 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 
 2. No caso do funcionário, será direcionado à mesma página porém com possibilidade de alteração/inclusão/exclusão dos alimentos e preços.
 
-#### CDU 05 - Situação do pedido 
+### CDU 05 - Situação do pedido 
 
 **Atores:** Clientes e Funcionários 
 
@@ -205,7 +207,7 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 
 2. No caso do funcionário, ele será o responsável por alterar a situação do pedido.
 
-#### CDU 06 - Gerenciamento do preço dos produtos 
+### CDU 06 - Gerenciamento do preço dos produtos 
 
 **Atores:** Funcionários 
 
@@ -215,7 +217,7 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 
 2. Os funcionários serão responsáveis pela publicação dos produtos disponíveis e seus respectivos preços, e terão a possibilidade de alterar, incluir ou excluir produtos e preços, e divulgação de promoções.
 
-#### CDU 07 - Gerenciamento da venda dos produtos 
+### CDU 07 - Gerenciamento da venda dos produtos 
 
 **Atores:** Funcionários 
 
@@ -226,7 +228,7 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 
 2. Os funcionários receberão dados sobre os produtos vendidos e a soma de dinheiro total obtido na venda destes produtos diariamente, semanalmente serão somados os produtos e o dinheiro obtido naquela semana, e também mensalmente.
 
-#### CDU 08 - Avaliação da loja
+### CDU 08 - Avaliação da loja
 
 **Atores:** Clientes 
 
@@ -236,7 +238,7 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 
 2. O cliente avaliará a loja através da parte de avaliação disponibilizada pelo sistema
 
-#### CDU 09 - Dados pessoais
+### CDU 09 - Dados pessoais
 
 **Atores:** Clientes
 
@@ -244,7 +246,7 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 
 1. O Sistema disponibilizará uma página para alteração de dados pessoais, na qual o cliente precisará disponibilizar os antigos e os novos dados que deseja.
 
-#### CDU 10 - Acesso ao histórico de vendas
+### CDU 10 - Acesso ao histórico de vendas
 
 **Atores:** Funcionários e Clientes
 
@@ -253,6 +255,3 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 1. Os funcionários poderão acessar o histórico de vendas realizadas.
 
 2. Os clientes poderão acessar cada um o seu histórico de compras.
-
-
-
