@@ -39,7 +39,7 @@ Organização dos produtos e seus preços e armazenamento dos pedidos ao longo d
 
 ## Requisitos
 
-### Requisitos do Sistema
+## Requisitos do Sistema
 
 ### Sumário
 
@@ -66,7 +66,7 @@ Organização dos produtos e seus preços e armazenamento dos pedidos ao longo d
     * [RNF 08](#rnf-08)
     * [RNF 09](#rnf-09)
 
-### Requisitos Funcionais 
+## Requisitos Funcionais 
 
 ### RF 01
 
@@ -96,7 +96,7 @@ O software deverá conter um controle de estoque, que apontará os gastos de um 
 
 O software deverá utilizar um sistema de mapa (como o Google) e mostrar rotas até os endereços selecionados.
 
-### Requisitos Não Funcionais
+## Requisitos Não Funcionais
 
 ### RNF 01  
 
