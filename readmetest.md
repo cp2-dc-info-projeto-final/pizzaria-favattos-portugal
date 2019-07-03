@@ -35,7 +35,13 @@ O projeto consiste em sistematizar o atendimento da pizzaria Favatto's Portugal,
 - Facilitar a organização econômica e dos pedidos do estabelecimento.
 
 ### Funcionalidades
-Organização dos produtos e seus preços e armazenamento dos pedidos ao longo do expediente, para por fim gerar o total obtido naquele dia, e incluir dia após dia um somatório para que o admin veja o total gerado na semana ou num mês, mostrando ao admin qual semana e/ou mês foi mais ou menos efetiva; Cadastro pelo site ou opção de entrar pelo facebook; O sistema registrará informações referentes a clientes, funcionários, produtos, vendas, compras e pagamentos, e com base nessas informações, o sistema deve gerar informações estatísticas como o produto mais vendido, clientes mais féis, dia/horário de maior venda, % de lucro ( o admin entrará com o total gastos em produto e adicionará o total obtido gerado), sugerir promoções com base nas estatísticas ( como um alerta de baixo rendimento em determinado produto, horário ou dia), haverá um chat de comunicação entre funcionário e cliente, um limite de localidade e um sistema de avaliação de até 5 estrelas e caso o cliente queira, adicionar um comentário.
+- Organização dos produtos, seus preços e armazenamento dos pedidos ao longo do expediente, para por fim gerar o total obtido naquele dia e incluir dia após dia um somatório para que o admin veja o total gerado na semana ou mês, mostrando ao admin qual semana e/ou mês foi mais ou menos efetiva;
+- Cadastro pelo site ou opção de entrar pelo facebook; 
+- O sistema registrará informações referentes a clientes, funcionários, produtos, vendas, compras e pagamentos. Com base nessas informações, o sistema deve gerar informações estatísticas como o produto mais vendido, clientes mais féis, dia/horário de maior venda, % de lucro (o admin entrará com o total gastos em produto e adicionará o total obtido); 
+- Sugerir promoções com base nas estatísticas (como um alerta de baixo rendimento em determinado produto, horário ou dia);
+- Chat de comunicação entre funcionário e cliente;
+- Limite de localidade;
+- Sistema de avaliação de até 5 estrelas e caixa para comentário (o comentário não é obrigatório).
 
 ## Requisitos
 
@@ -78,19 +84,19 @@ O software deverá gerar estatísticas que devem mostrar o lucro, produto mais v
 
 ### RF 03
 
-O software conterá um menu, que funcionará como um cardápio para os clientes. Sendo assim, o programa irá anotar pedidos,incluindo o preço, e enviar para o administrador, criando uma comanda virtual.
+O software conterá um menu que funcionará como um cardápio para os clientes. Sendo assim, o programa irá anotar pedidos, incluindo o preço, e enviar para o administrador, criando uma comanda virtual.
 
 ### RF 04
 
-As contas de administrador deverão ter acessos privados, para alteração de produtos, preços, visualizar pedidos e etc.
+As contas de administrador deverão ter acessos privados para alteração de produtos, preços, visualizar pedidos e etc.
 
 ### RF 05
 
-Os dados contidos no software, como produtos, usuários e pedidos deverão ser armazenados no banco de dados.
+Os dados contidos no software como produtos, usuários e pedidos deverão ser armazenados no banco de dados.
 
 ### RF 06
 
-O software deverá conter um controle de estoque, que apontará os gastos de um determinado período de tempo.
+O software deverá conter um controle de estoque que apontará os gastos de um determinado período de tempo.
 
 ### RF 07
 
@@ -100,7 +106,7 @@ O software deverá utilizar um sistema de mapa (como o Google) e mostrar rotas a
 
 ### RNF 01  
 
-Os dados dos usuários devem ser privados, em relação aos outros usuários. Somente o administrador terá acesso a todas as informações.
+Os dados dos usuários devem ser privados em relação aos outros usuários. Somente o administrador terá acesso a todas as informações.
 
 ### RNF 02
 
@@ -120,11 +126,11 @@ O Sistema web terá portabilidade para celular, se adaptando nos diferentes disp
 
 ### RNF 06
 
-O Sistema deverá mostrar mensagens, em casos de erro em login ou cadastros.
+O Sistema deverá mostrar mensagens em casos de erro em login ou cadastros.
 
 ### RNF 07
 
-Com uma semana de treinamento, o administrador deveu ser capaz de utilizar todo o software. E no caso de usuários normais, o sistema será intuitivo para que em uma hora já se saiba como utilizar as principais funções.
+Com uma semana de treinamento o administrador deve ser capaz de utilizar todo o software. E no caso de usuários normais, o sistema será intuitivo para que em uma hora já se saiba como utilizar as principais funções.
 
 ### RNF 08
 
@@ -132,7 +138,7 @@ O software deverá efetuar logins, cadastros e outros processos em menos de 5 se
 
 ### RNF 09
 
-Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
+Para o administrador o sistema deve ficar acessível a qualquer hora do dia.
 
 ## Casos de Uso
 
@@ -156,13 +162,13 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 
 1. Usuário informa o nome, telefone, e-mail, qual será o login utilizado e a senha.
 
-2. O Sistema fará a verificação dos dados fornecidos  e  cadastrará um novo cliente normal. Os funcionários criarão a conta como clientes normais porém receberão permissão de admin. 
+2. O Sistema fará a verificação dos dados fornecidos e cadastrará um novo cliente normal. Os funcionários criarão a conta como clientes normais porém receberão permissão de admin. 
 
 **Fluxo Alternativo:**
 
 1. Usuário informa o nome, telefone, e-mail, qual será o login utilizado e a senha.
 
-2. Após a verificação do sistema, caso os dados fornecidos não corresponderem ao campo preenchido ou  e-mail já cadastrado, uma mensagem de erro será exibida na tela ou abaixo do campo errado.
+2. Após a verificação do sistema, caso os dados fornecidos não corresponderem ao campo preenchido ou e-mail já cadastrado, uma mensagem de erro será exibida na tela ou abaixo do campo errado.
 
 ### CDU 02 - Login 
 
@@ -172,10 +178,10 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 
 1. O cliente informa ou o e-mail e a senha, ou o login e a senha. Caso os dados sejam confirmados como cadastrados, o cliente poderá começar a navegar. 
 
-2. O cliente será levado para a pagina inicial do software. No caso do funcionário, ele será redirecionado à uma página diferente da do cliente, caso tenha permissão de admin confirmada pelo sistema. 
+2. O cliente será levado para a página inicial do software. No caso do funcionário, ele será redirecionado à uma página diferente do cliente, caso tenha permissão de admin confirmada pelo sistema. 
 
 **Fluxo Alternativo:**
-1. No caso de o usuário esquecer sua senha, haverá um botão "esqueceu a senha?". 
+1. No caso de o usuário esquecer sua senha haverá um botão "esqueceu a senha?". 
 
 2. O usuário será levado para uma página de recuperação através do e-mail cadastrado.
 
@@ -186,7 +192,7 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 **Fluxo Principal:** 
 1. O sistema disponibiliza as informações dos clientes (com exceção da senha) para visualização. 
 
-2. Um funcionário ( conta com permissão de admin) poderá dar permissão de admin a outros funcionários. O funcionário poderá alterar a situação da venda.
+2. Um funcionário (conta com permissão de admin) poderá dar permissão de admin a outros funcionários. O funcionário poderá alterar a situação da venda.
 
 ### CDU 04 - Listagem dos Alimentos 
 
@@ -194,7 +200,7 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 
 **Fluxo principal:** 
 
-1. No caso dos clientes, ao clicar na aba Alimentos, os clientes serão direcionados à uma página com os alimentos e seus preços, e também farão seu pedido por essa página. 
+1. No caso dos clientes, ao clicar na aba Alimentos os clientes serão direcionados à uma página com os alimentos e seus preços, e também farão seu pedido por essa página. 
 
 2. No caso do funcionário, será direcionado à mesma página porém com possibilidade de alteração/inclusão/exclusão dos alimentos e preços.
 
@@ -225,8 +231,7 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 
 1. O sistema disponibilizará uma permissão exclusiva para os admins para poderem alterar os produtos. 
 
-
-2. Os funcionários receberão dados sobre os produtos vendidos e a soma de dinheiro total obtido na venda destes produtos diariamente, semanalmente serão somados os produtos e o dinheiro obtido naquela semana, e também mensalmente.
+2. Os funcionários receberão dados sobre os produtos vendidos e a soma de dinheiro total obtido na venda destes produtos diariamente. Semanalmente/mensalmente serão somados os produtos e o dinheiro obtido naquela semana/mês.
 
 ### CDU 08 - Avaliação da loja
 
@@ -234,9 +239,9 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 
 **Fluxo Principal:** 
 
-1. O sistema disponibilizará uma parte de avaliação (rating) da loja após o produto ser entregue
+1. O sistema disponibilizará uma parte de avaliação (rating) da loja após o produto ser entregue.
 
-2. O cliente avaliará a loja através da parte de avaliação disponibilizada pelo sistema
+2. O cliente avaliará a loja através da parte de avaliação disponibilizada pelo sistema.
 
 ### CDU 09 - Dados pessoais
 
@@ -268,3 +273,7 @@ Arquivo LICENSE contendo licenciamento MIT*
 ## Diagrama de Casos de Uso
 
 ![Diagrama dos Casos de Uso](https://raw.githubusercontent.com/cp2-dc-info-projeto-final/pizzaria-favattos-portugal/master/CasosDeUso.png)
+
+*Diagrama de classes (modelo editável e imagem)
+Modelagem do banco de dados (modelo editável e imagem)
+Pasta src contendo todo o código e os demais arquivos necessários para seu funcionamento*
