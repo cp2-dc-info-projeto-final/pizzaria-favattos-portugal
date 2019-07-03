@@ -261,7 +261,10 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 - [Áudio da entrevista](entrevista.mp3)
 - [Transcrição da entrevista](entrevista.md)
 
+*Arquivo schema.sql contendo o script SQL para criação do banco de dados
+Arquivo slides.pdf contendo os Slides da apresentação
+Arquivo LICENSE contendo licenciamento MIT*
 
 ## Diagrama de Casos de Uso
 
-![Alt ou título da imagem](https://raw.githubusercontent.com/cp2-dc-info-projeto-final/pizzaria-favattos-portugal/master/CasosDeUso.png)
+![Diagrama dos Casos de Uso](https://raw.githubusercontent.com/cp2-dc-info-projeto-final/pizzaria-favattos-portugal/master/CasosDeUso.png)
