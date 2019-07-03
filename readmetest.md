@@ -255,3 +255,8 @@ Para o administrador, o sistema deve ficar acessível a qualquer hora do dia.
 1. Os funcionários poderão acessar o histórico de vendas realizadas.
 
 2. Os clientes poderão acessar cada um o seu histórico de compras.
+
+## Entrevista com Stakeholder
+
+- [Áudio da entrevista](entrevista.mp3)
+- [Transcrição da entrevista](entrevista.md)
