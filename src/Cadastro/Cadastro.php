@@ -19,8 +19,8 @@
     $cpf = $_REQUEST["cpf"];
     $sexo = $_REQUEST["sexo"];
     $login = $_REQUEST["login"];
-    $senha = md5($_REQUEST["senha"]);
-    $Csenha = md5($_REQUEST["Csenha"]);
+    $senha = password_hash($_REQUEST["senha"], PASSWORD_DEFAULT);
+    $Csenha = password_hash($_REQUEST["Csenha"], PASSWORD_DEFAULT);
 
 
     //Verificando dados

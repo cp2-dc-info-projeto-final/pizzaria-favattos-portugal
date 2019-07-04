@@ -14,7 +14,7 @@
     require_once("../Funcoes/CriaConexao.php");
 // RECEBENDO OS DADOS PREENCHIDOS DO FORMULÁRIO
     $login = $_REQUEST ["emailLogin"];
-    $senha = md5($_REQUEST["senha"]);
+    $senha = password_hash($_REQUEST["senha"],PASSWORD_DEFAULT););
 
 //Testar se já é cadastrado
 
