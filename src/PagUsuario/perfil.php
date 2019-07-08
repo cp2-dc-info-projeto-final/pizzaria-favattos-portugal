@@ -17,7 +17,6 @@
     <title>Perfil</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../Estilo/Perfil.css">
     <link rel ="stylesheet" href ="../Estilo/bootstrap-4.1.3-dist/css/bootstrap.min.css">
     <script src="../Estilo/jquery.min.js"></script>
@@ -46,17 +45,17 @@
       <li class="nav-item">
             <a class="nav-link" href="#">Fotos</a>
       </li>
-      <!-- Dropdown -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-          Usuário
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Seu perfil</a>
-          <a class="dropdown-item" href="#">Histórico de compras</a>
-          <a class="dropdown-item" href="#">Link 3</a>
-        </div>
-      </li>
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Usuário
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Seu perfil</a>
+        <a class="dropdown-item" href="#">Histórico de compras</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </li>
     </ul>
     </div>
   </nav>  
@@ -65,9 +64,11 @@
     require_once("../Funcoes/CriaConexao.php");
     $con = CriarConexao();
     $consulta = $con->prepare("SELECT * FROM cliente WHERE email = $login or logi = $login");
-    $dados = $consulta->fetchAll();
+    $dados = $consulta->fetchAll(PDO::FETCH_ASSOC);
   ?>
   
+  <!--Demonstrando dados do usário -->
+
   <div class="container" style="margin-top: 180px">
   <div class="shadow p-3 mb-5 bg-white rounded">
 
@@ -90,7 +91,8 @@
   </center>
   </div>
   </div>
- 
+  
+  <!--Rodapé -->
   <nav class="navbar bg-dark navbar-dark fixed-bottom">
     <div class="container">
       <span class="text-muted">Até que enfim foi</span>
