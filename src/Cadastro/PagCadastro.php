@@ -79,8 +79,9 @@
     <input type ="password" name="Csenha" id="Csenha" minlength="7" maxlength = "15" placeholder= "Confirme sua senha" onkeypress= "return senhaLogin();" required> <br> <br>
 
     
-    <input type ="submit" name ="cadastrar" value ="Cadastrar" >
-    
+    <input type ="submit" name ="cadastrar" value ="Cadastrar" ><br><br>
+
+    Já possui uma conta? <a href="../Login/PagLogin.php">Entre agora.</a>
     <!-- fim de formulario -->
     
     </form>

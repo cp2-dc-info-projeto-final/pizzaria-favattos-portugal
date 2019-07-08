@@ -34,15 +34,14 @@ $hash = $consulta2['senha'];
 
 if($consulta->rowCount() == 1 && password_verify($senha, $hash) ){
     $_SESSION['logi'] = $login;
-    echo "Login efetuado com sucesso";
     header('location:../PagUsuario/perfil.php');
 }
 //login incorreto ou inválido
 else{
     unset ($_SESSION['logi']);
     unset ($_SESSION['senha']);
-    echo "Falha no login tente novamente";
-    //header('location:login.html');
+    $text = "Falha no login. Verifique as informações e tente novamente.";
+	header('Location: PagLogin.php?erros='.urlencode($text));
 }
 
 
