@@ -19,8 +19,8 @@
     $cpf = $_REQUEST["cpf"];
     $sexo = $_REQUEST["sexo"];
     $login = $_REQUEST["login"];
-    $senha = password_hash($_REQUEST["senha"], PASSWORD_DEFAULT);
-    $Csenha = password_hash($_REQUEST["Csenha"], PASSWORD_DEFAULT);
+    $senha = $_REQUEST["senha"];
+    $Csenha = $_REQUEST["Csenha"];
 
 
     //Verificando dados
@@ -44,7 +44,8 @@
 
     if(count($erros)==0){
     
-
+    $senha = password_hash($_REQUEST["senha"], PASSWORD_DEFAULT);
+        
     //Inserindo usuário
 
     $con = CriarConexao();
