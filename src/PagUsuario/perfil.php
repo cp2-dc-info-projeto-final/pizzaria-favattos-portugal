@@ -65,14 +65,14 @@
     require_once("../Funcoes/CriaConexao.php");
     $con = CriarConexao();
     $consulta = $con->prepare("SELECT * FROM cliente WHERE email = $login or logi = $login");
-    $dados = $consulta->fetch(PDO::FETCH_ASSOC);
+    $dados = $consulta->fetchAll();
   ?>
   
   <div class="container" style="margin-top: 180px">
   <div class="shadow p-3 mb-5 bg-white rounded">
 
     <h1>Seus dados</h1>
-    <h2>Nome: <?php echo $dados["nome"]; ?></h2>
+    <h2>Nome: <?php echo $dados['nome']; ?></h2>
     <h2>Idade: 16</h2>
     <h2>Email: <?php echo $dados["email"]; ?></h2>
  

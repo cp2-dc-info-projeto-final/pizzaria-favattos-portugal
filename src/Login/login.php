@@ -14,20 +14,26 @@
     require_once("../Funcoes/CriaConexao.php");
 // RECEBENDO OS DADOS PREENCHIDOS DO FORMULÁRIO
     $login = $_REQUEST ["emailLogin"];
-    $senha = password_hash($_REQUEST["senha"],PASSWORD_DEFAULT);
+    $senha = $_REQUEST["senha"];
 
 //Testar se já é cadastrado
 
 $con = CriarConexao();
-$consulta = $con->prepare('SELECT * FROM cliente WHERE email = :logi or logi = :logi and senha = :senha');
+$consulta = $con->prepare('SELECT email FROM cliente WHERE email = :logi or logi = :logi');
 $consulta->bindValue(':logi',$login);
-$consulta->bindValue(':senha', $senha);
 $consulta->execute();
 
+$consulta2 = $con->prepare('SELECT senha FROM cliente WHERE email = :logi or logi = :logi');
+$consulta2->bindValue(':logi',$login);
+$consulta2->execute(); 
+
+$consulta2 = $consulta2 -> fetch();
+$hash = $consulta2['senha'];
+
 //login válido
-if($consulta->rowCount() == 1){
+
+if($consulta->rowCount() == 1 && password_verify($senha, $hash) ){
     $_SESSION['logi'] = $login;
-    $_SESSION['senha'] = $senha;
     echo "Login efetuado com sucesso";
     header('location:../PagUsuario/perfil.php');
 }
