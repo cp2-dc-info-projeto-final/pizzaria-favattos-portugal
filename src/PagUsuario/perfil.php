@@ -60,34 +60,38 @@
     </div>
   </nav>  
 
-  <?php
-    require_once("../Funcoes/CriaConexao.php");
-    $con = CriarConexao();
-    $consulta = $con->prepare("SELECT * FROM cliente WHERE email = $login or logi = $login");
-    $dados = $consulta->fetchAll(PDO::FETCH_ASSOC);
-  ?>
-  
+ 
   <!--Demonstrando dados do usário -->
 
   <div class="container" style="margin-top: 180px">
   <div class="shadow p-3 mb-5 bg-white rounded">
 
+    <?php
+      require_once("../Funcoes/CriaConexao.php");
+      $con = CriarConexao();
+      $consulta = $con->prepare("SELECT * FROM cliente WHERE email = :login or logi = :login");
+      $consulta->bindValue(':login', $login);
+      $consulta->execute();
+      $dados = $consulta->fetch();
+    
+    ?>
+
     <h1>Seus dados</h1>
     <h2>Nome: <?php echo $dados['nome']; ?></h2>
-    <h2>Idade: 16</h2>
-    <h2>Email: <?php echo $dados["email"]; ?></h2>
+    <h2>Idade: <?php echo "Temos que ver isso aqui quid pro quo"; ?></h2>
+    <h2>Email: <?php echo $dados['email']; ?></h2>
  
     <hr>
     <h1>Outras Informações</h1>
-    <h2>Endereço: Exemplo de Endereço bem aqui!</h2>
-    <h2>Telefone: 4002-8922</h2>
-    <h2>Login: exemplologin</h2>
-    <h2>Sexo: Masculino</h2>
+    <h2>Endereço: <?php echo $dados['endereco']; ?></h2>
+    <h2>Telefone: <?php echo $dados['telefone']; ?></h2>
+    <h2>Login: <?php echo $dados['logi']; ?></h2>
+    <h2>Sexo: <?php echo $dados['sexo']; ?></h2>
 
   <hr>
   <center>
     <a class="btn btn-outline-success" href="Editar.php">Editar Perfil</a>
-    <a class="btn btn-outline-danger" href="Sair.php">Sair</a>
+    <a class="btn btn-outline-danger" href="../Login/Sair.php">Sair</a>
   </center>
   </div>
   </div>
