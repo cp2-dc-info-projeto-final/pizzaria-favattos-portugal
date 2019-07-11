@@ -1,5 +1,7 @@
 <?php
 
+require_once("../Funcoes/CriaConexao.php");
+
 //Verifica se o email já foi cadastrado
 function MesmoEmail($email){
     $con = CriarConexao();
@@ -69,6 +71,38 @@ function CpfValido($cpf){
             }
         }
 
+}
+
+function CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$cpf,$endereco,$tel){
+
+    if(MesmoEmail($email) == 1){
+        throw new Exception("Email já cadastrado");
+    }
+    if(MesmoLogin($login) == 1){
+        throw new Exception("Login já cadastrado");
+    }
+    if(MesmoCpf($cpf) == 1){
+        throw new Exception("Cpf já cadastrado");
+    }
+    if(CpfValido($cpf)==false){
+        throw new Exception("Cpf invalido");
+    }
+
+    $con = CriarConexao();
+    $inserir = 'INSERT INTO cliente (nome, data_nasc, sexo, email, logi, senha, cpf, endereco, telefone)
+              VALUES (:nome,:data_nascimento,:sexo,:email,:logi,:senha,:cpf,:endereco,:tel)';
+    $stmt = $con->prepare($inserir);
+    $stmt ->bindValue(':nome', $nome);
+    $stmt ->bindValue(':data_nascimento', $data_nascimento);
+    $stmt ->bindValue(':sexo', $sexo);
+    $stmt ->bindValue(':email', $email);
+    $stmt ->bindValue(':logi', $login);
+    $stmt ->bindValue(':senha', $senha);
+    $stmt ->bindValue(':cpf', $cpf);
+    $stmt ->bindValue(':endereco', $endereco);
+    $stmt ->bindValue(':tel', $tel);
+
+    return $stmt->execute();
 }
 
 ?>
