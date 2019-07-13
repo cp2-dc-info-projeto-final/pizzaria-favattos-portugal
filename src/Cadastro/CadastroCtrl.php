@@ -9,7 +9,7 @@
 <?php
 
     
-    require_once("ValidarCadastro.php");
+    require_once("CadastroModel.php");
     // RECEBENDO OS DADOS PREENCHIDOS DO FORMULÁRIO
     $nome = $_REQUEST["nome"];
     $email = $_REQUEST["email"];
@@ -22,26 +22,21 @@
     $senha = $_REQUEST["senha"];
     $Csenha = $_REQUEST["Csenha"];
 
-
     //Verificando dados
-    $erros = [];
-
-    $senha = password_hash($_REQUEST["senha"], PASSWORD_DEFAULT);
+    $erros = "";
+    
     try {
-        $resultCadastro = CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$cpf,$endereco,$tel);  
+        $resultCadastro = CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$Csenha,$cpf,$endereco,$tel);  
     }
     catch (Exception $e) {
-        $erros[] = $e->getMessage();
+        $erros = $e->getMessage();
     }
 
-    if (count($erros)==0) {      
-        echo "Seu cadastro foi realizado com sucesso!<br>Agradecemos a atenção.";
+    if ($erros == "") {      
+        header('Location: ../Login/PagLogin.php');
     }
     else {
-        foreach ($erros as $erro) {
-            $text = "$text $erro | ";
-            header('Location: PagCadastro.php?erros='.urlencode($text));
-        }
+            header('Location: CadastroView.php?erros='.urlencode($erros));
     }
 
 ?>

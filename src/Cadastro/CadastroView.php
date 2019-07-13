@@ -40,7 +40,7 @@
     
     <!-- Inicio de formulario -->
     <div class="container">
-    <form id= "cadastro" method="POST" action="Cadastro.php" onsubmit="return validate()" >
+    <form id= "cadastro" method="POST" action="CadastroCtrl.php" onsubmit="return validate()" >
     
     <h3>Cadastro</h3>
     <h4>Cadastre-se para ter acesso as delícias da Favatto's Portugal</h4>

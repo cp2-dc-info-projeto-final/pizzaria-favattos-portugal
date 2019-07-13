@@ -45,7 +45,7 @@
     <input type ="submit" name ="Entrar" value ="Entrar" id="botao" > <br> <br>
 
     <center><a href="pagPerdiSenha.html">Esqueceu a senha?</a></center>  <br><br>
-    Ainda não tem uma conta? <a href="../Cadastro/PagCadastro.php">Cadastre-se agora.</a>  
+    Ainda não tem uma conta? <a href="../Cadastro/CadastroView.php">Cadastre-se agora.</a>  
     </form>
     </div>
 

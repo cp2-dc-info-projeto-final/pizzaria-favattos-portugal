@@ -73,19 +73,28 @@ function CpfValido($cpf){
 
 }
 
-function CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$cpf,$endereco,$tel){
+function CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$Csenha,$cpf,$endereco,$tel){
 
+    $error_list = [];
     if(MesmoEmail($email) == 1){
-        throw new Exception("Email já cadastrado");
+        $error_list[] = "Email já cadastrado";
     }
     if(MesmoLogin($login) == 1){
-        throw new Exception("Login já cadastrado");
+        $error_list[] = "Login já cadastrado";
     }
     if(MesmoCpf($cpf) == 1){
-        throw new Exception("Cpf já cadastrado");
+        $error_list[] = "Cpf já cadastrado";
     }
     if(CpfValido($cpf)==false){
-        throw new Exception("Cpf invalido");
+        $error_list[] =  "Cpf invalido";
+    }
+    if($senha != $Csenha){
+        $error_list[] = "Senhas diferentes";
+    }else{
+        $senha = password_hash($senha, PASSWORD_DEFAULT);
+    }
+    if (!empty($error_list )) {
+        throw new Exception(implode('|', $error_list));
     }
 
     $con = CriarConexao();
