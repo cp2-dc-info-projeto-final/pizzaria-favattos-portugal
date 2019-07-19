@@ -67,18 +67,14 @@
   <div class="shadow p-3 mb-5 bg-white rounded">
 
     <?php
-      require_once("../Funcoes/CriaConexao.php");
-      $con = CriarConexao();
-      $consulta = $con->prepare("SELECT * FROM cliente WHERE email = :login or logi = :login");
-      $consulta->bindValue(':login', $login);
-      $consulta->execute();
-      $dados = $consulta->fetch();
-    
+      require_once("perfilModel.php");
+      $dados = Pegardados($login);
+      $idade = CalcularIdade($dados['data_nasc']);
     ?>
 
     <h1>Seus dados</h1>
     <h2>Nome: <?php echo $dados['nome']; ?></h2>
-    <h2>Idade: <?php echo "Temos que ver isso aqui quid pro quo"; ?></h2>
+    <h2>Idade: <?php echo $idade; ?></h2>
     <h2>Email: <?php echo $dados['email']; ?></h2>
  
     <hr>
