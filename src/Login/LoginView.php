@@ -36,8 +36,9 @@
     </div>
     </center>
     
+    <!-- Inicio de formulario -->
     <div class="container">
-    <form id="cadastro" method="POST" action="login.php">
+    <form id="cadastro" method="POST" action="LoginCtrl.php">
     <h3>Login</h3>
     <br> 
     <input type ="text" name ="emailLogin" id="emailLogin" placeholder="Email ou Login" size="29px" required> <br><br>
@@ -48,6 +49,6 @@
     Ainda não tem uma conta? <a href="../Cadastro/CadastroView.php">Cadastre-se agora.</a>  
     </form>
     </div>
-
+    <!-- fim de formulario -->
 </body>
 </hmtl>
