@@ -13,7 +13,7 @@ else{
 
 // Armazenando dados do usuário
 $dados = PegarDados($login);
-// Fazendo as alterações requisitadas
+// Fazendo as alterações requisitadas 
 function AlterarDados($email, $sexo, $telefone, $endereco){
     if($email == ""){
         $email = $dados['email'];
@@ -26,5 +26,8 @@ function AlterarDados($email, $sexo, $telefone, $endereco){
     }
     
     $con = CriarConexao();
+    $consulta = $con->prepare("UPDATE cliente SET email = $email, sexo = $sexo, telefone = $telefone, endereco = $endereco WHERE logi = :login");
+    $consulta->bindValue(':login',$login);
+    $consulta->execute();
 
 }
