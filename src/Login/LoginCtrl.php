@@ -25,7 +25,7 @@
 
     if($erros==""){
         $_SESSION['logi'] = $login;
-        header('location:../PagUsuario/perfil.php');
+        header('location:../PagUsuario/PerfilView.php');
     }
 
     else{

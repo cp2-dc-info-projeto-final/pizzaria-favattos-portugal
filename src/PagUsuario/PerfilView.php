@@ -62,8 +62,8 @@
 
  
   <!--Demonstrando dados do usário -->
-
-  <div class="container" style="margin-top: 180px">
+ 
+  <div class="container" style="margin-top: 150px">
   <div class="shadow p-3 mb-5 bg-white rounded">
 
     <?php
@@ -83,10 +83,10 @@
     <h2>Telefone: <?php echo $dados['telefone']; ?></h2>
     <h2>Login: <?php echo $dados['logi']; ?></h2>
     <h2>Sexo: <?php echo $dados['sexo']; ?></h2>
-
+  
   <hr>
   <center>
-    <a class="btn btn-outline-success" href="Editar.php">Editar Perfil</a>
+    <a class="btn btn-outline-success" href="EditarView.php">Editar Perfil</a>
     <a class="btn btn-outline-danger" href="../Login/Sair.php">Sair</a>
   </center>
   </div>

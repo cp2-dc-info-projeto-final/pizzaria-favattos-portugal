@@ -58,7 +58,7 @@
     </fieldset> 
 
     <label for="telefone"> Telefone:</label> 
-    <input type ="text" name ="telefone" id="telefone" placeholder="Ex: (00)00000-0000" maxlength="11" size="17" onkeypress="return numeros();" required><br> <br>
+    <input type ="text" name ="telefone" id="telefone" placeholder="Ex: (00)00000-0000" minlength= "11" maxlength="11" size="17" onkeypress="return numeros();" required><br> <br>
 
     <label for="cpf"> CPF:</label> 
     <input type ="text" name ="cpf" id="cpf" placeholder="Ex: 000.000.000-00" maxlength="11" size="17" onkeypress="return numeros();" required> <br> <br>
