@@ -7,7 +7,7 @@ require_once("PerfilModel.php");
 function AlterarDados($email, $sexo, $telefone, $endereco){
 
     if(!isset($_SESSION["logi"])){
-        header("location: ../Login/Login.html");
+        header("location: ../Login/LoginView.php");
       }
       else{
         $login = $_SESSION["logi"];

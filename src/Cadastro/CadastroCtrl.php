@@ -33,7 +33,7 @@
     }
 
     if ($erros == "") {      
-        header('Location: ../Login/PagLogin.php');
+        header('Location: ../Login/LoginView.php');
     }
     else {
             header('Location: CadastroView.php?erros='.urlencode($erros));
