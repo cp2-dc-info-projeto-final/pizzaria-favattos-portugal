@@ -3,6 +3,7 @@
 
   if(!isset($_SESSION["logi"])){
     header("location: ../Login/LoginView.php");
+    exit();
   }
   else{
     $login = $_SESSION["logi"];
@@ -67,9 +68,7 @@
   <div class="shadow p-3 mb-5 bg-white rounded">
 
     <?php
-      require_once("perfilModel.php");
-      $dados = Pegardados($login);
-      $idade = CalcularIdade($dados['data_nasc']);
+    require_once("PerfilCtrl.php");
     ?>
 
     <h1>Seus dados</h1>

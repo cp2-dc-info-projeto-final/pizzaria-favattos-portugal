@@ -3,6 +3,7 @@
 
   if(!isset($_SESSION["logi"])){
     header("location: ../Login/LoginView.php");
+    exit();
   }
   else{
     $login = $_SESSION["logi"];
@@ -23,7 +24,27 @@
       <script src="../Funcoes/ScriptInput.js"></script>
   </head> 
   
-  <body> 
+  <body>
+
+  <?php
+    if(count($_REQUEST) != 0){
+      echo ('
+        <br>
+        <style>
+        #Erros{
+          visibility:visible;
+          background-color: #ffff80;
+          width: 50%;
+          text-align: center;
+          border: solid 1px;
+          padding: 3px;
+          font-size: 18px;
+        }
+        </style>
+        ');
+    }
+  ?> 
+
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <!-- Logo -->
   <a class="navbar-brand" href="#">
@@ -62,8 +83,7 @@
   <div class="container" style="margin-top: 180px"> 
   <div class="shadow p-3 mb-5 bg-white rounded"> 
   <?php
-    require_once("perfilModel.php");
-    $dados = Pegardados($login);
+    require_once("PerfilCtrl.php");
   ?>
       <form method="POST" action="EditarCtrl.php"> 
       <div class="form-group">
@@ -99,8 +119,12 @@
       <input type ="text" class="form-control" name ="telefone" id= "telefone" minlength= "11" maxlength="11" onkeypress="return numeros();" placeholder= <?php echo $dados['telefone']; ?>> 
       </div>
       <div class="form-group">
-      <label for ="endereco"> Endereço </label> 
-      <input type ="text" class="form-control" name ="endereco" id="endereco" minlength="15" maxlength="320" placeholder= <?php echo $dados['endereco']; ?>> 
+      <label for ="endereco"> Rua/Numero </label> 
+      <input type ="text" class="form-control" name ="endereco" id="endereco" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['rua']; ?>>
+      <label for ="endereco"> Cidade </label> 
+      <input type ="text" class="form-control" name ="endereco" id="endereco" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['cidade']; ?>>
+      <label for ="endereco"> Complemento </label> 
+      <input type ="text" class="form-control" name ="endereco" id="endereco" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['complemento']; ?>> 
       </div>     
   <br>
   <center> 

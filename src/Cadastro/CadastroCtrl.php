@@ -34,9 +34,11 @@
 
     if ($erros == "") {      
         header('Location: ../Login/LoginView.php');
+        exit();
     }
     else {
             header('Location: CadastroView.php?erros='.urlencode($erros));
+            exit();
     }
 
 ?>

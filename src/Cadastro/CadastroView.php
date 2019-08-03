@@ -22,6 +22,7 @@
           border: solid 1px;
           padding: 3px;
           font-size: 18px;
+          top: 150px;
         }
         </style>
         ');
@@ -81,7 +82,7 @@
     
     <input type ="submit" name ="cadastrar" value ="Cadastrar" ><br><br>
 
-    Já possui uma conta? <a href="../Login/PagLogin.php">Entre agora.</a>
+    Já possui uma conta? <a href="../Login/LoginView.php">Entre agora.</a>
     <!-- fim de formulario -->
     
     </form>
