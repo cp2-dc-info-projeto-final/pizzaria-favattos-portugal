@@ -125,7 +125,20 @@
       <input type ="text" class="form-control" name ="endereco" id="endereco" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['cidade']; ?>>
       <label for ="endereco"> Complemento </label> 
       <input type ="text" class="form-control" name ="endereco" id="endereco" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['complemento']; ?>> 
+      </div>
+      <div class ="form-group">
+      <label for ="SenhaA"> Digite a senha atual </label>
+      <input type ="password" class="form-control" name ="SenhaA" id="SenhaA" minlength="7" maxlength="100" onkeypress="return SenhaLogin();">
       </div>     
+      <div class="form-group">
+      <label for ="Senha"> Alterar Senha </label>
+      <input type ="password" class="form-control" name="Senha" id="Senha" minlength="7" maxlength="100" onkeypress="return SenhaLogin();">
+  
+      </div>
+      <div class ="form-group">
+      <label for ="Csenha"> Repetir alteração de senha </label>
+      <input type ="password" class ="form-control" name="Csenha" id="Csenha" minlength="7" maxlength="100" onkeypress ="return SenhaLogin();">
+      </div>
   <br>
   <center> 
   <input type= "submit" class= "btn btn-outline-success" value= "Aplicar Mudanças">
