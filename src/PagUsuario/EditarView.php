@@ -119,12 +119,12 @@
       <input type ="text" class="form-control" name ="telefone" id= "telefone" minlength= "11" maxlength="11" onkeypress="return numeros();" placeholder= <?php echo $dados['telefone']; ?>> 
       </div>
       <div class="form-group">
-      <label for ="endereco"> Rua/Numero </label> 
-      <input type ="text" class="form-control" name ="endereco" id="endereco" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['rua']; ?>>
-      <label for ="endereco"> Cidade </label> 
-      <input type ="text" class="form-control" name ="endereco" id="endereco" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['cidade']; ?>>
-      <label for ="endereco"> Complemento </label> 
-      <input type ="text" class="form-control" name ="endereco" id="endereco" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['complemento']; ?>> 
+      <label for ="Rua"> Rua/Numero </label> 
+      <input type ="text" class="form-control" name ="Rua" id="Rua" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['rua']; ?>>
+      <label for ="municipio"> Município </label> 
+      <input type ="text" class="form-control" name ="municipio" id="municipio" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['cidade']; ?>>
+      <label for ="complemento"> Complemento </label> 
+      <input type ="text" class="form-control" name ="complemento" id="complemento" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['complemento']; ?>> 
       </div>
       <div class ="form-group">
       <label for ="SenhaA"> Digite a senha atual </label>
