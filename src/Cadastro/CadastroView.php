@@ -84,7 +84,7 @@
     </div>
 
     <label for="municipio">Município:</label>
-    <select name="municipio" id="inputState" class="form-control">
+    <select name="municipio" id="municipio" class="form-control">
     <option value="" disabled selected>Selecione seu município</option>
 	  <option value="BELFOD-ROXO">BELFOD ROXO</option>
     <option value="DUQUE-DE-CAXIAS">DUQUE DE CAXIAS</option>

@@ -73,7 +73,7 @@ function CpfValido($cpf){
 
 }
 
-function CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$Csenha,$cpf,$endereco,$tel){
+function CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$Csenha,$cpf,$municipio,$complemento,$rua,$tel){
 
     $error_list = [];
     if(MesmoEmail($email) == 1){
@@ -98,8 +98,8 @@ function CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$Csen
     }
 
     $con = CriarConexao();
-    $inserir = 'INSERT INTO cliente (nome, data_nasc, sexo, email, logi, senha, cpf, endereco, telefone)
-              VALUES (:nome,:data_nascimento,:sexo,:email,:logi,:senha,:cpf,:endereco,:tel)';
+    $inserir = 'INSERT INTO cliente (nome, data_nasc, sexo, email, logi, senha, cpf, municipio, complemento, rua, telefone)
+              VALUES (:nome,:data_nascimento,:sexo,:email,:logi,:senha,:cpf,:municipio,:complemento,:rua,:tel)';
     $stmt = $con->prepare($inserir);
     $stmt ->bindValue(':nome', $nome);
     $stmt ->bindValue(':data_nascimento', $data_nascimento);
@@ -108,7 +108,9 @@ function CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$Csen
     $stmt ->bindValue(':logi', $login);
     $stmt ->bindValue(':senha', $senha);
     $stmt ->bindValue(':cpf', $cpf);
-    $stmt ->bindValue(':endereco', $endereco);
+    $stmt ->bindValue(':municipio', $municipio);
+    $stmt ->bindValue(':complemento', $complemento);
+    $stmt ->bindValue(':rua', $rua);
     $stmt ->bindValue(':tel', $tel);
 
     return $stmt->execute();
