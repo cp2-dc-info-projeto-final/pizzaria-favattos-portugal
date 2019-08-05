@@ -86,29 +86,29 @@
     <label for="municipio">Município:</label>
     <select name="municipio" id="municipio" class="form-control">
     <option value="" disabled selected>Selecione seu município</option>
-	  <option value="BELFOD-ROXO">BELFOD ROXO</option>
-    <option value="DUQUE-DE-CAXIAS">DUQUE DE CAXIAS</option>
-    <option value="GUAPIMIRIM">GUAPIMIRIM</option>
-    <option value="ITAGUAI">ITAGUAI</option>
-    <option value="JAPERI">JAPERI</option>
-    <option value="MAGE">MAGÉ</option>
-    <option value="MESQUITA">MESQUITA</option>
-    <option value="NILOPOLIS">NILOPOLIS</option>
-    <option value="NOVA IGUACU">NOVA IGUAÇU</option>
-    <option value="PARACAMBI">PARACAMBI</option>
-    <option value="QUEIMADOS">QUEIMADOS</option>
-    <option value="SÃO-JOAO-DE-MERITI">SÃO JOAO DE MERITI</option>
-    <option value="SEROPEDICA">SEROPEDICA</option>
+	  <option value="Belford Roxo">BELFORD ROXO</option>
+    <option value="Duque de Caxias">DUQUE DE CAXIAS</option>
+    <option value="Guapimirim">GUAPIMIRIM</option>
+    <option value="Itaguai">ITAGUAI</option>
+    <option value="Japeri">JAPERI</option>
+    <option value="Magé">MAGÉ</option>
+    <option value="Mesquita">MESQUITA</option>
+    <option value="Nilopolis">NILOPOLIS</option>
+    <option value="Nova Iguaçu">NOVA IGUAÇU</option>
+    <option value="Paracambi">PARACAMBI</option>
+    <option value="Queimados">QUEIMADOS</option>
+    <option value="São João de Meriti">SÃO JOAO DE MERITI</option>
+    <option value="Seropedica">SEROPEDICA</option>
     <select><br>
 
     <div class="form-row">
       <div class="form-group col-md-6"> 
       <label for="rua">Rua/Numero:</label>
-      <input type="text" name="rua" id="rua" class="form-control" size="30" minlength="15" maxlength="320" placeholder="Nome da rua, número" onkeypress="return local();" required> 
+      <input type="text" name="rua" id="rua" class="form-control" size="30" minlength="3" maxlength="150" placeholder="Nome da rua, número" onkeypress="return local();" required> 
       </div>
       <div class="form-group col-md-6"> 
       <label for="complemento">Complemento:</label>
-      <input type="text" name="complemento" id="complemento" class="form-control" size="30" minlength="15" maxlength="320" placeholder="Complemento do endereço" onkeypress="return local();" required>  
+      <input type="text" name="complemento" id="complemento" class="form-control" size="30" minlength="3" maxlength="50" placeholder="Complemento do endereço" onkeypress="return local();" required>  
       </div>
     </div>
 

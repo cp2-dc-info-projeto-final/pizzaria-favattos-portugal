@@ -75,13 +75,15 @@
     <h2>Nome: <?php echo $dados['nome']; ?></h2>
     <h2>Idade: <?php echo $idade; ?></h2>
     <h2>Email: <?php echo $dados['email']; ?></h2>
+    <h2>Telefone: <?php echo $dados['telefone']; ?></h2>
+    <h2>Sexo: <?php echo $dados['sexo']; ?></h2>
+    <h2>Login: <?php echo $dados['logi']; ?></h2>
  
     <hr>
-    <h1>Outras Informações</h1>
-    <h2>Endereço: <?php echo $dados['endereco']; ?></h2>
-    <h2>Telefone: <?php echo $dados['telefone']; ?></h2>
-    <h2>Login: <?php echo $dados['logi']; ?></h2>
-    <h2>Sexo: <?php echo $dados['sexo']; ?></h2>
+    <h1>Endereço</h1>
+    <h2>Município: <?php echo $dados['municipio']; ?></h2>
+    <h2>Rua: <?php echo $dados['rua']; ?></h2>
+    <h2>Complemento: <?php echo $dados['complemento']; ?></h2>
   
   <hr>
   <center>
