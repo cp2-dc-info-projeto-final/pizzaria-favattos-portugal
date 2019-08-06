@@ -40,7 +40,8 @@
     </center>
     
     <!-- Inicio de formulario -->
-    <div class="container" style="margin-top: 50px; width:500px"> 
+    <div class="view" style="background-image: url('../Imagens/imgfundo.jpg'); background-repeat: no-repeat; background-position: center center;">
+    <div class="container" style="margin-top: 50px; width:500px;"> 
     <div class="shadow p-3 mb-5 bg-white rounded"> 
     <form id="cadastro" method="POST" action="LoginCtrl.php">
     <h3>Login</h3>
@@ -58,6 +59,7 @@
     </form>
     </div>
     </div>
+    </div>
     <!-- fim de formulario -->
 </body>
-</hmtl>
+</html>

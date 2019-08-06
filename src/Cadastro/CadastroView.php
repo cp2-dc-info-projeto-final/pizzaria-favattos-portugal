@@ -10,6 +10,13 @@
     <script src="../Funcoes/ScriptInput.js"></script>
     <script src="../Funcoes/ScriptInput.js"></script>
 
+    <style>
+    body{
+      background-image:url("../Imagens/imgfundo.jpg");
+    }
+    
+    </style>
+
 </head>
 
 <body> 
