@@ -8,6 +8,15 @@
     <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
     <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
     <script src="../Funcoes/ScriptInput.js"></script>
+    <style>
+     body {
+    background-image: url('../Imagens/imgFundo.jpg');
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    color: white;
+      } 
+    </style>
 </head>
 <body>
 <?php
@@ -40,9 +49,9 @@
     </center>
     
     <!-- Inicio de formulario -->
-    <div class="view" style="background-image: url('../Imagens/imgfundo.jpg'); background-repeat: no-repeat; background-position: center center;">
+  
     <div class="container" style="margin-top: 50px; width:500px;"> 
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
+    
     <form id="cadastro" method="POST" action="LoginCtrl.php">
     <h3>Login</h3>
     <br> 
@@ -57,8 +66,6 @@
     <center><a href="pagPerdiSenha.html">Esqueceu a senha?</a></center>  <br><br>
     Ainda não tem uma conta? <a href="../Cadastro/CadastroView.php">Cadastre-se agora.</a>  
     </form>
-    </div>
-    </div>
     </div>
     <!-- fim de formulario -->
 </body>
