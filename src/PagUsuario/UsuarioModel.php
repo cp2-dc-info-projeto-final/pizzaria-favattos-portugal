@@ -39,7 +39,7 @@ function CalcularIdade($data) {
     }
 }
 
-function AlterarDados($email, $sexo, $telefone, $endereco){
+function AlterarDados($email,$sexo,$telefone,$endereco){
 
     if(!isset($_SESSION["logi"])){
         header("location: ../Login/LoginView.php");
@@ -58,7 +58,6 @@ function AlterarDados($email, $sexo, $telefone, $endereco){
     if($endereco == ""){
         $endereco = $dados['endereco'];
     }
-    
     $con = CriarConexao();
     $consulta = $con->prepare('UPDATE cliente SET email=:email, sexo=:sexo, telefone=:telefone, cidade=:cidade, complemento=:complemento, rua=:rua WHERE logi = :logi');
     $consulta->bindValue(':email',$email);
@@ -77,6 +76,32 @@ function AlterarDados($email, $sexo, $telefone, $endereco){
         return 0;
     }
 
+}
+
+function AlterarSenha($senhaA,$senha,$Csenha){
+    $error_list = [];
+    $dados = PegarDados($login);
+    if($senhaA != "" && password_verify($senhaA, $dados['senha'])){
+        if($senha != "" && $senha != $senhaA){
+            if($Csenha != "" && $Csenha == $senha){
+                $hash = password_hash($senha, PASSWORD_DEFAULT);
+                $con = CriarConexao();
+                $consulta = $con->prepare('UPDATE cliente SET senha=:senha');
+                $consulta->bindValue(':senha',$hash);
+                $consulta->execute();
+            }else{
+                $error_list = "Confirmação de senha invalida";
+            }
+        }else{
+            $error_list = "Nova senha invalida ou igual a antiga";
+        }
+    }else{
+        $error_list = "Senha atual errada";
+    }
+
+    if (!empty($error_list )) {
+        throw new Exception(implode('|', $error_list));
+    } 
 }
 
 ?>

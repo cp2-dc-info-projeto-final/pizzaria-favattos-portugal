@@ -121,24 +121,16 @@
       <div class="form-group">
       <label for ="Rua"> Rua/Numero </label> 
       <input type ="text" class="form-control" name ="Rua" id="Rua" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['rua']; ?>>
+      </div>
+      <div class="form-group">
       <label for ="municipio"> Município </label> 
-      <input type ="text" class="form-control" name ="municipio" id="municipio" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['cidade']; ?>>
+      <input type ="text" class="form-control" name ="municipio" id="municipio" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['municipio']; ?>>
+      </div>
+      <div class="form-group">
       <label for ="complemento"> Complemento </label> 
       <input type ="text" class="form-control" name ="complemento" id="complemento" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['complemento']; ?>> 
       </div>
-      <div class ="form-group">
-      <label for ="SenhaA"> Digite a senha atual </label>
-      <input type ="password" class="form-control" name ="SenhaA" id="SenhaA" minlength="7" maxlength="100" onkeypress="return SenhaLogin();">
-      </div>     
-      <div class="form-group">
-      <label for ="Senha"> Alterar Senha </label>
-      <input type ="password" class="form-control" name="Senha" id="Senha" minlength="7" maxlength="100" onkeypress="return SenhaLogin();">
-  
-      </div>
-      <div class ="form-group">
-      <label for ="Csenha"> Repetir alteração de senha </label>
-      <input type ="password" class ="form-control" name="Csenha" id="Csenha" minlength="7" maxlength="100" onkeypress ="return SenhaLogin();">
-      </div>
+      
   <br>
   <center> 
   <input type= "submit" class= "btn btn-outline-success" value= "Aplicar Mudanças">
@@ -147,6 +139,22 @@
   </form>
   </div> 
   </div> 
+  
+  <div class="container" style="margin-top: 180px"> 
+  <div class="shadow p-3 mb-5 bg-white rounded"> 
+  <h1>Alterar Senha</h1>
+      <div class ="form-group">
+      <label for ="senhaA"> Digite a senha atual </label>
+      <input type ="password" class="form-control" name ="senhaA" id="senhaA" minlength="7" maxlength="100" onkeypress="return SenhaLogin();">
+      </div>     
+      <div class="form-group">
+      <label for ="senha"> Alterar Senha </label>
+      <input type ="password" class="form-control" name="senha" id="senha" minlength="7" maxlength="100" onkeypress="return SenhaLogin();">
+      </div>
+      <div class ="form-group">
+      <label for ="Csenha"> Repetir alteração de senha </label>
+      <input type ="password" class ="form-control" name="Csenha" id="Csenha" minlength="7" maxlength="100" onkeypress ="return SenhaLogin();">
+      </div>
   <!--Rodapé -->
   <nav class="navbar bg-dark navbar-dark fixed-bottom"> 
   <div class="container"> 
