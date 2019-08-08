@@ -39,6 +39,7 @@
           border: solid 1px;
           padding: 3px;
           font-size: 18px;
+          top: 100px;
         }
         </style>
         ');
@@ -80,56 +81,72 @@
   </div>
   </nav>  
   <!-- Formulário -->
-  <div class="container" style="margin-top: 180px"> 
+  <div class="container" style="margin-top: 180px">
+  <div class="row"> 
+  <div class="col-8">
   <div class="shadow p-3 mb-5 bg-white rounded"> 
   <?php
     require_once("PerfilCtrl.php");
   ?>
-      <form method="POST" action="EditarCtrl.php"> 
-      <div class="form-group">
-      <label for ="email"> E-mail </label> 
-      <input type ="email" class="form-control" name= "email" id= "email" maxlength="125" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder= <?php echo $dados['email']; ?>>
-      </div> 
-      <?php
-        if($dados['sexo']=="Masculino"){
-          echo "<label>Sexo</label> 
-                <div class='form-check'>
-                <input type ='radio' class='form-check-input' name = 'sexo' id='masc' value='Masculino' checked>
-                <label class='form-check-label' for='masc'>Masculino</label>
-                </div> 
-                <div class='form-check'>
-                <input type ='radio' name ='sexo' class='form-check-input' id='fem' value='Feminino'>
-                <label class='form-check-label' for='fem'>Feminino</label>    
-                </div>";
-        }else{
-          echo"<label>Sexo</label> 
-              <div class='form-check'>
-              <input type ='radio' class='form-check-input' name = 'sexo' id='masc' value='Masculino'>
-              <label class='form-check-label' for='masc'>Masculino</label>
-              </div> 
-              <div class='form-check'>
-              <input type ='radio' name ='sexo' class='form-check-input' id='fem' value='Feminino' checked>
-              <label class='form-check-label' for='fem'>Feminino</label>    
-              </div>";
-        }
-      ?>
-      <br>
-      <div class="form-group">
-      <label for ="telefone"> Telefone </label> 
-      <input type ="text" class="form-control" name ="telefone" id= "telefone" minlength= "11" maxlength="11" onkeypress="return numeros();" placeholder= <?php echo $dados['telefone']; ?>> 
-      </div>
-      <div class="form-group">
-      <label for ="Rua"> Rua/Numero </label> 
-      <input type ="text" class="form-control" name ="Rua" id="Rua" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['rua']; ?>>
-      </div>
-      <div class="form-group">
-      <label for ="municipio"> Município </label> 
-      <input type ="text" class="form-control" name ="municipio" id="municipio" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['municipio']; ?>>
-      </div>
-      <div class="form-group">
-      <label for ="complemento"> Complemento </label> 
-      <input type ="text" class="form-control" name ="complemento" id="complemento" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['complemento']; ?>> 
-      </div>
+  <form method="POST" action="EditarCtrl.php"> 
+  <h1>Redefinir Dados</h1>
+  <div class="form-group">
+  <label for ="email"> E-mail </label> 
+  <input type ="email" class="form-control" name= "email" id= "email" maxlength="125" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder= <?php echo $dados['email']; ?>>
+  </div> 
+  <?php
+    if($dados['sexo']=="Masculino"){
+      echo "<label>Sexo</label> 
+            <div class='form-check'>
+            <input type ='radio' class='form-check-input' name = 'sexo' id='masc' value='Masculino' checked>
+            <label class='form-check-label' for='masc'>Masculino</label>
+            </div> 
+            <div class='form-check'>
+            <input type ='radio' name ='sexo' class='form-check-input' id='fem' value='Feminino'>
+            <label class='form-check-label' for='fem'>Feminino</label>    
+            </div>";
+    }else{
+      echo"<label>Sexo</label> 
+          <div class='form-check'>
+          <input type ='radio' class='form-check-input' name = 'sexo' id='masc' value='Masculino'>
+          <label class='form-check-label' for='masc'>Masculino</label>
+          </div> 
+          <div class='form-check'>
+          <input type ='radio' name ='sexo' class='form-check-input' id='fem' value='Feminino' checked>
+          <label class='form-check-label' for='fem'>Feminino</label>    
+          </div>";
+    }
+  ?>
+  <br>
+  <div class="form-group">
+  <label for ="telefone"> Telefone </label> 
+  <input type ="text" class="form-control" name ="telefone" id= "telefone" minlength= "11" maxlength="11" onkeypress="return numeros();" placeholder= <?php echo $dados['telefone']; ?>> 
+  </div>
+  <div class="form-group">
+  <label for ="Rua"> Rua/Numero </label> 
+  <input type ="text" class="form-control" name ="Rua" id="Rua" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['rua']; ?>>
+  </div>
+  <label for="municipio">Município:</label>
+    <select name="municipio" id="municipio" class="form-control">
+    <option value="" disabled selected><?php echo $dados['municipio'];?></option>
+	  <option value="Belford Roxo">BELFORD ROXO</option>
+    <option value="Duque de Caxias">DUQUE DE CAXIAS</option>
+    <option value="Guapimirim">GUAPIMIRIM</option>
+    <option value="Itaguai">ITAGUAI</option>
+    <option value="Japeri">JAPERI</option>
+    <option value="Magé">MAGÉ</option>
+    <option value="Mesquita">MESQUITA</option>
+    <option value="Nilopolis">NILOPOLIS</option>
+    <option value="Nova Iguaçu">NOVA IGUAÇU</option>
+    <option value="Paracambi">PARACAMBI</option>
+    <option value="Queimados">QUEIMADOS</option>
+    <option value="São João de Meriti">SÃO JOAO DE MERITI</option>
+    <option value="Seropedica">SEROPEDICA</option>
+    <select><br>
+  <div class="form-group">
+  <label for ="complemento"> Complemento </label> 
+  <input type ="text" class="form-control" name ="complemento" id="complemento" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['complemento']; ?>> 
+  </div>
       
   <br>
   <center> 
@@ -137,24 +154,33 @@
   <a class="btn btn-outline-danger" href="PerfilView.php">Voltar</a> 
   </center>
   </form>
-  </div> 
-  </div> 
+  </div>
+  </div>  
   
-  <div class="container" style="margin-top: 180px"> 
+  <div class="col-sm">
   <div class="shadow p-3 mb-5 bg-white rounded"> 
+
+  <form method="POST" action="SenhaCtrl.php"> 
   <h1>Alterar Senha</h1>
-      <div class ="form-group">
-      <label for ="senhaA"> Digite a senha atual </label>
-      <input type ="password" class="form-control" name ="senhaA" id="senhaA" minlength="7" maxlength="100" onkeypress="return SenhaLogin();">
-      </div>     
-      <div class="form-group">
-      <label for ="senha"> Alterar Senha </label>
-      <input type ="password" class="form-control" name="senha" id="senha" minlength="7" maxlength="100" onkeypress="return SenhaLogin();">
-      </div>
-      <div class ="form-group">
-      <label for ="Csenha"> Repetir alteração de senha </label>
-      <input type ="password" class ="form-control" name="Csenha" id="Csenha" minlength="7" maxlength="100" onkeypress ="return SenhaLogin();">
-      </div>
+  <div class ="form-group">
+  <label for ="senhaA"> Digite a senha atual </label>
+  <input type ="password" class="form-control" name ="senhaA" id="senhaA" minlength="7" maxlength="100" onkeypress="return SenhaLogin();">
+  </div>     
+  <div class="form-group">
+  <label for ="senha"> Alterar Senha </label>
+  <input type ="password" class="form-control" name="senha" id="senha" minlength="7" maxlength="100" onkeypress="return SenhaLogin();">
+  </div>
+  <div class ="form-group">
+  <label for ="Csenha"> Repetir alteração de senha </label>
+  <input type ="password" class ="form-control" name="Csenha" id="Csenha" minlength="7" maxlength="100" onkeypress ="return SenhaLogin();">
+  </div>
+  <center>
+  <input type= "submit" class= "btn btn-outline-success" value= "Alterar senha">
+  </center>
+  </form>
+  </div> 
+  </div>
+  
   <!--Rodapé -->
   <nav class="navbar bg-dark navbar-dark fixed-bottom"> 
   <div class="container"> 

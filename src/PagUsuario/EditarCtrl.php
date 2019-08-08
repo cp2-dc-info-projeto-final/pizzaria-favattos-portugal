@@ -14,9 +14,11 @@ else{
 $email = $_REQUEST ["email"];
 $sexo = $_REQUEST["sexo"];
 $telefone = $_REQUEST["telefone"];
-$endereco = $_REQUEST["endereco"];
+$rua = $_REQUEST["Rua"];
+$complmento = $_REQUEST["complemento"];
+$municipio = $_REQUEST["municipio"];
 
-$resultAlteracao = AlterarDados($email,$sexo,$telefone,$endereco);
+$resultAlteracao = AlterarDados($email,$sexo,$telefone,$rua,$municipio,$complmento);
 
 if($resultAlteracao == 1){
   header("location: PerfilView.php");

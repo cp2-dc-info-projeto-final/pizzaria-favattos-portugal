@@ -93,27 +93,27 @@ function CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$Csen
     }else{
         $senha = password_hash($senha, PASSWORD_DEFAULT);
     }
-    if (!empty($error_list )) {
+    if (!empty($error_list)) {
         throw new Exception(implode('|', $error_list));
     }
 
     $con = CriarConexao();
     $inserir = 'INSERT INTO cliente (nome, data_nasc, sexo, email, logi, senha, cpf, municipio, complemento, rua, telefone)
               VALUES (:nome,:data_nascimento,:sexo,:email,:logi,:senha,:cpf,:municipio,:complemento,:rua,:tel)';
-    $stmt = $con->prepare($inserir);
-    $stmt ->bindValue(':nome', $nome);
-    $stmt ->bindValue(':data_nascimento', $data_nascimento);
-    $stmt ->bindValue(':sexo', $sexo);
-    $stmt ->bindValue(':email', $email);
-    $stmt ->bindValue(':logi', $login);
-    $stmt ->bindValue(':senha', $senha);
-    $stmt ->bindValue(':cpf', $cpf);
-    $stmt ->bindValue(':municipio', $municipio);
-    $stmt ->bindValue(':complemento', $complemento);
-    $stmt ->bindValue(':rua', $rua);
-    $stmt ->bindValue(':tel', $tel);
+    $consulta = $con->prepare($inserir);
+    $consulta ->bindValue(':nome', $nome);
+    $consulta ->bindValue(':data_nascimento', $data_nascimento);
+    $consulta ->bindValue(':sexo', $sexo);
+    $consulta ->bindValue(':email', $email);
+    $consulta ->bindValue(':logi', $login);
+    $consulta ->bindValue(':senha', $senha);
+    $consulta ->bindValue(':cpf', $cpf);
+    $consulta ->bindValue(':municipio', $municipio);
+    $consulta ->bindValue(':complemento', $complemento);
+    $consulta ->bindValue(':rua', $rua);
+    $consulta ->bindValue(':tel', $tel);
 
-    return $stmt->execute();
+    return $consulta->execute();
 }
 
 ?>

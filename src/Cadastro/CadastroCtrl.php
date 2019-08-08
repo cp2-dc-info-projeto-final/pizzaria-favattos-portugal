@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Cadastro</title>
-</head>
-
-<body>
 
 <?php
 
@@ -45,5 +38,3 @@
 
 ?>
 
-</body>
-</html>

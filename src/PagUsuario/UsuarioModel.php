@@ -39,14 +39,14 @@ function CalcularIdade($data) {
     }
 }
 
-function AlterarDados($email,$sexo,$telefone,$endereco){
+function AlterarDados($email,$sexo,$telefone,$rua,$municipio,$complemento){
 
     if(!isset($_SESSION["logi"])){
         header("location: ../Login/LoginView.php");
       }
       else{
         $login = $_SESSION["logi"];
-      }
+    }
     // Armazenando dados do usuário
     $dados = PegarDados($login);
     if($email == ""){
@@ -55,16 +55,22 @@ function AlterarDados($email,$sexo,$telefone,$endereco){
     if($telefone == ""){
         $telefone = $dados['telefone'];
     }
-    if($endereco == ""){
-        $endereco = $dados['endereco'];
+    if($rua == ""){
+        $rua = $dados['rua'];
+    }
+    if($municipio == ""){
+        $municipio = $dados['municipio'];
+    }
+    if($complemento == ""){
+        $complemento = $dados['complemento'];
     }
     $con = CriarConexao();
-    $consulta = $con->prepare('UPDATE cliente SET email=:email, sexo=:sexo, telefone=:telefone, cidade=:cidade, complemento=:complemento, rua=:rua WHERE logi = :logi');
+    $consulta = $con->prepare('UPDATE cliente SET email=:email, sexo=:sexo, telefone=:telefone, municipio=:municipio, complemento=:complemento, rua=:rua WHERE logi = :logi');
     $consulta->bindValue(':email',$email);
     $consulta->bindValue(':sexo',$sexo);
     $consulta->bindValue(':telefone',$telefone);
     $consulta->bindValue(':rua',$rua);
-    $consulta->bindValue(':cidade',$cidade);
+    $consulta->bindValue(':municipio',$municipio);
     $consulta->bindValue(':complemento',$complemento);
     $consulta->bindValue(':logi',$login);
     $consulta->execute();
@@ -79,29 +85,30 @@ function AlterarDados($email,$sexo,$telefone,$endereco){
 }
 
 function AlterarSenha($senhaA,$senha,$Csenha){
+    
     $error_list = [];
     $dados = PegarDados($login);
-    if($senhaA != "" && password_verify($senhaA, $dados['senha'])){
-        if($senha != "" && $senha != $senhaA){
-            if($Csenha != "" && $Csenha == $senha){
-                $hash = password_hash($senha, PASSWORD_DEFAULT);
-                $con = CriarConexao();
-                $consulta = $con->prepare('UPDATE cliente SET senha=:senha');
-                $consulta->bindValue(':senha',$hash);
-                $consulta->execute();
-            }else{
-                $error_list = "Confirmação de senha invalida";
-            }
-        }else{
-            $error_list = "Nova senha invalida ou igual a antiga";
-        }
+    if($senhaA == "" || $senha == "" || $Csenha == ""){
+        $error_list = "Os campos das senhas não podem ser nulos";
+    }
+    if(!password_verify($senhaA, $dados['senha']) || $Csenha != $senha){
+        $error_list = "Senha atual incorreta ou as novas não coincidem";
+    }
+    if($senha === $senhaA){
+        $error_list = "A senha nova deve ser diferente da atual";
     }else{
-        $error_list = "Senha atual errada";
+        $senha = password_hash($senha, PASSWORD_DEFAULT);
+    }
+    if (!empty($error_list)) {
+        throw new Exception(implode('|', $error_list));
     }
 
-    if (!empty($error_list )) {
-        throw new Exception(implode('|', $error_list));
-    } 
+    $con = CriarConexao();
+    $consulta = $con->prepare('UPDATE cliente SET senha=:senha WHERE logi = :logi');
+    $consulta->bindValue(':senha',$senha);
+    $consulta->bindValue(':logi',$login);
+    return $consulta->execute();
+
 }
 
 ?>
