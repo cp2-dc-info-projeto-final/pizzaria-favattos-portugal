@@ -141,9 +141,9 @@
       </div>
     </div>
     
-    <input type ="submit" name ="cadastrar" value ="Cadastrar" class="btn btn-primary"><br><br>
+    <input type ="submit" name ="cadastrar" value ="Cadastrar" class="btn btn-success"><br><br>
 
-    Já possui uma conta? <a href="../Login/LoginView.php">Entre agora.</a>
+    Já possui uma conta? <a href="../Login/LoginView.php" style ="color:green">Entre agora.</a>
     <!-- fim de formulario -->
     
     </form> 
