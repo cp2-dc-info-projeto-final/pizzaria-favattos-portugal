@@ -51,8 +51,8 @@
     </center>
     
     <!-- Inicio de formulario -->
-    <div class="container" style="margin-top: 50px"> 
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
+    <div class="container" style="margin-top: 50px; color:white;"> 
+   
     <form id= "cadastro" method="POST" action="CadastroCtrl.php" onsubmit="return validate()">
     
     <h3>Cadastro</h3>
@@ -147,7 +147,6 @@
     <!-- fim de formulario -->
     
     </form> 
-    </div>
     </div> 
 
 </body>
