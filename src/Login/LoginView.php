@@ -61,10 +61,10 @@
     <div class="form-group">
     <input type ="password" name="senha" id="senha" class="form-control" placeholder="Senha" size="29px" onkeypress= "return senhaLogin();" required>
     </div>
-    <input type ="submit" name ="Entrar" value ="Entrar" class="btn btn-primary" id="botao" style="width:100%"> <br> <br>
+    <input type ="submit" name ="Entrar" value ="Entrar" class=" btn btn-success" id="botao" style="width:100%"> <br> <br>
 
-    <center><a href="pagPerdiSenha.html">Esqueceu a senha?</a></center>  <br><br>
-    Ainda não tem uma conta? <a href="../Cadastro/CadastroView.php">Cadastre-se agora.</a>  
+    <center><a href="pagPerdiSenha.html" style = "color:green">Esqueceu a senha?</a></center>  <br><br>
+    <center>Ainda não tem uma conta? <a href="../Cadastro/CadastroView.php" style ="color:green">Cadastre-se agora.</a> </center>  
     </form>
     </div>
     <!-- fim de formulario -->
