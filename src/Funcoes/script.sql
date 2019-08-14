@@ -64,12 +64,12 @@ INSERT INTO produto (nome, descricao, qtdd_vendida, preco) VALUES
 ('Combo Viana 2', 'Viana duplo + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '15.99');
 
 INSERT INTO produto (nome, descricao, qtdd_vendida, preco) VALUES
-('Combo Viana 3', '2 Viana duplo + Batata frita (porção) + 2 Rfefrigerante 350ml (Coca + 0.50 C) + 2 sachês de olho', 0, '38.99');
+('Combo Viana 3', '2 Viana duplo + Batata frita (porção) + 2 Rfefrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '38.99');
 
 --Pizzas
 
 INSERT INTO produto (nome, descricao, qtdd_vendida, preco) VALUES 
-('Pizza CPizza alabresa grande', 'Muçarela, orégano, calabresa, cebola', 0, '28.99');
+('Pizza Calabresa grande', 'Muçarela, orégano, calabresa, cebola', 0, '28.99');
 
 INSERT INTO produto (nome, descricao, qtdd_vendida, preco) VALUES 
 ('Pizza Calabresa gigante', 'Muçarela, orégano, calabresa, cebola', 0, '38.99');
@@ -93,10 +93,10 @@ INSERT INTO produto (nome, descricao, qtdd_vendida, preco) VALUES
 ('Pizza Mista gigante', 'Muçarela, orégano, calabresa, presunto, bacon, ovo, tomate, cebola', 0, '39.99');
 
 INSERT INTO produto (nome, descricao, qtdd_vendida, preco) VALUES 
-('Pizza Bacon c/ ovos grande', 'Muçarela, orégano, bacon, ovo', 0, '30.99');
+('Pizza Bacon com ovos grande', 'Muçarela, orégano, bacon, ovo', 0, '30.99');
 
 INSERT INTO produto (nome, descricao, qtdd_vendida, preco) VALUES 
-('Pizza Bacon c/ ovos gigante', 'Muçarela, orégano, bacon, ovo', 0, '40.99');
+('Pizza Bacon com ovos gigante', 'Muçarela, orégano, bacon, ovo', 0, '40.99');
 
 INSERT INTO produto (nome, descricao, qtdd_vendida, preco) VALUES 
 ('Pizza Favatto`s Portugal grande', 'Muçarela, orégano, calabresa, presunto, ovo, azeitona, cebola', 0, '29.99');
@@ -135,10 +135,10 @@ INSERT INTO produto (nome, descricao, qtdd_vendida, preco) VALUES
 ('Pizza Marguerita gigante', 'Muçarela, orégano, tomate, manjericão', 0, '38.99');
 
 INSERT INTO produto (nome, descricao, qtdd_vendida, preco) VALUES 
-('Pizza Banana c/ canela grande', 'Muçarela, banana, canela', 0, '26.99');
+('Pizza Banana com canela grande', 'Muçarela, banana, canela', 0, '26.99');
 
 INSERT INTO produto (nome, descricao, qtdd_vendida, preco) VALUES 
-('Pizza Banana c/ canela gigante', 'Muçarela, banana, canela', 0, '36.99');
+('Pizza Banana com canela gigante', 'Muçarela, banana, canela', 0, '36.99');
 
 --Bordas
 
@@ -180,7 +180,7 @@ INSERT INTO produto (nome, descricao, qtdd_vendida, preco) VALUES
 --Bebidas
 
 INSERT INTO produto (nome, descricao, qtdd_vendida, preco) VALUES 
-('Água s/gás', ' ', 0, '1.99');
+('Água sem gás', ' ', 0, '1.99');
 
 INSERT INTO produto (nome, descricao, qtdd_vendida, preco) VALUES
 ('Guaracamp 285ml', ' ', 0, '1.99');

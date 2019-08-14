@@ -107,8 +107,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da pizza</h5>
-        Aqui é a descrição dessa pizza invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Pizza Calabresa</h5>
+        Muçarela, orégano, calabresa e cebola.
         </div>
         </div>
     </div>
@@ -118,8 +118,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da pizza</h5>
-        Aqui é a descrição dessa pizza invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Pizza Presunto</h5>
+        Muçarela, orégano, presunto e cebola.
         </div>
         </div>
     </div>
@@ -129,8 +129,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da pizza</h5>
-        Aqui é a descrição dessa pizza invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Pizza Muçarela</h5>
+        Muçarela e orégano.
         </div>
         </div>
     </div>
@@ -140,8 +140,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da pizza</h5>
-        Aqui é a descrição dessa pizza invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Pizza Mista</h5>
+        Muçarela, orégano, calabresa, presunto, bacon, ovo, tomate e cebola.
         </div>
         </div>
     </div>
@@ -153,8 +153,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da pizza</h5>
-        Aqui é a descrição dessa pizza invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Pizza Bacon com ovos</h5>
+        Muçarela, orégano, bacon e ovo.
         </div>
         </div>
     </div>
@@ -164,8 +164,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da pizza</h5>
-        Aqui é a descrição dessa pizza invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Pizza Favatto`s Portugal</h5>
+        Muçarela, orégano, calabresa, presunto, ovo, azeitona e cebola.        
         </div>
         </div>
     </div>
@@ -175,8 +175,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da pizza</h5>
-        Aqui é a descrição dessa pizza invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Pizza Salame</h5>
+        Muçarela, orégano,Pizza  manjericão, queijo prato, queijo parmesão e salame.
         </div>
         </div>
     </div>
@@ -186,8 +186,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da pizza</h5>
-        Aqui é a descrição dessa pizza invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Pizza Frango com catupiry</h5>
+        Muçarela, orégano, frango e catupiry.       
         </div>
         </div>
     </div>
@@ -199,8 +199,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da pizza</h5>
-        Aqui é a descrição dessa pizza invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Pizza Hot dog</h5>
+        Muçarela, orégano, molho, salsicha, batata palha e azeitona.       
         </div>
         </div>
     </div>
@@ -210,8 +210,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da pizza</h5>
-        Aqui é a descrição dessa pizza invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Pizza Portuguesa</h5>
+        Muçarela, orégano, presunto, calabresa, cebola, ovo e azeitona.
         </div>
         </div>
     </div>
@@ -221,8 +221,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da pizza</h5>
-        Aqui é a descrição dessa pizza invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Pizza Marguerita</h5>
+        Muçarela, orégano, tomate e manjericão.       
         </div>
         </div>
     </div>
@@ -232,8 +232,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da pizza</h5>
-        Aqui é a descrição dessa pizza invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Pizza Banana com canela grande</h5>
+        Muçarela, banana e canela.        
         </div>
         </div>
     </div>
@@ -248,8 +248,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome do Lanche</h5>
-        Aqui é a descrição desse Lanche invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Veneza</h5>
+        Pão, carne, cheddar, presunto, calabresa, bacon, alface, tomate e cebola roxa.      
         </div>
         </div>
     </div>
@@ -259,8 +259,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome do Lanche</h5>
-        Aqui é a descrição desse Lanche invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Veneza duplo</h5>
+        Pão, duas carnes, dois cheddar, dois presuntos, calabresa, bacon, alface, tomate, cebola roxa.        
         </div>
         </div>
     </div>
@@ -270,8 +270,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome do Lanche</h5>
-        Aqui é a descrição desse Lanche invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Veneza triplo</h5>
+        Pão, três carnes, três cheddar, três presuntos, calabresa, bacon, alface, tomate e cebola roxa.        
         </div>
         </div>
     </div>
@@ -281,8 +281,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome do Lanche</h5>
-        Aqui é a descrição desse Lanche invisível, mas que pode ter certeza que o ingrediente principal é o amor
+        <h5 class="mt-0">Viana</h5>
+        Pão, carne, dois cheddar, bacon e calabresa.        
         </div>
         </div>
     </div>
@@ -294,7 +294,29 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome do Lanche</h5>
+        <h5 class="mt-0">Viana duplo</h5>
+        Pão, carne, duplo cheddar, carne, duplo cheddar, bacon e calabresa.        
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-sm">
+    <div class="shadow p-3 mb-5 bg-white rounded"> 
+        <div class="media">
+        <img class="mr-3" src="..." alt="Generic placeholder image">
+        <div class="media-body">
+        <h5 class="mt-0">Viana triplo</h5>
+        Pão, carne, duplo cheddar, carne, duplo cheddar, carne, duplo cheddar, bacon e calabresa.        
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-sm">
+    <div class="shadow p-3 mb-5 bg-white rounded"> 
+        <div class="media">
+        <img class="mr-3" src="..." alt="Generic placeholder image">
+        <div class="media-body">
+        <h5 class="mt-0">Batata frita</h5>
         Aqui é a descrição desse Lanche invisível, mas que pode ter certeza que o ingrediente principal é o amor
         </div>
         </div>
@@ -305,29 +327,7 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome do Lanche</h5>
-        Aqui é a descrição desse Lanche invisível, mas que pode ter certeza que o ingrediente principal é o amor
-        </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Nome do Lanche</h5>
-        Aqui é a descrição desse Lanche invisível, mas que pode ter certeza que o ingrediente principal é o amor
-        </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Nome do Lanche</h5>
+        <h5 class="mt-0">Batata maluca</h5>
         Aqui é a descrição desse Lanche invisível, mas que pode ter certeza que o ingrediente principal é o amor
         </div>
         </div>
@@ -343,7 +343,7 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da bebida</h5>
+        <h5 class="mt-0">Água sem gás</h5>
         Preço da bebida do lado da imagem
         </div>
         </div>
@@ -354,7 +354,7 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da bebida</h5>
+        <h5 class="mt-0">Refrigerante 350ml</h5>
         Preço da bebida do lado da imagem
         </div>
         </div>
@@ -365,7 +365,7 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da bebida</h5>
+        <h5 class="mt-0">Coca-cola 350ml</h5>
         Preço da bebida do lado da imagem
         </div>
         </div>
@@ -376,7 +376,7 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da bebida</h5>
+        <h5 class="mt-0">Refrigerante 2L</h5>
         Preço da bebida do lado da imagem
         </div>
         </div>
@@ -389,7 +389,7 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da bebida</h5>
+        <h5 class="mt-0">Coca-cola 2L</h5>
         Preço da bebida do lado da imagem
         </div>
         </div>
@@ -400,7 +400,7 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da bebida</h5>
+        <h5 class="mt-0">Del Valle</h5>
         Preço da bebida do lado da imagem
         </div>
         </div>
@@ -411,7 +411,7 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da bebida</h5>
+        <h5 class="mt-0">Guaraviton 500ml</h5>
         Preço da bebida do lado da imagem
         </div>
         </div>
@@ -422,7 +422,7 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome da bebida</h5>
+        <h5 class="mt-0">Guaracamp 285ml</h5>
         Preço da bebida do lado da imagem
         </div>
         </div>
@@ -438,8 +438,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome do Combo</h5>
-        O que vem no combo e seu preço logo ao lado da foto (n sei se vai ter foto).
+        <h5 class="mt-0">Combo Veneza 1</h5>
+        Veneza + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 1 sachê de molho.        
         </div>
         </div>
     </div>
@@ -449,8 +449,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome do Combo</h5>
-        O que vem no combo e seu preço logo ao lado da foto (n sei se vai ter foto).
+        <h5 class="mt-0">Combo Veneza 2</h5>
+        Veneza duplo + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho.        
         </div>
         </div>
     </div>
@@ -460,8 +460,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome do Combo</h5>
-        O que vem no combo e seu preço logo ao lado da foto (n sei se vai ter foto).
+        <h5 class="mt-0">Combo Veneza 3</h5>
+        2 Veneza Duplo + Batata frita (porção) + 2 Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho.       
         </div>
         </div>
     </div>
@@ -473,8 +473,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome do Combo</h5>
-        O que vem no combo e seu preço logo ao lado da foto (n sei se vai ter foto).
+        <h5 class="mt-0">Combo Viana 1</h5>
+        Viana + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 1 sachê de molho.        
         </div>
         </div>
     </div>
@@ -484,8 +484,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome do Combo</h5>
-        O que vem no combo e seu preço logo ao lado da foto (n sei se vai ter foto).
+        <h5 class="mt-0">Combo Viana 2</h5>
+        Viana duplo + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho.        
         </div>
         </div>
     </div>
@@ -495,8 +495,8 @@
         <div class="media">
         <img class="mr-3" src="..." alt="Generic placeholder image">
         <div class="media-body">
-        <h5 class="mt-0">Nome do Combo</h5>
-        O que vem no combo e seu preço logo ao lado da foto (n sei se vai ter foto).
+        <h5 class="mt-0">Combo Viana 3</h5>
+        2 Viana duplo + Batata frita (porção) + 2 Rfefrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho.        
         </div>
         </div>
     </div>
