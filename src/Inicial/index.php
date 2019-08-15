@@ -1,37 +1,23 @@
 <!doctype html> 
 <html> 
   <head> 
-      <title> Menu </title> 
-      <meta charset="UTF-8"> 
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
-      <link rel="stylesheet" href="../Estilo/Perfil.css">
-      <link rel ="stylesheet" href ="../Estilo/bootstrap-4.1.3-dist/css/bootstrap.min.css">
-      <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
-      <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
-      <script src="../Funcoes/ScriptInput.js"></script>
+    <title> Menu </title> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <link rel="stylesheet" href="../Estilo/Perfil.css">
+    <link rel ="stylesheet" href ="../Estilo/bootstrap-4.1.3-dist/css/bootstrap.min.css">
+    <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
+    <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
+    <script src="../Funcoes/ScriptInput.js"></script>
+
+    <style>
+    .alert {
+    margin-bottom: 8px !important;
+    }
+    </style>
   </head> 
   
   <body>
-
-  <?php
-    if(count($_REQUEST) != 0){
-      echo ('
-        <br>
-        <style>
-        #Erros{
-          visibility:visible;
-          background-color: #ffff80;
-          width: 50%;
-          text-align: center;
-          border: solid 1px;
-          padding: 3px;
-          font-size: 18px;
-          top: 100px;
-        }
-        </style>
-        ');
-    }
-  ?> 
 
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <!-- Logo -->
@@ -45,13 +31,7 @@
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="../Inicial/index.php">Menu</a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Pizzas</a>
-        <a class="dropdown-item" href="#">Lanches</a>
-        <a class="dropdown-item" href="#">Bebidas</a>
-        <a class="dropdown-item" href="#">Combos</a>
-      </div>  
+      <a class="nav-link" href="../Inicial/index.php">Menu</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Nossa Gastronomia</a>
@@ -65,7 +45,7 @@
         Usuário
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Seu perfil</a>
+        <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
         <a class="dropdown-item" href="#">Histórico de compras</a>
         <a class="dropdown-item" href="#">Link 3</a>
       </div>
@@ -75,6 +55,22 @@
   </nav>  
 
 <div class="container-fluid" style="margin-top: 100px;">
+<br>
+<!-- Caixa de erros -->
+<?php
+  foreach($_REQUEST as $item){
+    foreach (explode("|", $item) as $item_item) {
+?>
+<div class="alert alert-danger" role="alert">
+<?php
+print($item_item . ".");
+?>
+</div>
+<?php
+  }
+}
+?>
+
 <h1 style="text-align: center">Mais pedidos </h1><hr>
 <div class="row">
     <div class="col-sm">

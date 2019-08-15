@@ -11,46 +11,33 @@
     <style>
      body {
     background-image: url('../Imagens/imgFundo.jpg');
-    width: 100%;
-    height: auto;
-    background-size: cover;
     color: white;
       } 
+    .alert {
+    margin-bottom: 8px !important;
+    }
     </style>
 </head>
 <body>
-<?php
-    if(count($_REQUEST) != 0){
-      echo ('
-        <br>
-        <style>
-        #Erros{
-          visibility:visible;
-          background-color: #ffff80;
-          width: 50%;
-          text-align: center;
-          border: solid 1px;
-          padding: 3px;
-          font-size: 18px;
-        }
-        </style>
-        ');
-    }
-    ?>
-
-    <center>
-    <div id='Erros'>
-    <?php
-      foreach($_REQUEST as $item){
-      print($item);
-      }
-    ?>
-    </div>
-    </center>
     
     <!-- Inicio de formulario -->
   
     <div class="container" style="margin-top: 50px; width:500px;"> 
+
+    <!-- Caixa de erros -->
+    <?php
+      foreach($_REQUEST as $item){
+        foreach (explode("|", $item) as $item_item) {
+    ?>
+    <div class="alert alert-danger" role="alert">
+    <?php
+    print($item_item . ".");
+    ?>
+    </div>
+    <?php
+      }
+    }
+    ?>
     
     <form id="cadastro" method="POST" action="LoginCtrl.php">
     <h3>Login</h3>

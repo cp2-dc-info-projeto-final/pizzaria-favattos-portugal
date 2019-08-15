@@ -26,39 +26,39 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-    <!-- Logo -->
-    <a class="navbar-brand" href="#">
-            <img src="bird.jpg" alt="Logo" style="width:40px;">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Menu</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Nossa Gastronomia</a>
-      </li>
-      <li class="nav-item">
-            <a class="nav-link" href="#">Fotos</a>
-      </li>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <!-- Logo -->
+  <a class="navbar-brand" href="#">
+          <img src="bird.jpg" alt="Logo" style="width:40px;">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item dropdown">
+      <a class="nav-link" href="../Inicial/index.php">Menu</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Nossa Gastronomia</a>
+    </li>
+    <li class="nav-item">
+          <a class="nav-link" href="#">Fotos</a>
+    </li>
     <!-- Dropdown -->
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
         Usuário
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Seu perfil</a>
+        <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
         <a class="dropdown-item" href="#">Histórico de compras</a>
         <a class="dropdown-item" href="#">Link 3</a>
       </div>
     </li>
-    </ul>
-    </div>
+  </ul>
+  </div>
   </nav>  
 
  

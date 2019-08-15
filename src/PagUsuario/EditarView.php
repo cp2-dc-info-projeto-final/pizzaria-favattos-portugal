@@ -11,34 +11,23 @@
 
 ?>
 
-<style>
-  #Erros{
-    visibility:visible;
-    background-color: #ffff80;
-    width: 50%;
-    text-align: center;
-    border: solid 1px;
-    padding: 3px;
-    font-size: 18px;
-    top: 100px;
-  }
-
-  .alert {
-    margin-bottom: 7px !important;
-  }
-</style>
-
 <!doctype html> 
 <html> 
   <head> 
-      <title> Dados </title> 
-      <meta charset="UTF-8"> 
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
-      <link rel="stylesheet" href="../Estilo/Perfil.css">
-      <link rel ="stylesheet" href ="../Estilo/bootstrap-4.1.3-dist/css/bootstrap.min.css">
-      <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
-      <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
-      <script src="../Funcoes/ScriptInput.js"></script>
+  <title> Dados </title> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <link rel="stylesheet" href="../Estilo/Perfil.css">
+  <link rel ="stylesheet" href ="../Estilo/bootstrap-4.1.3-dist/css/bootstrap.min.css">
+  <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
+  <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
+  <script src="../Funcoes/ScriptInput.js"></script>
+
+  <style>
+  .alert {
+    margin-bottom: 8px !important;
+  }
+  </style>
   </head> 
   
   <body>
@@ -54,7 +43,7 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
   <!-- Links -->
   <ul class="navbar-nav">
-    <li class="nav-item">
+    <li class="nav-item dropdown">
       <a class="nav-link" href="../Inicial/index.php">Menu</a>
     </li>
     <li class="nav-item">
@@ -69,7 +58,7 @@
         Usuário
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Seu perfil</a>
+        <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
         <a class="dropdown-item" href="#">Histórico de compras</a>
         <a class="dropdown-item" href="#">Link 3</a>
       </div>
@@ -78,7 +67,8 @@
   </div>
   </nav>  
   <!-- Formulário -->
-  <div class="container" style="margin-top: 180px">
+  <div class="container" style="margin-top: 110px">
+  <!-- Caixa de erros -->
     <br>
       <?php
         foreach($_REQUEST as $item){
@@ -136,11 +126,11 @@
   </div>
   <div class="form-group">
   <label for ="Rua"> Rua/Numero </label> 
-  <input type ="text" class="form-control" name ="Rua" id="Rua" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['rua']; ?>>
+  <input type ="text" class="form-control" name ="Rua" id="Rua" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['Rua']; ?>>
   </div>
   <label for="municipio">Município:</label>
     <select name="municipio" id="municipio" class="form-control">
-    <option value="" disabled selected><?php echo $dados['municipio'];?></option>
+    <option value="" disabled selected><?php echo $dados['Municipio'];?></option>
 	  <option value="Belford Roxo">BELFORD ROXO</option>
     <option value="Duque de Caxias">DUQUE DE CAXIAS</option>
     <option value="Guapimirim">GUAPIMIRIM</option>
@@ -157,7 +147,7 @@
     <select><br>
   <div class="form-group">
   <label for ="complemento"> Complemento </label> 
-  <input type ="text" class="form-control" name ="complemento" id="complemento" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['complemento']; ?>> 
+  <input type ="text" class="form-control" name ="complemento" id="complemento" minlength="5" maxlength="320" onkeypress="return local();" placeholder= <?php echo $dados['Complemento']; ?>> 
   </div>
       
   <br>

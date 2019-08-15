@@ -1,57 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cadastro</title>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
-    <link rel ="stylesheet" href ="../Estilo/bootstrap-4.1.3-dist/css/bootstrap.min.css">
-    <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
-    <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
-    <script src="../Funcoes/ScriptInput.js"></script>
-    <script src="../Funcoes/ScriptInput.js"></script>
+  <title>Cadastro</title>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <link rel ="stylesheet" href ="../Estilo/bootstrap-4.1.3-dist/css/bootstrap.min.css">
+  <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
+  <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
+  <script src="../Funcoes/ScriptInput.js"></script>
+  <script src="../Funcoes/ScriptInput.js"></script>
 
-    <style>
-    body{
-      background-image:url("../Imagens/imgfundo.jpg");
-    }
+  <style>
+  body{
+    background-image:url("../Imagens/imgfundo.jpg");
+  }
+
+  .alert {
+    margin-bottom: 7px !important;
+  }
     
-    </style>
+  </style>
 
 </head>
 
 <body> 
-    <?php
-    if(count($_REQUEST) != 0){
-      echo ('
-        <br>
-        <style>
-        #Erros{
-          visibility:visible;
-          background-color: #ffff80;
-          width: 50%;
-          text-align: center;
-          border: solid 1px;
-          padding: 3px;
-          font-size: 18px;
-          top: 150px;
-        }
-        </style>
-        ');
-    }
-    ?>
 
-    <center>
-    <div id='Erros'>
+    
+  <!-- Inicio de formulario -->
+  <div class="container" style="margin-top: 50px; color:white;"> 
+
+  <!-- Caixa de erros -->
     <?php
-      foreach($_REQUEST as $item){
-      print($item);
+        foreach($_REQUEST as $item){
+          foreach (explode("|", $item) as $item_item) {
+      ?>
+      <div class="alert alert-danger" role="alert">
+      <?php
+      print($item_item . ".");
+      ?>
+      </div>
+      <?php
+        }
       }
     ?>
-    </div>
-    </center>
-    
-    <!-- Inicio de formulario -->
-    <div class="container" style="margin-top: 50px; color:white;"> 
    
     <form id= "cadastro" method="POST" action="CadastroCtrl.php" onsubmit="return validate()">
     
