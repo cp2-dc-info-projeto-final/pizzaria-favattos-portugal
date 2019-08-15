@@ -17,6 +17,9 @@ create table cliente (
     primary key (id)
 );
 
+INSERT INTO cliente (nome,data_nasc,email,telefone,cpf,logi,senha,sexo,Rua,Municipio,Complemento) VALUES
+('Sigismundo','1970/08/29','sigismundo@gmail.com','123456789','49108328900','sigismundo','$2y$10$bPtdRgaMsyNYXOkrwzXI1O3F0vY7PM6kuGcQPjv26yFQnYSWR28.G','Masculino','Rua dos cara barbaro','Duque de Caxias','casa');
+
 CREATE TABLE produto(
     id int AUTO_INCREMENT,
     nome varchar(50),

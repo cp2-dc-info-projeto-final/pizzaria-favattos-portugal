@@ -9,8 +9,7 @@
       <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
       <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
       <script src="../Funcoes/ScriptInput.js"></script>
-  </head> 
-  
+  </head>
   <body>
 
   <?php
@@ -102,142 +101,27 @@
 
 <h1 style="text-align: center">Pizzas </h1><hr>
 <div class="row">
-    <div class="col-sm">
+    <?php
+        require_once "ctrl.php";
+        $produtos = listarProdutos("");
+        
+        foreach ($produtos as $produto) {
+        
+    ?>
+    <div class="col-sm" style="display: inline-box">
     <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Pizza Calabresa</h5>
-        Muçarela, orégano, calabresa e cebola.
-        </div>
-        </div>
+    <div class="media">
+    <img class="mr-3" src="..." alt="Generic placeholder image">
+    <div class="media-body">
+        <h5 class="mt-0"><?php $produto["nome"] ?></h5>
+        <span> <?php $produto["descricao"] ?> </span>
     </div>
     </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Pizza Presunto</h5>
-        Muçarela, orégano, presunto e cebola.
-        </div>
-        </div>
     </div>
     </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Pizza Muçarela</h5>
-        Muçarela e orégano.
-        </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Pizza Mista</h5>
-        Muçarela, orégano, calabresa, presunto, bacon, ovo, tomate e cebola.
-        </div>
-        </div>
-    </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Pizza Bacon com ovos</h5>
-        Muçarela, orégano, bacon e ovo.
-        </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Pizza Favatto`s Portugal</h5>
-        Muçarela, orégano, calabresa, presunto, ovo, azeitona e cebola.        
-        </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Pizza Salame</h5>
-        Muçarela, orégano,Pizza  manjericão, queijo prato, queijo parmesão e salame.
-        </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Pizza Frango com catupiry</h5>
-        Muçarela, orégano, frango e catupiry.       
-        </div>
-        </div>
-    </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Pizza Hot dog</h5>
-        Muçarela, orégano, molho, salsicha, batata palha e azeitona.       
-        </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Pizza Portuguesa</h5>
-        Muçarela, orégano, presunto, calabresa, cebola, ovo e azeitona.
-        </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Pizza Marguerita</h5>
-        Muçarela, orégano, tomate e manjericão.       
-        </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Pizza Banana com canela grande</h5>
-        Muçarela, banana e canela.        
-        </div>
-        </div>
-    </div>
-    </div>
+    <?php
+        }
+    ?>
 </div>
 <br>
 

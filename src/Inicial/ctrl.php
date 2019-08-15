@@ -1,6 +1,8 @@
 <?php
-require_once("UsuarioModel.php");
+require_once("model.php");
 
-    $dados = Pegardados($nome);
+function listarProdutos($nome) {
+    return Pegardados($nome);
+}
 
 ?>
