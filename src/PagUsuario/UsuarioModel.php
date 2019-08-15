@@ -39,14 +39,8 @@ function CalcularIdade($data) {
     }
 }
 
-function AlterarDados($email,$sexo,$telefone,$rua,$municipio,$complemento){
+function AlterarDados($email,$sexo,$telefone,$rua,$municipio,$complemento,$login){
 
-    if(!isset($_SESSION["logi"])){
-        header("location: ../Login/LoginView.php");
-      }
-      else{
-        $login = $_SESSION["logi"];
-    }
     // Armazenando dados do usuário
     $dados = PegarDados($login);
     if($email == ""){
@@ -84,18 +78,18 @@ function AlterarDados($email,$sexo,$telefone,$rua,$municipio,$complemento){
 
 }
 
-function AlterarSenha($senhaA,$senha,$Csenha){
+function AlterarSenha($senhaA,$senha,$Csenha,$login){
     
     $error_list = [];
     $dados = PegarDados($login);
-    if($senhaA == "" || $senha == "" || $Csenha == ""){
-        $error_list = "Os campos das senhas não podem ser nulos";
+    if(empty($senhaA) || empty($senha) || empty($Csenha)){
+        $error_list[] = "Os campos das senhas não podem ser nulos";
     }
     if(!password_verify($senhaA, $dados['senha']) || $Csenha != $senha){
-        $error_list = "Senha atual incorreta ou as novas não coincidem";
+        $error_list[] = "Senha atual incorreta ou as novas não coincidem";
     }
     if($senha === $senhaA){
-        $error_list = "A senha nova deve ser diferente da atual";
+        $error_list[] = "A senha nova deve ser diferente da atual";
     }else{
         $senha = password_hash($senha, PASSWORD_DEFAULT);
     }

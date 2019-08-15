@@ -11,6 +11,23 @@
 
 ?>
 
+<style>
+  #Erros{
+    visibility:visible;
+    background-color: #ffff80;
+    width: 50%;
+    text-align: center;
+    border: solid 1px;
+    padding: 3px;
+    font-size: 18px;
+    top: 100px;
+  }
+
+  .alert {
+    margin-bottom: 7px !important;
+  }
+</style>
+
 <!doctype html> 
 <html> 
   <head> 
@@ -25,26 +42,6 @@
   </head> 
   
   <body>
-
-  <?php
-    if(count($_REQUEST) != 0){
-      echo ('
-        <br>
-        <style>
-        #Erros{
-          visibility:visible;
-          background-color: #ffff80;
-          width: 50%;
-          text-align: center;
-          border: solid 1px;
-          padding: 3px;
-          font-size: 18px;
-          top: 100px;
-        }
-        </style>
-        ');
-    }
-  ?> 
 
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <!-- Logo -->
@@ -82,6 +79,21 @@
   </nav>  
   <!-- Formulário -->
   <div class="container" style="margin-top: 180px">
+    <br>
+      <?php
+        foreach($_REQUEST as $item){
+          foreach (explode("|", $item) as $item_item) {
+      ?>
+      <div class="alert alert-danger" role="alert">
+      <?php
+      print($item_item . ".");
+      ?>
+      </div>
+      <?php
+        }
+      }
+      ?>
+      
   <div class="row"> 
   <div class="col-8">
   <div class="shadow p-3 mb-5 bg-white rounded"> 

@@ -18,7 +18,7 @@ $rua = $_REQUEST["Rua"];
 $complmento = $_REQUEST["complemento"];
 $municipio = $_REQUEST["municipio"];
 
-$resultAlteracao = AlterarDados($email,$sexo,$telefone,$rua,$municipio,$complmento);
+$resultAlteracao = AlterarDados($email,$sexo,$telefone,$rua,$municipio,$complmento,$login);
 
 if($resultAlteracao == 1){
   header("location: PerfilView.php");

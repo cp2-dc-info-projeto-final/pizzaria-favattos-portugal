@@ -17,18 +17,18 @@ $Csenha = $_REQUEST["Csenha"];
 $erros = "";
     
 try {
-  $result = AlterarSenha($senhaA,$senha,$Csenha);
+  $result = AlterarSenha($senhaA,$senha,$Csenha,$login);
 }
 catch (Exception $e) {
-    $erros = $e->getMessage();
+  $erros = $e->getMessage();
 }
 
-if ($erros == "") {      
-    header('Location: PerfilView.php');
-    exit();
+if (empty($erros)) {      
+  header('Location: PerfilView.php');
+  exit();
 }
 else {
-        header('Location: EditarView.php?erros='.urlencode($erros));
-        exit();
+  header('Location: EditarView.php?erros='.urlencode($erros));
+  exit();
 }
 ?>

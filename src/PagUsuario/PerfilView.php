@@ -81,9 +81,9 @@
  
     <hr>
     <h1>Endereço</h1>
-    <h2>Município: <?php echo $dados['municipio']; ?></h2>
-    <h2>Rua: <?php echo $dados['rua']; ?></h2>
-    <h2>Complemento: <?php echo $dados['complemento']; ?></h2>
+    <h2>Município: <?php echo $dados['Municipio']; ?></h2>
+    <h2>Rua: <?php echo $dados['Rua']; ?></h2>
+    <h2>Complemento: <?php echo $dados['Complemento']; ?></h2>
   
   <hr>
   <center>
