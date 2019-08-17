@@ -103,21 +103,25 @@
 <div class="row">
     <?php
         require_once "ctrl.php";
-        $produtos = listarProdutos("");
+        $produtos = listarProdutos(1);
         
         foreach ($produtos as $produto) {
         
     ?>
-    <div class="col-sm" style="display: inline-box">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-    <div class="media">
-    <img class="mr-3" src="..." alt="Generic placeholder image">
-    <div class="media-body">
-        <h5 class="mt-0"><?php $produto["nome"] ?></h5>
-        <span> <?php $produto["descricao"] ?> </span>
-    </div>
-    </div>
-    </div>
+    <div class="col-md-4" style="max-width: 777px;">
+        <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="<?php echo $produto['imagem'];?>" alt="<?php echo $produto['nome']; ?>">
+          <div class="card-body">
+            <h6> <?php echo $produto['nome']; ?> </h6>
+            <p class="card-text"><?php echo $produto['descricao']; ?></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn">
+                <button type="button" class="btn btn-bg btn-outline-danger"><?php echo "Grande: R$".$produto['preco_normal']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger"><?php echo "Gigante: R$".$produto['preco_gigante']?></button>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
     <?php
         }
@@ -127,96 +131,31 @@
 
 <h1 style="text-align: center">Lanches </h1><hr>
 <div class="row">
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Veneza</h5>
-        Pão, carne, cheddar, presunto, calabresa, bacon, alface, tomate e cebola roxa.      
-        </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Veneza duplo</h5>
-        Pão, duas carnes, dois cheddar, dois presuntos, calabresa, bacon, alface, tomate, cebola roxa.        
-        </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Veneza triplo</h5>
-        Pão, três carnes, três cheddar, três presuntos, calabresa, bacon, alface, tomate e cebola roxa.        
-        </div>
+    <?php
+        require_once "ctrl.php";
+        $produtos = listarProdutos(2);
+        
+        foreach ($produtos as $produto) {
+        
+    ?>
+    <div class="col-md-4" style="max-width: 777px;">
+        <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="<?php echo $produto['imagem'];?>" alt="<?php echo $produto['nome']; ?>">
+          <div class="card-body">
+            <h6> <?php echo $produto['nome']; ?> </h6>
+            <p class="card-text"><?php echo $produto['descricao']; ?></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn">
+                <button type="button" class="btn btn-bg btn-outline-danger"><?php echo "Grande: R$".$produto['preco_normal']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger"><?php echo "Gigante: R$".$produto['preco_gigante']?></button>
+              </div>
+            </div>
+          </div>
         </div>
     </div>
-    </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Viana</h5>
-        Pão, carne, dois cheddar, bacon e calabresa.        
-        </div>
-        </div>
-    </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Viana duplo</h5>
-        Pão, carne, duplo cheddar, carne, duplo cheddar, bacon e calabresa.        
-        </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Viana triplo</h5>
-        Pão, carne, duplo cheddar, carne, duplo cheddar, carne, duplo cheddar, bacon e calabresa.        
-        </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Batata frita</h5>
-        Aqui é a descrição desse Lanche invisível, mas que pode ter certeza que o ingrediente principal é o amor
-        </div>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm">
-    <div class="shadow p-3 mb-5 bg-white rounded"> 
-        <div class="media">
-        <img class="mr-3" src="..." alt="Generic placeholder image">
-        <div class="media-body">
-        <h5 class="mt-0">Batata maluca</h5>
-        Aqui é a descrição desse Lanche invisível, mas que pode ter certeza que o ingrediente principal é o amor
-        </div>
-        </div>
-    </div>
-    </div>
+    <?php
+        }
+    ?>
 </div>
 <br>
 
