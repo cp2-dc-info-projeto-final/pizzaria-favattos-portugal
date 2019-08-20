@@ -54,23 +54,23 @@ CREATE TABLE produto(
 
 /*Hamburguers*/
 
-INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria) VALUES 
-('Veneza', 'Pão, carne, cheddar, presunto, calabresa, bacon, alface, tomate, cebola roxa', 0, '7.99', 2),
-('Veneza duplo', 'Pão, duas carnes, dois cheddar, dois presuntos, calabresa, bacon, alface, tomate, cebola roxa', 0, '12.99', 2),
-('Veneza triplo', 'Pão, três carnes, três cheddar, três presuntos, calabresa, bacon, alface, tomate, cebola roxa', 0, '17.99', 2),
-('Viana', 'Pão, carne, dois cheddar, bacon, calabresa', 0, '7.99', 2),
-('Viana duplo', 'Pão, carne, duplo cheddar, carne, duplo cheddar, bacon, calabresa', 0, '11.99', 2),
-('Viana triplo', 'Pão, carne, duplo cheddar, carne, duplo cheddar, carne, duplo cheddar, bacon, calabresa', 0, '15.99', 2);
+INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria, imagem) VALUESa 
+('Veneza', 'Pão, carne, cheddar, presunto, calabresa, bacon, alface, tomate, cebola roxa', 0, '7.99', 2,'../Imagens/imgfundo.jpg'),
+('Veneza duplo', 'Pão, duas carnes, dois cheddar, dois presuntos, calabresa, bacon, alface, tomate, cebola roxa', 0, '12.99', 2,'../Imagens/imgfundo.jpg'),
+('Veneza triplo', 'Pão, três carnes, três cheddar, três presuntos, calabresa, bacon, alface, tomate, cebola roxa', 0, '17.99', 2,'../Imagens/imgfundo.jpg'),
+('Viana', 'Pão, carne, dois cheddar, bacon, calabresa', 0, '7.99', 2,'../Imagens/imgfundo.jpg'),
+('Viana duplo', 'Pão, carne, duplo cheddar, carne, duplo cheddar, bacon, calabresa', 0, '11.99', 2,'../Imagens/imgfundo.jpg'),
+('Viana triplo', 'Pão, carne, duplo cheddar, carne, duplo cheddar, carne, duplo cheddar, bacon, calabresa', 0, '15.99', 2,'../Imagens/imgfundo.jpg');
 
 /*Combos*/
 
-INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria) VALUES
-('Combo Veneza 1', 'Veneza + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 1 sachê de molho', 0, '10.99', 3),
-('Combo Veneza 2', 'Veneza duplo + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '15.99', 3), 
-('Combo Veneza 3', '2 Veneza Duplo + Batata frita (porção) + 2 Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '38.99', 3),
-('Combo Viana 1', 'Viana + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 1 sachê de molho', 0, '10.99', 3), 
-('Combo Viana 2', 'Viana duplo + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '15.99', 3),
-('Combo Viana 3', '2 Viana duplo + Batata frita (porção) + 2 Rfefrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '38.99', 3);
+INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria, imagem) VALUES
+('Combo Veneza 1', 'Veneza + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 1 sachê de molho', 0, '10.99', 3,'../Imagens/imgfundo.jpg'),
+('Combo Veneza 2', 'Veneza duplo + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '15.99', 3,'../Imagens/imgfundo.jpg'), 
+('Combo Veneza 3', '2 Veneza Duplo + Batata frita (porção) + 2 Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '38.99', 3,'../Imagens/imgfundo.jpg'),
+('Combo Viana 1', 'Viana + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 1 sachê de molho', 0, '10.99', 3,'../Imagens/imgfundo.jpg'), 
+('Combo Viana 2', 'Viana duplo + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '15.99', 3,'../Imagens/imgfundo.jpg'),
+('Combo Viana 3', '2 Viana duplo + Batata frita (porção) + 2 Rfefrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '38.99', 3,'../Imagens/imgfundo.jpg');
 
 /*Pizzas*/
 
@@ -90,25 +90,26 @@ INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, preco_gigante,
 
 /*Bordas*/
 
-INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, preco_gigante, categoria) VALUES 
-('Borda de Cheddar', '', 0, '3.00', '4.00', 6),
-('Borda de Catupiry', '', 0, '3.00', '4.00', 6);
+INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, preco_gigante, categoria, imagem) VALUES 
+('Borda de Cheddar', '', 0, '3.00', '4.00', 6,'../Imagens/imgfundo.jpg'),
+('Borda de Catupiry', '', 0, '3.00', '4.00', 6,'../Imagens/imgfundo.jpg');
 
 /*Batatas*/
 
-INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, preco_medio, preco_gigante, preco_gg, categoria) VALUES
-('Batata frita', ' ', 0, '3.99', '7.99', '9.99', '14.99', 4),
-('Batata maluca', ' ', 0, '', '12.99', '14.99', '19.99', 4);
+INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, preco_medio, preco_gigante, preco_gg, categoria, imagem) VALUES
+('Batata frita', ' ', 0, '3.99', '7.99', '9.99', '14.99', 4,'../Imagens/imgfundo.jpg'),
+('Batata maluca', ' ', 0, '', '12.99', '14.99', '19.99', 4,'../Imagens/imgfundo.jpg');
 
 /*Bebidas*/
+/*preco_medio é a coca*/
 
-INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria) VALUES 
-('Água sem gás', ' ', 0, '1.99', 5),
-('Guaracamp 285ml', ' ', 0, '1.99', 5),
-('Refrigerante 350ml', '(Conferir opções, exceto coca-cola) ', 0, '3.50', 5),
-('Coca-cola 350ml', ' ', 0, '3.99', 5),
-('Refrigerante 2L', '(Conferir opções, exceto coca-cola)', 0, '7.99', 5), 
-('Coca-cola 2L', ' ', 0, '8.99', 5),
-('Del Valle', '(Conferir opções de sabores)', 0, '4.99', 5),
-('Guaraviton 500ml', ' ', 0, '3.99', 5);
+INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria, imagem) VALUES 
+('Água sem gás', ' ', 0, '1.99', 5,'../Imagens/imgfundo.jpg'),
+('Guaracamp 285ml', ' ', 0, '1.99', 5,'../Imagens/imgfundo.jpg'),
+('Refrigerante 350ml', '(Conferir opções, exceto coca-cola) ', 0, '3.50', 5,'../Imagens/imgfundo.jpg'),
+('Coca-cola 350ml', ' ', 0, '3.99', 5,'../Imagens/imgfundo.jpg'),
+('Refrigerante 2L', '(Conferir opções, exceto coca-cola)', 0, '7.99', 5,'../Imagens/imgfundo.jpg'), 
+('Coca-cola 2L', ' ', 0, '8.99', 5,'../Imagens/imgfundo.jpg'),
+('Del Valle', '(Conferir opções de sabores)', 0, '4.99', 5,'../Imagens/imgfundo.jpg'),
+('Guaraviton 500ml', ' ', 0, '3.99', 5,'../Imagens/imgfundo.jpg');
 
