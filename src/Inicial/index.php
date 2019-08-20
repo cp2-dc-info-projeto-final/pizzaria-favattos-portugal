@@ -178,8 +178,8 @@
                 <?php if($produto['nome'] == 'Batata frita'){ ?>
                 <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto auto"><?php echo "Pequena: R$".$produto['preco_normal']?></button>
                 <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 2px"><?php echo "Média: R$".$produto['preco_medio']?></button><br>
-                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 15px auto 5px"><?php echo "Grande: R$".$produto['preco_gigante']?></button>
-                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 5px"><?php echo "Gigante: R$".$produto['preco_gg']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 18px"><?php echo "Grande: R$".$produto['preco_gigante']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 13px"><?php echo "Gigante: R$".$produto['preco_gg']?></button>
                 <?php } else{?>
                 <button type="button" class="btn btn-bg btn-outline-danger"><?php echo "Média: R$".$produto['preco_medio']?></button>
                 <button type="button" class="btn btn-bg btn-outline-danger"><?php echo "Grande: R$".$produto['preco_gigante']?></button>
