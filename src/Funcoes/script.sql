@@ -54,7 +54,7 @@ CREATE TABLE produto(
 
 /*Hamburguers*/
 
-INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria, imagem) VALUESa 
+INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria, imagem) VALUES
 ('Veneza', 'Pão, carne, cheddar, presunto, calabresa, bacon, alface, tomate, cebola roxa', 0, '7.99', 2,'../Imagens/imgfundo.jpg'),
 ('Veneza duplo', 'Pão, duas carnes, dois cheddar, dois presuntos, calabresa, bacon, alface, tomate, cebola roxa', 0, '12.99', 2,'../Imagens/imgfundo.jpg'),
 ('Veneza triplo', 'Pão, três carnes, três cheddar, três presuntos, calabresa, bacon, alface, tomate, cebola roxa', 0, '17.99', 2,'../Imagens/imgfundo.jpg'),
