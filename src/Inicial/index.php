@@ -252,9 +252,9 @@ print($item_item . ".");
 </div>
 
 
-
 </div>
 
+<br><br>
 <nav class="navbar bg-dark navbar-dark fixed-bottom"> 
 <div class="container"> 
 <span class="text-muted">Até que enfim foi</span> 
