@@ -15,6 +15,61 @@
     margin-bottom: 8px !important;
     }
     </style>
+
+    <script>  
+
+    
+
+    $(document).ready(function(){
+
+      function adicionar_carrinho(id,tamanho,preco) {
+        $.ajax({
+          url:"AdicionarCarrinhoCtrl.php",
+          method:"POST",
+          data:{id:id, tamanho:tamanho, preco:preco},
+          success:function(data)
+          {
+            carregar_carrinho();
+            alert("Agora vai!");
+          }
+        });
+      }
+
+      function popular_carrinho(data)
+      {
+        $('#carrinho').html("<h1> Carrinho! </h1>");
+        for (let i = 0; i < data.length; i++)
+        {
+          $('#carrinho').append("<h1>" + data[i].nome + "</h1>");
+          $('#carrinho').append("<h2>" + data[i].tamanho + "</h2>");
+          $('#carrinho').append("<h2>" + data[i].preco + "</h2>");
+          $('#carrinho').append("<h2>" + data[i].quantidade + "</h2>");
+
+       }
+        
+      }
+
+      function carregar_carrinho()
+      {
+        $.ajax({
+          url:"CarrinhoCtrl.php",
+          method:"POST",
+          dataType:"json",
+          success:function(data)
+          {
+            popular_carrinho(data);
+          }
+        });
+      }
+
+    $(document).on('click', '#add_carrinho', function(){
+      var produto_id = $(this).attr("id");
+      var produto_nome = $()
+
+    });
+
+  });
+      </script>
   </head> 
   
   <body>
@@ -52,7 +107,10 @@
     </li>
   </ul>
   </div>
-  </nav>  
+  </nav> 
+
+  <div id="carrinho">
+  </div>
 
 <div class="container-fluid" style="margin-top: 100px;">
 <br>
@@ -113,8 +171,8 @@ print($item_item . ".");
             <p class="card-text"><?php echo $produto['descricao']; ?></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn">
-                <button type="button" class="btn btn-bg btn-outline-danger"><?php echo "Grande: R$".$produto['preco_normal']?></button>
-                <button type="button" class="btn btn-bg btn-outline-danger"><?php echo "Gigante: R$".$produto['preco_gigante']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'grande', <?php echo $produto['preco_normal']?>);"><?php echo "Grande: R$".$produto['preco_normal']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'gigante', <?php echo $produto['preco_gigante']?>);"><?php echo "Gigante: R$".$produto['preco_gigante']?></button>
               </div>
             </div>
           </div>
