@@ -16,24 +16,26 @@
     }
     </style>
 
-    <script>  
+    <script> 
+
+    function adicionar_carrinho(id,tamanho,preco) {
+      window.location.replace("AdicionarCarrinhoCtrl.php?id=" + id + "&tamanho=" + tamanho + "&preco=" + preco);
+    }
 
     
-
+/*
     $(document).ready(function(){
-
-      function adicionar_carrinho(id,tamanho,preco) {
+      function carregar_carrinho()
+      {
         $.ajax({
-          url:"AdicionarCarrinhoCtrl.php",
+          url:"CarrinhoCtrl.php",
           method:"POST",
-          data:{id:id, tamanho:tamanho, preco:preco},
+          dataType:"json",
           success:function(data)
           {
-            carregar_carrinho();
-            alert("Agora vai!");
+            popular_carrinho(data);
           }
         });
-      }
 
       function popular_carrinho(data)
       {
@@ -48,27 +50,13 @@
        }
         
       }
-
-      function carregar_carrinho()
-      {
-        $.ajax({
-          url:"CarrinhoCtrl.php",
-          method:"POST",
-          dataType:"json",
-          success:function(data)
-          {
-            popular_carrinho(data);
-          }
-        });
       }
-
-    $(document).on('click', '#add_carrinho', function(){
-      var produto_id = $(this).attr("id");
-      var produto_nome = $()
+      $(document).on('click', '#add_carrinho', function(){
+      adicionar_carrinho(1, "grande", 30.90);
 
     });
 
-  });
+  });*/
       </script>
   </head> 
   
@@ -110,6 +98,24 @@
   </nav> 
 
   <div id="carrinho">
+  <?php 
+
+    require_once "CarrinhoCtrl.php";
+
+    $ctrl = new CarrinhoCtrl();
+
+    $carrinho = $ctrl->getCarrinho();
+    foreach ($carrinho as $item) {
+      echo $item['id'];
+      echo "<br>";
+      echo $item['tamanho'];
+      echo "<br>";
+      echo $item['preco'];
+      echo "<br>";
+      echo $item['quantidade'];
+      echo "<br>";
+    }
+  ?>
   </div>
 
 <div class="container-fluid" style="margin-top: 100px;">
