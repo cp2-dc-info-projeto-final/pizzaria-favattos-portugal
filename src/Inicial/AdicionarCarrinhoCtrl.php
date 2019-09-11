@@ -1,20 +1,47 @@
 <?php
 
+    $id = $_GET["id"];
+    
+    $preco = $_GET["preco"];
+
+    if (isset($_GET["tamanho"])) {
+        $tamanho = $_GET["tamanho"];
+    } else {
+        $tamanho = null;
+    }
+    
     session_start();
 
     if (!isset($_SESSION["carrinho"]))
     {
-        $_SESSION["carrinho"] = [];
+        $carrinho = [];
+    } else {
+        $carrinho = $_SESSION["carrinho"];
     }
     
+    $encontrado = false;
+    for($i = 0; $i < count($carrinho); $i++) {
+        if ($carrinho[$i]["id"] == $id && (is_null($tamanho) || $carrinho[$i]["tamanho"] == $tamanho)) {
+            echo "<script> alert('achei yeee')</script>";    
+            $carrinho[$i]["quantidade"] += 1;
+            $encontrado = true;
+        }
+    }
+
+    if (!$encontrado) {
+        $item = array(
+            "id" => $id,
+            "preco" => $preco,
+            "quantidade" => 1
+        );
+
+        if (!is_null($tamanho)) {
+            $item["tamanho"] = $tamanho;
+        }
+        array_push($carrinho, $item);
+    }
     
-    $item = array(
-        "id" => $_GET['id'],
-        "tamanho" => $_GET['tamanho'],
-        "preco" => $_GET['preco'],
-        "quantidade" => 5
-    );
-    array_push($_SESSION["carrinho"], $item);
+    $_SESSION["carrinho"] = $carrinho;
 
     header("Location: Index.php");
 ?>
