@@ -21,47 +21,9 @@
     function adicionar_carrinho(id,tamanho,preco) {
       window.location.replace("AdicionarCarrinhoCtrl.php?id=" + id + "&tamanho=" + tamanho + "&preco=" + preco);
     }
+   
+    </script>
 
-    function adicionar_carrinho(id,preco) {
-      window.location.replace("AdicionarCarrinhoCtrl.php?id=" + id + "&preco=" + preco);
-    }
-
-    
-/*
-    $(document).ready(function(){
-      function carregar_carrinho()
-      {
-        $.ajax({
-          url:"CarrinhoCtrl.php",
-          method:"POST",
-          dataType:"json",
-          success:function(data)
-          {
-            popular_carrinho(data);
-          }
-        });
-
-      function popular_carrinho(data)
-      {
-        $('#carrinho').html("<h1> Carrinho! </h1>");
-        for (let i = 0; i < data.length; i++)
-        {
-          $('#carrinho').append("<h1>" + data[i].nome + "</h1>");
-          $('#carrinho').append("<h2>" + data[i].tamanho + "</h2>");
-          $('#carrinho').append("<h2>" + data[i].preco + "</h2>");
-          $('#carrinho').append("<h2>" + data[i].quantidade + "</h2>");
-
-       }
-        
-      }
-      }
-      $(document).on('click', '#add_carrinho', function(){
-      adicionar_carrinho(1, "grande", 30.90);
-
-    });
-
-  });*/
-      </script>
   </head> 
   
   <body>
@@ -183,7 +145,7 @@ print($item_item . ".");
             <p class="card-text"><?php echo $produto['descricao']; ?></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn">
-                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'grande', <?php echo $produto['preco_normal']?>);"><?php echo "Grande: R$".$produto['preco_normal']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'grande', <?php echo $produto['preco_grande']?>);"><?php echo "Grande: R$".$produto['preco_grande']?></button>
                 <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'gigante', <?php echo $produto['preco_gigante']?>);"><?php echo "Gigante: R$".$produto['preco_gigante']?></button>
               </div>
             </div>
@@ -213,7 +175,7 @@ print($item_item . ".");
             <p class="card-text"><?php echo $produto['descricao']; ?></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn">
-                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>, <?php echo $produto['preco_normal']?>);"><?php echo "Preço: R$".$produto['preco_normal']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'',<?php echo $produto['preco_normal']?>);"><?php echo "Preço: R$".$produto['preco_normal']?></button>
               </div>
             </div>
           </div>
@@ -244,13 +206,13 @@ print($item_item . ".");
               <div class="btn">
                 <?php if($produto['nome'] == 'Batata frita'){ ?>
                 <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto auto" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'pequena', <?php echo $produto['preco_normal']?>);"><?php echo "Pequena: R$".$produto['preco_normal']?></button>
-                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 2px" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'media', <?php echo $produto['preco_media']?>);"><?php echo "Média: R$".$produto['preco_medio']?></button><br>
-                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 18px" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'grande', <?php echo $produto['preco_gigante']?>);"><?php echo "Grande: R$".$produto['preco_gigante']?></button>
-                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 13px" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'gigante', <?php echo $produto['preco_gg']?>);"><?php echo "Gigante: R$".$produto['preco_gg']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 2px" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'media', <?php echo $produto['preco_medio']?>);"><?php echo "Média: R$".$produto['preco_medio']?></button><br>
+                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 18px" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'grande', <?php echo $produto['preco_grande']?>);"><?php echo "Grande: R$".$produto['preco_grande']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 13px" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'gigante', <?php echo $produto['preco_gigante']?>);"><?php echo "Gigante: R$".$produto['preco_gigante']?></button>
                 <?php } else{?>
                 <button type="button" class="btn btn-bg btn-outline-danger"><?php echo "Média: R$".$produto['preco_medio']?></button>
-                <button type="button" class="btn btn-bg btn-outline-danger"><?php echo "Grande: R$".$produto['preco_gigante']?></button>
-                <button type="button" class="btn btn-bg btn-outline-danger"><?php echo "Gigante: R$".$produto['preco_gg']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger"><?php echo "Grande: R$".$produto['preco_grande']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger"><?php echo "Gigante: R$".$produto['preco_gigante']?></button>
                 <?php }?>
               </div>
             </div>
@@ -280,7 +242,7 @@ print($item_item . ".");
             <p class="card-text"><?php echo $produto['descricao']; ?></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn">
-                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>, <?php echo $produto['preco_normal']?>);" ><?php echo "Preço: R$".$produto['preco_normal']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'',<?php echo $produto['preco_normal']?>);" ><?php echo "Preço: R$".$produto['preco_normal']?></button>
               </div>
             </div>
           </div>
@@ -309,7 +271,7 @@ print($item_item . ".");
             <p class="card-text"><?php echo $produto['descricao']; ?></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn">
-                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>, <?php echo $produto['preco_normal']?>);"><?php echo "Preço: R$".$produto['preco_normal']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'',<?php echo $produto['preco_normal']?>);"><?php echo "Preço: R$".$produto['preco_normal']?></button>
               </div>
             </div>
           </div>

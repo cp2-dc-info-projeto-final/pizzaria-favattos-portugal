@@ -44,8 +44,8 @@ CREATE TABLE produto(
     qtdd_vendida int,
     preco_normal float,
     preco_medio float,
+    preco_grande float,
     preco_gigante float,
-    preco_gg float,
     categoria int,
     imagem varchar(2048),
     primary key (id),
@@ -74,7 +74,7 @@ INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria, ima
 
 /*Pizzas*/
 
-INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, preco_gigante, categoria, imagem) VALUES 
+INSERT INTO produto (nome, descricao, qtdd_vendida, preco_grande, preco_gigante, categoria, imagem) VALUES 
 ('Pizza Calabresa', 'Muçarela, orégano, calabresa, cebola', 0, '28.99', '38.99', 1, '../Imagens/imgfundo.jpg'),
 ('Pizza Presunto', 'Muçarela, orégano, presunto, cebola', 0, '28.99', '38.99', 1, '../Imagens/imgfundo.jpg'),
 ('Pizza Muçarela', 'Muçarela, orégano', 0, '27.99', '37.99', 1, '../Imagens/imgfundo.jpg'),
@@ -90,13 +90,13 @@ INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, preco_gigante,
 
 /*Bordas*/
 
-INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, preco_gigante, categoria, imagem) VALUES 
+INSERT INTO produto (nome, descricao, qtdd_vendida, preco_grande, preco_gigante, categoria, imagem) VALUES 
 ('Borda de Cheddar', '', 0, '3.00', '4.00', 6,'../Imagens/imgfundo.jpg'),
 ('Borda de Catupiry', '', 0, '3.00', '4.00', 6,'../Imagens/imgfundo.jpg');
 
 /*Batatas*/
 
-INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, preco_medio, preco_gigante, preco_gg, categoria, imagem) VALUES
+INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, preco_medio, preco_grande, preco_gigante, categoria, imagem) VALUES
 ('Batata frita', ' ', 0, '3.99', '7.99', '9.99', '14.99', 4,'../Imagens/imgfundo.jpg'),
 ('Batata maluca', ' ', 0, '', '12.99', '14.99', '19.99', 4,'../Imagens/imgfundo.jpg');
 
