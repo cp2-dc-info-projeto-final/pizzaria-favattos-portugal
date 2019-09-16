@@ -44,7 +44,7 @@
       <a class="nav-link" href="#">Nossa Gastronomia</a>
     </li>
     <li class="nav-item">
-          <a class="nav-link" href="#">Fotos</a>
+          <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
     </li>
     <!-- Dropdown -->
     <li class="nav-item dropdown">
