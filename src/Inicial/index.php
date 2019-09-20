@@ -21,6 +21,20 @@
     function adicionar_carrinho(id,tamanho,preco) {
       window.location.replace("AdicionarCarrinhoCtrl.php?id=" + id + "&tamanho=" + tamanho + "&preco=" + preco);
     }
+
+    $(function(){
+    $("[data-toggle=popover]").popover({
+        html : true,
+        content: function() {
+          var content = $(this).attr("data-popover-content");
+          return $(content).children(".popover-body").html();
+        },
+        title: function() {
+          var title = $(this).attr("data-popover-content");
+          return $(title).children(".popover-heading").html();
+        }
+    });
+});
    
     </script>
 
@@ -33,9 +47,6 @@
   <a class="navbar-brand" href="#">
           <img src="bird.jpg" alt="Logo" style="width:40px;">
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-  </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
   <!-- Links -->
   <ul class="navbar-nav">
@@ -59,32 +70,37 @@
         <a class="dropdown-item" href="#">Link 3</a>
       </div>
     </li>
-  </ul>
+    <!-- Na teoria o carrinho -->
+    <li class="nav-item">
+    <a href="#" class="btn btn-primary" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="top">Carrinho</a>
+    <div id="a1" class="invisible" style="width: 0px; height: 0px;">
+      <div class="popover-heading">Carrinho de compras</div>
+      <div id="carrinho" class="popover-body">
+      <?php 
+      require_once "CarrinhoCtrl.php";
+
+      $ctrl = new CarrinhoCtrl();
+
+      $carrinho = $ctrl->getCarrinho();
+      foreach ($carrinho as $item) {
+        echo $item['id'];
+        echo "<br>";
+        if (array_key_exists('tamanho', $item)) {
+          echo $item['tamanho'];
+          echo "<br>";
+        }
+        echo $item['preco'];
+        echo "<br>";
+        echo $item['quantidade'];
+        echo "<br>";
+      }
+      ?>
+      </div>
+    </div>   
+    </li>      
   </div>
   </nav> 
 
-  <div id="carrinho">
-  <?php 
-
-    require_once "CarrinhoCtrl.php";
-
-    $ctrl = new CarrinhoCtrl();
-
-    $carrinho = $ctrl->getCarrinho();
-    foreach ($carrinho as $item) {
-      echo $item['id'];
-      echo "<br>";
-      if (array_key_exists('tamanho', $item)) {
-        echo $item['tamanho'];
-        echo "<br>";
-      }
-      echo $item['preco'];
-      echo "<br>";
-      echo $item['quantidade'];
-      echo "<br>";
-    }
-  ?>
-  </div>
 
 <div class="container-fluid" style="margin-top: 100px;">
 <br>

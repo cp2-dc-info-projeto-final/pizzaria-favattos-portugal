@@ -22,7 +22,6 @@
     $encontrado = false;
     for($i = 0; $i < count($carrinho); $i++) {
         if ($carrinho[$i]["id"] == $id && (is_null($tamanho) || $carrinho[$i]["tamanho"] == $tamanho)) {
-            echo "<script> alert('achei yeee')</script>";    
             $carrinho[$i]["quantidade"] += 1;
             $encontrado = true;
         }
