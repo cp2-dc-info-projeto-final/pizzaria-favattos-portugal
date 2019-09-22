@@ -44,7 +44,7 @@
       <a class="nav-link" href="#">Nossa Gastronomia</a>
     </li>
     <li class="nav-item">
-          <a class="nav-link" href="#">Fotos</a>
+          <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
     </li>
     <!-- Dropdown -->
     <li class="nav-item dropdown">
@@ -94,10 +94,11 @@
   </div>
   
   <!--Rodapé -->
-  <nav class="navbar bg-dark navbar-dark fixed-bottom">
-    <div class="container">
-      <span class="text-muted">Até que enfim foi</span>
-  </nav>
+  <br><br>
+<nav class="navbar bg-dark navbar-dark fixed-bottom"> 
+<div class="container"> 
+<span class="text-muted">Até que enfim foi</span> 
+</nav> 
 
 </body>
 </html>

@@ -69,7 +69,7 @@
       <a class="nav-link" href="#">Nossa Gastronomia</a>
     </li>
     <li class="nav-item">
-          <a class="nav-link" href="#">Fotos</a>
+      <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a> 
     </li>
   <!-- Dropdown -->
   <li class="nav-item dropdown">
@@ -321,9 +321,16 @@ print($item_item . ".");
     ?>
 </div>
 
+<<<<<<< HEAD
 </div>
 
 <!--Rodapé no final da página-->
+=======
+
+</div>
+
+<br><br>
+>>>>>>> e64ef2a2929fa162f867b8241e3deda7523ea6e7
 <nav class="navbar bg-dark navbar-dark fixed-bottom"> 
 <div class="container"> 
 <span class="text-muted">Até que enfim foi</span> 
