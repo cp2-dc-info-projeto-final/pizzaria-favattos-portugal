@@ -321,16 +321,9 @@ print($item_item . ".");
     ?>
 </div>
 
-<<<<<<< HEAD
 </div>
 
 <!--Rodapé no final da página-->
-=======
-
-</div>
-
-<br><br>
->>>>>>> e64ef2a2929fa162f867b8241e3deda7523ea6e7
 <nav class="navbar bg-dark navbar-dark fixed-bottom"> 
 <div class="container"> 
 <span class="text-muted">Até que enfim foi</span> 
