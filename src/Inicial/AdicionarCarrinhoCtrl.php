@@ -1,8 +1,12 @@
 <?php
 
     $id = $_GET["id"];
+
+    $nome = $_GET["nome"];
     
     $preco = $_GET["preco"];
+
+    $descricao = $_GET["descricao"];
 
     if (isset($_GET["tamanho"])) {
         $tamanho = $_GET["tamanho"];
@@ -11,6 +15,8 @@
     }
     
     session_start();
+    //session_destroy();
+
 
     if (!isset($_SESSION["carrinho"]))
     {
@@ -30,7 +36,9 @@
     if (!$encontrado) {
         $item = array(
             "id" => $id,
+            "nome" => $nome,
             "preco" => $preco,
+            "descricao" => $descricao,
             "quantidade" => 1
         );
 

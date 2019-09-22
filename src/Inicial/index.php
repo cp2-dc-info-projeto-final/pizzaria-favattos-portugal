@@ -14,16 +14,28 @@
     .alert {
     margin-bottom: 8px !important;
     }
+
+    .popover{
+      max-width: 100% !important; 
+    }
+
     </style>
 
     <script> 
 
-    function adicionar_carrinho(id,tamanho,preco) {
-      window.location.replace("AdicionarCarrinhoCtrl.php?id=" + id + "&tamanho=" + tamanho + "&preco=" + preco);
+    //Envia as informações dos produtos pela URL para o arquivo AdicionarCarrinhoCtrl
+    function adicionar_carrinho(id,nome,tamanho,preco, descricao) {
+      window.location.replace("AdicionarCarrinhoCtrl.php?id=" + id + "&nome=" + nome + "&tamanho=" + tamanho + "&preco=" + preco + "&descricao=" + descricao);
     }
 
+    function remover_carrinho(id,tamanho){
+      window.location.replace("RemoverCarrinhoCtrl.php?id=" + id + "&nome=" + "&tamanho=" + tamanho);
+    }
+
+    //Função para ativar o popover e inseriro seu titulo e corpo
     $(function(){
     $("[data-toggle=popover]").popover({
+        container: 'body',
         html : true,
         content: function() {
           var content = $(this).attr("data-popover-content");
@@ -41,7 +53,7 @@
   </head> 
   
   <body>
-
+  <!-- Barra de navegação -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <!-- Logo -->
   <a class="navbar-brand" href="#">
@@ -59,45 +71,50 @@
     <li class="nav-item">
           <a class="nav-link" href="#">Fotos</a>
     </li>
-    <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Usuário
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-        <a class="dropdown-item" href="#">Histórico de compras</a>
-        <a class="dropdown-item" href="#">Link 3</a>
-      </div>
-    </li>
-    <!-- Na teoria o carrinho -->
-    <li class="nav-item">
-    <a href="#" class="btn btn-primary" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="top">Carrinho</a>
-    <div id="a1" class="invisible" style="width: 0px; height: 0px;">
-      <div class="popover-heading">Carrinho de compras</div>
-      <div id="carrinho" class="popover-body">
-      <?php 
-      require_once "CarrinhoCtrl.php";
+  <!-- Dropdown -->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+      Usuário
+    </a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
+      <a class="dropdown-item" href="#">Histórico de compras</a>
+      <a class="dropdown-item" href="#">Link 3</a>
+    </div>
+  </li>
+  <!-- O carrinho de compras popover -->
+  <li class="nav-item">
+  <a href="#" class="btn btn-primary" data-toggle="popover" data-popover-content="#a1" data-placement="top">Carrinho</a>
+  <div id="a1" class="invisible" style="width: 0px; height: 0px;">
+    <div class="popover-heading">
+    Carrinho de compras
+    </div>
+    <div id="carrinho" class="popover-body">
+    <?php 
+    require_once "CarrinhoCtrl.php";
+    $ctrl = new CarrinhoCtrl();
+    $carrinho = $ctrl->getCarrinho();
 
-      $ctrl = new CarrinhoCtrl();
-
-      $carrinho = $ctrl->getCarrinho();
+    if(count($carrinho) == null){
+      echo 'Carrinho vazio, favor adicionar produtos aqui... rs';
+    }
+    else{
       foreach ($carrinho as $item) {
-        echo $item['id'];
-        echo "<br>";
-        if (array_key_exists('tamanho', $item)) {
-          echo $item['tamanho'];
-          echo "<br>";
-        }
-        echo $item['preco'];
-        echo "<br>";
-        echo $item['quantidade'];
-        echo "<br>";
+        echo '<div class="row">
+        <div class="col">'.$item['nome'].'</div>
+        <div class="col">'.$item['descricao'].'</div>
+        <div class="col">'.$item['preco'].'</div>
+        <div class="col">'.$item['tamanho'].'</div>
+        <div class="col">'.$item['quantidade'].'</div>
+        <div class="col"><button type="button" class="btn btn-info" onclick="remover_carrinho('.$item['id'].','.$item['tamanho'].')">Remover</button></div>
+        </div> <hr>';
       }
-      ?>
-      </div>
-    </div>   
-    </li>      
+    echo '<br><button type="button" class="btn btn-danger">Finalizar pedido</button>';
+    }
+    ?>
+    </div>
+  </div>   
+  </li>      
   </div>
   </nav> 
 
@@ -119,6 +136,7 @@ print($item_item . ".");
 }
 ?>
 
+<!-- Inicio do menú com os mais pedidos -->
 <h1 style="text-align: center">Mais pedidos </h1><hr>
 <div class="row">
     <div class="col-sm">
@@ -144,36 +162,38 @@ print($item_item . ".");
 </div>
 <br>
 
+<!-- Listagem das pizzas organizados em cards por meio da função php listarProdutos() e a chamada da função javascript adicionar_carrinho dentro do botão que contem o preço-->
 <h1 style="text-align: center">Pizzas </h1><hr>
 <div class="row">
-    <?php
-        require_once "ctrl.php";
-        $produtos = listarProdutos(1);
-        
-        foreach ($produtos as $produto) {
-        
-    ?>
-    <div class="col-md-4" style="max-width: 777px;">
-        <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="<?php echo $produto['imagem'];?>" alt="<?php echo $produto['nome']; ?>">
-          <div class="card-body">
-            <h6> <?php echo $produto['nome']; ?> </h6>
-            <p class="card-text"><?php echo $produto['descricao']; ?></p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn">
-                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'grande', <?php echo $produto['preco_grande']?>);"><?php echo "Grande: R$".$produto['preco_grande']?></button>
-                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'gigante', <?php echo $produto['preco_gigante']?>);"><?php echo "Gigante: R$".$produto['preco_gigante']?></button>
-              </div>
-            </div>
+  <?php
+      require_once "ctrl.php";
+      $produtos = listarProdutos(1);
+      
+      foreach ($produtos as $produto) {
+      
+  ?>
+  <div class="col-md-4" style="max-width: 777px;">
+    <div class="card mb-4 shadow-sm">
+      <img class="card-img-top" src="<?php echo $produto['imagem'];?>" alt="<?php echo $produto['nome']; ?>">
+      <div class="card-body">
+        <h6> <?php echo $produto['nome']; ?> </h6>
+        <p class="card-text"><?php echo $produto['descricao']; ?></p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn">
+            <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'nome do produto', 'grande', <?php echo $produto['preco_grande']?>, 'descricão do produto está aqui' );"><?php echo "Grande: R$".$produto['preco_grande']?></button>
+            <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'nome do produto', 'gigante', <?php echo $produto['preco_gigante']?>, 'descricão do produto está aqui' );"><?php echo "Gigante: R$".$produto['preco_gigante']?></button>
           </div>
         </div>
+      </div>
     </div>
-    <?php
-        }
-    ?>
+  </div>
+  <?php
+      }
+  ?>
 </div>
 <br>
 
+<!-- Listagem dos lanches organizados em cards por meio da função php listarProdutos() e a chamada da função javascript adicionar_carrinho dentro do botão que contem o preço-->
 <h1 style="text-align: center">Lanches </h1><hr>
 <div class="row">
     <?php
@@ -191,7 +211,7 @@ print($item_item . ".");
             <p class="card-text"><?php echo $produto['descricao']; ?></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn">
-                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'',<?php echo $produto['preco_normal']?>);"><?php echo "Preço: R$".$produto['preco_normal']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'nome do produto','',<?php echo $produto['preco_normal']?>, 'descricão do produto está aqui');"><?php echo "Preço: R$".$produto['preco_normal']?></button>
               </div>
             </div>
           </div>
@@ -203,6 +223,7 @@ print($item_item . ".");
 </div>
 <br>
 
+<!-- Listagem das batatas organizados em cards por meio da função php listarProdutos() e a chamada da função javascript adicionar_carrinho dentro do botão que contem o preço-->
 <h1 style="text-align: center">Batatas </h1><hr>
 <div class="row">
 <?php
@@ -221,10 +242,10 @@ print($item_item . ".");
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn">
                 <?php if($produto['nome'] == 'Batata frita'){ ?>
-                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto auto" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'pequena', <?php echo $produto['preco_normal']?>);"><?php echo "Pequena: R$".$produto['preco_normal']?></button>
-                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 2px" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'media', <?php echo $produto['preco_medio']?>);"><?php echo "Média: R$".$produto['preco_medio']?></button><br>
-                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 18px" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'grande', <?php echo $produto['preco_grande']?>);"><?php echo "Grande: R$".$produto['preco_grande']?></button>
-                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 13px" onclick="adicionar_carrinho(<?php echo $produto['id']?>, 'gigante', <?php echo $produto['preco_gigante']?>);"><?php echo "Gigante: R$".$produto['preco_gigante']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto auto" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'nome do produto', 'pequena', <?php echo $produto['preco_normal']?>, 'descricão do produto está aqui');"><?php echo "Pequena: R$".$produto['preco_normal']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 2px" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'nome do produto', 'media', <?php echo $produto['preco_medio']?>, 'descricão do produto está aqui');"><?php echo "Média: R$".$produto['preco_medio']?></button><br>
+                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 18px" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'nome do produto', 'grande', <?php echo $produto['preco_grande']?>, 'descricão do produto está aqui');"><?php echo "Grande: R$".$produto['preco_grande']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 13px" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'nome do produto', 'gigante', <?php echo $produto['preco_gigante']?>, 'descricão do produto está aqui');"><?php echo "Gigante: R$".$produto['preco_gigante']?></button>
                 <?php } else{?>
                 <button type="button" class="btn btn-bg btn-outline-danger"><?php echo "Média: R$".$produto['preco_medio']?></button>
                 <button type="button" class="btn btn-bg btn-outline-danger"><?php echo "Grande: R$".$produto['preco_grande']?></button>
@@ -241,6 +262,7 @@ print($item_item . ".");
 
 </div>
 
+<!-- Listagem das bebidas organizados em cards por meio da função php listarProdutos() e a chamada da função javascript adicionar_carrinho dentro do botão que contem o preço-->
 <h1 style="text-align: center">Bebidas </h1><hr>
 <div class="row">
 <?php
@@ -258,7 +280,7 @@ print($item_item . ".");
             <p class="card-text"><?php echo $produto['descricao']; ?></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn">
-                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'',<?php echo $produto['preco_normal']?>);" ><?php echo "Preço: R$".$produto['preco_normal']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'nome do produto','',<?php echo $produto['preco_normal']?>, 'descricão do produto está aqui');" ><?php echo "Preço: R$".$produto['preco_normal']?></button>
               </div>
             </div>
           </div>
@@ -270,6 +292,7 @@ print($item_item . ".");
 </div>
 <br>
 
+<!-- Listagem dos combos organizados em cards por meio da função php listarProdutos() e a chamada da função javascript adicionar_carrinho dentro do botão que contem o preço-->
 <h1 style="text-align: center">Combos </h1><hr>
 <div class="row">
 <?php
@@ -287,7 +310,7 @@ print($item_item . ".");
             <p class="card-text"><?php echo $produto['descricao']; ?></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn">
-                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'',<?php echo $produto['preco_normal']?>);"><?php echo "Preço: R$".$produto['preco_normal']?></button>
+                <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'nome do produto','',<?php echo $produto['preco_normal']?>, 'descricão do produto está aqui');"><?php echo "Preço: R$".$produto['preco_normal']?></button>
               </div>
             </div>
           </div>
@@ -296,13 +319,11 @@ print($item_item . ".");
     <?php
         }
     ?>
+</div>
 
 </div>
 
-
-
-</div>
-
+<!--Rodapé no final da página-->
 <nav class="navbar bg-dark navbar-dark fixed-bottom"> 
 <div class="container"> 
 <span class="text-muted">Até que enfim foi</span> 
