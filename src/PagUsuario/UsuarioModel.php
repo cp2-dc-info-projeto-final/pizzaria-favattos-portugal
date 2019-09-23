@@ -41,7 +41,7 @@ function CalcularIdade($data) {
 
 function AlterarDados($email,$sexo,$telefone,$rua,$municipio,$complemento,$login){
 
-    // Armazenando dados do usuário
+    // Alterando dados do usuário pelos dados informados
     $dados = PegarDados($login);
     if($email == ""){
         $email = $dados['email'];
@@ -80,6 +80,7 @@ function AlterarDados($email,$sexo,$telefone,$rua,$municipio,$complemento,$login
 
 function AlterarSenha($senhaA,$senha,$Csenha,$login){
     
+    //Alterando e validando a troca de senha requerida 
     $error_list = [];
     $dados = PegarDados($login);
     if(empty($senhaA) || empty($senha) || empty($Csenha)){

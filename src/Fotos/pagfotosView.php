@@ -55,29 +55,30 @@
 
   <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0" style="color:white">Galeria de fotos </h1>
   <div class="container-fluid" style="margin-top:20px;">
-      <h1 style="text-align:center;"><span style ="color:green">Fa</span><span style ="color:white">va</span><span style="color:red">tt</span><span style ="color:green">o</span><span style="color:white">'</span><span style="color:green">s</span>   <span style="color:white">Po</span><span style="color:red">rt</span><span style="color:green">ug</span><span style="color:white">al</span></h1><br>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content-sm">
-                <div class="modal-header-sm">
-                  <h5 class="modal-title" id="exampleModalLabel"></h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body" style ="margin-top:30%" >
-                  <a href="../Imagens/loja.jpg">
-                    <img class="img-fluid img-thumbnail" src="../Imagens/loja.jpg" alt="">
-                    <p><h5>APERTE ESC PARA FECHAR</h5></p>
-                  
-                  </a>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
+  <h1 style="text-align:center;"><span style ="color:green">Fa</span><span style ="color:white">va</span><span style="color:red">tt</span><span style ="color:green">o</span><span style="color:white">'</span><span style="color:green">s</span>   <span style="color:white">Po</span><span style="color:red">rt</span><span style="color:green">ug</span><span style="color:white">al</span></h1><br>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!--Onde cada foto é exebida ao clicar-->
+      <div class="modal-dialog" role="document">
+      <div class="modal-content-sm">
+      <div class="modal-header-sm">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style ="margin-top:30%" >
+        <a href="../Imagens/loja.jpg">
+        <img class="img-fluid img-thumbnail" src="../Imagens/loja.jpg" alt="">
+        <p><h5>APERTE ESC PARA FECHAR</h5></p> 
+        </a>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
   <hr class="mt-2 mb-5">
-
+  
+  <!-- Imagens -->
   <div class="row text-center text-lg-left">
 
     <div class="col-lg-3 col-md-4 col-6">

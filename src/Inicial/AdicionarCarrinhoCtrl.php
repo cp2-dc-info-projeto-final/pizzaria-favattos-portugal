@@ -1,5 +1,6 @@
 <?php
 
+    //Recebendo dados do index
     $id = $_GET["id"];
 
     $nome = $_GET["nome"];
@@ -17,7 +18,7 @@
     session_start();
     //session_destroy();
 
-
+    //Armazenar dados na variável carrinho
     if (!isset($_SESSION["carrinho"]))
     {
         $carrinho = [];
@@ -25,6 +26,7 @@
         $carrinho = $_SESSION["carrinho"];
     }
     
+    //Se o produto já foi adcionado antes, somente aumenta a quantidade
     $encontrado = false;
     for($i = 0; $i < count($carrinho); $i++) {
         if ($carrinho[$i]["id"] == $id && (is_null($tamanho) || $carrinho[$i]["tamanho"] == $tamanho)) {
@@ -33,6 +35,7 @@
         }
     }
 
+    //Insere um novo produto no carrinho 
     if (!$encontrado) {
         $item = array(
             "id" => $id,

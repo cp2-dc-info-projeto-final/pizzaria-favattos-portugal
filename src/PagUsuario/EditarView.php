@@ -90,6 +90,7 @@
   <?php
     require_once("PerfilCtrl.php");
   ?>
+  <!--Inicio do formlário com os dados atuais-->
   <form method="POST" action="EditarCtrl.php"> 
   <h1>Redefinir Dados</h1>
   <div class="form-group">

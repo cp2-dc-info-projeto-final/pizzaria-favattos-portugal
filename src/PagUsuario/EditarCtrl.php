@@ -18,6 +18,7 @@ $rua = $_REQUEST["Rua"];
 $complmento = $_REQUEST["complemento"];
 $municipio = $_REQUEST["municipio"];
 
+//Alterando dados
 $resultAlteracao = AlterarDados($email,$sexo,$telefone,$rua,$municipio,$complmento,$login);
 
 if($resultAlteracao == 1){

@@ -1,7 +1,7 @@
 <?php 
 
     class CarrinhoCtrl {
-
+        //Criação da sessão do carrinho para armazenar os dados
         public function getCarrinho() {
             session_start();
 
