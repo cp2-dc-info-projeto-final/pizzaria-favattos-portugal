@@ -28,10 +28,6 @@
       window.location.replace("AdicionarCarrinhoCtrl.php?id=" + id + "&nome=" + nome + "&tamanho=" + tamanho + "&preco=" + preco + "&descricao=" + descricao);
     }
 
-    function remover_carrinho(id,tamanho){
-      window.location.replace("RemoverCarrinhoCtrl.php?id=" + id + "&nome=" + "&tamanho=" + tamanho);
-    }
-
     //Função para ativar o popover e inseriro seu titulo e corpo
     $(function(){
     $("[data-toggle=popover]").popover({
@@ -106,10 +102,10 @@
         <div class="col">'.$item['preco'].'</div>
         <div class="col">'.$item['tamanho'].'</div>
         <div class="col">'.$item['quantidade'].'</div>
-        <div class="col"><button type="button" class="btn btn-info" onclick="remover_carrinho('.$item['id'].','.$item['tamanho'].')">Remover</button></div>
+        <div class="col"><a  class="btn btn-info" href="RemoverCarrinhoCtrl.php?id='.$item['id'].'&tamanho='.$item['tamanho'].'">Remover</a></div>
         </div> <hr>';
       }
-    echo '<br><button type="button" class="btn btn-danger">Finalizar pedido</button>';
+    echo '<br><a class="btn btn-danger" href="FinalizarPedidoView.php">Finalizar pedido</a>';
     }
     ?>
     </div>
