@@ -41,8 +41,8 @@
           var title = $(this).attr("data-popover-content");
           return $(title).children(".popover-heading").html();
         }
+      });
     });
-});
    
     </script>
 
@@ -105,7 +105,7 @@
         <div class="col"><a  class="btn btn-info" href="RemoverCarrinhoCtrl.php?id='.$item['id'].'&tamanho='.$item['tamanho'].'">Remover</a></div>
         </div> <hr>';
       }
-    echo '<br><a class="btn btn-danger" href="FinalizarPedidoView.php">Finalizar pedido</a>';
+    echo '<br><a class="btn btn-danger" href="../FinalizarPedido/FinalizarPedidoView.php">Finalizar pedido</a>';
     }
     ?>
     </div>
@@ -176,8 +176,8 @@ print($item_item . ".");
         <p class="card-text"><?php echo $produto['descricao']; ?></p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn">
-            <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'nome do produto', 'grande', <?php echo $produto['preco_grande']?>, 'descricão do produto está aqui' );"><?php echo "Grande: R$".$produto['preco_grande']?></button>
-            <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'nome do produto', 'gigante', <?php echo $produto['preco_gigante']?>, 'descricão do produto está aqui' );"><?php echo "Gigante: R$".$produto['preco_gigante']?></button>
+            <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'<?php echo $produto['nome']?>', 'grande', <?php echo $produto['preco_grande']?>, '<?php echo $produto['descricao']?>' );"><?php echo "Grande: R$".$produto['preco_grande']?></button>
+            <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'<?php echo $produto['nome']?>','gigante', <?php echo $produto['preco_gigante']?>, '<?php echo $produto['descricao']?>' );"><?php echo "Gigante: R$".$produto['preco_gigante']?></button>
           </div>
         </div>
       </div>
