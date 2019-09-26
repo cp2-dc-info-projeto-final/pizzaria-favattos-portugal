@@ -26,6 +26,7 @@
     //Envia as informações dos produtos pela URL para o arquivo AdicionarCarrinhoCtrl
     function adicionar_carrinho(id,nome,tamanho,preco, descricao) {
       window.location.replace("AdicionarCarrinhoCtrl.php?id=" + id + "&nome=" + nome + "&tamanho=" + tamanho + "&preco=" + preco + "&descricao=" + descricao);
+      
     }
 
     //Função para ativar o popover e inseriro seu titulo e corpo
@@ -99,7 +100,7 @@
         echo '<div class="row">
         <div class="col">'.$item['nome'].'</div>
         <div class="col">'.$item['descricao'].'</div>
-        <div class="col">'.$item['preco'].'</div>
+        <div class="col">R$ '.$item['preco'].'</div>
         <div class="col">'.$item['tamanho'].'</div>
         <div class="col">'.$item['quantidade'].'</div>
         <div class="col"><a  class="btn btn-info" href="RemoverCarrinhoCtrl.php?id='.$item['id'].'&tamanho='.$item['tamanho'].'">Remover</a></div>
