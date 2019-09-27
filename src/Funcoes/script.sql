@@ -113,3 +113,26 @@ INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria, ima
 ('Del Valle', '(Conferir opções de sabores)', 0, '4.99', 5,'../Imagens/imgfundo.jpg'),
 ('Guaraviton 500ml', ' ', 0, '3.99', 5,'../Imagens/imgfundo.jpg');
 
+
+drop table if exists pedido;
+CREATE TABLE pedido(
+    id int AUTO_INCREMENT,
+    comentario varchar (100),
+    precototal float,
+    diahora datetime,
+    cliente int,
+    primary key (id),
+    foreign key (cliente) references cliente(id)
+);
+
+drop table if exists produtopedido;
+CREATE TABLE produtopedido(
+    id int AUTO_INCREMENT,
+    qtd int,
+    valor float,
+    pedido int,
+    produto int,
+    primary key (id),
+    foreign key (pedido) references pedido(id),
+    foreign key (cliente) references cliente(id)
+);
