@@ -71,18 +71,7 @@
     <li class="nav-item">
       <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a> 
     </li>
-    
-
-  <!-- Dropdown -->
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-      Usuário
-    </a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-      <a class="dropdown-item" href="#">Histórico de compras</a>
-    </div>
-  </li>
+ 
   <!-- O carrinho de compras popover -->
   <li class="nav-item">
   <a href="#" class="btn btn-primary" data-toggle="popover" data-popover-content="#a1" data-placement="top">Carrinho</a>
@@ -121,17 +110,43 @@
   </div>
 
     <!-- Entrar e cadastrar na direita -->
-  <div class ="collapse navbar-collapse" id="collapsibleNavbar">
+    <?php
+
+
+  if(!isset($_SESSION["logi"])){
+ echo '<div class ="collapse navbar-collapse" id="collapsibleNavbar">
     <a class ="navbar-brand"></a>
-    <ul class ="navbar-nav ml-auto">
-    <li class="nav-item">
-      <a class="nav-link" href="../Cadastro/CadastroView.php">Cadastrar</a> 
+  <ul class ="navbar-nav ml-auto">
+ <li class="nav-item">
+   <a class="nav-link" href="../Cadastro/CadastroView.php">Cadastrar</a> 
+ </li>
+ <li class="nav-item">
+   <a class="nav-link" href="../Login/LoginView.php">Entrar</a> 
+ </li>
+  </ul>
+    </div>';
+  }
+  else{
+    $login = $_SESSION["logi"];
+    echo '
+    <ul class ="navbar-nav">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbardrop" data-toggle="dropdown">
+        Usuário
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
+        <a class="dropdown-item" href="#">Histórico de compras</a>
+      </div>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="../Login/LoginView.php">Entrar</a> 
-    </li>
-    </ul>
-    </div>
+    </ul>';
+  }
+
+  
+?>
+  
+
+  <!-- fim da barra de navegação aqui -->
   </nav> 
 
 
