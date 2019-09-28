@@ -1,8 +1,8 @@
 drop database if exists favatto;
 create database favatto;
 use favatto;
-drop table if exists cliente;
-create table cliente (
+drop table if exists usuario;
+create table usuario (
 
     id int AUTO_INCREMENT,
     nome varchar (80),
@@ -16,11 +16,12 @@ create table cliente (
     Rua varchar (120),
     Municipio varchar (30),
     Complemento varchar (50),
+    adm boolean,
     primary key (id)
 );
 
-INSERT INTO cliente (nome,data_nasc,email,telefone,cpf,logi,senha,sexo,Rua,Municipio,Complemento) VALUES
-('Sigismundo','1970/08/29','sigismundo@gmail.com','123456789','49108328900','sigismundo','$2y$10$bPtdRgaMsyNYXOkrwzXI1O3F0vY7PM6kuGcQPjv26yFQnYSWR28.G','Masculino','Rua dos cara barbaro','Duque de Caxias','casa');
+INSERT INTO usuario (nome,data_nasc,email,telefone,cpf,logi,senha,sexo,Rua,Municipio,Complemento,adm) VALUES
+('Sigismundo','1970/08/29','sigismundo@gmail.com','123456789','49108328900','sigismundo','$2y$10$bPtdRgaMsyNYXOkrwzXI1O3F0vY7PM6kuGcQPjv26yFQnYSWR28.G','Masculino','Rua dos cara barbaro','Duque de Caxias','casa',true);
 
 drop table if exists categoria;
 CREATE TABLE categoria (
@@ -120,9 +121,9 @@ CREATE TABLE pedido(
     comentario varchar (100),
     precototal float,
     diahora datetime,
-    cliente int,
+    usuario int,
     primary key (id),
-    foreign key (cliente) references cliente(id)
+    foreign key (usuario) references usuario(id)
 );
 
 drop table if exists produtopedido;
@@ -133,6 +134,5 @@ CREATE TABLE produtopedido(
     pedido int,
     produto int,
     primary key (id),
-    foreign key (pedido) references pedido(id),
-    foreign key (cliente) references cliente(id)
+    foreign key (pedido) references pedido(id)
 );

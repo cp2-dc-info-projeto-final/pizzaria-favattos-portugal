@@ -5,7 +5,7 @@ require_once("../Funcoes/CriaConexao.php");
 //Verifica se o email já foi cadastrado
 function MesmoEmail($email){
     $con = CriarConexao();
-    $dados = $con->prepare('SELECT email FROM cliente WHERE email = :email');
+    $dados = $con->prepare('SELECT email FROM usuario WHERE email = :email');
     $dados->bindValue(':email',$email);
     $dados->execute();
 
@@ -20,7 +20,7 @@ function MesmoEmail($email){
 
 function MesmoLogin($login){
     $con = CriarConexao();
-    $dados = $con->prepare('SELECT logi FROM cliente WHERE logi = :logi');
+    $dados = $con->prepare('SELECT logi FROM usuario WHERE logi = :logi');
     $dados->bindValue(':logi',$login);
     $dados->execute(); 
     if($dados->rowCount() != 0){
@@ -34,7 +34,7 @@ function MesmoLogin($login){
 
 function MesmoCpf($cpf){
     $con = CriarConexao();
-    $dados = $con->prepare('SELECT cpf FROM cliente WHERE cpf = :cpf');
+    $dados = $con->prepare('SELECT cpf FROM usuario WHERE cpf = :cpf');
     $dados->bindValue(':cpf',$cpf);
     $dados->execute();  
     if($dados->rowCount() != 0){
@@ -98,8 +98,8 @@ function CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$Csen
     }
 
     $con = CriarConexao();
-    $inserir = 'INSERT INTO cliente (nome, data_nasc, sexo, email, logi, senha, cpf, municipio, complemento, rua, telefone)
-              VALUES (:nome,:data_nascimento,:sexo,:email,:logi,:senha,:cpf,:municipio,:complemento,:rua,:tel)';
+    $inserir = 'INSERT INTO usuario (nome, data_nasc, sexo, email, logi, senha, cpf, municipio, complemento, rua, telefone,adm)
+              VALUES (:nome,:data_nascimento,:sexo,:email,:logi,:senha,:cpf,:municipio,:complemento,:rua,:tel,:adm)';
     $consulta = $con->prepare($inserir);
     $consulta ->bindValue(':nome', $nome);
     $consulta ->bindValue(':data_nascimento', $data_nascimento);
@@ -112,6 +112,7 @@ function CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$Csen
     $consulta ->bindValue(':complemento', $complemento);
     $consulta ->bindValue(':rua', $rua);
     $consulta ->bindValue(':tel', $tel);
+    $consulta ->bindValue(':adm',false);
 
     return $consulta->execute();
 }

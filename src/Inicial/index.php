@@ -141,14 +141,10 @@
     </li>
     </ul>';
   }
-
-  
 ?>
-  
 
   <!-- fim da barra de navegação aqui -->
   </nav> 
-
 
 <div class="container-fluid" style="margin-top: 100px;">
 <br>
@@ -197,7 +193,7 @@ print($item_item . ".");
 <h1 style="text-align: center">Pizzas </h1><hr>
 <div class="row">
   <?php
-      require_once "ctrl.php";
+      require_once("ctrl.php");
       $produtos = listarProdutos(1);
       
       foreach ($produtos as $produto) {
@@ -211,8 +207,20 @@ print($item_item . ".");
         <p class="card-text"><?php echo $produto['descricao']; ?></p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn">
-            <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'nome do produto', 'grande', <?php echo $produto['preco_grande']?>, 'descricão do produto está aqui' );"><?php echo "Grande: R$".$produto['preco_grande']?></button>
-            <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id']?>,'nome do produto', 'gigante', <?php echo $produto['preco_gigante']?>, 'descricão do produto está aqui' );"><?php echo "Gigante: R$".$produto['preco_gigante']?></button>
+
+          <?php
+          require_once("../PagUsuario/PerfilCtrl.php");
+          
+          if(isset($_SESSION["logi"]) && $dados['adm']){
+            echo "<button type='button' class='btn btn-bg btn-outline-danger'>Editar</button>
+                  <button type='button' class='btn btn-bg btn-outline-danger'>Excluir</button>";
+          }
+          elseif (!isset($_SESSION["logi"]) || !$dados['adm']){
+            echo "<button type='button' class='btn btn-bg btn-outline-danger' onclick='adicionar_carrinho(".$produto['id'].",'nome do produto', 'grande', ".$produto['preco_grande'].", 'descricão do produto está aqui' );'>Grande: R$".$produto['preco_grande']."</button>
+                  <button type='button' class='btn btn-bg btn-outline-danger' onclick='adicionar_carrinho(".$produto['id'].",'nome do produto', 'gigante', ".$produto['preco_gigante'].", 'descricão do produto está aqui' );'>Gigante: R$".$produto['preco_gigante']."</button>";
+          }
+          ?>
+
           </div>
         </div>
       </div>
@@ -236,7 +244,7 @@ print($item_item . ".");
     ?>
     <div class="col-md-4" style="max-width: 777px;">
         <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="<?php echo $produto['imagem'];?>" alt="<?php echo $produto['nome']; ?>">
+          <img class="card-img-top" src="<?php $produto['imagem'];?>" alt="<?php echo $produto['nome']; ?>">
           <div class="card-body">
             <h6> <?php echo $produto['nome']; ?> </h6>
             <p class="card-text"><?php echo $produto['descricao']; ?></p>

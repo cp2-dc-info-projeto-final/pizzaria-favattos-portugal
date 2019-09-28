@@ -1,5 +1,5 @@
 <?php
-function PegarDados($categoria){
+function PegarProdutos($categoria){
     //Armazenando dados do produto de acordo com a categoria na variável $dados
     require_once("../Funcoes/CriaConexao.php");
     $con = CriarConexao();

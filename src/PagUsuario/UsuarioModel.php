@@ -4,7 +4,7 @@ function PegarDados($login){
     //Armazenando dados do usário logado na variável $dados
     require_once("../Funcoes/CriaConexao.php");
     $con = CriarConexao();
-    $consulta = $con->prepare("SELECT * FROM cliente WHERE email = :login or logi = :login");
+    $consulta = $con->prepare("SELECT * FROM usuario WHERE email = :login or logi = :login");
     $consulta->bindValue(':login', $login);
     $consulta->execute();
     $dados = $consulta->fetch();
@@ -59,7 +59,7 @@ function AlterarDados($email,$sexo,$telefone,$rua,$municipio,$complemento,$login
         $complemento = $dados['complemento'];
     }
     $con = CriarConexao();
-    $consulta = $con->prepare('UPDATE cliente SET email=:email, sexo=:sexo, telefone=:telefone, municipio=:municipio, complemento=:complemento, rua=:rua WHERE logi = :logi');
+    $consulta = $con->prepare('UPDATE usuario SET email=:email, sexo=:sexo, telefone=:telefone, municipio=:municipio, complemento=:complemento, rua=:rua WHERE logi = :logi');
     $consulta->bindValue(':email',$email);
     $consulta->bindValue(':sexo',$sexo);
     $consulta->bindValue(':telefone',$telefone);
@@ -99,7 +99,7 @@ function AlterarSenha($senhaA,$senha,$Csenha,$login){
     }
 
     $con = CriarConexao();
-    $consulta = $con->prepare('UPDATE cliente SET senha=:senha WHERE logi = :logi');
+    $consulta = $con->prepare('UPDATE usuario SET senha=:senha WHERE logi = :logi');
     $consulta->bindValue(':senha',$senha);
     $consulta->bindValue(':logi',$login);
     return $consulta->execute();
