@@ -97,7 +97,7 @@
     <option value="Queimados">QUEIMADOS</option>
     <option value="São João de Meriti">SÃO JOAO DE MERITI</option>
     <option value="Seropedica">SEROPEDICA</option>
-    <select><br>
+    </select><br>
 
     <div class="form-row">
       <div class="form-group col-md-6"> 
