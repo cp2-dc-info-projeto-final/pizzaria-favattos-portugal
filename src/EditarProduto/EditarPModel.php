@@ -1,32 +1,47 @@
 <?php
-function AlterarDados($email,$sexo,$telefone,$rua,$municipio,$complemento,$login){
+require_once("../Funcoes/CriaConexao.php");
+
+function BuscarProduto($id){
+    //Armazenando dados do produto na variável $dados
+    $con = CriarConexao();
+    $consulta = $con->prepare("SELECT * FROM produto WHERE id = :id");
+    $consulta->bindValue(':id',$id);
+    $consulta->execute();
+    $dados = $consulta->fetch();
+    return $dados;
+}
+
+function AlterarDados($nome,$descricao,$preco,$precoM,$precoG,$precoGG,$id){
 
 // Alterando dados do usuário pelos dados informados
-$dados = PegarDados($login);
-if($email == ""){
-    $email = $dados['email'];
+$dados = BuscarProduto($id);
+if($nome == ""){
+    $nome = $dados['nome'];
 }
-if($telefone == ""){
-    $telefone = $dados['telefone'];
+if($descricao == ""){
+    $descricao = $dados['descricao'];
 }
-if($rua == ""){
-    $rua = $dados['rua'];
+if($preco == ""){
+    $preco = $dados['preco_normal'];
 }
-if($municipio == ""){
-    $municipio = $dados['municipio'];
+if($precoM == ""){
+    $precoM = $dados['preco_medio'];
 }
-if($complemento == ""){
-    $complemento = $dados['complemento'];
+if($precoG == ""){
+    $precoG = $dados['preco_grande'];
+}
+if($precoGG == ""){
+    $precoGG = $dados['preco_gigante'];
 }
 $con = CriarConexao();
-$consulta = $con->prepare('UPDATE usuario SET email=:email, sexo=:sexo, telefone=:telefone, municipio=:municipio, complemento=:complemento, rua=:rua WHERE logi = :logi');
-$consulta->bindValue(':email',$email);
-$consulta->bindValue(':sexo',$sexo);
-$consulta->bindValue(':telefone',$telefone);
-$consulta->bindValue(':rua',$rua);
-$consulta->bindValue(':municipio',$municipio);
-$consulta->bindValue(':complemento',$complemento);
-$consulta->bindValue(':logi',$login);
+$consulta = $con->prepare('UPDATE produto SET nome=:nome, descricao=:descricao, preco_normal=:preco_normal, preco_medio=:preco_medio, preco_grande=:preco_grande, preco_gigante=:preco_gigante WHERE id = :id');
+$consulta->bindValue(':nome',$nome);
+$consulta->bindValue(':descricao',$descricao);
+$consulta->bindValue(':preco_normal',$preco);
+$consulta->bindValue(':preco_medio',$precoM);
+$consulta->bindValue(':preco_grande',$precoG);
+$consulta->bindValue(':preco_gigante',$precoGG);
+$consulta->bindValue(':id',$id);
 $consulta->execute();
 
 if($consulta->rowCount() > 0){
