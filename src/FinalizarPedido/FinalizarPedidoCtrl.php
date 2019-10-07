@@ -15,8 +15,10 @@ require_once("../PagUsuario/UsuarioModel.php");
 
 $dados = Pegardados($login);
 $carrinho = ReceberCarrinho();
+$usuarioId = $dados['id'];
 $formaPag = $_REQUEST["Formapag"];
 $comentario = $_REQUEST["comentario"];
+$precoTotal = 
 
 
 

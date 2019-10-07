@@ -119,9 +119,10 @@ drop table if exists pedido;
 CREATE TABLE pedido(
     id int AUTO_INCREMENT,
     comentario varchar (100),
+    formaPag varchar(30),
     precototal float,
     diahora datetime,
-    usuario int,
+    usuarioId int,
     primary key (id),
     foreign key (usuario) references usuario(id)
 );

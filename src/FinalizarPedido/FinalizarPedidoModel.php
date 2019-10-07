@@ -7,24 +7,27 @@ function ReceberCarrinho(){
     return $carrinho;
 }
 
-function CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$Csenha,$cpf,$municipio,$complemento,$rua,$tel){
-
+function AdicionaPedido($comentario, $formaPag, $precoTotal, $diahora, $usuarioId){
     $con = CriarConexao();
-    $inserir = 'INSERT INTO cliente (nome, data_nasc, sexo, email, logi, senha, cpf, municipio, complemento, rua, telefone)
-              VALUES (:nome,:data_nascimento,:sexo,:email,:logi,:senha,:cpf,:municipio,:complemento,:rua,:tel)';
+    $inserir = 'INSERT INTO pedido (comentario,formaPag,precototal,diahora,usuarioId)
+                VALUES (:comentario,:formaPag,:precototal,:diahora,:usuarioId)';
     $consulta = $con->prepare($inserir);
-    $consulta ->bindValue(':nome', $nome);
-    $consulta ->bindValue(':data_nascimento', $data_nascimento);
-    $consulta ->bindValue(':sexo', $sexo);
-    $consulta ->bindValue(':email', $email);
-    $consulta ->bindValue(':logi', $login);
-    $consulta ->bindValue(':senha', $senha);
-    $consulta ->bindValue(':cpf', $cpf);
-    $consulta ->bindValue(':municipio', $municipio);
-    $consulta ->bindValue(':complemento', $complemento);
-    $consulta ->bindValue(':rua', $rua);
-    $consulta ->bindValue(':tel', $tel);
+    $consulta ->bindValue(':comentario', $comentario);
+    $consulta ->bindValue(':fomraPag', $formaPag);
+    $consulta ->bindValue(':precototal', $precoTotal);
+    $consulta ->bindValue(':diahora', $diahora);
+    $consulta ->bindValue(':usuarioId', $usuarioId);
+    return $consulta->execute();
+}
 
+function AdicionaProdutoPedido($idProduto,$idPedido,$qtd){
+    $con = CriarConexao();
+    $inserir = 'INSERT INTO produtopedido (idProduto,idPedido,qtd)
+                VALUES (:idProduto,:idPedido,:qtd,)';
+    $consulta = $con->prepare($inserir);
+    $consulta ->bindValue(':idProduto', $idProduto);
+    $consulta ->bindValue(':idPedido', $idPedido);
+    $consulta ->bindValue(':qtd', $qtd);
     return $consulta->execute();
 }
 
