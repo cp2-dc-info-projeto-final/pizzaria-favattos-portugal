@@ -207,17 +207,24 @@
                   <?php
                     require_once("../PagUsuario/PerfilCtrl.php");
 
-                    if (isset($_SESSION["logi"]) && $dados['adm']) {
-                      ?>
-                    <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
-                    <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a>                  <?php
-                    } elseif (!isset($_SESSION["logi"]) || !$dados['adm']) {
+                    if (isset($login)) {
+                      $dados = PegardadosCtrl($login);
+                      if ($dados['adm']) {
+
+                        ?>
+                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
+                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a>                  <?php
+                      } 
+                    }
+                    elseif (!isset($login) || !$dados['adm']) {
                       ?>
                     <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id'] ?>,'<?php echo $produto['nome'] ?>', 'grande', <?php echo $produto['preco_grande'] ?>, '<?php echo $produto['descricao'] ?>' );"><?php echo "Grande: R$" . $produto['preco_grande'] ?></button>
                     <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id'] ?>,'<?php echo $produto['nome'] ?>','gigante', <?php echo $produto['preco_gigante'] ?>, '<?php echo $produto['descricao'] ?>' );"><?php echo "Gigante: R$" . $produto['preco_gigante'] ?></button>
-                  <?php
+                    <?php
                     }
                     ?>
+                  
+                    
 
                 </div>
               </div>

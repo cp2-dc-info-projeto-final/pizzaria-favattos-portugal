@@ -69,6 +69,8 @@
 
     <?php
     require_once("PerfilCtrl.php");
+    $dados = PegardadosCtrl($login);
+    $idade = CalcularIdadeCtrl($dados);
     ?>
 
     <h1>Seus dados</h1>

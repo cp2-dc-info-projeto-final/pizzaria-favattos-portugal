@@ -4,18 +4,24 @@
 
     $tamanho = $_GET["tamanho"];
 
+    session_start();
+
     if (!isset($_SESSION["carrinho"]))
     {
         $carrinho = [];
     } else {
         $carrinho = $_SESSION["carrinho"];
+        $novo_carrinho = [];
     }
 
-    for($i=0; $i < count($carrinho); $i++){
-        if($carrinho[$i]["id"] == $id && $carrinho[$i]["tamanho"] == $tamanho){
-            unset($_SESSION["carrinho"][$i]);
+    for($i = 0; $i < count($carrinho); $i++){
+        if (!($carrinho[$i]["id"] == $id && $carrinho[$i]["tamanho"] == $tamanho)){
+            array_push($novo_carrinho, $carrinho[$i]);
         }
     }
 
-    header("Location: Index.php");
+    $_SESSION["carrinho"] = $novo_carrinho;
+
+   header("Location: Index.php");
+   exit();
 ?>
