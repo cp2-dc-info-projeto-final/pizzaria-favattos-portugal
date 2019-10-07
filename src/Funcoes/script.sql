@@ -128,11 +128,10 @@ CREATE TABLE pedido(
 
 drop table if exists produtopedido;
 CREATE TABLE produtopedido(
-    id int AUTO_INCREMENT,
+    idPedido int,
+    idProduto int,
     qtd int,
-    valor float,
-    pedido int,
-    produto int,
-    primary key (id),
-    foreign key (pedido) references pedido(id)
+    primary key (idPedido, idProduto),
+    foreign key (idPedido) references pedido(id),
+    foreign key (idProduto) references produto(id)
 );
