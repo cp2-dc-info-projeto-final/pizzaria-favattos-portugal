@@ -45,6 +45,7 @@
   <?php
   session_start();
   require_once("HistoricoModel.php");
+  
   ?>
 <div class="container-fluid" style="margin-top: 100px;">
 <br>
