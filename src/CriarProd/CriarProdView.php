@@ -1,7 +1,7 @@
 <!doctype html> 
 <html> 
   <head> 
-    <title> Editar Produto </title> 
+    <title> Criar Produto </title> 
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
     <link rel ="stylesheet" href ="../Estilo/bootstrap-4.1.3-dist/css/bootstrap.min.css">
