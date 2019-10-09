@@ -9,7 +9,6 @@
     <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
     <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
     <script src="../Funcoes/ScriptInput.js"></script>
-
   </head> 
   
   <body>
@@ -39,13 +38,15 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
       <a class="dropdown-item" href="#">Histórico de compras</a>
-      <a class="dropdown-item" href="#">Link 3</a>
     </div>
   </li>  
   </div>
   </nav> 
-
-
+  <?php
+  session_start();
+  require_once("HistoricoModel.php");
+  
+  ?>
 <div class="container-fluid" style="margin-top: 100px;">
 <br>
 
