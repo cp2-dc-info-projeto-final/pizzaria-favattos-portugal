@@ -1,11 +1,8 @@
 <?php
 
-session_start();
-require_once("FinalizarPedidoMode.php");
-
 if(!isset($_SESSION["logi"])){
-  header("location: ../Login/LoginView.php");
-  exit();
+  /*header("location: ../Login/LoginView.php");
+  exit();*/
 }
 else{
   $login = $_SESSION["logi"];
@@ -20,7 +17,7 @@ $usuarioId = $dados['id'];
 $formaPag = $_REQUEST["Formapag"];
 $comentario = $_REQUEST["comentario"];
 $precoTotal = 0;
-date_default_timezone_set(‘America/Rio_de_Janeiro’);
+date_default_timezone_set(‘America/Sao_Paulo’);
 $datahora = date('d/m/Y às H:i:s');
 foreach ($carrinho as $item) {
   $precoTotal += $item['preco'];

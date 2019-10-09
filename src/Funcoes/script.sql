@@ -124,7 +124,7 @@ CREATE TABLE pedido(
     diahora varchar(60),
     usuarioId int,
     primary key (id),
-    foreign key (usuario) references usuario(id)
+    foreign key (usuarioId) references usuario(id)
 );
 
 drop table if exists produtopedido;

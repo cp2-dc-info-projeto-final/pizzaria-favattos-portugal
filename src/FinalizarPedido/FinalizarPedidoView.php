@@ -102,7 +102,7 @@
     </div>
     <div class="form-group">
     <label for="comentario">Adicionar Comentário:</label>
-    <textarea class="form-control" id="comentario" rows="3"></textarea>
+    <textarea class="form-control" name ="comentario" id="comentario" rows="3"></textarea>
     </div>
     <b>OBS: O endereço utilizado será o cadastrado. Caso queria alterar: </b><a class="badge badge-primary" href="../PagUsuario/EditarView.php">Alterar</a>
     <hr>
