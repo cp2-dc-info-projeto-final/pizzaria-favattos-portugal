@@ -17,7 +17,14 @@ function AdicionaPedido($comentario, $formaPag, $precoTotal, $diahora, $usuarioI
     $consulta ->bindValue(':precototal', $precoTotal);
     $consulta ->bindValue(':diahora', $diahora);
     $consulta ->bindValue(':usuarioId', $usuarioId);
-    return $consulta->execute();
+    $consulta->execute();
+
+    if($consulta->rowCount() > 0){
+        return 1;
+    }
+    else{
+        return 0;
+    }
 }
 
 function AdicionaProdutoPedido($idProduto,$idPedido,$qtd){
@@ -28,7 +35,20 @@ function AdicionaProdutoPedido($idProduto,$idPedido,$qtd){
     $consulta ->bindValue(':idProduto', $idProduto);
     $consulta ->bindValue(':idPedido', $idPedido);
     $consulta ->bindValue(':qtd', $qtd);
-    return $consulta->execute();
+    $consulta->execute();
+
+    if($consulta->rowCount() > 0){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
+function PegaIdPedido(){
+    $con = CriarConexao();
+    $id = $con->lastInsertId();
+    return $id;
 }
 
 

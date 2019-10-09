@@ -121,7 +121,7 @@ CREATE TABLE pedido(
     comentario varchar (100),
     formaPag varchar(30),
     precototal float,
-    diahora datetime,
+    diahora varchar(60),
     usuarioId int,
     primary key (id),
     foreign key (usuario) references usuario(id)
