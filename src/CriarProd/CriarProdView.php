@@ -110,3 +110,5 @@
 </nav> 
 </body> 
 </html>
+
+<!--https://forum.imasters.com.br/topic/534442-sistema-de-inserir-foto-igual-do-perfil-do-facebook/-->
