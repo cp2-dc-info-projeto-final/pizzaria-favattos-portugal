@@ -1,42 +1,49 @@
 <?php
 
-if(!isset($_SESSION["logi"])){
-  /*header("location: ../Login/LoginView.php");
-  exit();*/
-}
-else{
-  $login = $_SESSION["logi"];
-}
+session_start();  
 
-require_once("FinalizarPedidoModel.php");
-require_once("../PagUsuario/UsuarioModel.php");
-
-$dados = Pegardados($login);
-$carrinho = ReceberCarrinho();
-$usuarioId = $dados['id'];
-$formaPag = $_REQUEST["Formapag"];
-$comentario = $_REQUEST["comentario"];
-$precoTotal = 0;
-date_default_timezone_set(‘America/Sao_Paulo’);
-$datahora = date('d/m/Y às H:i:s');
-foreach ($carrinho as $item) {
-  $precoTotal += $item['preco'];
+function ReceberCarrinho(){
+  require_once "../Inicial/CarrinhoCtrl.php";
+  $ctrl = new CarrinhoCtrl();
+  $carrinho = $ctrl->getCarrinho($_SESSION);
+  return $carrinho;
 }
 
-$Pedido = AdicionaPedido($comentario,$formaPag,$precoTotal,$diahora,$usuarioId);
-if($Pedido == 1){
-  $PedidoId = PegaIdPedido();
-  foreach ($carrinho as $item){
-    $ProdutoPedido = AdicionaProdutoPedido($item['id'],$PedidoId,$item['quantidade']);
-    if($ProdutoPedido == 0){
-      break;
-      header('Location: FinalizarPedidoView.php?erros='.urlencode("Ocorreu algum erro"));
-      exit();
-    }
+function FecharCompra($request) {
+  if(!isset($_SESSION["logi"])){
+    /*header('Location: FinalizarPedidoView.php?erros='.urlencode("O login precisa ser efetuado para finalizar o pedido"));
+    exit();*/
   }
-}else{
-  header('Location: FinalizarPedidoView.php?erros='.urlencode("Ocorreu algum erro"));
-  exit();
+  else{
+    $login = $_SESSION["logi"];
+  }
+  
+  require_once("FinalizarPedidoModel.php");
+  require_once("../PagUsuario/UsuarioModel.php");
+  
+  $dados = Pegardados($login);
+  $carrinho = ReceberCarrinho();
+  $usuarioId = $dados['id'];
+  $formaPag = $request["Formapag"];
+  $comentario = $request["comentario"];
+  $precoTotal = 0;
+  $datahora = date('Y-m-d H:i:s');
+  foreach ($carrinho as $item) {
+    $precoTotal += $item['preco'] * $item['quantidade'];
+  }
+  
+  $Pedido = AdicionaPedido($comentario,$formaPag,$precoTotal,$datahora,$usuarioId,$carrinho);
+  if($Pedido == 1){
+    //
+    header('Location: ../Inicial/index.php');
+  }else{
+    header('Location: FinalizarPedidoView.php?erros='.urlencode("Ocorreu algum erro"));
+    exit();
+  }
+}
+
+if (!empty($_POST)) {
+  FecharCompra($_POST);
 }
 
 ?>

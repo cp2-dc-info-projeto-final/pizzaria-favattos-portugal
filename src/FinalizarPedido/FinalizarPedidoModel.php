@@ -1,30 +1,33 @@
 <?php
 
-function ReceberCarrinho(){
-    require_once "../Inicial/CarrinhoCtrl.php";
-    $ctrl = new CarrinhoCtrl();
-    $carrinho = $ctrl->getCarrinho();
-    return $carrinho;
-}
-
-function AdicionaPedido($comentario, $formaPag, $precoTotal, $diahora, $usuarioId){
+function AdicionaPedido($comentario, $formaPag, $precoTotal, $diahora, $usuarioId, $carrinho){
     $con = CriarConexao();
     $inserir = 'INSERT INTO pedido (comentario,formaPag,precototal,diahora,usuarioId)
                 VALUES (:comentario,:formaPag,:precototal,:diahora,:usuarioId)';
     $consulta = $con->prepare($inserir);
-    $consulta ->bindValue(':comentario', $comentario);
-    $consulta ->bindValue(':fomraPag', $formaPag);
+    $consulta ->bindValue(':comentario', $comentario, PDO::PARAM_STR);
+    $consulta ->bindValue(':formaPag', $formaPag, PDO::PARAM_STR);
     $consulta ->bindValue(':precototal', $precoTotal);
-    $consulta ->bindValue(':diahora', $diahora);
-    $consulta ->bindValue(':usuarioId', $usuarioId);
+    $consulta ->bindValue(':diahora', $diahora, PDO::PARAM_STR);
+    #echo $diahora;
+    #exit();
+    $consulta ->bindValue(':usuarioId', $usuarioId, PDO::PARAM_INT);
     $consulta->execute();
 
-    if($consulta->rowCount() > 0){
-        return 1;
+    if($consulta->rowCount() == 0){
+        return false;
     }
-    else{
-        return 0;
+
+    $PedidoId = $con->lastInsertId();
+
+    foreach ($carrinho as $item){
+        $ProdutoPedido = AdicionaProdutoPedido($item['id'],$PedidoId,$item['quantidade']);
+        if(!$ProdutoPedido){
+            return false;
+        }
     }
+
+    return true;
 }
 
 function AdicionaProdutoPedido($idProduto,$idPedido,$qtd){
@@ -38,18 +41,11 @@ function AdicionaProdutoPedido($idProduto,$idPedido,$qtd){
     $consulta->execute();
 
     if($consulta->rowCount() > 0){
-        return 1;
+        return true;
     }
     else{
-        return 0;
+        return false;
     }
 }
-
-function PegaIdPedido(){
-    $con = CriarConexao();
-    $id = $con->lastInsertId();
-    return $id;
-}
-
 
 ?>

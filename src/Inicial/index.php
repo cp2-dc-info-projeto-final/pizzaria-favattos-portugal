@@ -75,10 +75,11 @@
               Carrinho de compras
             </div>
             <div id="carrinho" class="popover-body">
-              <?php
+            <?php
+             session_start();
              require_once "CarrinhoCtrl.php";
              $ctrl = new CarrinhoCtrl();
-             $carrinho = $ctrl->getCarrinho();
+             $carrinho = $ctrl->getCarrinho($_SESSION);
          
              if(count($carrinho) == null){
                echo 'Carrinho vazio, favor adicionar produtos aqui... rs';
