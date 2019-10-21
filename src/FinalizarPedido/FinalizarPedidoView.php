@@ -54,10 +54,25 @@
   <div class="container" style="margin-top: 150px">
   <div class="shadow p-3 mb-5 bg-white rounded">
   
+  <!-- Caixa de erros -->
+  <?php
+        foreach($_REQUEST as $item){
+          foreach (explode("|", $item) as $item_item) {
+      ?>
+      <div class="alert alert-danger" role="alert">
+      <?php
+      print($item_item . ".");
+      ?>
+      </div>
+      <?php
+        }
+      }
+    ?>
+    
   <?php 
-    require_once "../Inicial/CarrinhoCtrl.php";
-    $ctrl = new CarrinhoCtrl();
-    $carrinho = $ctrl->getCarrinho();
+    require_once("FinalizarPedidoCtrl.php");
+
+    $carrinho = ReceberCarrinho();
 
     if(count($carrinho) == null){
       echo 'Carrinho vazio, favor adicionar produtos aqui... rs';
@@ -102,7 +117,7 @@
     </div>
     <div class="form-group">
     <label for="comentario">Adicionar Comentário:</label>
-    <textarea class="form-control" id="comentario" rows="3"></textarea>
+    <textarea class="form-control" name ="comentario" id="comentario" rows="3"></textarea>
     </div>
     <b>OBS: O endereço utilizado será o cadastrado. Caso queria alterar: </b><a class="badge badge-primary" href="../PagUsuario/EditarView.php">Alterar</a>
     <hr>
