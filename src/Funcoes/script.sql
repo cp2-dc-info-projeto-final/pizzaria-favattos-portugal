@@ -131,8 +131,9 @@ drop table if exists produtopedido;
 CREATE TABLE produtopedido(
     idPedido int,
     idProduto int,
+    tamanho varchar(30),
     qtd int,
-    primary key (idPedido, idProduto),
+    primary key (idPedido, idProduto, tamanho),
     foreign key (idPedido) references pedido(id),
     foreign key (idProduto) references produto(id)
 );

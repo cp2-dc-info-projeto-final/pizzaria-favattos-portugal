@@ -21,7 +21,7 @@ function AdicionaPedido($comentario, $formaPag, $precoTotal, $diahora, $usuarioI
     $PedidoId = $con->lastInsertId();
 
     foreach ($carrinho as $item){
-        $ProdutoPedido = AdicionaProdutoPedido($item['id'],$PedidoId,$item['quantidade']);
+        $ProdutoPedido = AdicionaProdutoPedido($item['id'],$PedidoId,$item['tamanho'],$item['quantidade']);
         if(!$ProdutoPedido){
             return false;
         }
@@ -30,13 +30,14 @@ function AdicionaPedido($comentario, $formaPag, $precoTotal, $diahora, $usuarioI
     return true;
 }
 
-function AdicionaProdutoPedido($idProduto,$idPedido,$qtd){
+function AdicionaProdutoPedido($idProduto,$idPedido,$tamanho,$qtd){
     $con = CriarConexao();
-    $inserir = 'INSERT INTO produtopedido (idProduto,idPedido,qtd)
-                VALUES (:idProduto,:idPedido,:qtd,)';
+    $inserir = 'INSERT INTO produtopedido (idProduto,idPedido,tamanho,qtd)
+                VALUES (:idProduto,:idPedido,:tamanho,:qtd)';
     $consulta = $con->prepare($inserir);
     $consulta ->bindValue(':idProduto', $idProduto);
     $consulta ->bindValue(':idPedido', $idPedido);
+    $consulta ->bindValue(':tamanho', $tamanho);
     $consulta ->bindValue(':qtd', $qtd);
     $consulta->execute();
 
