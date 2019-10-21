@@ -32,7 +32,7 @@ function MesmaDescricao($descricao){
 }
 
 
-function CadastraProduto($nome,$descricao,$qtdd_vendida,$preco_normal,$preco_medio,$preco_grande,$preco_gigante,$categoria){
+function CadastraProduto($nome,$descricao,$qtdd_vendida,$preco_normal,$preco_medio,$preco_grande,$preco_gigante,$categoria,$imagem){
 
     $error_list = [];
     if(MesmoNome($nome) == 1){
@@ -43,8 +43,8 @@ function CadastraProduto($nome,$descricao,$qtdd_vendida,$preco_normal,$preco_med
     }
     
     $con = CriarConexao();
-    $inserir = 'INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, preco_medio, preco_grande, preco_gigante, categoria)
-              VALUES (:nome, :descricao, :qtdd_vendida, :preco_normal, :preco_medio, :preco_grande, :preco_gigante, :categoria)';
+    $inserir = 'INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, preco_medio, preco_grande, preco_gigante, categoria, imagem)
+              VALUES (:nome, :descricao, :qtdd_vendida, :preco_normal, :preco_medio, :preco_grande, :preco_gigante, :categoria, :imagem)';
     $consulta = $con->prepare($inserir);
     $consulta ->bindValue(':nome', $nome);
     $consulta ->bindValue(':descricao', $descricao);
@@ -54,7 +54,7 @@ function CadastraProduto($nome,$descricao,$qtdd_vendida,$preco_normal,$preco_med
     $consulta ->bindValue(':preco_grande', $preco_grande);
     $consulta ->bindValue(':preco_gigante', $preco_gigante);
     $consulta ->bindValue(':categoria', $categoria);
-    //$consulta ->bindValue(':imagem', $imagem);
+    $consulta ->bindValue(':imagem', $imagem);
 
     return $consulta->execute();
 }

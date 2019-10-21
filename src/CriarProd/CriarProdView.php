@@ -54,14 +54,36 @@
 
     <form method="POST" action="CriarProdCtrl.php"> 
     <h1 style="font-size:28px">Criar Produto</h1>
-    <div class="form-group">
+    <div class="row">
+    <div class="col"><div class="form-group">
     <label for ="nome"> Nome </label> 
     <input type ="text" class="form-control" name="nome" id= "nome" maxlength="40" placeholder="">
-    </div> 
+    </div>
     <div class="form-group">
     <label for ="descricao"> Descrição </label> 
     <input type ="text" class="form-control" name ="descricao" id= "descricao" maxlength="100" placeholder=""> 
     </div>
+    <label for="Categoria">Categoria</label>
+    <select name="Categoria" id="Categoria" class="form-control">
+    <option value="" disabled selected>Selecione a categoria</option>
+	  <option value="1">Pizza</option>
+    <option value="2">Hamburguer</option>
+    <option value="3">Combos</option>
+    <option value="4">Batatas</option>
+    <option value="5">Bebidas</option>
+    <option value="6">Bordas</option>
+    </select>
+    </div>
+    <div class="col"><div class="file-field" style="style=width: 400px; padding-left: 80px;">
+    <div class="z-depth-1-half mb-4">
+      <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" class="img-fluid" style="width: 350px;">
+    </div>
+    <div class="d-flex justify-content-center">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+        <input type="file" style="color:transparent;" name="img" id="img">
+    </div>
+    </div></div></div>
+    <br>
     <div class="row">
     <div class="col"><div class="form-group">
     <label for ="precoP"> Preço Pequeno</label> 
@@ -80,17 +102,7 @@
     <label for ="precoGG"> Preço Gigante</label> 
     <input type ="text" class="form-control" name ="precoGG" id="precoGG" maxlength="6" pattern="[\d,.]*" placeholder="">
     </div></div></div>
-
-    <label for="Categoria">Categoria</label>
-    <select name="Categoria" id="Categoria" class="form-control">
-    <option value="" disabled selected>Selecione a categoria</option>
-	<option value="1">Pizza</option>
-    <option value="2">Hamburguer</option>
-    <option value="3">Combos</option>
-    <option value="4">Batatas</option>
-    <option value="5">Bebidas</option>
-    <option value="6">Bordas</option>
-    </select><br>
+    <br><br>
 
     <center> 
     <input type= "submit" class= "btn btn-outline-success" value="Criar Produto">
