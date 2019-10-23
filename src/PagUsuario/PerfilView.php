@@ -47,18 +47,25 @@
           <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
     </li>
     <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Usuário
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-        <a class="dropdown-item" href="#">Histórico de compras</a>
-        <a class="dropdown-item" href="#">Link 3</a>
-      </div>
-    </li>
   </ul>
   </div>
+  <?php
+  if(isset($_SESSION['logi'])){
+    echo '
+    <ul class ="navbar-nav">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbardrop" data-toggle="dropdown">
+        Usuário
+      </a>
+      <div class="dropdown-menu dropdown-menu-right">
+        <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
+        <a class="dropdown-item" href="#">Histórico de compras</a>
+      </div>
+    </li>
+    </ul>';
+  }
+
+  ?>
   </nav>  
 
  

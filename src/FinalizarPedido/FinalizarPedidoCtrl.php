@@ -1,6 +1,6 @@
 <?php
 
-session_start();  
+session_start();
 
 function ReceberCarrinho(){
   require_once "../Inicial/CarrinhoCtrl.php";
@@ -11,8 +11,8 @@ function ReceberCarrinho(){
 
 function FecharCompra($request) {
   if(!isset($_SESSION["logi"])){
-    /*header('Location: FinalizarPedidoView.php?erros='.urlencode("O login precisa ser efetuado para finalizar o pedido"));
-    exit();*/
+    header('Location: FinalizarPedidoView.php?erros='.urlencode("O login precisa ser efetuado para finalizar o pedido"));
+    exit();
   }
   else{
     $login = $_SESSION["logi"];
@@ -35,7 +35,7 @@ function FecharCompra($request) {
   $Pedido = AdicionaPedido($comentario,$formaPag,$precoTotal,$datahora,$usuarioId,$carrinho);
   if($Pedido == 1){
     //
-    header('Location: ../Inicial/index.php');
+    header('Location: Pedidofinalizado.php');
   }else{
     header('Location: FinalizarPedidoView.php?erros='.urlencode("Ocorreu algum erro"));
     exit();

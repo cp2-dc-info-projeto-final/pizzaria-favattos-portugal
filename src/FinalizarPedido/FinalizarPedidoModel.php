@@ -1,5 +1,10 @@
 <?php
 
+if(!isset($_SESSION["logi"])){
+    header('Location: FinalizarPedidoView.php?erros='.urlencode("O login precisa ser efetuado para finalizar o pedido"));
+    exit();
+  } 
+
 function AdicionaPedido($comentario, $formaPag, $precoTotal, $diahora, $usuarioId, $carrinho){
     $con = CriarConexao();
     $inserir = 'INSERT INTO pedido (comentario,formaPag,precototal,diahora,usuarioId)

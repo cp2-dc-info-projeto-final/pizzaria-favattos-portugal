@@ -129,7 +129,7 @@
       <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbardrop" data-toggle="dropdown">
         Usuário
       </a>
-      <div class="dropdown-menu">
+      <div class="dropdown-menu dropdown-menu-right">
         <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
         <a class="dropdown-item" href="#">Histórico de compras</a>
       </div>
@@ -421,7 +421,7 @@
   </div>
 
   <!--Rodapé no final da página-->
-  <nav class="navbar bg-dark navbar-dark fixed-bottom">
+  <nav class="navbar bg-dark navbar-dark bottom">
     <div class="container">
       <span class="text-muted">Até que enfim foi</span>
   </nav>
