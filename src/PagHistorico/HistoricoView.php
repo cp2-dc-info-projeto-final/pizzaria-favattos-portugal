@@ -42,13 +42,30 @@
   </li>  
   </div>
   </nav> 
+
+  
+<div class="container-fluid" style="margin-top: 100px;">
+<br>
+<table>
   <?php
   session_start();
   require_once("HistoricoModel.php");
-  
+  $historico = recuperarHistorico();
+  foreach($historico as $row) {
   ?>
-<div class="container-fluid" style="margin-top: 100px;">
-<br>
+    <tr>
+      <td><?php echo $row['id']?></td>
+      <td><?php echo $row['diahora']?></td>
+      <td><?php echo $row['precototal']?></td>
+      <td><?php echo $row['formaPag']?></td>
+      <td><?php echo $row['nome']?></td>
+      <td><?php echo $row['telefone']?></td>
+      <td><?php echo $row['produto']?></td>
+    </tr>
+  <?php
+  }
+  ?>
+  </table>
 
 
 <!--Rodapé no final da página-->
