@@ -26,17 +26,19 @@
 
     <!-- Caixa de erros -->
     <?php
-      foreach($_REQUEST as $item){
-        foreach (explode("|", $item) as $item_item) {
-    ?>
-    <div class="alert alert-danger" role="alert">
-    <?php
-    print($item_item . ".");
-    ?>
-    </div>
-    <?php
+      if (isset($_REQUEST['erros'])) {
+        $erros = $_REQUEST['erros'];
+        foreach (explode("|", $erros) as $erros_item) {
+          ?>
+          <div class="alert alert-danger" role="alert">
+          <?php
+          print($erros_item . ".");
+          ?>
+          </div>
+          <?php
+        }
       }
-    }
+      
     ?>
     
     <form id="cadastro" method="POST" action="LoginCtrl.php">

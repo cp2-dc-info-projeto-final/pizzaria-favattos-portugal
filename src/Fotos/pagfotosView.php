@@ -76,6 +76,22 @@ else{
 </nav>
 
 <div class="container" style="margin-top: 100px;">
+<!-- caixa de erros -->
+<?php
+      if (isset($_REQUEST['erros'])) {
+        $erros = $_REQUEST['erros'];
+        foreach (explode("|", $erros) as $erros_item) {
+          ?>
+          <div class="alert alert-danger" role="alert">
+          <?php
+          print($erros_item . ".");
+          ?>
+          </div>
+          <?php
+        }
+      }
+      
+    ?>
 
   <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0" style="color:white">Galeria de fotos </h1>
   <div class="container-fluid" style="margin-top:20px;">

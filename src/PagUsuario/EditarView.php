@@ -70,19 +70,21 @@
   <div class="container" style="margin-top: 110px">
   <!-- Caixa de erros -->
     <br>
-      <?php
-        foreach($_REQUEST as $item){
-          foreach (explode("|", $item) as $item_item) {
-      ?>
-      <div class="alert alert-danger" role="alert">
-      <?php
-      print($item_item . ".");
-      ?>
-      </div>
-      <?php
+    <?php
+      if (isset($_REQUEST['erros'])) {
+        $erros = $_REQUEST['erros'];
+        foreach (explode("|", $erros) as $erros_item) {
+          ?>
+          <div class="alert alert-danger" role="alert">
+          <?php
+          print($erros_item . ".");
+          ?>
+          </div>
+          <?php
         }
       }
-      ?>
+      
+    ?>
       
   <div class="row"> 
   <div class="col-8">

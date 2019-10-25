@@ -35,7 +35,7 @@ function FecharCompra($request) {
   $Pedido = AdicionaPedido($comentario,$formaPag,$precoTotal,$datahora,$usuarioId,$carrinho);
   if($Pedido == 1){
     //
-    header('Location: Pedidofinalizado.php');
+    header('Location: Pedidofinalizado.php?formaPag='.$formaPag.'');
   }else{
     header('Location: FinalizarPedidoView.php?erros='.urlencode("Ocorreu algum erro"));
     exit();

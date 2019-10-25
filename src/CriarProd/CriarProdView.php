@@ -45,6 +45,22 @@
 </nav> 
 
 <div class="container" style="margin-top: 110px">
+<!-- Caixa de erros -->
+<?php
+      if (isset($_REQUEST['erros'])) {
+        $erros = $_REQUEST['erros'];
+        foreach (explode("|", $erros) as $erros_item) {
+          ?>
+          <div class="alert alert-danger" role="alert">
+          <?php
+          print($erros_item . ".");
+          ?>
+          </div>
+          <?php
+        }
+      }
+      
+?>
 
 <div class="shadow p-3 mb-5 bg-white rounded"> 
   <?php

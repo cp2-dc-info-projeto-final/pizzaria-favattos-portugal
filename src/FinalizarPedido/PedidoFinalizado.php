@@ -33,20 +33,40 @@
     <li class="nav-item">
           <a class="nav-link" href="#">Fotos</a>
     </li>
-    <!-- Dropdown -->
+    </ul>
+    </div>
+    <?php
+    session_start();
+    if (!isset($_SESSION["logi"])) {
+      echo '<div class ="collapse navbar-collapse" id="collapsibleNavbar">
+    <a class ="navbar-brand"></a>
+  <ul class ="navbar-nav ml-auto">
+ <li class="nav-item">
+   <a class="nav-link" href="../Cadastro/CadastroView.php">Cadastrar</a> 
+ </li>
+ <li class="nav-item">
+   <a class="nav-link" href="../Login/LoginView.php">Entrar</a> 
+ </li>
+  </ul>
+    </div>';
+    } else {
+      $login = $_SESSION["logi"];
+      echo '
+    <ul class ="navbar-nav">
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
         Usuário
       </a>
-      <div class="dropdown-menu">
+      <div class="dropdown-menu dropdown-menu-right">
         <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
         <a class="dropdown-item" href="#">Histórico de compras</a>
-        <a class="dropdown-item" href="#">Link 3</a>
       </div>
     </li>
-  </ul>
-  </div>
-  </nav>  
+    </ul>';
+    }
+    session_abort();
+    ?>
+   </nav>  
 
  
   <!--Demonstrando dados do usário -->
@@ -54,12 +74,12 @@
   <div class="container" style="margin-top: 150px">
   <div class="shadow p-3 mb-5 bg-white rounded">
 
-  <div class="alert alert-success" role="alert">Pedido Realizado com sucesso!</div>
-  <h2> Dados do pedido</h2>
+  <div class="alert alert-success" role="alert">Pedido Realizado com sucesso!</div><br>
+  <h2> Dados do pedido</h2><br>  
   
   <!-- Caixa de erros -->
   <?php
-        foreach($_REQUEST as $item){
+        /*foreach($_REQUEST as $item){
           foreach (explode("|", $item) as $item_item) {
       ?>
       <div class="alert alert-danger" role="alert">
@@ -69,7 +89,7 @@
       </div>
       <?php
         }
-      }
+      }*/
     ?>
     
   <?php 
@@ -87,7 +107,6 @@
       <div class="col"><b>Preço</b></div>
       <div class="col"><b>Tamanho</b></div>
       <div class="col"><b>Quantidade</b></div>
-      <div class="col"></div>
       </div><hr>';
       foreach ($carrinho as $item) {
         echo '<div class="row">
@@ -95,12 +114,29 @@
         <div class="col">'.$item['descricao'].'</div>
         <div class="col">R$ '.$item['preco'].'</div>
         <div class="col">'.$item['tamanho'].'</div>
-        <div class="col">'.$item['quantidade'].'</div><hr>';
+        <div class="col">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        '.$item['quantidade'].'</div>
+        </div><hr>';
       }
     }
     ?>
     <br>
-    
+  <h2> Endereço</h2><hr>  
+  <?php 
+  require_once("../PagUsuario/PerfilCtrl.php");
+  $dados = PegardadosCtrl($login);
+  ?>  
+  <h2>Município: <?php echo $dados['Municipio']; ?></h2>
+  <h2>Rua: <?php echo $dados['Rua']; ?></h2>
+  <h2>Complemento: <?php echo $dados['Complemento']; ?></h2>
+  <br>
+  <h2>Informações do cliente </h2><hr>
+  <h2>Nome: <?php echo $dados['nome']; ?></h2>
+  <h2>Telefone: <?php echo $dados['telefone']; ?></h2>
+  <h2>Forma de pagamento: <?php echo $_GET['formaPag']; ?> </h2>
+  <br><hr>
+  <center><h2 class="alert alert-warning">Para cancelar o pedido ligue para  a loja!</h2></center>
   </div>
   </div>
   
