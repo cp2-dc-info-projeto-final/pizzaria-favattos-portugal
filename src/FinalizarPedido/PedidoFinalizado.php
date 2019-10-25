@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Finalizar Pedido</title>
+    <title>Pedido Realizado</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../Estilo/Perfil.css">
@@ -33,40 +33,19 @@
     <li class="nav-item">
           <a class="nav-link" href="#">Fotos</a>
     </li>
-  </ul>
-  </div>
-
-  <?php
-    session_start();
-    if (!isset($_SESSION["logi"])) {
-      echo '<div class ="collapse navbar-collapse" id="collapsibleNavbar">
-    <a class ="navbar-brand"></a>
-  <ul class ="navbar-nav ml-auto">
- <li class="nav-item">
-   <a class="nav-link" href="../Cadastro/CadastroView.php">Cadastrar</a> 
- </li>
- <li class="nav-item">
-   <a class="nav-link" href="../Login/LoginView.php">Entrar</a> 
- </li>
-  </ul>
-    </div>';
-    } else {
-      $login = $_SESSION["logi"];
-      echo '
-    <ul class ="navbar-nav">
+    <!-- Dropdown -->
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
         Usuário
       </a>
-      <div class="dropdown-menu dropdown-menu-right">
+      <div class="dropdown-menu">
         <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
         <a class="dropdown-item" href="#">Histórico de compras</a>
+        <a class="dropdown-item" href="#">Link 3</a>
       </div>
     </li>
-    </ul>';
-    }
-    session_abort();
-    ?>
+  </ul>
+  </div>
   </nav>  
 
  
@@ -74,6 +53,9 @@
  
   <div class="container" style="margin-top: 150px">
   <div class="shadow p-3 mb-5 bg-white rounded">
+
+  <div class="alert alert-success" role="alert">Pedido Realizado com sucesso!</div>
+  <h2> Dados do pedido</h2>
   
   <!-- Caixa de erros -->
   <?php
@@ -113,39 +95,12 @@
         <div class="col">'.$item['descricao'].'</div>
         <div class="col">R$ '.$item['preco'].'</div>
         <div class="col">'.$item['tamanho'].'</div>
-        <div class="col">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        '.$item['quantidade'].'</div>
-        <div class="col"><a  class="btn btn-info" href="../Inicial/RemoverCarrinhoCtrl.php?id='.$item['id'].'&tamanho='.$item['tamanho'].'">Remover</a></div>
-        </div> <hr>';
+        <div class="col">'.$item['quantidade'].'</div><hr>';
       }
     }
     ?>
     <br>
-    <form id="Pedido" method="POST" action="FinalizarPedidoCtrl.php">
-    <h2>Informações do Pedido</h2>
-    <hr>
-    <div class="form-group">
-    <label>Forma de pagamento:</label>
-    <div class="custom-control custom-radio">
-    <input type ="radio" name="Formapag" id="cart" class="custom-control-input" value="Cartao">
-    <label for="cart" class="custom-control-label">Cartão de Crédito ou Débito</label> 
-    </div>
-    <div class="custom-control custom-radio">
-    <input type ="radio" name="Formapag" id="din" class="custom-control-input" value="Dinheiro">
-    <label for="din" class="custom-control-label">Dinheiro</label>
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="comentario">Adicionar Comentário:</label>
-    <textarea class="form-control" name ="comentario" id="comentario" rows="3"></textarea>
-    </div>
-    <b>OBS: O endereço utilizado será o cadastrado. Caso queria alterar: </b><a class="badge badge-primary" href="../PagUsuario/EditarView.php">Alterar</a>
-    <hr>
-    <br>
-    <input type ="submit" name ="FinalizarPedido" value ="FinalizarPedido" class="btn btn-danger">
-    </form>
-
+    
   </div>
   </div>
   

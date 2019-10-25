@@ -23,6 +23,9 @@ create table usuario (
 INSERT INTO usuario (nome,data_nasc,email,telefone,cpf,logi,senha,sexo,Rua,Municipio,Complemento,adm) VALUES
 ('Sigismundo','1970/08/29','sigismundo@gmail.com','123456789','49108328900','sigismundo','$2y$10$bPtdRgaMsyNYXOkrwzXI1O3F0vY7PM6kuGcQPjv26yFQnYSWR28.G','Masculino','Rua dos cara barbaro','Duque de Caxias','casa',true);
 
+INSERT INTO usuario (nome,data_nasc,email,telefone,cpf,logi,senha,sexo,Rua,Municipio,Complemento,adm) VALUES
+('João Guilherme','2003/01/15','jguilhermepasco@gmail.com','123456789','02253651702','joaoG','$2y$12$qmISoEeHSWCwjCqHPR6I3.mv3i3fLLLLdJ9pnoAJ0oajRbzIVxhZe','Masculino','Rua dos cara barbaro','Duque de Caxias','casa',false);
+
 drop table if exists categoria;
 CREATE TABLE categoria (
     id int PRIMARY KEY AUTO_INCREMENT,
@@ -119,19 +122,21 @@ drop table if exists pedido;
 CREATE TABLE pedido(
     id int AUTO_INCREMENT,
     comentario varchar (100),
+    formaPag varchar(30),
     precototal float,
-    diahora datetime,
-    usuario int,
+    diahora varchar(60),
+    usuarioId int,
     primary key (id),
-    foreign key (usuario) references usuario(id)
+    foreign key (usuarioId) references usuario(id)
 );
 
 drop table if exists produtopedido;
 CREATE TABLE produtopedido(
     idPedido int,
     idProduto int,
+    tamanho varchar(30),
     qtd int,
-    primary key (idPedido, idProduto),
+    primary key (idPedido, idProduto, tamanho),
     foreign key (idPedido) references pedido(id),
     foreign key (idProduto) references produto(id)
 );

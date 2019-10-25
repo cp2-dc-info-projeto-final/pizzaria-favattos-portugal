@@ -99,7 +99,7 @@ function CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$Csen
 
     $con = CriarConexao();
     $inserir = 'INSERT INTO usuario (nome, data_nasc, sexo, email, logi, senha, cpf, municipio, complemento, rua, telefone,adm)
-              VALUES (:nome,:data_nascimento,:sexo,:email,:logi,:senha,:cpf,:municipio,:complemento,:rua,:tel,:adm)';
+              VALUES (:nome,:data_nascimento,:sexo,:email,:logi,:senha,:cpf,:municipio,:complemento,:rua,:tel,false)';
     $consulta = $con->prepare($inserir);
     $consulta ->bindValue(':nome', $nome);
     $consulta ->bindValue(':data_nascimento', $data_nascimento);
@@ -112,7 +112,6 @@ function CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$Csen
     $consulta ->bindValue(':complemento', $complemento);
     $consulta ->bindValue(':rua', $rua);
     $consulta ->bindValue(':tel', $tel);
-    $consulta ->bindValue(':adm',false);
 
     return $consulta->execute();
 }

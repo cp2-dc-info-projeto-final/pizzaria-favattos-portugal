@@ -75,10 +75,11 @@
               Carrinho de compras
             </div>
             <div id="carrinho" class="popover-body">
-              <?php
+            <?php
+             session_start();
              require_once "CarrinhoCtrl.php";
              $ctrl = new CarrinhoCtrl();
-             $carrinho = $ctrl->getCarrinho();
+             $carrinho = $ctrl->getCarrinho($_SESSION);
          
              if(count($carrinho) == null){
                echo 'Carrinho vazio, favor adicionar produtos aqui... rs';
@@ -128,7 +129,7 @@
       <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbardrop" data-toggle="dropdown">
         Usuário
       </a>
-      <div class="dropdown-menu">
+      <div class="dropdown-menu dropdown-menu-right">
         <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
         <a class="dropdown-item" href="#">Histórico de compras</a>
       </div>
@@ -215,6 +216,12 @@
                       <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
                       <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a>                  <?php
                       } 
+                      else{
+                      ?>
+                        <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id'] ?>,'<?php echo $produto['nome'] ?>', 'grande', <?php echo $produto['preco_grande'] ?>, '<?php echo $produto['descricao'] ?>' );"><?php echo "Grande: R$" . $produto['preco_grande'] ?></button>
+                        <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id'] ?>,'<?php echo $produto['nome'] ?>','gigante', <?php echo $produto['preco_gigante'] ?>, '<?php echo $produto['descricao'] ?>' );"><?php echo "Gigante: R$" . $produto['preco_gigante'] ?></button>
+                      <?php
+                      }
                     }
                     elseif (!isset($login) || !$dados['adm']) {
                       ?>
@@ -414,7 +421,7 @@
   </div>
 
   <!--Rodapé no final da página-->
-  <nav class="navbar bg-dark navbar-dark fixed-bottom">
+  <nav class="navbar bg-dark navbar-dark bottom">
     <div class="container">
       <span class="text-muted">Até que enfim foi</span>
   </nav>

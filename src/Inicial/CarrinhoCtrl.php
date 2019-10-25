@@ -2,14 +2,13 @@
 
     class CarrinhoCtrl {
         //Criação da sessão do carrinho para armazenar os dados
-        public function getCarrinho() {
-            session_start();
+        public function getCarrinho($session) {
 
-            if (!isset($_SESSION["carrinho"]))
+            if (!isset($session["carrinho"]))
             {
-                $_SESSION["carrinho"] = [];
+                $session["carrinho"] = [];
             }
-            return $_SESSION["carrinho"];
+            return $session["carrinho"];
                 
         }
 

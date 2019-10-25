@@ -64,7 +64,7 @@ else{
     <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbardrop" data-toggle="dropdown">
       Usuário
     </a>
-    <div class="dropdown-menu">
+    <div class="dropdown-menu dropdown-menu-right">
       <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
       <a class="dropdown-item" href="#">Histórico de compras</a>
     </div>
