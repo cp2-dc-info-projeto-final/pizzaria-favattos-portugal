@@ -53,14 +53,38 @@
   $historico = recuperarHistorico();
   foreach($historico as $row) {
   ?>
+  <table class="table table-bordered table-dark">
+  <thead>
     <tr>
+      <th scope="col">#</th>
+      <th scope="col">id</th>
+      <th scope="col">horário</th>
+      <th scope="col">valor</th>
+      <th scope="col">forma de pagamento</th>
+      <th scope="col">nome</th>
+      <th scope="col">telefone</th>
+      <th scope="col">endereço</th>
+      <th scope="col">cpf</th>
+      <th scope="col">produto</th>
+      <th scope="col">quantidade</th>
+      
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th scope ="row"></th>
       <td><?php echo $row['id']?></td>
       <td><?php echo $row['diahora']?></td>
-      <td><?php echo $row['precototal']?></td>
+      <td><?php echo ''.$row['precototal'] .' R$ '. ''?></td>
       <td><?php echo $row['formaPag']?></td>
       <td><?php echo $row['nome']?></td>
       <td><?php echo $row['telefone']?></td>
+      <td><?php echo ''.$row['Rua'] .' / '. $row['Municipio'] .' / '. $row['Complemento'].''?></td>
+      <td><?php echo $row['cpf']?></td>
       <td><?php echo $row['produto']?></td>
+      <td><?php echo $row['qtd']?></td>
+      
     </tr>
   <?php
   }
