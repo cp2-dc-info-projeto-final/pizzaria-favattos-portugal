@@ -63,7 +63,7 @@
             <div id="carrinho" class="popover-body">
             <?php
              session_start();
-             require_once "CarrinhoCtrl.php";
+             require_once "../Inicial/CarrinhoCtrl.php";
              $ctrl = new CarrinhoCtrl();
              $carrinho = $ctrl->getCarrinho($_SESSION);
          
@@ -78,7 +78,7 @@
                  <div class="col">R$ '.$item['preco'].'</div>
                  <div class="col">'.$item['tamanho'].'</div>
                  <div class="col">'.$item['quantidade'].'</div>
-                 <div class="col"><a  class="btn btn-info" href="RemoverCarrinhoCtrl.php?id='.$item['id'].'&tamanho='.$item['tamanho'].'">Remover</a></div>
+                 <div class="col"><a  class="btn btn-info" href="../Inicial/RemoverCarrinhoCtrl.php?id='.$item['id'].'&tamanho='.$item['tamanho'].'">Remover</a></div>
                  </div> <hr>';
                }
              echo '<br><a class="btn btn-danger" href="../FinalizarPedido/FinalizarPedidoView.php">Finalizar pedido</a>';

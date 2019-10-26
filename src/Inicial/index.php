@@ -219,7 +219,9 @@
 
                         ?>
                       <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
-                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a>                  <?php
+                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a>
+                      <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a>                  
+                      <?php
                       } 
                       else{
                       ?>
@@ -268,18 +270,26 @@
                 <div class="btn">
 
                   <?php
-                    require_once("../PagUsuario/PerfilCtrl.php");
+                    if (isset($login)) {
 
-                    if (isset($_SESSION["logi"]) && $dados['adm']) {
-                      ?>
-                    <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
-                    <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a>                  <?php
-                    } elseif (!isset($_SESSION["logi"]) || !$dados['adm']) {
-                      ?>
+                      if ($dados['adm']) {
+                  ?>
+                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
+                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a>
+                      <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a>                  
+                  <?php
+                      } 
+                      else {
+                  ?>
+                    <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id'] ?>,'<?php echo $produto['nome'] ?>', '', <?php echo $produto['preco_normal'] ?>, '<?php echo $produto['descricao'] ?>' );"><?php echo "Preço: R$" . $produto['preco_normal'] ?></button>
+                  <?php
+                      }
+                    }elseif (!isset($login) || !$dados['adm']) {
+                  ?>
                     <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id'] ?>,'<?php echo $produto['nome'] ?>', '', <?php echo $produto['preco_normal'] ?>, '<?php echo $produto['descricao'] ?>' );"><?php echo "Preço: R$" . $produto['preco_normal'] ?></button>
                   <?php
                     }
-                    ?>
+                  ?>
 
                 </div>
               </div>
@@ -312,11 +322,13 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn">
                   <?php
-                    if (isset($_SESSION["logi"]) && $dados['adm']) {
+                    if (isset($login) && $dados['adm']) {
                   ?>
                       <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
-                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a>                  <?php
-                    } elseif (!isset($_SESSION["logi"]) || !$dados['adm']) {
+                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a> 
+                      <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a> 
+                    <?php
+                    } elseif (!isset($login) || !$dados['adm']) {
                       if ($produto['nome'] == 'Batata frita') { ?>
                       <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto auto" onclick="adicionar_carrinho(<?php echo $produto['id'] ?>,'<?php echo $produto['nome'] ?>', 'pequena', <?php echo $produto['preco_normal'] ?>, '<?php echo $produto['descricao'] ?>');"><?php echo "Pequena: R$" . $produto['preco_normal'] ?></button>
                       <button type="button" class="btn btn-bg btn-outline-danger" style="margin: 5px 5px auto 2px" onclick="adicionar_carrinho(<?php echo $produto['id'] ?>,'<?php echo $produto['nome'] ?>', 'media', <?php echo $produto['preco_medio'] ?>, '<?php echo $produto['descricao'] ?>');"><?php echo "Média: R$" . $produto['preco_medio'] ?></button><br>
@@ -359,17 +371,18 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn">
                   <?php
-                    if (isset($_SESSION["logi"]) && $dados['adm']) {
+                    if (isset($login) && $dados['adm']) {
                       ?>
                     <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
                     <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a>
+                    <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a> 
                   <?php
-                    } elseif (!isset($_SESSION["logi"]) || !$dados['adm']) {
+                    } elseif (!isset($login) || !$dados['adm']) {
                       ?>
                     <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id'] ?>,'<?php echo $produto['nome'] ?>', '', <?php echo $produto['preco_normal'] ?>, '<?php echo $produto['descricao'] ?>' );"><?php echo "Preço: R$" . $produto['preco_normal'] ?></button>
-                  <?php
-                    }
-                    ?>
+                    <?php } else { ?>
+                    <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id'] ?>,'<?php echo $produto['nome'] ?>', '', <?php echo $produto['preco_normal'] ?>, '<?php echo $produto['descricao'] ?>' );"><?php echo "Preço: R$" . $produto['preco_normal'] ?></button>
+                  <?php } ?>
                 </div>
               </div>
             </div>
@@ -401,12 +414,16 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn">
                   <?php
-                    if (isset($_SESSION["logi"]) && $dados['adm']) {
+                    if (isset($login) && $dados['adm']) {
                   ?>
                       <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
-                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a>                  <?php
-                    } elseif (!isset($_SESSION["logi"]) || !$dados['adm']) {
+                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a>
+                      <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a>                   
+                  <?php
+                    } elseif (!isset($login) || !$dados['adm']) {
                   ?>
+                    <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id'] ?>,'<?php echo $produto['nome'] ?>', '', <?php echo $produto['preco_normal'] ?>, '<?php echo $produto['descricao'] ?>' );"><?php echo "Preço: R$" . $produto['preco_normal'] ?></button>
+                  <?php } else { ?>
                     <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id'] ?>,'<?php echo $produto['nome'] ?>', '', <?php echo $produto['preco_normal'] ?>, '<?php echo $produto['descricao'] ?>' );"><?php echo "Preço: R$" . $produto['preco_normal'] ?></button>
                   <?php  
                     }

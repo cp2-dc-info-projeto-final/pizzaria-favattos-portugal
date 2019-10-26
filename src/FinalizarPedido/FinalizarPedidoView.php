@@ -34,47 +34,13 @@
         <li class="nav-item">
               <a class="nav-link" href="#">Fotos</a>
         </li>
-        <!-- O carrinho de compras popover -->
-        <li class="nav-item">
-          <a href="#" class="btn btn-primary" data-toggle="popover" data-popover-content="#a1" data-placement="top">Carrinho</a>
-          <div id="a1" class="invisible" style="width: 0px; height: 0px;">
-            <div class="popover-heading">
-              Carrinho de compras
-            </div>
-            <div id="carrinho" class="popover-body">
-            <?php
-             session_start();
-             require_once "CarrinhoCtrl.php";
-             $ctrl = new CarrinhoCtrl();
-             $carrinho = $ctrl->getCarrinho($_SESSION);
-         
-             if(count($carrinho) == null){
-               echo 'Carrinho vazio, favor adicionar produtos aqui... rs';
-             }
-             else{
-               foreach ($carrinho as $item) {
-                 echo '<div class="row">
-                 <div class="col">'.$item['nome'].'</div>
-                 <div class="col">'.$item['descricao'].'</div>
-                 <div class="col">R$ '.$item['preco'].'</div>
-                 <div class="col">'.$item['tamanho'].'</div>
-                 <div class="col">'.$item['quantidade'].'</div>
-                 <div class="col"><a  class="btn btn-info" href="RemoverCarrinhoCtrl.php?id='.$item['id'].'&tamanho='.$item['tamanho'].'">Remover</a></div>
-                 </div> <hr>';
-               }
-             echo '<br><a class="btn btn-danger" href="../FinalizarPedido/FinalizarPedidoView.php">Finalizar pedido</a>';
-             }
-              ?>
-            </div>
-          </div>
-        </li>
       </ul>
     </div>
 
     <!-- Entrar e cadastrar na direita -->
     <?php
 
-      
+    session_start();
     if (!isset($_SESSION["logi"])) {
       echo '
       <div class ="collapse navbar-collapse" id="collapsibleNavbar">
@@ -104,13 +70,11 @@
       </ul>
       </div>';
     }
+    session_abort();
     ?>
 
     <!-- fim da barra de navegação aqui -->
   </nav>
-
- 
-  <!--Demonstrando dados do usário -->
  
   <div class="container" style="margin-top: 150px">
   <div class="shadow p-3 mb-5 bg-white rounded">
