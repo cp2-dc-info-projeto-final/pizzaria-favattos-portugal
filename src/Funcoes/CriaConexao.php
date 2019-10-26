@@ -1,5 +1,7 @@
 <?php
 //Criando conexao
+set_time_limit(0);
+ignore_user_abort(1);
 function CriarConexao(){
     
     $con = new PDO('mysql:host=localhost;

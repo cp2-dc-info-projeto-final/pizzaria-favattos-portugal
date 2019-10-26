@@ -45,7 +45,6 @@ session_start();
 
 if(!isset($_SESSION["logi"])){
 echo '<div class ="collapse navbar-collapse" id="collapsibleNavbar">
-  <a class ="navbar-brand"></a>
 <ul class ="navbar-nav ml-auto">
 <li class="nav-item">
  <a class="nav-link" href="../Cadastro/CadastroView.php">Cadastrar</a> 
@@ -58,8 +57,8 @@ echo '<div class ="collapse navbar-collapse" id="collapsibleNavbar">
 }
 else{
   $login = $_SESSION["logi"];
-  echo '
-  <ul class ="navbar-nav">
+  echo '<div class ="collapse navbar-collapse" id="collapsibleNavbar">
+  <ul class ="navbar-nav ml-auto">
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbardrop" data-toggle="dropdown">
       Usuário
@@ -69,7 +68,8 @@ else{
       <a class="dropdown-item" href="#">Histórico de compras</a>
     </div>
   </li>
-  </ul>';
+  </ul>
+  </div>';
 }
 ?>
 

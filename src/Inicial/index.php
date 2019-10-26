@@ -50,11 +50,14 @@
 <body>
   <!-- Barra de navegação -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-    <!-- Logo -->
-    <a class="navbar-brand" href="#">
-      <img src="bird.jpg" alt="Logo" style="width:40px;">
-    </a>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+              <img src="bird.jpg" alt="Logo" style="width:40px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <!-- Links -->
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
@@ -64,9 +67,8 @@
           <a class="nav-link" href="#">Nossa Gastronomia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
+              <a class="nav-link" href="#">Fotos</a>
         </li>
-
         <!-- O carrinho de compras popover -->
         <li class="nav-item">
           <a href="#" class="btn btn-primary" data-toggle="popover" data-popover-content="#a1" data-placement="top">Carrinho</a>
@@ -103,38 +105,39 @@
         </li>
       </ul>
     </div>
-    </div>
 
     <!-- Entrar e cadastrar na direita -->
     <?php
 
-
+      
     if (!isset($_SESSION["logi"])) {
-      echo '<div class ="collapse navbar-collapse" id="collapsibleNavbar">
-    <a class ="navbar-brand"></a>
-  <ul class ="navbar-nav ml-auto">
- <li class="nav-item">
-   <a class="nav-link" href="../Cadastro/CadastroView.php">Cadastrar</a> 
- </li>
- <li class="nav-item">
-   <a class="nav-link" href="../Login/LoginView.php">Entrar</a> 
- </li>
-  </ul>
-    </div>';
+      echo '
+      <div class ="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class ="navbar-nav ml-auto">
+      <li class="nav-item">
+       <a class="nav-link" href="../Cadastro/CadastroView.php">Cadastrar</a> 
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="../Login/LoginView.php">Entrar</a> 
+      </li>
+      </ul>
+        </div>';
     } else {
       $login = $_SESSION["logi"];
       echo '
-    <ul class ="navbar-nav">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbardrop" data-toggle="dropdown">
-        Usuário
-      </a>
-      <div class="dropdown-menu dropdown-menu-right">
-        <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-        <a class="dropdown-item" href="#">Histórico de compras</a>
-      </div>
-    </li>
-    </ul>';
+      <div class ="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class ="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbardrop" data-toggle="dropdown">
+          Usuário
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
+          <a class="dropdown-item" href="#">Histórico de compras</a>
+        </div>
+      </li>
+      </ul>
+      </div>';
     }
     ?>
 
@@ -190,7 +193,7 @@
     <!-- Listagem das pizzas organizados em cards por meio da função php listarProdutos() e a chamada da função javascript adicionar_carrinho dentro do botão que contem o preço-->
     <h1 style="text-align: center">Pizzas </h1>
     <hr>
-    <div class="row">
+    <div class="row justify-content-center">
       <?php
       require_once("ctrl.php");
       $produtos = listarProdutos(1);
@@ -232,8 +235,6 @@
                     <?php
                     }
                     ?>
-                  
-                    
 
                 </div>
               </div>
@@ -249,7 +250,7 @@
     <!-- Listagem dos lanches organizados em cards por meio da função php listarProdutos() e a chamada da função javascript adicionar_carrinho dentro do botão que contem o preço-->
     <h1 style="text-align: center">Lanches </h1>
     <hr>
-    <div class="row">
+    <div class="row justify-content-center">
       <?php
       require_once "ctrl.php";
       $produtos = listarProdutos(2);
@@ -294,7 +295,7 @@
     <!-- Listagem das batatas organizados em cards por meio da função php listarProdutos() e a chamada da função javascript adicionar_carrinho dentro do botão que contem o preço-->
     <h1 style="text-align: center">Batatas </h1>
     <hr>
-    <div class="row">
+    <div class="row justify-content-center">
       <?php
       require_once "ctrl.php";
       $produtos = listarProdutos(4);
@@ -341,7 +342,7 @@
     <!-- Listagem das bebidas organizados em cards por meio da função php listarProdutos() e a chamada da função javascript adicionar_carrinho dentro do botão que contem o preço-->
     <h1 style="text-align: center">Bebidas </h1>
     <hr>
-    <div class="row">
+    <div class="row justify-content-center">
       <?php
       require_once "ctrl.php";
       $produtos = listarProdutos(5);
@@ -383,7 +384,7 @@
     <!-- Listagem dos combos organizados em cards por meio da função php listarProdutos() e a chamada da função javascript adicionar_carrinho dentro do botão que contem o preço-->
     <h1 style="text-align: center">Combos </h1>
     <hr>
-    <div class="row">
+    <div class="row justify-content-center">
       <?php
       require_once "ctrl.php";
       $produtos = listarProdutos(3);

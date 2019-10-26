@@ -8,7 +8,6 @@
     <link rel ="stylesheet" href ="../Estilo/bootstrap-4.1.3-dist/css/bootstrap.min.css">
     <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
     <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
-    <script src="../Funcoes/ScriptInput.js"></script>
   </head> 
   
   <body>
@@ -42,13 +41,54 @@
   </li>  
   </div>
   </nav> 
-  <?php
-  session_start();
-  require_once("HistoricoModel.php");
+
   
-  ?>
 <div class="container-fluid" style="margin-top: 100px;">
 <br>
+<table>
+  <?php
+  session_start();
+  require_once("HistoricoCtrl.php");
+  $historico = recuperarHistoricoCtrl();
+  foreach($historico as $row) {
+  ?>
+  <table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">id</th>
+      <th scope="col">horário</th>
+      <th scope="col">valor</th>
+      <th scope="col">forma de pagamento</th>
+      <th scope="col">nome</th>
+      <th scope="col">telefone</th>
+      <th scope="col">endereço</th>
+      <th scope="col">cpf</th>
+      <th scope="col">produto</th>
+      <th scope="col">quantidade</th>
+      
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th scope ="row"></th>
+      <td><?php echo $row['id']?></td>
+      <td><?php echo $row['diahora']?></td>
+      <td><?php echo ''.$row['precototal'] .' R$ '. ''?></td>
+      <td><?php echo $row['formaPag']?></td>
+      <td><?php echo $row['nome']?></td>
+      <td><?php echo $row['telefone']?></td>
+      <td><?php echo ''.$row['Rua'] .' / '. $row['Municipio'] .' / '. $row['Complemento'].''?></td>
+      <td><?php echo $row['cpf']?></td>
+      <td><?php echo $row['produto']?></td>
+      <td><?php echo $row['qtd']?></td>
+      
+    </tr>
+  <?php
+  }
+  ?>
+  </table>
 
 
 <!--Rodapé no final da página-->
