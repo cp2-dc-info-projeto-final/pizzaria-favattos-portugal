@@ -8,7 +8,6 @@
     <link rel ="stylesheet" href ="../Estilo/bootstrap-4.1.3-dist/css/bootstrap.min.css">
     <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
     <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
-    <script src="../Funcoes/ScriptInput.js"></script>
   </head> 
   
   <body>
@@ -49,8 +48,8 @@
 <table>
   <?php
   session_start();
-  require_once("HistoricoModel.php");
-  $historico = recuperarHistorico();
+  require_once("HistoricoCtrl.php");
+  $historico = recuperarHistoricoCtrl();
   foreach($historico as $row) {
   ?>
   <table class="table table-bordered table-dark">
