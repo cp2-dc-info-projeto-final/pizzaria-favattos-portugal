@@ -11,4 +11,9 @@ function recuperarHistoricoCtrl(){
     return $historico;
 }
 
+function recuperarHistoricoCCtrl($id){
+    $historico = recuperarHistoricoC($id);
+    return $historico;
+}
+
 ?>

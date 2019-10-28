@@ -160,30 +160,6 @@
   <label for ="email"> E-mail </label> 
   <input type ="email" class="form-control" name= "email" id= "email" maxlength="125" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder= <?php echo $dados['email']; ?>>
   </div> 
-  <?php
-    if($dados['sexo']=="Masculino"){
-      echo "<label>Sexo</label> 
-            <div class='form-check'>
-            <input type ='radio' class='form-check-input' name = 'sexo' id='masc' value='Masculino' checked>
-            <label class='form-check-label' for='masc'>Masculino</label>
-            </div> 
-            <div class='form-check'>
-            <input type ='radio' name ='sexo' class='form-check-input' id='fem' value='Feminino'>
-            <label class='form-check-label' for='fem'>Feminino</label>    
-            </div>";
-    }else{
-      echo"<label>Sexo</label> 
-          <div class='form-check'>
-          <input type ='radio' class='form-check-input' name = 'sexo' id='masc' value='Masculino'>
-          <label class='form-check-label' for='masc'>Masculino</label>
-          </div> 
-          <div class='form-check'>
-          <input type ='radio' name ='sexo' class='form-check-input' id='fem' value='Feminino' checked>
-          <label class='form-check-label' for='fem'>Feminino</label>    
-          </div>";
-    }
-  ?>
-  <br>
   <div class="form-group">
   <label for ="telefone"> Telefone </label> 
   <input type ="text" class="form-control" name ="telefone" id= "telefone" minlength= "11" maxlength="11" onkeypress="return numeros();" placeholder= <?php echo $dados['telefone']; ?>> 

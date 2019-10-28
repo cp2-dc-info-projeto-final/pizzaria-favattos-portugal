@@ -73,7 +73,7 @@ function CpfValido($cpf){
 
 }
 
-function CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$Csenha,$cpf,$municipio,$complemento,$rua,$tel){
+function CadastraUsuario($nome,$data_nascimento,$email,$login,$senha,$Csenha,$cpf,$municipio,$complemento,$rua,$tel){
 
     $error_list = [];
     if(MesmoEmail($email) == 1){
@@ -98,12 +98,11 @@ function CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$Csen
     }
 
     $con = CriarConexao();
-    $inserir = 'INSERT INTO usuario (nome, data_nasc, sexo, email, logi, senha, cpf, municipio, complemento, rua, telefone,adm)
-              VALUES (:nome,:data_nascimento,:sexo,:email,:logi,:senha,:cpf,:municipio,:complemento,:rua,:tel,false)';
+    $inserir = 'INSERT INTO usuario (nome, data_nasc, email, logi, senha, cpf, municipio, complemento, rua, telefone,adm)
+              VALUES (:nome,:data_nascimento,:email,:logi,:senha,:cpf,:municipio,:complemento,:rua,:tel,false)';
     $consulta = $con->prepare($inserir);
     $consulta ->bindValue(':nome', $nome);
     $consulta ->bindValue(':data_nascimento', $data_nascimento);
-    $consulta ->bindValue(':sexo', $sexo);
     $consulta ->bindValue(':email', $email);
     $consulta ->bindValue(':logi', $login);
     $consulta ->bindValue(':senha', $senha);

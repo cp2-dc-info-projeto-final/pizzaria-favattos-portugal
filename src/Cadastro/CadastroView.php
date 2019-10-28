@@ -8,7 +8,6 @@
   <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
   <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
   <script src="../Funcoes/ScriptInput.js"></script>
-  <script src="../Funcoes/ScriptInput.js"></script>
 
   <style>
   body{
@@ -46,7 +45,7 @@
       
     ?>
    
-    <form id= "cadastro" method="POST" action="CadastroCtrl.php" onsubmit="return validate()">
+    <form id= "cadastro" method="POST" action="CadastroCtrl.php">
     
     <h3>Cadastro</h3>
     <h4>Cadastre-se para ter acesso as delícias da Favatto's Portugal</h4>
@@ -60,17 +59,7 @@
       <label for="datan">Data de Nascimento:</label>
       <input type ="date" name ="dataN" id="datan" class="form-control" min ="1919-06-24" max ="2015-01-01" required>  
       </div>
-    </div>
-
-    <label>Sexo:</label>
-    <div class="custom-control custom-radio">
-    <input type ="radio" name = "sexo" id="masc" class="custom-control-input" value="Masculino">
-    <label for="masc" class="custom-control-label">Masculino</label> 
-    </div>
-    <div class="custom-control custom-radio">
-    <input type ="radio" name ="sexo" id="fem" class="custom-control-input" value="Feminino">
-    <label for="fem" class="custom-control-label">Feminino</label>
-    </div><br>       
+    </div>       
 
     <div class="form-row">
       <div class="form-group col-md-6">  
@@ -134,7 +123,7 @@
       </div>
     </div>
     
-    <input type ="submit" name ="cadastrar" value ="Cadastrar" class="btn btn-success"><br><br>
+    <input type ="submit" name ="cadastrar" id="cadastrar" value ="Cadastrar" class="btn btn-success"><br><br>
 
     Já possui uma conta? <a href="../Login/LoginView.php" style ="color:green">Entre agora.</a>
     <!-- fim de formulario -->

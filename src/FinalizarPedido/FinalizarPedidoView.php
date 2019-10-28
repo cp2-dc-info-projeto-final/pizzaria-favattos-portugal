@@ -103,6 +103,8 @@
 
     if(count($carrinho) == null){
       echo 'Carrinho vazio, favor adicionar produtos aqui... rs';
+      header('Location: ../Inicial/index.php');
+      exit();
     }
     else{
       echo '<div class="row">
@@ -128,19 +130,16 @@
     }
     ?>
     <br>
-    <form id="Pedido" method="POST" action="FinalizarPedidoCtrl.php">
+    <form id="Pedido" method="POST" action="FinalizarPedidoCtrl.php" onsubmit="return vformaPag()">
     <h2>Informações do Pedido</h2>
     <hr>
     <div class="form-group">
-    <label>Forma de pagamento:</label>
-    <div class="custom-control custom-radio">
-    <input type ="radio" name="Formapag" id="cart" class="custom-control-input" value="Cartao">
-    <label for="cart" class="custom-control-label">Cartão de Crédito ou Débito</label> 
-    </div>
-    <div class="custom-control custom-radio">
-    <input type ="radio" name="Formapag" id="din" class="custom-control-input" value="Dinheiro">
-    <label for="din" class="custom-control-label">Dinheiro</label>
-    </div>
+    <label for="formaPag">Forma de pagamento</label>
+    <select id="formaPag" name="formaPag" class="form-control" style="width:400px;" require>
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="Dinhiero">Dinheiro</option>
+        <option value="Cartão">Cartão de crédito ou débito</option>
+    </select>
     </div>
     <div class="form-group">
     <label for="comentario">Adicionar Comentário:</label>

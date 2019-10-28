@@ -99,7 +99,9 @@
 
     $carrinho = ReceberCarrinho();
     session_destroy();
-
+    session_start();
+    $_SESSION["logi"] = $login;
+      
     if(count($carrinho) == null){
       echo 'Carrinho vazio, favor adicionar produtos aqui... rs';
     }

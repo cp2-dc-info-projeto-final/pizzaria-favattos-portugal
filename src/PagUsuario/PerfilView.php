@@ -23,6 +23,34 @@
     <script src="../Estilo/jquery.min.js"></script>
     <script src="../Estilo/popper.min.js"></script>
     <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+
+    <style>
+    .alert {
+      margin-bottom: 8px !important;
+    }
+
+    .popover {
+      max-width: 100% !important;
+    }
+    </style>
+
+    <script>
+        //Função para ativar o popover e inseriro seu titulo e corpo
+        $(function() {
+      $("[data-toggle=popover]").popover({
+        container: 'body',
+        html: true,
+        content: function() {
+          var content = $(this).attr("data-popover-content");
+          return $(content).children(".popover-body").html();
+        },
+        title: function() {
+          var title = $(this).attr("data-popover-content");
+          return $(title).children(".popover-heading").html();
+        }
+      });
+    });
+  </script>
 </head>
 <body>
 
@@ -56,7 +84,6 @@
             </div>
             <div id="carrinho" class="popover-body">
             <?php
-             session_start();
              require_once "../Inicial/CarrinhoCtrl.php";
              $ctrl = new CarrinhoCtrl();
              $carrinho = $ctrl->getCarrinho($_SESSION);
@@ -155,7 +182,6 @@
     <h2>Idade: <?php echo $idade; ?></h2>
     <h2>Email: <?php echo $dados['email']; ?></h2>
     <h2>Telefone: <?php echo $dados['telefone']; ?></h2>
-    <h2>Sexo: <?php echo $dados['sexo']; ?></h2>
     <h2>Login: <?php echo $dados['logi']; ?></h2>
  
     <hr>

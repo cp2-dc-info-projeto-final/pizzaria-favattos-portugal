@@ -24,7 +24,7 @@ function FecharCompra($request) {
   $dados = Pegardados($login);
   $carrinho = ReceberCarrinho();
   $usuarioId = $dados['id'];
-  $formaPag = $request["Formapag"];
+  $formaPag = $request["formaPag"];
   $comentario = $request["comentario"];
   $precoTotal = 0;
   $datahora = date('Y-m-d H:i:s');
@@ -32,14 +32,22 @@ function FecharCompra($request) {
     $precoTotal += $item['preco'] * $item['quantidade'];
   }
   
-  $Pedido = AdicionaPedido($comentario,$formaPag,$precoTotal,$datahora,$usuarioId,$carrinho);
-  if($Pedido == 1){
-    //
-    header('Location: Pedidofinalizado.php?formaPag='.$formaPag.'');
-  }else{
-    header('Location: FinalizarPedidoView.php?erros='.urlencode("Ocorreu algum erro"));
+  try {
+    $resultPedido = AdicionaPedido($comentario,$formaPag,$precoTotal,$datahora,$usuarioId,$carrinho); 
+  }
+  catch (Exception $e) {
+    $erros = $e->getMessage();
+  }
+
+  if ($erros == "") {      
+    header('Location: PedidoFinalizado.php?formaPag='.$formaPag);
     exit();
   }
+  else {
+        header('Location: FinalizarPedidoView.php?erros='.urlencode($erros));
+        exit();
+  }
+
 }
 
 if (!empty($_POST)) {
