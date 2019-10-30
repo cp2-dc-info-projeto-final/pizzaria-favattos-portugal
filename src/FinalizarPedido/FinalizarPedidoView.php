@@ -10,6 +10,18 @@
     <script src="../Estilo/jquery.min.js"></script>
     <script src="../Estilo/popper.min.js"></script>
     <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+    <script>
+      function process(quant,item,tamanho){
+        if(quant == 1){
+          window.location.replace("../Inicial/AumentarDiminuir.php?item="+item+"&op="+1+"$tamanho="+tamanho);
+        }
+        else{
+          window.location.replace("../Inicial/AumentarDiminuir.php?item="+item+"&op="+2+"$tamanho="+tamanho);
+        }
+      }
+
+
+    </script>
 </head>
 <body>
 
@@ -121,9 +133,11 @@
         <div class="col">'.$item['descricao'].'</div>
         <div class="col">R$ '.$item['preco'].'</div>
         <div class="col">'.$item['tamanho'].'</div>
-        <div class="col">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        '.$item['quantidade'].'</div>
+        <div class="col">&nbsp;
+        <a href="../Inicial/AumentarDiminuir.php?item='.$item['id'].'&op=1&tamanho='.$item['tamanho'].'">+</a>
+        '.$item['quantidade'].'
+        <a href="../Inicial/AumentarDiminuir.php?item='.$item['id'].'&op=2&tamanho='.$item['tamanho'].'">-</a>
+        </div>
         <div class="col"><a  class="btn btn-info" href="../Inicial/RemoverCarrinhoCtrl.php?id='.$item['id'].'&tamanho='.$item['tamanho'].'">Remover</a></div>
         </div> <hr>';
       }

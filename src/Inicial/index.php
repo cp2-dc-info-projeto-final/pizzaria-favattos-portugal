@@ -93,7 +93,7 @@
                  <div class="col">'.$item['descricao'].'</div>
                  <div class="col">R$ '.$item['preco'].'</div>
                  <div class="col">'.$item['tamanho'].'</div>
-                 <div class="col">'.$item['quantidade'].'</div>
+                 <div class="col">R$ '.$item['quantidade'].'</div>
                  <div class="col"><a  class="btn btn-info" href="RemoverCarrinhoCtrl.php?id='.$item['id'].'&tamanho='.$item['tamanho'].'">Remover</a></div>
                  </div> <hr>';
                }

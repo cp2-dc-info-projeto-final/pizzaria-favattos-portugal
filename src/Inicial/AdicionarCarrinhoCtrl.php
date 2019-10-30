@@ -16,7 +16,6 @@
     }
     
     session_start();
-    //session_destroy();
 
     //Armazenar dados na variável carrinho
     if (!isset($_SESSION["carrinho"]))
