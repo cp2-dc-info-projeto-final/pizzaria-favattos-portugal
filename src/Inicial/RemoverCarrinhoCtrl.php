@@ -4,6 +4,8 @@
 
     $tamanho = $_GET["tamanho"];
 
+    $pag = $_SERVER['HTTP_REFERER'];
+
     session_start();
 
     if (!isset($_SESSION["carrinho"]))
@@ -22,6 +24,7 @@
 
     $_SESSION["carrinho"] = $novo_carrinho;
 
-   header("Location: Index.php");
-   exit();
+    header("Refresh:0; url=$pag");
+    exit();
+    
 ?>
