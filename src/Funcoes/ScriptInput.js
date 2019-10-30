@@ -60,4 +60,12 @@
         }   
     }
 
+   var auto_atualiza = setInterval(function () {
+        $.get('possui_alteracao.php', function(data) {
+          if (data.possui) {
+            $('#meudiv').load('listadados.php');
+          }
+        });
+      }, 30000);
+
 

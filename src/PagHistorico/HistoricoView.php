@@ -25,9 +25,6 @@
       <a class="nav-link" href="../Inicial/index.php">Menu</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Nossa Gastronomia</a>
-    </li>
-    <li class="nav-item">
       <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a> 
     </li>
   <!-- Dropdown -->
@@ -47,13 +44,8 @@
 <div class="container-fluid" style="margin-top: 100px;">
 <br>
 <table>
-  <?php
-  session_start();
-  require_once("HistoricoModel.php");
-  $historico = recuperarHistorico();
-  foreach($historico as $row) {
-  ?>
-  <table class="table table-bordered table-dark">
+
+<table class="table table-bordered table-dark">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -65,26 +57,32 @@
       <th scope="col">telefone</th>
       <th scope="col">endereço</th>
       <th scope="col">cpf</th>
-      <th scope="col">produto</th>
-      <th scope="col">quantidade</th>
-      
+      <th scope="col">itens</th>
+    
 
     </tr>
   </thead>
   <tbody>
+  <?php
+  session_start();
+  require_once("HistoricoModel.php");
+  $historico = recuperarHistorico();
+  foreach($historico as $row) {
+  ?>
     <tr>
     <th scope ="row"></th>
       <td><?php echo $row['id']?></td>
       <td><?php echo $row['diahora']?></td>
       <td><?php echo ''.$row['precototal'] .' R$ '. ''?></td>
-      <td><?php echo $row['formaPag']?></td>
-      <td><?php echo $row['nome']?></td>
+      <td><?php echo $row['formapag']?></td>
+      <td><?php echo $row['usuario']?></td>
       <td><?php echo $row['telefone']?></td>
-      <td><?php echo ''.$row['Rua'] .' / '. $row['Municipio'] .' / '. $row['Complemento'].''?></td>
+      <td><?php echo ''.$row['rua'] .' / '. $row['municipio'] .' / '. $row['complemento'].''?></td>
       <td><?php echo $row['cpf']?></td>
-      <td><?php echo $row['produto']?></td>
-      <td><?php echo $row['qtd']?></td>
-      
+      <td><?php
+            foreach ($row['itens'] as $item) {
+              echo $item['qtd'] . "x" . $item['produto'] . " " . $item['tamanho'] . "( R$ " . $item['preco'] . " )</br>" ;
+            }?>
     </tr>
   <?php
   }
