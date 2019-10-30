@@ -13,64 +13,68 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-  <!-- Logo -->
-  <a class="navbar-brand" href="#">
-          <img alt="Logo" style="width:40px;">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item dropdown">
-      <a class="nav-link" href="../Inicial/index.php">Menu</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Nossa Gastronomia</a>
-    </li>
-    <li class="nav-item">
-          <a class="nav-link" href="#">Fotos</a>
-    </li>
-  </ul>
-  </div>
+  <!-- Barra de navegação -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+              <img src="bird.jpg" alt="Logo" style="width:40px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="../Inicial/index.php">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Nossa Gastronomia</a>
+        </li>
+        <li class="nav-item">
+              <a class="nav-link" href="#">Fotos</a>
+        </li>
+      </ul>
+    </div>
 
-  <?php
+    <!-- Entrar e cadastrar na direita -->
+    <?php
+
     session_start();
     if (!isset($_SESSION["logi"])) {
-      echo '<div class ="collapse navbar-collapse" id="collapsibleNavbar">
-    <a class ="navbar-brand"></a>
-  <ul class ="navbar-nav ml-auto">
- <li class="nav-item">
-   <a class="nav-link" href="../Cadastro/CadastroView.php">Cadastrar</a> 
- </li>
- <li class="nav-item">
-   <a class="nav-link" href="../Login/LoginView.php">Entrar</a> 
- </li>
-  </ul>
-    </div>';
+      echo '
+      <div class ="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class ="navbar-nav ml-auto">
+      <li class="nav-item">
+       <a class="nav-link" href="../Cadastro/CadastroView.php">Cadastrar</a> 
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="../Login/LoginView.php">Entrar</a> 
+      </li>
+      </ul>
+        </div>';
     } else {
       $login = $_SESSION["logi"];
       echo '
-    <ul class ="navbar-nav">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Usuário
-      </a>
-      <div class="dropdown-menu dropdown-menu-right">
-        <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-        <a class="dropdown-item" href="#">Histórico de compras</a>
-      </div>
-    </li>
-    </ul>';
+      <div class ="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class ="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbardrop" data-toggle="dropdown">
+          Usuário
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
+          <a class="dropdown-item" href="#">Histórico de compras</a>
+        </div>
+      </li>
+      </ul>
+      </div>';
     }
     session_abort();
     ?>
-  </nav>  
 
- 
-  <!--Demonstrando dados do usário -->
+    <!-- fim da barra de navegação aqui -->
+  </nav>
  
   <div class="container" style="margin-top: 150px">
   <div class="shadow p-3 mb-5 bg-white rounded">
@@ -99,6 +103,8 @@
 
     if(count($carrinho) == null){
       echo 'Carrinho vazio, favor adicionar produtos aqui... rs';
+      header('Location: ../Inicial/index.php');
+      exit();
     }
     else{
       echo '<div class="row">
@@ -124,19 +130,16 @@
     }
     ?>
     <br>
-    <form id="Pedido" method="POST" action="FinalizarPedidoCtrl.php">
+    <form id="Pedido" method="POST" action="FinalizarPedidoCtrl.php" onsubmit="return vformaPag()">
     <h2>Informações do Pedido</h2>
     <hr>
     <div class="form-group">
-    <label>Forma de pagamento:</label>
-    <div class="custom-control custom-radio">
-    <input type ="radio" name="Formapag" id="cart" class="custom-control-input" value="Cartao">
-    <label for="cart" class="custom-control-label">Cartão de Crédito ou Débito</label> 
-    </div>
-    <div class="custom-control custom-radio">
-    <input type ="radio" name="Formapag" id="din" class="custom-control-input" value="Dinheiro">
-    <label for="din" class="custom-control-label">Dinheiro</label>
-    </div>
+    <label for="formaPag">Forma de pagamento</label>
+    <select id="formaPag" name="formaPag" class="form-control" style="width:400px;" require>
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="Dinhiero">Dinheiro</option>
+        <option value="Cartão">Cartão de crédito ou débito</option>
+    </select>
     </div>
     <div class="form-group">
     <label for="comentario">Adicionar Comentário:</label>

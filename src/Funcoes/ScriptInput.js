@@ -1,19 +1,4 @@
-    //Verifica se há pelo menos um sexo selecionado 
-    function validate()
-    {
-    var i = 0, counter = 0, sexo;
-    sexo = document.forms[0].sexo;
-    for (; i < sexo.length; i++) {
-    if (sexo[i].checked) {
-      counter++;
-        }
-    }
-    if (counter==0){
-    alert("Selecione o sexo")
-    return false;
-    }
-    return true; 		   
-    }
+
     //permite somente letras no input 
     function letras(){ 
     tecla = event.keyCode; 

@@ -39,7 +39,7 @@ function CalcularIdade($data) {
     }
 }
 
-function AlterarDados($email,$sexo,$telefone,$rua,$municipio,$complemento,$login){
+function AlterarDados($email,$telefone,$rua,$municipio,$complemento,$login){
 
     // Alterando dados do usuário pelos dados informados
     $dados = PegarDados($login);
@@ -59,9 +59,8 @@ function AlterarDados($email,$sexo,$telefone,$rua,$municipio,$complemento,$login
         $complemento = $dados['complemento'];
     }
     $con = CriarConexao();
-    $consulta = $con->prepare('UPDATE usuario SET email=:email, sexo=:sexo, telefone=:telefone, municipio=:municipio, complemento=:complemento, rua=:rua WHERE logi = :logi');
+    $consulta = $con->prepare('UPDATE usuario SET email=:email, telefone=:telefone, municipio=:municipio, complemento=:complemento, rua=:rua WHERE logi = :logi');
     $consulta->bindValue(':email',$email);
-    $consulta->bindValue(':sexo',$sexo);
     $consulta->bindValue(':telefone',$telefone);
     $consulta->bindValue(':rua',$rua);
     $consulta->bindValue(':municipio',$municipio);

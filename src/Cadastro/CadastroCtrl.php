@@ -12,7 +12,6 @@
     $complemento = $_REQUEST["complemento"];
     $data_nascimento = $_REQUEST["dataN"];
     $cpf = $_REQUEST["cpf"];
-    $sexo = $_REQUEST["sexo"];
     $login = $_REQUEST["login"];
     $senha = $_REQUEST["senha"];
     $Csenha = $_REQUEST["Csenha"];
@@ -21,7 +20,7 @@
     $erros = "";
     
     try {
-        $resultCadastro = CadastraUsuario($nome,$data_nascimento,$sexo,$email,$login,$senha,$Csenha,$cpf,$municipio,$complemento,$rua,$tel);  
+        $resultCadastro = CadastraUsuario($nome,$data_nascimento,$email,$login,$senha,$Csenha,$cpf,$municipio,$complemento,$rua,$tel);  
     }
     catch (Exception $e) {
         $erros = $e->getMessage();

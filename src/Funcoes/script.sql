@@ -12,7 +12,6 @@ create table usuario (
     cpf varchar (11),
     logi varchar (10),
     senha varchar (100),
-    sexo varchar (10),
     Rua varchar (120),
     Municipio varchar (30),
     Complemento varchar (50),
@@ -20,11 +19,11 @@ create table usuario (
     primary key (id)
 );
 
-INSERT INTO usuario (nome,data_nasc,email,telefone,cpf,logi,senha,sexo,Rua,Municipio,Complemento,adm) VALUES
-('Sigismundo','1970/08/29','sigismundo@gmail.com','123456789','49108328900','sigismundo','$2y$10$bPtdRgaMsyNYXOkrwzXI1O3F0vY7PM6kuGcQPjv26yFQnYSWR28.G','Masculino','Rua dos cara barbaro','Duque de Caxias','casa',true);
+INSERT INTO usuario (nome,data_nasc,email,telefone,cpf,logi,senha,Rua,Municipio,Complemento,adm) VALUES
+('Sigismundo','1970/08/29','sigismundo@gmail.com','123456789','49108328900','sigismundo','$2y$10$bPtdRgaMsyNYXOkrwzXI1O3F0vY7PM6kuGcQPjv26yFQnYSWR28.G','Rua dos cara barbaro','Duque de Caxias','casa',true);
 
-INSERT INTO usuario (nome,data_nasc,email,telefone,cpf,logi,senha,sexo,Rua,Municipio,Complemento,adm) VALUES
-('João Guilherme','2003/01/15','jguilhermepasco@gmail.com','123456789','02253651702','joaoG','$2y$12$qmISoEeHSWCwjCqHPR6I3.mv3i3fLLLLdJ9pnoAJ0oajRbzIVxhZe','Masculino','Rua dos cara barbaro','Duque de Caxias','casa',false);
+INSERT INTO usuario (nome,data_nasc,email,telefone,cpf,logi,senha,Rua,Municipio,Complemento,adm) VALUES
+('João Guilherme','2003/01/15','jguilhermepasco@gmail.com','123456789','02253651702','joaoG','$2y$12$qmISoEeHSWCwjCqHPR6I3.mv3i3fLLLLdJ9pnoAJ0oajRbzIVxhZe','Rua dos cara barbaro','Duque de Caxias','casa',false);
 
 drop table if exists categoria;
 CREATE TABLE categoria (

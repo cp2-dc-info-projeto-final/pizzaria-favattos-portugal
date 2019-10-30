@@ -32,39 +32,100 @@
   
   <body>
 
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-  <!-- Logo -->
-  <a class="navbar-brand" href="#">
-          <img src="bird.jpg" alt="Logo" style="width:40px;">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item dropdown">
-      <a class="nav-link" href="../Inicial/index.php">Menu</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Nossa Gastronomia</a>
-    </li>
-    <li class="nav-item">
-          <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
-    </li>
-    <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Usuário
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+              <img src="bird.jpg" alt="Logo" style="width:40px;">
       </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-        <a class="dropdown-item" href="#">Histórico de compras</a>
-        <a class="dropdown-item" href="#">Link 3</a>
-      </div>
-    </li>
-  </ul>
-  </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="../Inicial/index.php">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Nossa Gastronomia</a>
+        </li>
+        <li class="nav-item">
+              <a class="nav-link" href="#">Fotos</a>
+        </li>
+        <!-- O carrinho de compras popover -->
+        <li class="nav-item">
+          <a href="#" class="btn btn-primary" data-toggle="popover" data-popover-content="#a1" data-placement="top">Carrinho</a>
+          <div id="a1" class="invisible" style="width: 0px; height: 0px;">
+            <div class="popover-heading">
+              Carrinho de compras
+            </div>
+            <div id="carrinho" class="popover-body">
+            <?php
+             session_start();
+             require_once "../Inicial/CarrinhoCtrl.php";
+             $ctrl = new CarrinhoCtrl();
+             $carrinho = $ctrl->getCarrinho($_SESSION);
+         
+             if(count($carrinho) == null){
+               echo 'Carrinho vazio, favor adicionar produtos aqui... rs';
+             }
+             else{
+               foreach ($carrinho as $item) {
+                 echo '<div class="row">
+                 <div class="col">'.$item['nome'].'</div>
+                 <div class="col">'.$item['descricao'].'</div>
+                 <div class="col">R$ '.$item['preco'].'</div>
+                 <div class="col">'.$item['tamanho'].'</div>
+                 <div class="col">'.$item['quantidade'].'</div>
+                 <div class="col"><a  class="btn btn-info" href="../Inicial/RemoverCarrinhoCtrl.php?id='.$item['id'].'&tamanho='.$item['tamanho'].'">Remover</a></div>
+                 </div> <hr>';
+               }
+             echo '<br><a class="btn btn-danger" href="../FinalizarPedido/FinalizarPedidoView.php">Finalizar pedido</a>';
+             }
+              ?>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Entrar e cadastrar na direita -->
+    <?php
+
+      
+    if (!isset($_SESSION["logi"])) {
+      echo '
+      <div class ="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class ="navbar-nav ml-auto">
+      <li class="nav-item">
+       <a class="nav-link" href="../Cadastro/CadastroView.php">Cadastrar</a> 
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="../Login/LoginView.php">Entrar</a> 
+      </li>
+      </ul>
+        </div>';
+    } else {
+      $login = $_SESSION["logi"];
+      echo '
+      <div class ="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class ="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbardrop" data-toggle="dropdown">
+          Usuário
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
+          <a class="dropdown-item" href="#">Histórico de compras</a>
+        </div>
+      </li>
+      </ul>
+      </div>';
+    }
+    ?>
+
+    <!-- fim da barra de navegação aqui -->
   </nav>  
   <!-- Formulário -->
   <div class="container" style="margin-top: 110px">
@@ -99,30 +160,6 @@
   <label for ="email"> E-mail </label> 
   <input type ="email" class="form-control" name= "email" id= "email" maxlength="125" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder= <?php echo $dados['email']; ?>>
   </div> 
-  <?php
-    if($dados['sexo']=="Masculino"){
-      echo "<label>Sexo</label> 
-            <div class='form-check'>
-            <input type ='radio' class='form-check-input' name = 'sexo' id='masc' value='Masculino' checked>
-            <label class='form-check-label' for='masc'>Masculino</label>
-            </div> 
-            <div class='form-check'>
-            <input type ='radio' name ='sexo' class='form-check-input' id='fem' value='Feminino'>
-            <label class='form-check-label' for='fem'>Feminino</label>    
-            </div>";
-    }else{
-      echo"<label>Sexo</label> 
-          <div class='form-check'>
-          <input type ='radio' class='form-check-input' name = 'sexo' id='masc' value='Masculino'>
-          <label class='form-check-label' for='masc'>Masculino</label>
-          </div> 
-          <div class='form-check'>
-          <input type ='radio' name ='sexo' class='form-check-input' id='fem' value='Feminino' checked>
-          <label class='form-check-label' for='fem'>Feminino</label>    
-          </div>";
-    }
-  ?>
-  <br>
   <div class="form-group">
   <label for ="telefone"> Telefone </label> 
   <input type ="text" class="form-control" name ="telefone" id= "telefone" minlength= "11" maxlength="11" onkeypress="return numeros();" placeholder= <?php echo $dados['telefone']; ?>> 

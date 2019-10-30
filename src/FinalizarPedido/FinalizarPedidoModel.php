@@ -6,6 +6,15 @@ if(!isset($_SESSION["logi"])){
   } 
 
 function AdicionaPedido($comentario, $formaPag, $precoTotal, $diahora, $usuarioId, $carrinho){
+    $error_list = [];
+    if($formaPag==""){
+        $error_list[] = "Selecione uma forma de pagamento";
+    }
+    if(is_null($carrinho)){
+        $error_list[] = "Carrinho Vazio";
+    }
+    
+
     $con = CriarConexao();
     $inserir = 'INSERT INTO pedido (comentario,formaPag,precototal,diahora,usuarioId)
                 VALUES (:comentario,:formaPag,:precototal,:diahora,:usuarioId)';
@@ -14,13 +23,11 @@ function AdicionaPedido($comentario, $formaPag, $precoTotal, $diahora, $usuarioI
     $consulta ->bindValue(':formaPag', $formaPag, PDO::PARAM_STR);
     $consulta ->bindValue(':precototal', $precoTotal);
     $consulta ->bindValue(':diahora', $diahora, PDO::PARAM_STR);
-    #echo $diahora;
-    #exit();
     $consulta ->bindValue(':usuarioId', $usuarioId, PDO::PARAM_INT);
     $consulta->execute();
 
     if($consulta->rowCount() == 0){
-        return false;
+        $error_list[] = "Ocorreu algo de errado!";
     }
 
     $PedidoId = $con->lastInsertId();
@@ -28,11 +35,13 @@ function AdicionaPedido($comentario, $formaPag, $precoTotal, $diahora, $usuarioI
     foreach ($carrinho as $item){
         $ProdutoPedido = AdicionaProdutoPedido($item['id'],$PedidoId,$item['tamanho'],$item['quantidade']);
         if(!$ProdutoPedido){
-            return false;
+            $error_list[] = "Ocorreu algo de errado!";
         }
     }
 
-    return true;
+    if (!empty($error_list)) {
+        throw new Exception(implode('|', $error_list));
+    }
 }
 
 function AdicionaProdutoPedido($idProduto,$idPedido,$tamanho,$qtd){

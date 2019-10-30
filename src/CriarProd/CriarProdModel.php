@@ -31,6 +31,10 @@ function MesmaDescricao($descricao){
     }       
 }
 
+function ConverteFloat($preco){
+    return floatval($preco);
+}
+
 
 function CadastraProduto($nome,$descricao,$qtdd_vendida,$preco_normal,$preco_medio,$preco_grande,$preco_gigante,$categoria,$imagem){
 
@@ -41,18 +45,19 @@ function CadastraProduto($nome,$descricao,$qtdd_vendida,$preco_normal,$preco_med
     if(MesmaDescricao($descricao) == 1){
         $error_list[] = "Esta descrição utilizada no momento";
     }
-    
+     
+
     $con = CriarConexao();
     $inserir = 'INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, preco_medio, preco_grande, preco_gigante, categoria, imagem)
               VALUES (:nome, :descricao, :qtdd_vendida, :preco_normal, :preco_medio, :preco_grande, :preco_gigante, :categoria, :imagem)';
     $consulta = $con->prepare($inserir);
     $consulta ->bindValue(':nome', $nome);
     $consulta ->bindValue(':descricao', $descricao);
-    $consulta ->bindValue(':qtdd_vendida', $qtdd_vendida);
-    $consulta ->bindValue(':preco_normal', $preco_normal);
-    $consulta ->bindValue(':preco_medio', $preco_medio);
-    $consulta ->bindValue(':preco_grande', $preco_grande);
-    $consulta ->bindValue(':preco_gigante', $preco_gigante);
+    $consulta ->bindValue(':qtdd_vendida', 0);
+    $consulta ->bindValue(':preco_normal', ConverteFloat($preco_normal));
+    $consulta ->bindValue(':preco_medio', ConverteFloat($preco_medio));
+    $consulta ->bindValue(':preco_grande', ConverteFloat($preco_grande));
+    $consulta ->bindValue(':preco_gigante', ConverteFloat($preco_gigante));
     $consulta ->bindValue(':categoria', $categoria);
     $consulta ->bindValue(':imagem', $imagem);
 
