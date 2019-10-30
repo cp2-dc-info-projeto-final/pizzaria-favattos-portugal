@@ -28,14 +28,14 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <!-- Links -->
       <ul class="navbar-nav">
-        <li class="nav-item dropdown">
+      <li class="nav-item dropdown">
           <a class="nav-link" href="../Inicial/index.php">Menu</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Nossa Gastronomia</a>
         </li>
         <li class="nav-item">
-              <a class="nav-link" href="#">Fotos</a>
+              <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
         </li>
         <!-- O carrinho de compras popover -->
         <li class="nav-item">
