@@ -133,10 +133,10 @@
         <div class="col">'.$item['descricao'].'</div>
         <div class="col">R$ '.$item['preco'].'</div>
         <div class="col">'.$item['tamanho'].'</div>
-        <div class="col">&nbsp;
-        <a href="../Inicial/AumentarDiminuir.php?item='.$item['id'].'&op=1&tamanho='.$item['tamanho'].'">+</a>
+        <div class="col">&nbsp;&nbsp;
+        <a href="../Inicial/AdicionarCarrinhoCtrl.php?id='.$item['id'].'&nome='.$item['nome'].'&tamanho='.$item['tamanho'].'&preco='.$item['preco'].'&descricao='.$item['descricao'].'&op=1">+</a>
         '.$item['quantidade'].'
-        <a href="../Inicial/AumentarDiminuir.php?item='.$item['id'].'&op=2&tamanho='.$item['tamanho'].'">-</a>
+        <a href="../Inicial/AdicionarCarrinhoCtrl.php?id='.$item['id'].'&nome='.$item['nome'].'&tamanho='.$item['tamanho'].'&preco='.$item['preco'].'&descricao='.$item['descricao'].'&op=2">-</a>
         </div>
         <div class="col"><a  class="btn btn-info" href="../Inicial/RemoverCarrinhoCtrl.php?id='.$item['id'].'&tamanho='.$item['tamanho'].'">Remover</a></div>
         </div> <hr>';

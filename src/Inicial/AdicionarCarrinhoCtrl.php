@@ -9,6 +9,10 @@
 
     $descricao = $_GET["descricao"];
 
+    $op = $_GET["op"];
+
+    $pag = $_SERVER['HTTP_REFERER'];
+
     if (isset($_GET["tamanho"])) {
         $tamanho = $_GET["tamanho"];
     } else {
@@ -29,8 +33,22 @@
     $encontrado = false;
     for($i = 0; $i < count($carrinho); $i++) {
         if ($carrinho[$i]["id"] == $id && (is_null($tamanho) || $carrinho[$i]["tamanho"] == $tamanho)) {
+            if($op==1){
+                $carrinho[$i]["quantidade"] += 1;
+                $encontrado = true;  
+            }
+            elseif($op==2){
+                if($carrinho[$i]["quantidade"] == 1){
+                    header('Location: RemoverCarrinhoCtrl.php?id='.$id.'&tamanho='.$tamanho.'');
+                    exit();
+                }
+                $carrinho[$i]["quantidade"] -= 1;
+                $encontrado = true; 
+            }
+            else{
             $carrinho[$i]["quantidade"] += 1;
             $encontrado = true;
+            }
         }
     }
 
@@ -52,5 +70,6 @@
     
     $_SESSION["carrinho"] = $carrinho;
 
-    header("Location: Index.php");
+    header("Refresh:0; url=$pag");
+    exit();
 ?>
