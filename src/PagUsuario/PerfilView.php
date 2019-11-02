@@ -41,9 +41,6 @@
       <a class="nav-link" href="../Inicial/index.php">Menu</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Nossa Gastronomia</a>
-    </li>
-    <li class="nav-item">
           <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
     </li>
     <!-- Dropdown -->
@@ -54,7 +51,6 @@
       <div class="dropdown-menu">
         <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
         <a class="dropdown-item" href="#">Histórico de compras</a>
-        <a class="dropdown-item" href="#">Link 3</a>
       </div>
     </li>
   </ul>

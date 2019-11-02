@@ -25,9 +25,6 @@
     <a class="nav-link" href="../Inicial/index.php">Menu</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Nossa Gastronomia</a>
-  </li>
-  <li class="nav-item">
     <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a> 
   </li>
 <!-- Dropdown -->
