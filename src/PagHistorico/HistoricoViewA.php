@@ -13,55 +13,38 @@
   <body>
   <!-- Barra de navegação -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-      <!-- Logo -->
-      <a class="navbar-brand" href="#">
-              <img src="bird.jpg" alt="Logo" style="width:40px;">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <!-- Links -->
-      <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-          <a class="nav-link" href="../Inicial/index.php">Menu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Nossa Gastronomia</a>
-        </li>
-        <li class="nav-item">
-              <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
-        </li>
-      </ul>
+  <!-- Logo -->
+  <a class="navbar-brand" href="#">
+          <img src="bird.jpg" alt="Logo" style="width:40px;">
+  </a>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item dropdown">
+      <a class="nav-link" href="../Inicial/index.php">Menu</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a> 
+    </li>
+  <!-- Dropdown -->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+      Usuário
+    </a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
+      <a class="dropdown-item" href="#">Histórico de compras</a>
     </div>
-      <div class ="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class ="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbardrop" data-toggle="dropdown">
-          Usuário
-        </a>
-        <div class="dropdown-menu dropdown-menu-right">
-          <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-          <a class="dropdown-item" href="#">Histórico de compras</a>
-        </div>
-      </li>
-      </ul>
-      </div>
-
-    <!-- fim da barra de navegação aqui -->
-  </nav>
+  </li>  
+  </div>
+  </nav> 
 
   
 <div class="container-fluid" style="margin-top: 100px;">
 <br>
 <table>
-  <?php
-  session_start();
-  require_once("HistoricoCtrl.php");
-  $historico = recuperarHistoricoCtrl();
-  foreach($historico as $row) {
-  ?>
-  <table class="table table-bordered table-dark">
+
+<table class="table table-bordered table-dark">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -73,26 +56,32 @@
       <th scope="col">telefone</th>
       <th scope="col">endereço</th>
       <th scope="col">cpf</th>
-      <th scope="col">produto</th>
-      <th scope="col">quantidade</th>
-      
+      <th scope="col">itens</th>
+    
 
     </tr>
   </thead>
   <tbody>
+  <?php
+  session_start();
+  require_once("HistoricoModel.php");
+  $historico = recuperarHistorico();
+  foreach($historico as $row) {
+  ?>
     <tr>
     <th scope ="row"></th>
       <td><?php echo $row['id']?></td>
       <td><?php echo $row['diahora']?></td>
       <td><?php echo ''.$row['precototal'] .' R$ '. ''?></td>
-      <td><?php echo $row['formaPag']?></td>
-      <td><?php echo $row['nome']?></td>
+      <td><?php echo $row['formapag']?></td>
+      <td><?php echo $row['usuario']?></td>
       <td><?php echo $row['telefone']?></td>
-      <td><?php echo ''.$row['Rua'] .' / '. $row['Municipio'] .' / '. $row['Complemento'].''?></td>
+      <td><?php echo ''.$row['rua'] .' / '. $row['municipio'] .' / '. $row['complemento'].''?></td>
       <td><?php echo $row['cpf']?></td>
-      <td><?php echo $row['produto']?></td>
-      <td><?php echo $row['qtd']?></td>
-      
+      <td><?php
+            foreach ($row['itens'] as $item) {
+              echo $item['qtd'] . "x" . $item['produto'] . " " . $item['tamanho'] . "( R$ " . $item['preco'] . " )</br>" ;
+            }?>
     </tr>
   <?php
   }
