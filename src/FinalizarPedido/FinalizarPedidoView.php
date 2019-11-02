@@ -25,11 +25,27 @@
 </head>
 <body>
 
-  <!-- Barra de navegação -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-      <!-- Logo -->
-      <a class="navbar-brand" href="#">
-              <img src="bird.jpg" alt="Logo" style="width:40px;">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <!-- Logo -->
+  <a class="navbar-brand" href="#">
+          <img alt="Logo" style="width:40px;">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item dropdown">
+      <a class="nav-link" href="../Inicial/index.php">Menu</a>
+    </li>
+    <li class="nav-item">
+          <a class="nav-link" href="#">Fotos</a>
+    </li>
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Usuário
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>

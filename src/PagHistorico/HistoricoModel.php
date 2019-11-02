@@ -42,6 +42,7 @@ function recuperarHistorico() {
   
   return $historico;
 }
+
 function recuperarPedido($id_pedido) {
   $conn=CriarConexao();
   $itens_pedido = $conn->prepare ("SELECT pro.nome as produto, pp.qtd, pp.tamanho,
@@ -58,6 +59,7 @@ function recuperarPedido($id_pedido) {
     $item['produto'] = $row['produto'];
     $item['qtd'] = $row['qtd'];
     $item['tamanho'] = $row['tamanho'];
+
     if ($item['tamanho'] == 'normal') {
       $item['preco'] = $row['preco_normal'];
     } else if ($item['tamanho'] == 'medio') {
@@ -71,23 +73,6 @@ function recuperarPedido($id_pedido) {
     array_push($itens, $item);
   }
   return $itens;
-}
-
-function recuperarHistoricoC($id){
-  $conn=CriarConexao();
-  $historico = $conn->prepare ("SELECT p.id, p.diahora, p.precototal, p.formaPag, u.nome, u.telefone, u.Rua, u.Municipio, u.Complemento, u.cpf, pro.nome as produto, pp.qtd 
-  FROM pedido as p
-  join usuario as u
-  ON p.usuarioId = u.id
-  join produtopedido as pp
-  ON pp.idPedido
-  join produto as pro
-  ON pro.id = pp.idProduto
-  WHERE u.id = :id");
-  $historico->bindValue(':id',$id);
-  $historico->execute();
-  $historico= $historico->fetchAll();
-  return $historico;
 }
 
 

@@ -70,9 +70,6 @@
           <a class="nav-link" href="../Inicial/index.php">Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Nossa Gastronomia</a>
-        </li>
-        <li class="nav-item">
               <a class="nav-link" href="#">Fotos</a>
         </li>
         <!-- O carrinho de compras popover -->
@@ -149,7 +146,6 @@
     <!-- fim da barra de navegação aqui -->
   </nav>
 
- 
   <!--Demonstrando dados do usário -->
  
   <div class="container" style="margin-top: 150px">
