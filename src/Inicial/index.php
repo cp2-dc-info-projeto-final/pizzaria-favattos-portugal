@@ -27,6 +27,13 @@
     function adicionar_carrinho(id, nome, tamanho, preco, descricao) {
       window.location.replace("AdicionarCarrinhoCtrl.php?id=" + id + "&nome=" + nome + "&tamanho=" + tamanho + "&preco=" + preco + "&descricao=" + descricao + "&op" + 0);
     }
+
+    function excluir_prod(id){
+      if(confirm("Você tem certeza que deseja apagar esse produto?"))
+      {
+        window.location.replace("../EditarProduto/DeletarP.php?id="+id);
+      }
+    }
     
     //Função para ativar o popover e inseriro seu titulo e corpo
     $(function() {
@@ -220,8 +227,8 @@
 
                         ?>
                       <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
-                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a>
-                      <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a>                  
+                      <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a>
+                      <button class="btn btn-bg btn-outline-danger" onclick="excluir_prod(<?php echo $produto['id']?>)">Excluir</button>                      
                       <?php
                       } 
                       else{
@@ -276,8 +283,8 @@
                       if ($dados['adm']) {
                   ?>
                       <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
-                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a>
-                      <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a>                  
+                      <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a>
+                      <button class="btn btn-bg btn-outline-danger" onclick="excluir_prod(<?php echo $produto['id']?>)">Excluir</button>                  
                   <?php
                       } 
                       else {
@@ -326,8 +333,8 @@
                     if (isset($login) && $dados['adm']) {
                   ?>
                       <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
-                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a> 
-                      <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a> 
+                      <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a>
+                      <button class="btn btn-bg btn-outline-danger" onclick="excluir_prod(<?php echo $produto['id']?>)">Excluir</button>       
                     <?php
                     } elseif (!isset($login) || !$dados['adm']) {
                       if ($produto['nome'] == 'Batata frita') { ?>
@@ -374,9 +381,9 @@
                   <?php
                     if (isset($login) && $dados['adm']) {
                       ?>
-                    <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
-                    <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a>
-                    <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a> 
+                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
+                      <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a>
+                      <button class="btn btn-bg btn-outline-danger" onclick="excluir_prod(<?php echo $produto['id']?>)">Excluir</button>      
                   <?php
                     } elseif (!isset($login) || !$dados['adm']) {
                       ?>
@@ -418,8 +425,8 @@
                     if (isset($login) && $dados['adm']) {
                   ?>
                       <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
-                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/DeletarP.php?id=<?php echo $produto["id"]?>">Excluir</a>
-                      <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a>                   
+                      <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a>
+                      <button class="btn btn-bg btn-outline-danger" onclick="excluir_prod(<?php echo $produto['id']?>)">Excluir</button>                        
                   <?php
                     } elseif (!isset($login) || !$dados['adm']) {
                   ?>
