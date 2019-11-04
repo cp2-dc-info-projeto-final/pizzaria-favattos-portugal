@@ -141,7 +141,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-          <a class="dropdown-item" href="#">Histórico de compras</a>
+          <a class="dropdown-item" href="../PagHistorico/HistoricoViewC.php">Histórico de compras</a>
         </div>
       </li>
       </ul>

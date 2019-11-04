@@ -1,3 +1,21 @@
+<?php
+  session_start();
+  require_once("../PagUsuario/PerfilCtrl.php");
+
+  if(!isset($_SESSION["logi"])){
+    header("location: ../Login/LoginView.php");
+    exit();
+  }
+  else{
+    $login = $_SESSION["logi"];
+    $dados = PegardadosCtrl($login);
+    if(!$dados["adm"]){
+      header("location: ../Inicial/index.php");
+    }
+  }
+
+?>
+
 <!doctype html> 
 <html> 
   <head> 

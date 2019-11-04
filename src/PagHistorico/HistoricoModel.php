@@ -8,6 +8,7 @@ function registrarcompra($id){
   $compra= $compra->fetch();
   return $compra;
 }
+
 function recuperarHistorico() {
   $historico = [];
   $conn=CriarConexao();
@@ -17,6 +18,43 @@ function recuperarHistorico() {
   join usuario as u
   ON p.usuarioId = u.id
   ORDER BY diahora DESC");
+  $pedidos->execute();
+  if ($pedidos)
+  {
+    while ($row = $pedidos->fetch(PDO::FETCH_ASSOC)) {
+      $pedido = [];
+      $pedido['id'] = $row['id'];
+      $pedido['itens'] = recuperarPedido($row['id']);
+      $pedido['diahora'] = $row['diahora'];
+      $pedido['precototal'] = $row['precototal'];
+      $pedido['formapag'] = $row['formaPag'];
+      $pedido['usuario'] = $row['nome'];
+      $pedido['telefone'] = $row['telefone'];
+      $pedido['rua'] = $row['Rua'];
+      $pedido['municipio'] = $row['Municipio'];
+      $pedido['complemento'] = $row['Complemento'];
+      $pedido['cpf'] = $row['cpf'];
+      array_push($historico, $pedido);
+    }
+  } else {
+    die("morri!");
+  }
+  
+  
+  return $historico;
+}
+
+function recuperarHistoricoC($id) {
+  $historico = [];
+  $conn=CriarConexao();
+  $pedidos = $conn->prepare ("SELECT p.id, p.diahora, p.precototal, p.formaPag,
+  u.nome, u.telefone, u.Rua, u.Municipio, u.Complemento, u.cpf 
+  FROM pedido as p
+  join usuario as u
+  ON p.usuarioId = u.id
+  WHERE u.id = :id
+  ORDER BY diahora DESC");
+  $pedidos->bindValue(':id',$id);
   $pedidos->execute();
   if ($pedidos)
   {
