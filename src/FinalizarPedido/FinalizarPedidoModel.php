@@ -16,8 +16,8 @@ function AdicionaPedido($comentario, $formaPag, $precoTotal, $diahora, $usuarioI
     
 
     $con = CriarConexao();
-    $inserir = 'INSERT INTO pedido (comentario,formaPag,precototal,diahora,usuarioId)
-                VALUES (:comentario,:formaPag,:precototal,:diahora,:usuarioId)';
+    $inserir = 'INSERT INTO pedido (comentario,formaPag,precototal,diahora,usuarioId,estado)
+                VALUES (:comentario,:formaPag,:precototal,:diahora,:usuarioId,false)';
     $consulta = $con->prepare($inserir);
     $consulta ->bindValue(':comentario', $comentario, PDO::PARAM_STR);
     $consulta ->bindValue(':formaPag', $formaPag, PDO::PARAM_STR);

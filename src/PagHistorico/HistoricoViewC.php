@@ -66,57 +66,45 @@
 
   
 <div class="container-fluid" style="margin-top: 100px;">
-<div class="shadow p-3 mb-5 bg-white rounded">
 <br>
-<table>
+<center><h2>Histórico de pedidos </h2></center>
+<hr>
   <?php
   require_once("HistoricoCtrl.php");
   require_once("../PagUsuario/PerfilCtrl.php");
   $dados = PegardadosCtrl($login);
   $historico = recuperarHistoricoCCtrl($dados['id']);
-  if(count($historico) < 1){
-  ?>
-  <center><h2 class="alert alert-warning">Nenhum pedido foi efetuado até o momento!</h2></center>
-  <?php
-  }else{
   foreach($historico as $row) {
   ?>
-  <table class="table table-bordered table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Número do pedido</th>
-      <th scope="col">Horário</th>
-      <th scope="col">Valor</th>
-      <th scope="col">Forma de pagamento</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Telefone</th>
-      <th scope="col">Endereço</th>
-      <th scope="col">Produto</th>
-      <th scope="col">Quantidade</th>
-      
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><?php echo $row['id']?></td>
-      <td><?php echo $row['diahora']?></td>
-      <td><?php echo ''.$row['precototal'] .' R$ '. ''?></td>
-      <td><?php echo $row['formaPag']?></td>
-      <td><?php echo $row['nome']?></td>
-      <td><?php echo $row['telefone']?></td>
-      <td><?php echo ''.$row['Rua'] .' / '. $row['Municipio'] .' / '. $row['Complemento'].''?></td>
-      <td><?php echo $row['produto']?></td>
-      <td><?php echo $row['qtd']?></td>
-
-    </tr>
+  <div class="shadow p-3 mb-5 bg-white rounded">
+  <div class="row">
+    <div class="col">
+      <h3 style="font-size:22px"> Pedido </h3>
+      <p>Número - <?php echo $row['id']?></p>
+      <p>Realizado - <?php echo $row['diahora']?></p>
+      <p>Status - <?php echo $row['estado']?></p>
+    </div>
+    <div class="col">
+      <h3 style="font-size:22px"> Cliente </h3>
+      <p><?php echo $row['usuario']?></p>
+      <p>Telefone: <?php echo $row['telefone']?></p>
+      <p>Endereço: <?php echo ''.$row['rua'] .' / '. $row['municipio'] .' / '. $row['complemento'].''?></p>
+    </div>
+    <div class="col-5">
+      <h3 style="font-size:22px"> Resumo da compra </h3>
+      <p><?php
+            foreach ($row['itens'] as $item) {
+              echo $item['produto'] . " " . $item['tamanho'] . "( R$ " . $item['preco'] . " )" . " x " .  $item['qtd'] ." unidade(s) </br>" ;
+            }?>
+      </p>
+      <p>Forma de pagamento: <?php echo $row['formapag']?></p>
+      <p>Total: <?php echo 'R$ '.$row['precototal'].''?></p>
+    </div>
+  </div>
   <?php
   }
-  }
   ?>
-  </table>
 
-</div>
 </div>
 <!--Rodapé no final da página-->
 <nav class="navbar bg-dark navbar-dark fixed-bottom"> 

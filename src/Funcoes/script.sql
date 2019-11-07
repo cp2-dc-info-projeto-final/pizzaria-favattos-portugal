@@ -124,6 +124,7 @@ CREATE TABLE pedido(
     formaPag varchar(30),
     precototal float,
     diahora varchar(60),
+    estado boolean,
     usuarioId int,
     primary key (id),
     foreign key (usuarioId) references usuario(id)

@@ -117,7 +117,7 @@
         echo '<div class="row">
         <div class="col">'.$item['nome'].'</div>
         <div class="col">'.$item['descricao'].'</div>
-        <div class="col">R$ <input type="number" name="quantity" min="1" max="10" value="'.$item['preco'].'"></div>
+        <div class="col">R$ '.$item['preco'].'</div>
         <div class="col">'.$item['tamanho'].'</div>
         <div class="col">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

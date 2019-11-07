@@ -47,7 +47,7 @@ function recuperarHistorico() {
 function recuperarHistoricoC($id) {
   $historico = [];
   $conn=CriarConexao();
-  $pedidos = $conn->prepare ("SELECT p.id, p.diahora, p.precototal, p.formaPag,
+  $pedidos = $conn->prepare ("SELECT p.id, p.diahora, p.precototal, p.formaPag, p.estado,
   u.nome, u.telefone, u.Rua, u.Municipio, u.Complemento, u.cpf 
   FROM pedido as p
   join usuario as u
@@ -71,6 +71,7 @@ function recuperarHistoricoC($id) {
       $pedido['municipio'] = $row['Municipio'];
       $pedido['complemento'] = $row['Complemento'];
       $pedido['cpf'] = $row['cpf'];
+      $pedido['estado'] = $row['estado'];
       array_push($historico, $pedido);
     }
   } else {

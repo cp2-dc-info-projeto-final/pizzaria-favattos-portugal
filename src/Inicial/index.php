@@ -25,7 +25,7 @@
   <script>
     //Envia as informações dos produtos pela URL para o arquivo AdicionarCarrinhoCtrl
     function adicionar_carrinho(id, nome, tamanho, preco, descricao) {
-      window.location.replace("AdicionarCarrinhoCtrl.php?id=" + id + "&nome=" + nome + "&tamanho=" + tamanho + "&preco=" + preco + "&descricao=" + descricao + "&op" + 0);
+      window.location.replace("AdicionarCarrinhoCtrl.php?id=" + id + "&nome=" + nome + "&tamanho=" + tamanho + "&preco=" + preco + "&descricao=" + descricao + "&op=" + 0);
     }
 
     function excluir_prod(id){
