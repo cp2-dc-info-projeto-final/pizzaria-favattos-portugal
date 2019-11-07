@@ -29,6 +29,61 @@
   </head> 
   
   <body>
+
+
+  <script>
+
+    
+var getJSON = function(url, callback) {
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET', url, true);
+xhr.responseType = 'json';
+
+xhr.onload = function() {
+
+    var status = xhr.status;
+    
+    if (status == 200) {
+        callback(null, xhr.response);
+    } else {
+        callback(status);
+    }
+};
+
+xhr.send();
+};
+
+getJSON('HistoricoAdmAjax.php',  function(err, data) {
+
+if (err != null) {
+    console.error(err);
+} else {
+    
+    data.forEach(myFunction);
+
+    function myFunction(item, index, arr) {
+
+      var html = `<tr>
+                    <td></td>
+                    <td> ${item.id} </td>
+                    <td> ${item.diahora} </td>
+                    <td> R$ ${item.precototal} </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>`;
+      
+      $('#tb-historico').append(html);
+    }
+}
+});
+
+
+</script>
   <!-- Barra de navegação -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <!-- Logo -->
@@ -62,7 +117,7 @@
 <br>
 <table>
 
-<table class="table table-bordered table-dark">
+<table id="tb-historico" class="table table-bordered table-dark">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -78,33 +133,8 @@
     
 
     </tr>
-  </thead>
-  <tbody>
-  <?php
-  session_start();
-  require_once("HistoricoModel.php");
-  $historico = recuperarHistorico();
-  foreach($historico as $row) {
-  ?>
-    <tr>
-    <th scope ="row"></th>
-      <td><?php echo $row['id']?></td>
-      <td><?php echo $row['diahora']?></td>
-      <td><?php echo ''.$row['precototal'] .' R$ '. ''?></td>
-      <td><?php echo $row['formapag']?></td>
-      <td><?php echo $row['usuario']?></td>
-      <td><?php echo $row['telefone']?></td>
-      <td><?php echo ''.$row['rua'] .' / '. $row['municipio'] .' / '. $row['complemento'].''?></td>
-      <td><?php echo $row['cpf']?></td>
-      <td><?php
-            foreach ($row['itens'] as $item) {
-              echo $item['qtd'] . "x" . $item['produto'] . " " . $item['tamanho'] . "( R$ " . $item['preco'] . " )</br>" ;
-            }?>
-    </tr>
-  <?php
-  }
-  ?>
-  </table>
+  </thead> 
+</table>
 
 
 <!--Rodapé no final da página-->

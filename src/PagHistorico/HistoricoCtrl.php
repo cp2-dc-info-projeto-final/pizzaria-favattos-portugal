@@ -6,7 +6,7 @@ function registrarcompraCtrl($id){
     return $compra;
 }
 
-function recuperarHistoricoCtrl(){
+function recuperarHistoricoCtrlAdm(){
     $historico = recuperarHistorico();
     return $historico;
 }
