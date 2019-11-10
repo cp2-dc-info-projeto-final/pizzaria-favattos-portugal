@@ -270,7 +270,7 @@
         ?>
         <div class="col-md-4" style="max-width: 777px;">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="<?php $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
+            <img class="card-img-top" src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
             <div class="card-body">
               <h6> <?php echo $produto['nome']; ?> </h6>
               <p class="card-text"><?php echo $produto['descricao']; ?></p>

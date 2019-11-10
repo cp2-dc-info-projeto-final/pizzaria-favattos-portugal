@@ -7,6 +7,24 @@
     <link rel ="stylesheet" href ="../Estilo/bootstrap-4.1.3-dist/css/bootstrap.min.css">
     <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
     <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
+    <script>
+			function previewImagem(){
+				var imagem = document.querySelector('input[name=imagem]').files[0];
+				var preview = document.querySelector('img[name=pre]');
+				
+				var reader = new FileReader();
+				
+				reader.onloadend = function () {
+					preview.src = reader.result;
+				}
+				
+				if(imagem){
+					reader.readAsDataURL(imagem);
+				}else{
+					preview.src = "";
+				}
+			}
+		</script>
   </head> 
   
 <body>
@@ -62,18 +80,19 @@
 <div class="shadow p-3 mb-5 bg-white rounded"> 
   <?php
     session_start();
-    if(!isset($_SESSION['id']) || !isset($_SESSION['categoria'])){
-        $_SESSION['id']=$_GET['id'];
-        $_SESSION['categoria']=$_GET['categoria'];
-    }
+    $_SESSION['id']=$_GET['id'];
+    $_SESSION['categoria']=$_GET['categoria'];
+
 
     require_once("EditarPCtrl.php");
     $dados = PegarProduto($_SESSION['id']);
   ?>
   <!--Inicio do formlário com os dados atuais-->
 
-  <form method="POST" action="AlterarCtrl.php"> 
+  <form enctype="multipart/form-data" method="POST" action="AlterarCtrl.php"> 
   <h1 style="font-size:28px">Redefinir Dados</h1>
+  <div class="row">
+  <div class="col">
   <div class="form-group">
   <label for ="nome"> Nome </label> 
   <input type ="text" class="form-control" name="nome" id= "nome" maxlength="40" placeholder="<?php echo $dados["nome"]; ?>">
@@ -81,6 +100,14 @@
   <div class="form-group">
   <label for ="descricao"> Descrição </label> 
   <input type ="text" class="form-control" name ="descricao" id= "descricao" maxlength="100" placeholder="<?php echo $dados["descricao"]; ?>"> 
+  </div>
+  </div>
+  <div class="col">
+  <div class="file-field" style="style=width: 400px; padding-left: 80px;"> 
+  <input type="file" name="imagem" id="imagem" onchange="previewImagem()"><br><br>
+	<img style="width: 350px;" src="<?php echo $dados["imagem"];?>" name="pre"><br><br>
+  </div>
+  </div>
   </div>
   <?php
   if($_SESSION['categoria'] == 1){

@@ -11,17 +11,25 @@ $preco_medio = $_REQUEST["precoM"];
 $preco_grande = $_REQUEST["precoG"];
 $preco_gigante = $_REQUEST["precoGG"];
 $categoria = $_REQUEST["Categoria"];
-$imagem = $_FILES["img"];
 
-//diretorio das imagens
-$pasta_dir = "imagensProd/";
-//se nao existir a pasta ele cria uma
-if(!file_exists($pasta_dir)){
-mkdir($pasta_dir);
+if(isset($_FILES["imagem"])){
+
+    $imagem = $_FILES["imagem"];
+
+    //diretorio das imagens
+    $pasta_dir = "../Imagens/";
+    //se nao existir a pasta ele cria uma
+    if(!file_exists($pasta_dir)){
+    mkdir($pasta_dir);
+    }
+    
+    $imagem_nome = $pasta_dir.$imagem['name'];
+    // Faz o upload da imagem
+    move_uploaded_file($imagem["tmp_name"], $pasta_dir.$imagem_nome);
 }
-$imagem_nome = $pasta_dir . $imagem["name"];
-// Faz o upload da imagem
-move_uploaded_file($imagem["tmp_name"], $imagem_nome);
+else{
+    $imagem_nome = "";
+}
 
 //Verificando dados
 $erros = "";

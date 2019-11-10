@@ -5,9 +5,29 @@
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
     <link rel ="stylesheet" href ="../Estilo/bootstrap-4.1.3-dist/css/bootstrap.min.css">
-    <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
+    <script src="../Estilo/popper.min.js"></script> 
     <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
     <script src="../Funcoes/ScriptInput.js"></script>
+    <script src="../Estilo/jquery.min.js"></script>
+		<script>
+			function previewImagem(){
+				var imagem = document.querySelector('input[name=imagem]').files[0];
+				var preview = document.querySelector('img[name=pre]');
+				
+				var reader = new FileReader();
+				
+				reader.onloadend = function () {
+					preview.src = reader.result;
+				}
+				
+				if(imagem){
+					reader.readAsDataURL(imagem);
+				}else{
+					preview.src = "";
+				}
+			}
+		</script>
+
   </head> 
   
 <body>
@@ -16,7 +36,7 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
 <!-- Logo -->
 <a class="navbar-brand" href="#">
-        <img src="bird.jpg" alt="Logo" style="width:40px;">
+        <img src="" alt="Logo" style="width:40px;">
 </a>
 <div class="collapse navbar-collapse" id="collapsibleNavbar">
 <!-- Links -->
@@ -65,7 +85,7 @@
   ?>
   <!--Inicio do formlário com os dados atuais-->
 
-    <form method="POST" action="CriarProdCtrl.php"> 
+    <form enctype="multipart/form-data" method="POST" action="CriarProdCtrl.php"> 
     <h1 style="font-size:28px">Criar Produto</h1>
     <div class="row">
     <div class="col"><div class="form-group">
@@ -87,15 +107,14 @@
     <option value="6">Bordas</option>
     </select>
     </div>
-    <div class="col"><div class="file-field" style="style=width: 400px; padding-left: 80px;">
-    <div class="z-depth-1-half mb-4">
-      <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" class="img-fluid" style="width: 350px;">
+    <div class="col">
+    <div class="file-field" style="style=width: 400px; padding-left: 80px;">  
+      <input type="file" name="imagem" id="imagem" onchange="previewImagem()"><br><br>
+			<img style="width: 350px;" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" name="pre">
     </div>
-    <div class="d-flex justify-content-center">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
-        <input type="file" style="color:transparent;" name="img" id="img">
     </div>
-    </div></div></div>
+    </div>
+
     <br>
     <div class="row">
     <div class="col"><div class="form-group">
@@ -122,7 +141,7 @@
     <a class="btn btn-outline-danger" href="../Inicial/index.php">Voltar</a> 
     </center>
     </form>
-
+ 	
 </div>
 </div>
 <br>
@@ -135,5 +154,3 @@
 </nav> 
 </body> 
 </html>
-
-<!--https://forum.imasters.com.br/topic/534442-sistema-de-inserir-foto-igual-do-perfil-do-facebook/-->

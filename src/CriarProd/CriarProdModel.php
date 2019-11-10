@@ -42,8 +42,8 @@ function CadastraProduto($nome,$descricao,$qtdd_vendida,$preco_normal,$preco_med
     if(MesmoNome($nome) == 1){
         $error_list[] = "Este nome já está sendo utilizado no momento";
     }
-    if(MesmaDescricao($descricao) == 1){
-        $error_list[] = "Esta descrição utilizada no momento";
+    if (!empty($error_list)) {
+        throw new Exception(implode('|', $error_list));
     }
      
 
