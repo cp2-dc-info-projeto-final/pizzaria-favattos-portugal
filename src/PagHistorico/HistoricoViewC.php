@@ -21,6 +21,23 @@
     <script src="../Estilo/jquery.min.js"></script>
     <script src="../Estilo/popper.min.js"></script>
     <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+    <script>
+        //Função para ativar o popover e inseriro seu titulo e corpo
+        $(function() {
+      $("[data-toggle=popover]").popover({
+        container: 'body',
+        html: true,
+        content: function() {
+          var content = $(this).attr("data-popover-content");
+          return $(content).children(".popover-body").html();
+        },
+        title: function() {
+          var title = $(this).attr("data-popover-content");
+          return $(title).children(".popover-heading").html();
+        }
+      });
+    });
+  </script>
   </head> 
   
   <body>
@@ -40,10 +57,39 @@
           <a class="nav-link" href="../Inicial/index.php">Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Nossa Gastronomia</a>
+              <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
         </li>
         <li class="nav-item">
-              <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
+          <a href="#" class="btn btn-primary" data-toggle="popover" data-popover-content="#a1" data-placement="top">Carrinho</a>
+          <div id="a1" class="invisible" style="width: 0px; height: 0px;">
+            <div class="popover-heading">
+              Carrinho de compras
+            </div>
+            <div id="carrinho" class="popover-body">
+            <?php
+             require_once "../Inicial/CarrinhoCtrl.php";
+             $ctrl = new CarrinhoCtrl();
+             $carrinho = $ctrl->getCarrinho($_SESSION);
+         
+             if(count($carrinho) == null){
+               echo 'Carrinho vazio, favor adicionar produtos aqui... rs';
+             }
+             else{
+               foreach ($carrinho as $item) {
+                 echo '<div class="row">
+                 <div class="col">'.$item['nome'].'</div>
+                 <div class="col">'.$item['descricao'].'</div>
+                 <div class="col">R$ '.$item['preco'].'</div>
+                 <div class="col">'.$item['tamanho'].'</div>
+                 <div class="col">'.$item['quantidade'].'</div>
+                 <div class="col"><a  class="btn btn-info" href="../Inicial/RemoverCarrinhoCtrl.php?id='.$item['id'].'&tamanho='.$item['tamanho'].'">Remover</a></div>
+                 </div> <hr>';
+               }
+             echo '<br><a class="btn btn-danger" href="../FinalizarPedido/FinalizarPedidoView.php">Finalizar pedido</a>';
+             }
+              ?>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
@@ -55,7 +101,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-          <a class="dropdown-item" href="#">Histórico de compras</a>
+          <a class="dropdown-item" href="HistoricoViewC.php">Histórico de compras</a>
         </div>
       </li>
       </ul>
@@ -78,7 +124,7 @@
   ?>
   <div class="shadow p-3 mb-5 bg-white rounded">
   <div class="row">
-    <div class="col">
+    <div class="col col-lg-3">
       <h3 style="font-size:22px"> Pedido </h3>
       <p>Número - <?php echo $row['id']?></p>
       <p>Realizado - <?php echo $row['diahora']?></p>
@@ -90,7 +136,7 @@
       <p>Telefone: <?php echo $row['telefone']?></p>
       <p>Endereço: <?php echo ''.$row['rua'] .' / '. $row['municipio'] .' / '. $row['complemento'].''?></p>
     </div>
-    <div class="col-5">
+    <div class="col">
       <h3 style="font-size:22px"> Resumo da compra </h3>
       <p><?php
             foreach ($row['itens'] as $item) {
@@ -101,15 +147,13 @@
       <p>Total: <?php echo 'R$ '.$row['precototal'].''?></p>
     </div>
   </div>
+  </div>
   <?php
   }
   ?>
 
 </div>
 <!--Rodapé no final da página-->
-<nav class="navbar bg-dark navbar-dark fixed-bottom"> 
-<div class="container"> 
-<span class="text-muted">Até que enfim foi</span> 
-</nav> 
+
 </body> 
 </html>

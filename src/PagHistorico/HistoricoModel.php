@@ -99,7 +99,7 @@ function recuperarPedido($id_pedido) {
     $item['qtd'] = $row['qtd'];
     $item['tamanho'] = $row['tamanho'];
 
-    if ($item['tamanho'] == 'normal') {
+    if ($item['tamanho'] == 'pequeno' || $item['tamanho'] == '') {
       $item['preco'] = $row['preco_normal'];
     } else if ($item['tamanho'] == 'medio') {
       $item['preco'] = $row['preco_medio'];

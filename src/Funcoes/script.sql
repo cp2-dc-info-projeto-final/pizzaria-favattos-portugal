@@ -51,6 +51,7 @@ CREATE TABLE produto(
     preco_gigante float,
     categoria int,
     imagem varchar(2048),
+    estado boolean,
     primary key (id),
     foreign key (categoria) references categoria(id)
 );

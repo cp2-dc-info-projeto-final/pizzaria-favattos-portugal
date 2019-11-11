@@ -149,7 +149,7 @@
     <hr>
     <div class="form-group">
     <label for="formaPag">Forma de pagamento</label>
-    <select id="formaPag" name="formaPag" class="form-control" style="width:400px;" require>
+    <select id="formaPag" name="formaPag" class="form-control" style="width:400px;" required>
         <option value="" disabled selected>Selecione uma opção</option>
         <option value="Dinhiero">Dinheiro</option>
         <option value="Cartão">Cartão de crédito ou débito</option>
@@ -169,7 +169,7 @@
   </div>
   
   <!--Rodapé -->
-  <nav class="navbar bg-dark navbar-dark fixed-bottom">
+  <nav class="navbar bg-dark navbar-dark bottom">
     <div class="container">
       <span class="text-muted">Até que enfim foi</span>
   </nav>

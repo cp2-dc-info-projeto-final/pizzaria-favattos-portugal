@@ -1,3 +1,19 @@
+<?php
+  session_start();
+  require_once("../PagUsuario/PerfilCtrl.php");
+
+  if(!isset($_SESSION["logi"])){
+    header("location: ../Login/LoginView.php");
+    exit();
+  }
+  else{
+    $login = $_SESSION["logi"];
+    $dados = PegardadosCtrl($login);
+    if(!$dados["adm"]){
+      header("location: ../Inicial/index.php");
+    }
+  }
+?>
 <!doctype html> 
 <html> 
   <head> 
@@ -90,14 +106,14 @@
     <div class="row">
     <div class="col"><div class="form-group">
     <label for ="nome"> Nome </label> 
-    <input type ="text" class="form-control" name="nome" id= "nome" maxlength="40" placeholder="">
+    <input type ="text" class="form-control" name="nome" id= "nome" maxlength="40" placeholder="" required>
     </div>
     <div class="form-group">
     <label for ="descricao"> Descrição </label> 
-    <input type ="text" class="form-control" name ="descricao" id= "descricao" maxlength="100" placeholder=""> 
+    <input type ="text" class="form-control" name ="descricao" id= "descricao" maxlength="100" placeholder="" required> 
     </div>
     <label for="Categoria">Categoria</label>
-    <select name="Categoria" id="Categoria" class="form-control">
+    <select name="Categoria" id="Categoria" class="form-control" required >
     <option value="" disabled selected>Selecione a categoria</option>
 	  <option value="1">Pizza</option>
     <option value="2">Hamburguer</option>
@@ -109,7 +125,7 @@
     </div>
     <div class="col">
     <div class="file-field" style="style=width: 400px; padding-left: 80px;">  
-      <input type="file" name="imagem" id="imagem" onchange="previewImagem()"><br><br>
+      <input type="file" name="imagem" id="imagem" onchange="previewImagem()" required><br><br>
 			<img style="width: 350px;" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" name="pre">
     </div>
     </div>
@@ -148,7 +164,7 @@
 
 
 <!--Rodapé no final da página-->
-<nav class="navbar bg-dark navbar-dark fixed-bottom"> 
+<nav class="navbar bg-dark navbar-dark bottom"> 
 <div class="container"> 
 <span class="text-muted">Até que enfim foi</span> 
 </nav> 

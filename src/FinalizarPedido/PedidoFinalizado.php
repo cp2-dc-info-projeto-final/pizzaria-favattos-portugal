@@ -146,7 +146,7 @@
   </div>
   
   <!--Rodapé -->
-  <nav class="navbar bg-dark navbar-dark fixed-bottom">
+  <nav class="navbar bg-dark navbar-dark bottom">
     <div class="container">
       <span class="text-muted">Até que enfim foi</span>
   </nav>
