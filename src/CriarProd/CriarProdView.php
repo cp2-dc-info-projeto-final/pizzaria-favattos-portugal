@@ -43,7 +43,15 @@
 				}
 			}
 		</script>
-
+    <style>
+    footer{
+      position:absolute;
+      bottom:0;
+      width:100%;
+      background-color: #212529;
+      color: #6c757d;
+    }
+    </style>
   </head> 
   
 <body>

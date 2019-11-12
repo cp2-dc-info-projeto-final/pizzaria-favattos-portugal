@@ -27,9 +27,21 @@
   <script src="../Funcoes/ScriptInput.js"></script>
 
   <style>
-  .alert {
-    margin-bottom: 8px !important;
-  }
+    .alert {
+      margin-bottom: 8px !important;
+    }
+
+    .popover {
+      max-width: 100% !important;
+    }
+
+    footer{
+      position:absolute;
+      bottom:0;
+      width:100%;
+      background-color: #212529;
+      color: #6c757d;
+    }
   </style>
   </head> 
   
@@ -243,10 +255,17 @@
   </div>
   
   <!--Rodapé -->
-  <br><br>
-<nav class="navbar bg-dark navbar-dark bottom"> 
-<div class="container"> 
-<span class="text-muted">Até que enfim foi</span> 
-</nav> 
+  <footer class="page-footer pt-4">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col text-justify">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id felis in justo blandit egestas blandit nec nibh. Donec pellentesque nulla vel quam aliquam, sed posuere augue euismod. Quisque iaculis sit amet lectus eu accumsan. Nulla mattis mattis mauris, sed rutrum nulla molestie non. Mauris non interdum lacus, a varius lacus. Ut iaculis aliquet purus sed congue. Suspendisse egestas placerat arcu ut mattis. Cras mollis felis lorem, ac euismod justo sodales sit amet.</p>
+          </div>
+          <div class="col text-center">
+          largar uns links aqui tlgd
+          </div>
+        </div>
+      </div>
+  </footer>
   </body> 
 </html>
