@@ -118,6 +118,8 @@
   <?php
   require_once("HistoricoCtrl.php");
   require_once("../PagUsuario/PerfilCtrl.php");
+  $url = $_SERVER["REQUEST_URI"];
+  $_SESSION['url'] = $url;
   $dados = PegardadosCtrl($login);
   $historico = recuperarHistoricoCCtrl($dados['id']);
   foreach($historico as $row) {

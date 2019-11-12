@@ -1,7 +1,7 @@
 <?php
 
 if(!isset($_SESSION["logi"])){
-    header('Location: FinalizarPedidoView.php?erros='.urlencode("O login precisa ser efetuado para finalizar o pedido"));
+    header('Location: ../Login/LoginView.php');
     exit();
   } 
 
@@ -54,6 +54,11 @@ function AdicionaProdutoPedido($idProduto,$idPedido,$tamanho,$qtd){
     $consulta ->bindValue(':tamanho', $tamanho);
     $consulta ->bindValue(':qtd', $qtd);
     $consulta->execute();
+
+    $inserir2 = 'INSERT INTO produto (qtdd_vendida)
+    VALUES (:qtd)';
+    $consulta2 = $con->prepare($inserir2);
+    $consulta2 ->bindValue(':qtd', $qtd);
 
     if($consulta->rowCount() > 0){
         return true;

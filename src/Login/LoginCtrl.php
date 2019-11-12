@@ -17,7 +17,11 @@
 
     if($erros==""){
         $_SESSION['logi'] = $login;
-        header('location:../Inicial/index.php');
+        if(isset($_SESSION['url']) && $_SESSION['url'] != ""){
+            header("Location: ".$_SESSION['url']);
+        }else{
+            header('location:../Inicial/index.php');
+        }
     }
 
     else{

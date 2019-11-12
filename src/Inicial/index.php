@@ -83,6 +83,8 @@
             <div id="carrinho" class="popover-body">
             <?php
              session_start();
+             $url = $_SERVER["REQUEST_URI"];
+             $_SESSION['url'] = $url;
              require_once "CarrinhoCtrl.php";
              $ctrl = new CarrinhoCtrl();
              $carrinho = $ctrl->getCarrinho($_SESSION);

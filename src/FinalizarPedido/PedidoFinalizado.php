@@ -1,3 +1,15 @@
+<?php
+require_once("FinalizarPedidoCtrl.php");
+$carrinho = ReceberCarrinho();
+
+if (!isset($_SESSION["logi"]) || count($carrinho) == null) {
+  header('Location: ../Inicial/index.php');
+}
+else{
+  $login = $_SESSION["logi"];
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -15,7 +27,7 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <!-- Logo -->
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="../Inicial/index.php">
           <img alt="Logo" style="width:40px;">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -28,30 +40,10 @@
           <a class="nav-link" href="../Inicial/index.php">Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Nossa Gastronomia</a>
-        </li>
-        <li class="nav-item">
               <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
         </li>
     </ul>
     </div>
-    <?php
-    session_start();
-    if (!isset($_SESSION["logi"])) {
-      echo '<div class ="collapse navbar-collapse" id="collapsibleNavbar">
-    <a class ="navbar-brand"></a>
-  <ul class ="navbar-nav ml-auto">
- <li class="nav-item">
-   <a class="nav-link" href="../Cadastro/CadastroView.php">Cadastrar</a> 
- </li>
- <li class="nav-item">
-   <a class="nav-link" href="../Login/LoginView.php">Entrar</a> 
- </li>
-  </ul>
-    </div>';
-    } else {
-      $login = $_SESSION["logi"];
-      echo '
     <ul class ="navbar-nav">
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -59,13 +51,10 @@
       </a>
       <div class="dropdown-menu dropdown-menu-right">
         <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-        <a class="dropdown-item" href="#">Histórico de compras</a>
+        <a class="dropdown-item" href="../PagHistorico/HistoricoViewC.php">Histórico de compras</a>
       </div>
     </li>
-    </ul>';
-    }
-    session_abort();
-    ?>
+    </ul>'
    </nav>  
 
  
@@ -95,11 +84,7 @@
     ?>
     
   <?php 
-    require_once("FinalizarPedidoCtrl.php");
-
-    $carrinho = ReceberCarrinho();
-    session_destroy();
-    session_start();
+    session_unset($_SESSION["carrinho"]);
     $_SESSION["logi"] = $login;
       
     if(count($carrinho) == null){

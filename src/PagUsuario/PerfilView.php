@@ -1,6 +1,9 @@
 <?php
   session_start();
 
+  $url = $_SERVER["REQUEST_URI"];
+  $_SESSION['url'] = $url;
+
   if(!isset($_SESSION["logi"])){
     header("location: ../Login/LoginView.php");
     exit();

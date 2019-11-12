@@ -111,6 +111,9 @@
   <?php 
     require_once("FinalizarPedidoCtrl.php");
 
+    $url = $_SERVER["REQUEST_URI"];
+    $_SESSION['url'] = $url;
+
     $carrinho = ReceberCarrinho();
 
     if(count($carrinho) == null){
