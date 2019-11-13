@@ -28,7 +28,7 @@ O projeto consiste em sistematizar o atendimento da pizzaria Favatto's Portugal,
 ### Stakeholder(s)
 - Nome: Anderson dos Santos Favatto Portugal;
 - Profissão: Gerente;
-- Cargo: Gerente da Favatto's Portugal;
+- Cargo: Gerente da Favatto's Portugal.
 
 ### Objetivos
 - Otimização do tempo ao facilitar o trabalho dos funcionários através de uma maior acessibilidade e praticidade; 
@@ -268,15 +268,15 @@ Para o administrador o sistema deve ficar acessível a qualquer hora do dia.
 
 ## Script do Banco de Dados
 
-- [arquivo sql banco de dados](schema.sql)
+- [Script do Banco de Dados](schema.sql)
 
 ## Slides da Apresentação
 
--[slides da apresentação](slides.pdf)
+-[Slides da apresentação](slides.pdf)
 
 ## Licenciamento MIT
 
--[licenciamento mit](license.md)
+-[Licenciamento MIT do Projeto](license.md)
 
 ## Diagrama de Casos de Uso
 
