@@ -272,11 +272,11 @@ Para o administrador o sistema deve ficar acessível a qualquer hora do dia.
 
 ## Slides da Apresentação
 
--[Slides da apresentação](slides.pdf)
+- [Slides da apresentação](slides.pdf)
 
 ## Licenciamento MIT
 
--[Licenciamento MIT do Projeto](license.md)
+- [Licenciamento MIT do Projeto](license.md)
 
 ## Diagrama de Casos de Uso
 
