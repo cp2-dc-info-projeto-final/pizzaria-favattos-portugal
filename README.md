@@ -43,6 +43,11 @@ O projeto consiste em sistematizar o atendimento da pizzaria Favatto's Portugal,
 - Limite de localidade;
 - Sistema de avaliação de até 5 estrelas e caixa para comentário (o comentário não é obrigatório).
 
+## Entrevista com Stakeholder
+
+- [Áudio da entrevista](entrevista.mp3)
+- [Transcrição da entrevista](entrevista.md)
+
 ## Requisitos
 
 ## Requisitos do Sistema
@@ -261,11 +266,6 @@ Para o administrador o sistema deve ficar acessível a qualquer hora do dia.
 
 2. Os clientes poderão acessar cada um o seu histórico de compras.
 
-## Entrevista com Stakeholder
-
-- [Áudio da entrevista](entrevista.mp3)
-- [Transcrição da entrevista](entrevista.md)
-
 ## Script do Banco de Dados
 
 - [Script do Banco de Dados](schema.sql)
@@ -285,3 +285,11 @@ Para o administrador o sistema deve ficar acessível a qualquer hora do dia.
 *Diagrama de classes (modelo editável e imagem)
 Modelagem do banco de dados (modelo editável e imagem)
 Pasta src contendo todo o código e os demais arquivos necessários para seu funcionamento*
+
+## Manual de Utilização
+
+- [Manual](manual.md)
+
+## Código Final
+
+- [Código](src)
