@@ -130,7 +130,14 @@
       <h3 style="font-size:22px"> Pedido </h3>
       <p>Número - <?php echo $row['id']?></p>
       <p>Realizado - <?php echo $row['diahora']?></p>
-      <p>Status - <?php echo $row['estado']?></p>
+      <p>Status - 
+      <?php 
+      if($row['estado']){
+        echo 'Concluido';
+      }else{
+      echo 'Em andamento...';
+      }
+      ?></p>
     </div>
     <div class="col">
       <h3 style="font-size:22px"> Cliente </h3>

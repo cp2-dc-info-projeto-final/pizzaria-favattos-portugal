@@ -26,23 +26,6 @@
     <link rel ="stylesheet" href ="../Estilo/bootstrap-4.1.3-dist/css/bootstrap.min.css">
     <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
     <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
-    <style>
-    .alert {
-      margin-bottom: 8px !important;
-    }
-
-    .popover {
-      max-width: 100% !important;
-    }
-
-    footer{
-      position:absolute;
-      bottom:0;
-      width:100%;
-      background-color: #212529;
-      color: #6c757d;
-    }
-  </style>
   </head> 
   
   <body>
@@ -51,54 +34,60 @@
   <script>
 
     
-var getJSON = function(url, callback) {
+    var getJSON = function(url, callback) {
 
-var xhr = new XMLHttpRequest();
-xhr.open('GET', url, true);
-xhr.responseType = 'json';
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.timeout = 5000;
 
-xhr.onload = function() {
+    xhr.onload = function() {
 
-    var status = xhr.status;
-    
-    if (status == 200) {
-        callback(null, xhr.response);
-    } else {
-        callback(status);
-    }
-};
+        var status = xhr.status;
+        
+        if (status == 200) {
+            callback(null, xhr.response);
+        } else {
+            callback(status);
+        }
+    };
 
-xhr.send();
-};
+    xhr.send();
+    };
 
-getJSON('HistoricoAdmAjax.php',  function(err, data) {
+    function callAjax(){
+       
+       getJSON('HistoricoAdmAjax.php',  function(err, data) {
 
-if (err != null) {
-    console.error(err);
-} else {
-    
-    data.forEach(myFunction);
+        if (err != null) {
+            console.error(err);
+        } else {
+            $('#tb-historico-body').html("");
+            data.forEach(myFunction);
 
-    function myFunction(item, index, arr) {
+            function myFunction(item, index, arr) {
 
-      var html = `<tr>
-                    <td></td>
-                    <td> ${item.id} </td>
-                    <td> ${item.diahora} </td>
-                    <td> R$ ${item.precototal} </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>`;
-      
-      $('#tb-historico').append(html);
-    }
-}
-});
+              var html = `<tr>
+                            <td></td>
+                            <td> ${item.id} </td>
+                            <td> ${item.diahora} </td>
+                            <td> R$ ${item.precototal} </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>`;
+              
+              $('#tb-historico-body').append(html);
+            }
+        }
+        });
+        }
 
+    callAjax();
+    setInterval(callAjax,5000);
 
 </script>
   <!-- Barra de navegação -->
@@ -123,7 +112,7 @@ if (err != null) {
     </a>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-      <a class="dropdown-item" href="#">Histórico de compras</a>
+      <a class="dropdown-item" href="HistoricoViewA.php">Lista de Pedidos</a>
     </div>
   </li>  
   </div>
@@ -151,21 +140,10 @@ if (err != null) {
 
     </tr>
   </thead> 
+  <tbody id="tb-historico-body">
+  </tbody>
 </table>
 
 
-<!--Rodapé no final da página-->
-<footer class="page-footer pt-4">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col text-justify">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id felis in justo blandit egestas blandit nec nibh. Donec pellentesque nulla vel quam aliquam, sed posuere augue euismod. Quisque iaculis sit amet lectus eu accumsan. Nulla mattis mattis mauris, sed rutrum nulla molestie non. Mauris non interdum lacus, a varius lacus. Ut iaculis aliquet purus sed congue. Suspendisse egestas placerat arcu ut mattis. Cras mollis felis lorem, ac euismod justo sodales sit amet.</p>
-          </div>
-          <div class="col text-center">
-          largar uns links aqui tlgd
-          </div>
-        </div>
-      </div>
-  </footer>
 </body> 
 </html>
