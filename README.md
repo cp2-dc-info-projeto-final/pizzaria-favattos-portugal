@@ -266,9 +266,17 @@ Para o administrador o sistema deve ficar acessível a qualquer hora do dia.
 - [Áudio da entrevista](entrevista.mp3)
 - [Transcrição da entrevista](entrevista.md)
 
-*Arquivo schema.sql contendo o script SQL para criação do banco de dados
-Arquivo slides.pdf contendo os Slides da apresentação
-Arquivo LICENSE contendo licenciamento MIT*
+## Script do Banco de Dados
+
+- [arquivo sql banco de dados](schema.sql)
+
+## Slides da Apresentação
+
+-[slides da apresentação](slides.pdf)
+
+## Licenciamento MIT
+
+-[licenciamento mit](license.md)
 
 ## Diagrama de Casos de Uso
 
