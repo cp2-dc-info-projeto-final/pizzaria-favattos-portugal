@@ -7,7 +7,6 @@ $nome = $_REQUEST["nome"];
 $descricao = $_REQUEST["descricao"];
 $qtdd_vendida = $_REQUEST["qtdd_vendida"];
 $preco_normal = $_REQUEST["precoP"];
-$preco_medio = $_REQUEST["precoM"];
 $preco_grande = $_REQUEST["precoG"];
 $preco_gigante = $_REQUEST["precoGG"];
 $categoria = $_REQUEST["Categoria"];
@@ -35,7 +34,7 @@ else{
 $erros = "";
 
 try {
-    $resultProduto = CadastraProduto($nome, $descricao, $qtdd_vendida, $preco_normal, $preco_medio, $preco_grande, $preco_gigante, $categoria,$imagem_nome);  
+    $resultProduto = CadastraProduto($nome, $descricao, $qtdd_vendida, $preco_normal, $preco_grande, $preco_gigante, $categoria,$imagem_nome);  
 }
 catch (Exception $e) {
     $erros = $e->getMessage();

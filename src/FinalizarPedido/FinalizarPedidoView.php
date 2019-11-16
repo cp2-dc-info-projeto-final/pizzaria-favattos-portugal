@@ -158,7 +158,7 @@
     }
     ?>
     <br>
-    <form id="Pedido" method="POST" action="FinalizarPedidoCtrl.php" onsubmit="return vformaPag()">
+    <form id="Pedido" method="POST" action="FinalizarPedidoCtrl.php">
     <h2>Informações do Pedido</h2>
     <hr>
     <div class="form-group">

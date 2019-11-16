@@ -136,28 +136,8 @@
   </div>
   </div>
   <?php
-  if($_SESSION['categoria'] == 1){
+  if($_SESSION['categoria'] == 1 or $_SESSION['categoria'] == 4){
   echo '<div class="row">
-        <div class="col"><div class="form-group">
-        <label for ="precoG"> Preço Grande</label> 
-        <input type ="text" class="form-control" name ="precoG" id="precoG" maxlength="6" placeholder="'.$dados['preco_grande'].'">
-        </div></div>
-        <div class="col"><div class="form-group">
-        <label for ="precoGG"> Preço Gigante</label> 
-        <input type ="text" class="form-control" name ="precoGG" id="precoGG" maxlength="6" placeholder="'.$dados['preco_gigante'].'">
-        </div></div>
-        </div>';
-  }
-  elseif ($_SESSION['categoria'] == 4){
-  echo '<div class="row">
-        <div class="col"><div class="form-group">
-        <label for ="precoP"> Preço Pequeno</label> 
-        <input type ="text" class="form-control" name ="precoP" id="precoP" maxlength="6" placeholder="'.$dados['preco_normal'].'">
-        </div></div>
-        <div class="col"><div class="form-group">
-        <label for ="precoM"> Preço Medio</label> 
-        <input type ="text" class="form-control" name ="precoM" id="precoM" maxlength="6" placeholder="'.$dados['preco_medio'].'">
-        </div></div>
         <div class="col"><div class="form-group">
         <label for ="precoG"> Preço Grande</label> 
         <input type ="text" class="form-control" name ="precoG" id="precoG" maxlength="6" placeholder="'.$dados['preco_grande'].'">

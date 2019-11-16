@@ -46,7 +46,6 @@ CREATE TABLE produto(
     descricao varchar (300),
     qtdd_vendida int,
     preco_normal float,
-    preco_medio float,
     preco_grande float,
     preco_gigante float,
     categoria int,
@@ -100,22 +99,18 @@ INSERT INTO produto (nome, descricao, qtdd_vendida, preco_grande, preco_gigante,
 
 /*Batatas*/
 
-INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, preco_medio, preco_grande, preco_gigante, categoria, imagem) VALUES
-('Batata frita', ' ', 0, '3.99', '7.99', '9.99', '14.99', 4,'../Imagens/imgfundo.jpg'),
-('Batata maluca', ' ', 0, '', '12.99', '14.99', '19.99', 4,'../Imagens/imgfundo.jpg');
+INSERT INTO produto (nome, descricao, qtdd_vendida, preco_grande, preco_gigante, categoria, imagem) VALUES
+('Batata frita', ' ', 0,'9.99', '14.99', 4,'../Imagens/imgfundo.jpg'),
+('Batata maluca', ' ', 0, '14.99', '19.99', 4,'../Imagens/imgfundo.jpg');
 
 /*Bebidas*/
-/*preco_medio é a coca*/
 
 INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria, imagem) VALUES 
-('Água sem gás', ' ', 0, '1.99', 5,'../Imagens/imgfundo.jpg'),
-('Guaracamp 285ml', ' ', 0, '1.99', 5,'../Imagens/imgfundo.jpg'),
-('Refrigerante 350ml', '(Conferir opções, exceto coca-cola) ', 0, '3.50', 5,'../Imagens/imgfundo.jpg'),
-('Coca-cola 350ml', ' ', 0, '3.99', 5,'../Imagens/imgfundo.jpg'),
-('Refrigerante 2L', '(Conferir opções, exceto coca-cola)', 0, '7.99', 5,'../Imagens/imgfundo.jpg'), 
-('Coca-cola 2L', ' ', 0, '8.99', 5,'../Imagens/imgfundo.jpg'),
-('Del Valle', '(Conferir opções de sabores)', 0, '4.99', 5,'../Imagens/imgfundo.jpg'),
-('Guaraviton 500ml', ' ', 0, '3.99', 5,'../Imagens/imgfundo.jpg');
+('Água sem gás', ' ', 0, '1.99', 5,''),
+('Guaracamp 285ml', ' ', 0, '1.99', 5,''),
+('Coca-cola 350ml', ' ', 0, '3.99', 5,''),
+('Coca-cola 2L', ' ', 0, '8.99', 5,''),
+('Guaraviton 500ml', ' ', 0, '3.99', 5,'');
 
 
 drop table if exists pedido;

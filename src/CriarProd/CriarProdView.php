@@ -142,12 +142,8 @@
     <br>
     <div class="row">
     <div class="col"><div class="form-group">
-    <label for ="precoP"> Preço Pequeno</label> 
+    <label for ="precoP"> Preço Único</label> 
     <input type ="text" class="form-control" name ="precoP" id="precoP" maxlength="6" pattern="[\d,.]*" placeholder="">
-    </div></div>
-    <div class="col"><div class="form-group">
-    <label for ="precoM"> Preço Medio</label> 
-    <input type ="text" class="form-control" name ="precoM" id="precoM" maxlength="6" pattern="[\d,.]*" placeholder="">
     </div></div></div>
     <div class= "row">
     <div class="col"><div class="form-group">

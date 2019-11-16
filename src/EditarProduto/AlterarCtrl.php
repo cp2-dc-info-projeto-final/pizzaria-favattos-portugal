@@ -11,11 +11,6 @@ if(isset($_REQUEST["preco"])){
 }
 else{ $preco = null;}
 
-if(isset($_REQUEST["precoM"])){
-    $precoM = $_REQUEST["precoM"];
-}
-else{ $precoM = null;}
-
 if(isset($_REQUEST["precoG"])){
     $precoG = $_REQUEST["precoG"];
 }
@@ -47,7 +42,7 @@ else{
 
 //Alterando dados
 
-$resultAlteracao = AlterarDados($nome,$descricao,$preco,$precoM,$precoG,$precoGG,$id,$imagem_nome);
+$resultAlteracao = AlterarDados($nome,$descricao,$preco,$precoG,$precoGG,$id,$imagem_nome);
 
 if($resultAlteracao == 1){
     unset($_SESSION["id"]);
