@@ -13,6 +13,7 @@
       header("location: ../Inicial/index.php");
     }
   }
+  session_abort();
 ?>
 <!doctype html> 
 <html> 

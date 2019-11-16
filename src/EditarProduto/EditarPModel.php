@@ -11,7 +11,7 @@ function BuscarProduto($id){
     return $dados;
 }
 
-function AlterarDados($nome,$descricao,$preco,$precoG,$precoGG,$id,$imagem){
+function AlterarDadosProd($nome,$descricao,$preco,$precoG,$precoGG,$id,$imagem){
 
 // Alterando dados do usuário pelos dados informados
 $dados = BuscarProduto($id);

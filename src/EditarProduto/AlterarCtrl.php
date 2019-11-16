@@ -42,7 +42,7 @@ else{
 
 //Alterando dados
 
-$resultAlteracao = AlterarDados($nome,$descricao,$preco,$precoG,$precoGG,$id,$imagem_nome);
+$resultAlteracao = AlterarDadosProd($nome,$descricao,$preco,$precoG,$precoGG,$id,$imagem_nome);
 
 if($resultAlteracao == 1){
     unset($_SESSION["id"]);
