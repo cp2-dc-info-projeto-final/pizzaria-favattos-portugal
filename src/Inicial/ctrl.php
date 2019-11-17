@@ -6,4 +6,8 @@ function listarProdutos($categoria) {
     return PegarProdutos($categoria);
 }
 
+function listarMaisPedidos(){
+    return MaisPedido();
+}
+
 ?>

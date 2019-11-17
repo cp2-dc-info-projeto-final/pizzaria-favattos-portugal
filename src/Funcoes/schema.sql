@@ -78,16 +78,16 @@ INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria, ima
 /*Pizzas*/
 
 INSERT INTO produto (nome, descricao, qtdd_vendida, preco_grande, preco_gigante, categoria, imagem) VALUES 
-('Pizza Calabresa', 'Muçarela, orégano, calabresa, cebola', 0, '28.99', '38.99', 1, '../Imagens/imgfundo.jpg'),
+('Pizza Calabresa', 'Muçarela, orégano, calabresa, cebola', 3, '28.99', '38.99', 1, '../Imagens/imgfundo.jpg'),
 ('Pizza Presunto', 'Muçarela, orégano, presunto, cebola', 0, '28.99', '38.99', 1, '../Imagens/imgfundo.jpg'),
 ('Pizza Muçarela', 'Muçarela, orégano', 0, '27.99', '37.99', 1, '../Imagens/imgfundo.jpg'),
 ('Pizza Mista', 'Muçarela, orégano, calabresa, presunto, bacon, ovo, tomate, cebola', 0, '29.99', '39.99', 1, '../Imagens/imgfundo.jpg'),
-('Pizza Bacon com ovos', 'Muçarela, orégano, bacon, ovo', 0, '30.99', '40.99', 1, '../Imagens/imgfundo.jpg'),
+('Pizza Bacon com ovos', 'Muçarela, orégano, bacon, ovo', 2, '30.99', '40.99', 1, '../Imagens/imgfundo.jpg'),
 ('Pizza Favatto`s Portugal', 'Muçarela, orégano, calabresa, presunto, ovo, azeitona, cebola', 0, '29.99', '39.99', 1, '../Imagens/imgfundo.jpg'),
 ('Pizza Salame', 'Muçarela, orégano, manjericão, queijo prato, queijo parmesão, salame', 0, '34.99', '44.99', 1,'../Imagens/imgfundo.jpg'),
 ('Pizza Frango c/ catupiry', 'Muçarela, orégano, frango, catupiry', 0, '29.99', '39.99', 1,'../Imagens/imgfundo.jpg'),
 ('Pizza Hot dog', 'Muçarela, orégano, molho, salsicha, batata palha, azeitona', 0, '29.99', '39.99', 1,'../Imagens/imgfundo.jpg'),
-('Pizza Portuguesa', 'Muçarela, orégano, presunto, calabresa, cebola, ovo, azeitona', 0, '31.99', '41.99', 1,'../Imagens/imgfundo.jpg'),
+('Pizza Portuguesa', 'Muçarela, orégano, presunto, calabresa, cebola, ovo, azeitona', 1, '31.99', '41.99', 1,'../Imagens/imgfundo.jpg'),
 ('Pizza Marguerita', 'Muçarela, orégano, tomate, manjericão', 0, '28.99', '38.99', 1,'../Imagens/imgfundo.jpg'),
 ('Pizza Banana com canela', 'Muçarela, banana, canela', 0, '26.99', '36.99', 1,'../Imagens/imgfundo.jpg');
 

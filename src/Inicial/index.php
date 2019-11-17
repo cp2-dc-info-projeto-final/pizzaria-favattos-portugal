@@ -56,8 +56,9 @@
           var title = $(this).attr("data-popover-content");
           return $(title).children(".popover-heading").html();
         }
-      });
+      }).popover('show');
     });
+
   </script>
 
 </head>
@@ -151,6 +152,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>';
+
       require_once("../PagUsuario/PerfilCtrl.php");
       $dados = PegardadosCtrl($login);
       if($dados['adm']){
@@ -176,7 +178,7 @@
         $erros = $_REQUEST['erros'];
         foreach (explode("|", $erros) as $erros_item) {
           ?>
-          <div class="alert alert-danger" role="alert">
+          <div class="alert alert-danger text-center" id="alerta" role="alert">
           <?php
           print($erros_item . ".");
           ?>
@@ -190,28 +192,72 @@
     <!-- Inicio do menú com os mais pedidos -->
     <h1 style="text-align: center">Mais pedidos </h1>
     <hr>
-    <div class="row">
-      <div class="col-sm">
-        <div class="shadow p-3 mb-5 bg-white rounded">
-          Uma fotinha com o preço e descrição.
+    <div class="row justify-content-center">
+      <?php 
+        require_once("ctrl.php");
+
+        $produto = listarMaisPedidos();
+
+        for($i=0;$i<3;$i++){
+          ?>
+          <div class="col-md-4" style="max-width: 777px;">
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" src="<?php echo $produto[$i]['imagem']; ?>" alt="<?php echo $produto[$i]['nome']; ?>">
+            <div class="card-body">
+              <h6> <?php echo $produto[$i]['nome']; ?> </h6>
+              <p class="card-text"><?php echo $produto[$i]['descricao']; ?></p>
+              <div class="d-flex justify-content-between align-items-center">
+
+              <div class="btn">
+                  <?php
+                  require_once("../PagUsuario/PerfilCtrl.php");
+
+                    if (isset($login)) {
+                      $dados = PegardadosCtrl($login);
+                      if ($dados['adm']) {
+
+                        ?>
+                      <a class="btn btn-bg btn-outline-danger" href="../EditarProduto/EditarPView.php?id=<?php echo $produto[$i]["id"]?>&categoria=1">Editar</a>
+                      <a class="btn btn-bg btn-outline-danger" href="../CriarProd/CriarProdView.php">Criar novo produto</a>
+                      <button class="btn btn-bg btn-outline-danger" onclick="excluir_prod(<?php echo $produto[$i]['id']?>)">Excluir</button>                      
+                      <?php
+                      } 
+                      else{
+                        if($produto[$i]['categoria'] == 1 or $produto[$i]['categoria'] == 4){
+                      ?>
+                        <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto[$i]['id'] ?>,'<?php echo $produto[$i]['nome'] ?>', 'grande', <?php echo $produto[$i]['preco_grande'] ?>, '<?php echo $produto[$i]['descricao'] ?>' );"><?php echo "Grande: R$" . $produto[$i]['preco_grande'] ?></button>
+                        <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto[$i]['id'] ?>,'<?php echo $produto[$i]['nome'] ?>','gigante', <?php echo $produto[$i]['preco_gigante'] ?>, '<?php echo $produto[$i]['descricao'] ?>' );"><?php echo "Gigante: R$" . $produto[$i]['preco_gigante'] ?></button>
+                      <?php
+                          }else{
+                      ?>
+                        <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto[$i]['id'] ?>,'<?php echo $produto[$i]['nome'] ?>', '', <?php echo $produto[$i]['preco_normal'] ?>, '<?php echo $produto[$i]['descricao'] ?>' );"><?php echo "Preço: R$" . $produto[$i]['preco_normal'] ?></button>
+                        <?php   
+                          }
+                      }
+                    }
+                      elseif (!isset($login) || !$dados['adm']) {
+                      if($produto[$i]['categoria'] == 1 or $produto[$i]['categoria'] == 4){
+                      ?>
+                    <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto[$i]['id'] ?>,'<?php echo $produto[$i]['nome'] ?>', 'grande', <?php echo $produto[$i]['preco_grande'] ?>, '<?php echo $produto[$i]['descricao'] ?>' );"><?php echo "Grande: R$" . $produto[$i]['preco_grande'] ?></button>
+                    <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto[$i]['id'] ?>,'<?php echo $produto[$i]['nome'] ?>','gigante', <?php echo $produto[$i]['preco_gigante'] ?>, '<?php echo $produto[$i]['descricao'] ?>' );"><?php echo "Gigante: R$" . $produto[$i]['preco_gigante'] ?></button>
+                    <?php
+                      }else{
+                    ?>
+                        <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto[$i]['id'] ?>,'<?php echo $produto[$i]['nome'] ?>', '', <?php echo $produto[$i]['preco_normal'] ?>, '<?php echo $produto[$i]['descricao'] ?>' );"><?php echo "Preço: R$" . $produto[$i]['preco_normal'] ?></button>
+                    <?php   
+                      }
+                    }
+                    ?>
+
+              </div>
+              </div>
+            </div>
+          </div>
         </div>
+      <?php
+        }
+      ?>
       </div>
-      <div class="col-sm">
-        <div class="shadow p-3 mb-5 bg-white rounded">
-          Uma fotinha com o preço e descrição.
-        </div>
-      </div>
-      <div class="col-sm">
-        <div class="shadow p-3 mb-5 bg-white rounded">
-          Uma fotinha com o preço e descrição.
-        </div>
-      </div>
-      <div class="col-sm">
-        <div class="shadow p-3 mb-5 bg-white rounded">
-          Uma fotinha com o preço e descrição.
-        </div>
-      </div>
-    </div>
     <br>
 
     <!-- Listagem das pizzas organizados em cards por meio da função php listarProdutos() e a chamada da função javascript adicionar_carrinho dentro do botão que contem o preço-->
@@ -219,7 +265,7 @@
     <hr>
     <div class="row justify-content-center">
       <?php
-      require_once("ctrl.php");
+
       $produtos = listarProdutos(1);
 
       foreach ($produtos as $produto) {
