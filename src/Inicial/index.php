@@ -278,7 +278,7 @@
     <hr>
     <div class="row justify-content-center">
       <?php
-      require_once "ctrl.php";
+      
       $produtos = listarProdutos(2);
 
       foreach ($produtos as $produto) {
@@ -331,7 +331,7 @@
     <hr>
     <div class="row justify-content-center">
       <?php
-      require_once "ctrl.php";
+      
       $produtos = listarProdutos(4);
 
       foreach ($produtos as $produto) {
@@ -377,7 +377,7 @@
     <hr>
     <div class="row justify-content-center">
       <?php
-      require_once "ctrl.php";
+      
       $produtos = listarProdutos(3);
 
       foreach ($produtos as $produto) {
@@ -421,7 +421,7 @@
     <hr>
     <div class="row justify-content-center">
       <?php
-      require_once "ctrl.php";
+      
       $produtos = listarProdutos(5);
 
       foreach ($produtos as $produto) {
