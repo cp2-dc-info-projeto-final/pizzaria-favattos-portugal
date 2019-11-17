@@ -26,6 +26,24 @@
   <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
   <script src="../Funcoes/ScriptInput.js"></script>
 
+  <script>
+        //Função para ativar o popover e inseriro seu titulo e corpo
+        $(function() {
+      $("[data-toggle=popover]").popover({
+        container: 'body',
+        html: true,
+        content: function() {
+          var content = $(this).attr("data-popover-content");
+          return $(content).children(".popover-body").html();
+        },
+        title: function() {
+          var title = $(this).attr("data-popover-content");
+          return $(title).children(".popover-heading").html();
+        }
+      });
+      });
+    </script>
+
   <style>
     .alert {
       margin-bottom: 8px !important;
@@ -64,26 +82,6 @@
     <li class="nav-item">
           <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
     </li>
-    <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Usuário
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <!-- Links -->
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="../Inicial/index.php">Menu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Nossa Gastronomia</a>
-        </li>
-        <li class="nav-item">
-              <a class="nav-link" href="#">Fotos</a>
-        </li>
         <!-- O carrinho de compras popover -->
         <li class="nav-item">
           <a href="#" class="btn btn-primary" data-toggle="popover" data-popover-content="#a1" data-placement="top">Carrinho</a>
@@ -93,7 +91,6 @@
             </div>
             <div id="carrinho" class="popover-body">
             <?php
-             session_start();
              require_once "../Inicial/CarrinhoCtrl.php";
              $ctrl = new CarrinhoCtrl();
              $carrinho = $ctrl->getCarrinho($_SESSION);
@@ -120,27 +117,7 @@
         </li>
       </ul>
     </div>
-
-    <!-- Entrar e cadastrar na direita -->
-    <?php
-
-      
-    if (!isset($_SESSION["logi"])) {
-      echo '
-      <div class ="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class ="navbar-nav ml-auto">
-      <li class="nav-item">
-       <a class="nav-link" href="../Cadastro/CadastroView.php">Cadastrar</a> 
-      </li>
-      <li class="nav-item">
-       <a class="nav-link" href="../Login/LoginView.php">Entrar</a> 
-      </li>
-      </ul>
-        </div>';
-    } else {
-      $login = $_SESSION["logi"];
-      echo '
-      <div class ="collapse navbar-collapse" id="collapsibleNavbar">
+    <div class ="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class ="navbar-nav ml-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbardrop" data-toggle="dropdown">
@@ -152,9 +129,7 @@
         </div>
       </li>
       </ul>
-      </div>';
-    }
-    ?>
+      </div>
 
     <!-- fim da barra de navegação aqui -->
   </nav>  
@@ -183,6 +158,7 @@
   <div class="shadow p-3 mb-5 bg-white rounded"> 
   <?php
     require_once("PerfilCtrl.php");
+    $dados = PegardadosCtrl($login);
   ?>
   <!--Inicio do formlário com os dados atuais-->
   <form method="POST" action="EditarCtrl.php"> 
@@ -253,17 +229,33 @@
   </form>
   </div> 
   </div>
+
+  </div></div>
   
   <!--Rodapé -->
   <footer class="page-footer pt-4">
       <div class="container-fluid">
         <div class="row">
-          <div class="col text-justify">
+          <div class="col-md-5">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id felis in justo blandit egestas blandit nec nibh. Donec pellentesque nulla vel quam aliquam, sed posuere augue euismod. Quisque iaculis sit amet lectus eu accumsan. Nulla mattis mattis mauris, sed rutrum nulla molestie non. Mauris non interdum lacus, a varius lacus. Ut iaculis aliquet purus sed congue. Suspendisse egestas placerat arcu ut mattis. Cras mollis felis lorem, ac euismod justo sodales sit amet.</p>
           </div>
-          <div class="col text-center">
-          largar uns links aqui tlgd
-          </div>
+          <div class="col-md-2">
+                <h5 class="text-md-right">Fale conosco</h5>
+                <hr>
+            </div>
+            <div class="col-md-5">
+                <form method="POST" action="../Funcoes/ContatoCtrl.php"> 
+                    <fieldset class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Seu email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <textarea class="form-control" name="mensagem" id="mensagem" placeholder="Message" required></textarea>
+                    </fieldset>
+                    <fieldset class="form-group text-xs-right">
+                        <input type ="submit" class="btn btn-primary">
+                    </fieldset>
+                </form>
+            </div>
         </div>
       </div>
   </footer>
