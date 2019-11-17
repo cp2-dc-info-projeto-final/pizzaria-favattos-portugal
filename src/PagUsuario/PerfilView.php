@@ -219,7 +219,7 @@
                 <hr>
             </div>
             <div class="col-md-5">
-                <form method="POST" action="../Funcoes/ContatoCtrl.php"> 
+                <form> 
                     <fieldset class="form-group">
                         <input type="email" class="form-control" name="email" id="email" placeholder="Seu email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
                     </fieldset>

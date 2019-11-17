@@ -220,10 +220,32 @@
 </div>
 
 <br><br>
-<nav class="navbar bg-dark navbar-dark bottom"> 
-    <div class="container"> 
-    <span class="text-muted">Até que enfim foi</span> 
-</nav> 
+<footer class="page-footer pt-4">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-5">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id felis in justo blandit egestas blandit nec nibh. Donec pellentesque nulla vel quam aliquam, sed posuere augue euismod. Quisque iaculis sit amet lectus eu accumsan. Nulla mattis mattis mauris, sed rutrum nulla molestie non. Mauris non interdum lacus, a varius lacus. Ut iaculis aliquet purus sed congue. Suspendisse egestas placerat arcu ut mattis. Cras mollis felis lorem, ac euismod justo sodales sit amet.</p>
+          </div>
+          <div class="col-md-2">
+                <h5 class="text-md-right">Fale conosco</h5>
+                <hr>
+            </div>
+            <div class="col-md-5">
+                <form> 
+                    <fieldset class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Seu email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <textarea class="form-control" name="mensagem" id="mensagem" placeholder="Message" required></textarea>
+                    </fieldset>
+                    <fieldset class="form-group text-xs-right">
+                        <input type ="submit" class="btn btn-primary">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+      </div>
+  </footer>
 
 </body>
 </html>
