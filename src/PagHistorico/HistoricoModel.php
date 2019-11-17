@@ -85,7 +85,7 @@ function recuperarHistoricoC($id) {
 function recuperarPedido($id_pedido) {
   $conn=CriarConexao();
   $itens_pedido = $conn->prepare ("SELECT pro.nome as produto, pp.qtd, pp.tamanho,
-  preco_normal, preco_medio, preco_grande, preco_gigante FROM produtopedido as pp
+  preco_normal, preco_grande, preco_gigante FROM produtopedido as pp
   join produto as pro
   ON pro.id = pp.idProduto
   WHERE pp.idPedido = :id_pedido
@@ -101,8 +101,6 @@ function recuperarPedido($id_pedido) {
 
     if ($item['tamanho'] == 'pequeno' || $item['tamanho'] == '') {
       $item['preco'] = $row['preco_normal'];
-    } else if ($item['tamanho'] == 'medio') {
-      $item['preco'] = $row['preco_medio'];
     } else if ($item['tamanho'] == 'grande') {
       $item['preco'] = $row['preco_grande'];
     } else if ($item['tamanho'] == 'gigante') {
