@@ -68,16 +68,19 @@
             function myFunction(item, index, arr) {
 
               var html = `<tr>
-                            <td></td>
                             <td> ${item.id} </td>
                             <td> ${item.diahora} </td>
-                            <td> R$ ${item.precototal} </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td> ${item.usuario}</td>
+                            <td> ${item.telefone}</td>
+                            <td> ${item.rua} / ${item.municipio} / ${item.complemento}</td>
+                            <td>`;
+              for(var i = 0; i<item.itens.length; i++){
+                html += `<b> ${item.itens[i].produto} ${item.itens[i].tamanho} - ${item.itens[i].preco} X ${item.itens[i].qtd} </b><br>`;
+              }
+
+              html +=   `</td>
+                            <td> R$ ${item.precototal}</td>
+                            <td> ${item.formapag}</td>
                           </tr>`;
               
               $('#tb-historico-body').append(html);
@@ -120,22 +123,24 @@
 
   
 <div class="container-fluid" style="margin-top: 100px;">
+<center>
+<h2>Lista de Pedidos</h2>
+<hr>
+</center>
 <br>
 <table>
 
 <table id="tb-historico" class="table table-bordered table-dark">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">id</th>
-      <th scope="col">horário</th>
-      <th scope="col">valor</th>
-      <th scope="col">forma de pagamento</th>
-      <th scope="col">nome</th>
-      <th scope="col">telefone</th>
-      <th scope="col">endereço</th>
-      <th scope="col">cpf</th>
-      <th scope="col">itens</th>
+      <th scope="col">Num</th>
+      <th scope="col">Horário</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Endereço</th>
+      <th scope="col">Itens</th>
+      <th scope="col">Total</th>
+      <th scope="col">Forma Pag</th>
     
 
     </tr>

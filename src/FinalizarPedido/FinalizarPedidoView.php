@@ -166,7 +166,7 @@
     <label for="formaPag">Forma de pagamento</label>
     <select id="formaPag" name="formaPag" class="form-control" style="width:400px;" required>
         <option value="" disabled selected>Selecione uma opção</option>
-        <option value="Dinhiero">Dinheiro</option>
+        <option value="Dinheiro">Dinheiro</option>
         <option value="Cartão">Cartão de crédito ou débito</option>
     </select>
     </div>
