@@ -22,6 +22,17 @@ else{
     <script src="../Estilo/jquery.min.js"></script>
     <script src="../Estilo/popper.min.js"></script>
     <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+    <style>
+          footer{
+      position:relative;
+      bottom:0;
+      width:100%;
+      background-color: #212529;
+      color: #6c757d;
+      margin-top:100px;
+    }
+
+    </style>
 </head>
 <body>
 

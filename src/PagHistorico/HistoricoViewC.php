@@ -21,6 +21,22 @@
     <script src="../Estilo/jquery.min.js"></script>
     <script src="../Estilo/popper.min.js"></script>
     <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+    <style>
+
+    footer{
+      position:relative;
+      bottom:0;
+      width:100%;
+      background-color: #212529;
+      color: #6c757d;
+      margin-top:100px;
+    }
+
+    .popover {
+          max-width: 100% !important;
+        }
+
+    </style>
     <script>
         //Função para ativar o popover e inseriro seu titulo e corpo
         $(function() {
@@ -44,8 +60,8 @@
   <!-- Barra de navegação -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
       <!-- Logo -->
-      <a class="navbar-brand" href="#">
-              <img src="bird.jpg" alt="Logo" style="width:40px;">
+      <a class="navbar-brand" href="../Inicial/index.php">
+              <img src="" alt="Logo" style="width:40px;">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
@@ -60,7 +76,7 @@
               <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="btn btn-primary" data-toggle="popover" data-popover-content="#a1" data-placement="top">Carrinho</a>
+          <a class="btn btn-primary" data-toggle="popover" data-popover-content="#a1" data-placement="top">Carrinho</a>
           <div id="a1" class="invisible" style="width: 0px; height: 0px;">
             <div class="popover-heading">
               Carrinho de compras
@@ -162,6 +178,7 @@
   ?>
 
 </div>
+
 <!--Rodapé no final da página-->
 <footer class="page-footer pt-4">
       <div class="container-fluid">
@@ -171,7 +188,7 @@
           </div>
           <div class="col-md-2">
                 <h5 class="text-md-right">Fale conosco</h5>
-                <hr>
+                
             </div>
             <div class="col-md-5">
                 <form> 
@@ -188,6 +205,6 @@
             </div>
         </div>
       </div>
-  </footer>
+</footer>
 </body> 
 </html>

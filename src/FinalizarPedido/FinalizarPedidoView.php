@@ -30,11 +30,12 @@
     }
 
     footer{
-      position:absolute;
+      position:relative;
       bottom:0;
       width:100%;
       background-color: #212529;
       color: #6c757d;
+      margin-top:100px;
     }
   </style>
 </head>
@@ -42,7 +43,7 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <!-- Logo -->
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="../Inicial/index.php">
           <img alt="Logo" style="width:40px;">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -191,7 +192,7 @@
           </div>
           <div class="col-md-2">
                 <h5 class="text-md-right">Fale conosco</h5>
-                <hr>
+                
             </div>
             <div class="col-md-5">
                 <form> 

@@ -12,15 +12,46 @@
         body{
           background-image:url(../Imagens/imgfundo.jpg)
         }
+
+        .popover {
+          max-width: 100% !important;
+        }
+
+        footer{
+      position:relative;
+      bottom:0;
+      width:100%;
+      background-color: #212529;
+      color: #6c757d;
+      margin-top:100px;
+    }
       </style>
+
+      <script>
+        //Função para ativar o popover e inseriro seu titulo e corpo
+        $(function() {
+      $("[data-toggle=popover]").popover({
+        container: 'body',
+        html: true,
+        content: function() {
+          var content = $(this).attr("data-popover-content");
+          return $(content).children(".popover-body").html();
+        },
+        title: function() {
+          var title = $(this).attr("data-popover-content");
+          return $(title).children(".popover-heading").html();
+        }
+      });
+      });
+    </script>
     </head>
     <body>
 
   <!-- Barra de navegação -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
       <!-- Logo -->
-      <a class="navbar-brand" href="#">
-              <img src="bird.jpg" alt="Logo" style="width:40px;">
+      <a class="navbar-brand" href="../Inicial/index.php">
+              <img src="" alt="Logo">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
@@ -32,7 +63,7 @@
           <a class="nav-link" href="../Inicial/index.php">Menu</a>
         </li>
         <li class="nav-item">
-              <a class="nav-link" href="#">Fotos</a>
+              <a class="nav-link" href="pagfotosView.php">Fotos</a>
         </li>
         <!-- O carrinho de compras popover -->
         <li class="nav-item">
@@ -102,7 +133,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-          <a class="dropdown-item" href="#">Histórico de compras</a>
+          <a class="dropdown-item" href="../PagHistorico/HistoricoViewC.php">Histórico de compras</a>
         </div>
       </li>
       </ul>

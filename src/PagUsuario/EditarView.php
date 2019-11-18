@@ -54,11 +54,12 @@
     }
 
     footer{
-      position:absolute;
+      position:relative;
       bottom:0;
       width:100%;
       background-color: #212529;
       color: #6c757d;
+      margin-top:100px;
     }
   </style>
   </head> 
@@ -67,8 +68,8 @@
 
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <!-- Logo -->
-  <a class="navbar-brand" href="#">
-          <img src="bird.jpg" alt="Logo" style="width:40px;">
+  <a class="navbar-brand" href="../Inicial/index.php">
+          <img src="" alt="Logo" style="width:40px;">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -125,7 +126,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-          <a class="dropdown-item" href="#">Histórico de compras</a>
+          <a class="dropdown-item" href="../PagHistorico/HistoricoViewC.php">Histórico de compras</a>
         </div>
       </li>
       </ul>
@@ -241,7 +242,6 @@
           </div>
           <div class="col-md-2">
                 <h5 class="text-md-right">Fale conosco</h5>
-                <hr>
             </div>
             <div class="col-md-5">
                 <form> 

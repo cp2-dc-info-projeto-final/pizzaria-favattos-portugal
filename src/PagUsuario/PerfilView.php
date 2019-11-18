@@ -37,11 +37,12 @@
     }
 
     footer{
-      position:absolute;
+      position:relative;
       bottom:0;
       width:100%;
       background-color: #212529;
       color: #6c757d;
+      margin-top:100px;
     }
     </style>
 
@@ -69,8 +70,8 @@
   <!-- Barra de navegação -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
       <!-- Logo -->
-      <a class="navbar-brand" href="#">
-              <img src="bird.jpg" alt="Logo" style="width:40px;">
+      <a class="navbar-brand" href="../Inicial/index.php">
+              <img src="" alt="Logo">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
@@ -82,7 +83,7 @@
           <a class="nav-link" href="../Inicial/index.php">Menu</a>
         </li>
         <li class="nav-item">
-              <a class="nav-link" href="#">Fotos</a>
+              <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
         </li>
         <!-- O carrinho de compras popover -->
         <li class="nav-item">
@@ -120,25 +121,7 @@
       </ul>
     </div>
 
-    <!-- Entrar e cadastrar na direita -->
-    <?php
-
-      
-    if (!isset($_SESSION["logi"])) {
-      echo '
-      <div class ="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class ="navbar-nav ml-auto">
-      <li class="nav-item">
-       <a class="nav-link" href="../Cadastro/CadastroView.php">Cadastrar</a> 
-      </li>
-      <li class="nav-item">
-       <a class="nav-link" href="../Login/LoginView.php">Entrar</a> 
-      </li>
-      </ul>
-        </div>';
-    } else {
-      $login = $_SESSION["logi"];
-      echo '
+    <!-- Dropdown -->
       <div class ="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class ="navbar-nav ml-auto">
       <li class="nav-item dropdown">
@@ -147,13 +130,11 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-          <a class="dropdown-item" href="#">Histórico de compras</a>
+          <a class="dropdown-item" href="../PagHistorico/HistoricoVIewC.php">Histórico de compras</a>
         </div>
       </li>
       </ul>
-      </div>';
-    }
-    ?>
+      </div>
 
     <!-- fim da barra de navegação aqui -->
   </nav>
