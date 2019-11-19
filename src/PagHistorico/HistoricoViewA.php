@@ -81,6 +81,7 @@
               html +=   `</td>
                             <td> R$ ${item.precototal}</td>
                             <td> ${item.formapag}</td>
+                            <td> <a href="ConfirmarP.php?id=${item.id}" class="btn btn-success">Confirmar</a></td>
                           </tr>`;
               
               $('#tb-historico-body').append(html);
@@ -141,6 +142,7 @@
       <th scope="col">Itens</th>
       <th scope="col">Total</th>
       <th scope="col">Forma Pag</th>
+      <th scope="col">Status</th>
     
 
     </tr>

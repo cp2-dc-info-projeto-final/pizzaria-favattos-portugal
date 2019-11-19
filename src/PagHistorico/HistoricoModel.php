@@ -17,6 +17,7 @@ function recuperarHistorico() {
   FROM pedido as p
   join usuario as u
   ON p.usuarioId = u.id
+  WHERE p.estado = 0
   ORDER BY diahora DESC");
   $pedidos->execute();
   if ($pedidos)
@@ -110,6 +111,13 @@ function recuperarPedido($id_pedido) {
     array_push($itens, $item);
   }
   return $itens;
+}
+
+function ConfirmarPedido($id){
+  $conn=CriarConexao();
+  $Confirmar = $conn->prepare("UPDATE pedido SET estado=1 WHERE id=:id");
+  $Confirmar->bindValue(':id',$id);
+  $Confirmar->execute();
 }
 
 
