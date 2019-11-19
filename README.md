@@ -280,19 +280,15 @@ Para o administrador o sistema deve ficar acessível a qualquer hora do dia.
 
 ## Diagrama de Casos de Uso
 
-![Diagrama dos Casos de Uso](https://raw.githubusercontent.com/cp2-dc-info-projeto-final/pizzaria-favattos-portugal/master/CasosDeUso.png)
+![Diagrama dos Casos de Uso](https://github.com/cp2-dc-info-projeto-final/pizzaria-favattos-portugal/blob/master/diagrama%20dos%20casos%20de%20uso%20favatto.png)
 
 ## Diagrama de Classes
 
 ![Diagrama de Classes](https://github.com/cp2-dc-info-projeto-final/pizzaria-favattos-portugal/blob/master/diagrama%20de%20classe%20favatto.png)
 
-![Modelo Editável](https://github.com/cp2-dc-info-projeto-final/pizzaria-favattos-portugal/blob/master/diagrama%20de%20classe%20favatto.html)
-
 ## Modelagem do Banco de Dados
 
 ![Modelagem Banco de Dados](https://github.com/cp2-dc-info-projeto-final/pizzaria-favattos-portugal/blob/master/favatto%20mod%20bd.png)
-
-![Modelo Editável](https://github.com/cp2-dc-info-projeto-final/pizzaria-favattos-portugal/blob/master/favatto%20mod%20bd.html)
 
 ## Manual de Utilização
 
