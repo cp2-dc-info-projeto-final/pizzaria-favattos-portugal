@@ -280,7 +280,7 @@ Para o administrador o sistema deve ficar acessível a qualquer hora do dia.
 
 ## Diagrama de Casos de Uso
 
-  - ![Diagrama dos Casos de Uso](https://raw.githubusercontent.com/cp2-dc-info-projeto-final/pizzaria-favattos-portugal/master/CasosDeUso.png)
+  * ![Diagrama dos Casos de Uso](https://raw.githubusercontent.com/cp2-dc-info-projeto-final/pizzaria-favattos-portugal/master/CasosDeUso.png)
 
 ## Diagrama de Classes
 
