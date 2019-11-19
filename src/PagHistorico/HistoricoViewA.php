@@ -26,6 +26,55 @@
     <link rel ="stylesheet" href ="../Estilo/bootstrap-4.1.3-dist/css/bootstrap.min.css">
     <script src="../Estilo/jquery.min.js"></script> <script src="../Estilo/popper.min.js"></script> 
     <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script> 
+    <style>
+      nav{
+      background-color: white;
+    }
+
+    .nav-link{
+      color: red;
+    }
+
+    .navbar-brand{
+      color:green;
+    }
+
+    .dropdown-item{
+      color: rgb(159,1,1);
+    }
+
+    .nav-link:hover{
+      color: rgb(159,1,1);
+    }
+
+    .dropdown-item:hover{
+      color: rgb(159,1,1);
+    }
+
+    .carrinho:hover{
+      border-radius:50%;
+      box-shadow: 0 0 2px green;  
+    }
+
+    .navbar-toggler-icon:hover{
+      border-radius:50%;
+      box-shadow: 0 0 3px green;  
+    }
+
+    .navbar-brand:hover{
+      color:green;
+    }
+
+    footer{
+      position:relative;
+      bottom:0;
+      width:100%;
+      background-color: white;
+      color: #6c757d;
+      margin-top:100px;
+    }
+
+</style>
   </head> 
   
   <body>
@@ -95,11 +144,15 @@
 
 </script>
   <!-- Barra de navegação -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-sm bg navbar fixed-top border-bottom">
   <!-- Logo -->
-  <a class="navbar-brand" href="#">
-          <img src="bird.jpg" alt="Logo" style="width:40px;">
+  <a class="navbar-brand" href="../Inicial/index.php">
+              <img src="../Imagens/favatto.png" alt="Logo" style="width: 50px">
+              Favatto`s Portugal
   </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <img src="../Imagens/menu.png" class="navbar-toggler-icon"></span>
+  </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
   <!-- Links -->
   <ul class="navbar-nav">
@@ -131,8 +184,8 @@
 <br>
 <table>
 
-<table id="tb-historico" class="table table-bordered table-dark">
-  <thead>
+<table id="tb-historico" class="table table-bordered table-striped table-dark">
+  <thead class="thead-dark">
     <tr>
       <th scope="col">Num</th>
       <th scope="col">Horário</th>

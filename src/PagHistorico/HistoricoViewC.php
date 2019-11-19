@@ -22,19 +22,54 @@
     <script src="../Estilo/popper.min.js"></script>
     <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
     <style>
+      nav{
+      background-color: white;
+    }
+
+    .nav-link{
+      color: red;
+    }
+
+    .navbar-brand{
+      color:green;
+    }
+
+    .dropdown-item{
+      color: rgb(159,1,1);
+    }
+
+    .nav-link:hover{
+      color: rgb(159,1,1);
+    }
+
+    .dropdown-item:hover{
+      color: rgb(159,1,1);
+    }
+
+    .carrinho:hover{
+      border-radius:50%;
+      box-shadow: 0 0 2px green;  
+    }
+
+    .navbar-toggler-icon:hover{
+      border-radius:50%;
+      box-shadow: 0 0 3px green;  
+    }
+
+    .navbar-brand:hover{
+      color:green;
+    }
 
     footer{
       position:relative;
       bottom:0;
       width:100%;
-      background-color: #212529;
+      background-color: white;
       color: #6c757d;
-      margin-top:250px;
+      margin-top:200px;
     }
 
-    .popover {
-          max-width: 100% !important;
-        }
+</style>
 
     </style>
     <script>
@@ -58,13 +93,14 @@
   
   <body>
   <!-- Barra de navegação -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-sm bg navbar fixed-top border-bottom">
       <!-- Logo -->
       <a class="navbar-brand" href="../Inicial/index.php">
-              <img src="" alt="Logo" style="width:40px;">
+              <img src="../Imagens/favatto.png" alt="Logo" style="width: 50px">
+              Favatto`s Portugal
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
+          <img src="../Imagens/menu.png" class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <!-- Links -->
@@ -76,7 +112,7 @@
               <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-primary" data-toggle="popover" data-popover-content="#a1" data-placement="top">Carrinho</a>
+        <img src="../Imagens/carrinho.png" style="width:40px" class="carrinho" data-toggle="popover" data-popover-content="#a1" data-placement="top">
           <div id="a1" class="invisible" style="width: 0px; height: 0px;">
             <div class="popover-heading">
               Carrinho de compras
@@ -180,7 +216,7 @@
 </div>
 
 <!--Rodapé no final da página-->
-<footer class="page-footer pt-4 ">
+<footer class="page-footer pt-4 border-top">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-5">

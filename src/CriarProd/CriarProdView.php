@@ -44,24 +44,66 @@
 			}
 		</script>
     <style>
+
+nav{
+      background-color: white;
+    }
+
+    .nav-link{
+      color: red;
+    }
+
+    .navbar-brand{
+      color:green;
+    }
+
+    .dropdown-item{
+      color: rgb(159,1,1);
+    }
+
+    .nav-link:hover{
+      color: rgb(159,1,1);
+    }
+
+    .dropdown-item:hover{
+      color: rgb(159,1,1);
+    }
+
+    .carrinho:hover{
+      border-radius:50%;
+      box-shadow: 0 0 2px green;  
+    }
+
+    .navbar-toggler-icon:hover{
+      border-radius:50%;
+      box-shadow: 0 0 3px green;  
+    }
+
+    .navbar-brand:hover{
+      color:green;
+    }
+
+
     footer{
       position:relative;
       bottom:0;
       width:100%;
-      background-color: #212529;
+      background-color: white;
       color: #6c757d;
-      margin-top:150px;
+      margin-top:200px;
     }
+
     </style>
   </head> 
   
 <body>
 
 <!-- Barra de navegação -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+<nav class="navbar navbar-expand-sm bg navbar border-bottom fixed-top">
 <!-- Logo -->
-<a class="navbar-brand" href="#">
-        <img src="" alt="Logo" style="width:40px;">
+<a class="navbar-brand" href="../Inicial/index.php">
+              <img src="../Imagens/favatto.png" alt="Logo" style="width: 50px">
+              Favatto`s Portugal
 </a>
 <div class="collapse navbar-collapse" id="collapsibleNavbar">
 <!-- Links -->
@@ -168,7 +210,7 @@
 <br>
 
 <!--Rodapé no final da página-->
-<footer class="page-footer pt-4">
+<footer class="page-footer pt-4 border-top">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-5">
@@ -176,7 +218,6 @@
           </div>
           <div class="col-md-2">
                 <h5 class="text-md-right">Fale conosco</h5>
-                <hr>
             </div>
             <div class="col-md-5">
                 <form> 

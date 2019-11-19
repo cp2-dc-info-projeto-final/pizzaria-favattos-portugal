@@ -44,6 +44,36 @@
       color: red;
     }
 
+    .navbar-brand{
+      color:green;
+    }
+
+    .dropdown-item{
+      color: rgb(159,1,1);
+    }
+
+    .nav-link:hover{
+      color: rgb(159,1,1);
+    }
+
+    .dropdown-item:hover{
+      color: rgb(159,1,1);
+    }
+
+    .carrinho:hover{
+      border-radius:50%;
+      box-shadow: 0 0 2px green;  
+    }
+
+    .navbar-toggler-icon:hover{
+      border-radius:50%;
+      box-shadow: 0 0 3px green;  
+    }
+
+    .navbar-brand:hover{
+      color:green;
+    }
+
     footer{
       position:relative;
       bottom:0;
@@ -81,9 +111,10 @@
       <!-- Logo -->
       <a class="navbar-brand" href="../Inicial/index.php">
               <img src="../Imagens/favatto.png" alt="Logo" style="width: 50px">
+              Favatto`s Portugal
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
+          <img src="../Imagens/menu.png" class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <!-- Links -->
@@ -96,7 +127,7 @@
         </li>
         <!-- O carrinho de compras popover -->
         <li class="nav-item">
-          <img src="../Imagens/carrinho.png" style="width:40px" data-toggle="popover" data-popover-content="#a1" data-placement="top">
+          <img src="../Imagens/carrinho.png" style="width:40px" class="carrinho" data-toggle="popover" data-popover-content="#a1" data-placement="top">
           <div id="a1" class="invisible" style="width: 0px; height: 0px;">
             <div class="popover-heading">
               Carrinho de compras

@@ -23,11 +23,42 @@ else{
     <script src="../Estilo/popper.min.js"></script>
     <script src ="../Estilo/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
     <style>
-          footer{
+
+    nav{
+      background-color: white;
+    }
+
+    .nav-link{
+      color: red;
+    }
+
+    .dropdown-item{
+      color: rgb(159,1,1);
+    }
+
+    .nav-link:hover{
+      color: rgb(159,1,1);
+    }
+
+    .dropdown-item:hover{
+      color: rgb(159,1,1);
+    }
+
+    .carrinho:hover{
+      border-radius:50%;
+      box-shadow: 0 0 2px green;  
+    }
+
+    .navbar-toggler-icon:hover{
+      border-radius:50%;
+      box-shadow: 0 0 3px green;  
+    }
+
+    footer{
       position:relative;
       bottom:0;
       width:100%;
-      background-color: #212529;
+      background-color: white;
       color: #6c757d;
       margin-top:100px;
     }
@@ -36,36 +67,38 @@ else{
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+<nav class="navbar navbar-expand-sm bg navbar fixed-top border-bottom">
   <!-- Logo -->
   <a class="navbar-brand" href="../Inicial/index.php">
-          <img alt="Logo" style="width:40px;">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-  </button>
+              <img src="../Imagens/favatto.png" alt="Logo" style="width: 50px">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <img src="../Imagens/menu.png" class="navbar-toggler-icon"></span>
+      </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
   <!-- Links -->
   <ul class="navbar-nav">
-  <li class="nav-item dropdown">
-          <a class="nav-link" href="../Inicial/index.php">Menu</a>
-        </li>
-        <li class="nav-item">
-              <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
-        </li>
-    </ul>
-    </div>
-    <ul class ="navbar-nav">
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Usuário
-      </a>
-      <div class="dropdown-menu dropdown-menu-right">
-        <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-        <a class="dropdown-item" href="../PagHistorico/HistoricoViewC.php">Histórico de compras</a>
-      </div>
+      <a class="nav-link" href="../Inicial/index.php">Menu</a>
     </li>
-    </ul>'
+    <li class="nav-item">
+          <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
+    </li>
+      </ul>
+    </div>
+    <div class ="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class ="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbardrop" data-toggle="dropdown">
+          Usuário
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
+          <a class="dropdown-item" href="../PagHistorico/HistoricoViewC.php">Histórico de compras</a>
+        </div>
+      </li>
+      </ul>
+      </div>
    </nav>  
 
  
@@ -137,12 +170,12 @@ else{
   <h2>Telefone: <?php echo $dados['telefone']; ?></h2>
   <h2>Forma de pagamento: <?php echo $_GET['formaPag']; ?> </h2>
   <br><hr>
-  <center><h2 class="alert alert-warning">Para cancelar o pedido ligue para  a loja!</h2></center>
+  <center><h2 class="alert alert-danger">Para cancelar o pedido ligue para  a loja!</h2></center>
   </div>
   </div>
   
   <!--Rodapé -->
-  <footer class="page-footer pt-4">
+  <footer class="page-footer pt-4 border-top">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-5">
@@ -150,7 +183,6 @@ else{
           </div>
           <div class="col-md-2">
                 <h5 class="text-md-right">Fale conosco</h5>
-                <hr>
             </div>
             <div class="col-md-5">
                 <form> 
@@ -161,7 +193,7 @@ else{
                         <textarea class="form-control" name="mensagem" id="mensagem" placeholder="Message" required></textarea>
                     </fieldset>
                     <fieldset class="form-group text-xs-right">
-                        <input type ="submit" class="btn btn-primary">
+                        <input type ="submit" class="btn btn-outline-success">
                     </fieldset>
                 </form>
             </div>
