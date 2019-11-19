@@ -29,7 +29,7 @@
       width:100%;
       background-color: #212529;
       color: #6c757d;
-      margin-top:100px;
+      margin-top:250px;
     }
 
     .popover {
@@ -180,7 +180,7 @@
 </div>
 
 <!--Rodapé no final da página-->
-<footer class="page-footer pt-4">
+<footer class="page-footer pt-4 ">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-5">

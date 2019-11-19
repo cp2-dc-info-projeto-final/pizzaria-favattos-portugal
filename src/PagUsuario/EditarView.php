@@ -126,7 +126,15 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-          <a class="dropdown-item" href="../PagHistorico/HistoricoViewC.php">Histórico de compras</a>
+          <?php
+            require_once("PerfilCtrl.php");
+            $dados = PegardadosCtrl($login);
+            if($dados['adm']){
+              echo '<a class="dropdown-item" href="../PagHistorico/HistoricoViewA.php">Lista de Pedidos</a>';
+            }else{    
+              echo '<a class="dropdown-item" href="../PagHistorico/HistoricoViewC.php">Histórico de compras</a>';
+            }
+        ?>
         </div>
       </li>
       </ul>
@@ -157,10 +165,6 @@
   <div class="row"> 
   <div class="col-8">
   <div class="shadow p-3 mb-5 bg-white rounded"> 
-  <?php
-    require_once("PerfilCtrl.php");
-    $dados = PegardadosCtrl($login);
-  ?>
   <!--Inicio do formlário com os dados atuais-->
   <form method="POST" action="EditarCtrl.php"> 
   <h1>Redefinir Dados</h1>

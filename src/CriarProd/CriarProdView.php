@@ -45,11 +45,12 @@
 		</script>
     <style>
     footer{
-      position:absolute;
+      position:relative;
       bottom:0;
       width:100%;
       background-color: #212529;
       color: #6c757d;
+      margin-top:150px;
     }
     </style>
   </head> 

@@ -44,7 +44,7 @@ function FecharCompra($request) {
     exit();
   }
   else {
-        header('Location: FinalizarPedidoView.php?erros='.urlencode($erros));
+        header('Location: ../Login/LoginView.php');
         exit();
   }
 

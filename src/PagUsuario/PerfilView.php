@@ -42,7 +42,7 @@
       width:100%;
       background-color: #212529;
       color: #6c757d;
-      margin-top:100px;
+      margin-top:250px;
     }
     </style>
 
@@ -130,7 +130,16 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-          <a class="dropdown-item" href="../PagHistorico/HistoricoVIewC.php">Histórico de compras</a>
+        <?php
+            require_once("PerfilCtrl.php");
+            $dados = PegardadosCtrl($login);
+            $idade = CalcularIdadeCtrl($dados);
+            if($dados['adm']){
+              echo '<a class="dropdown-item" href="../PagHistorico/HistoricoViewA.php">Lista de Pedidos</a>';
+            }else{    
+              echo '<a class="dropdown-item" href="../PagHistorico/HistoricoViewC.php">Histórico de compras</a>';
+            }
+        ?>
         </div>
       </li>
       </ul>
@@ -158,12 +167,6 @@
         }
       }
       
-    ?>
-
-    <?php
-    require_once("PerfilCtrl.php");
-    $dados = PegardadosCtrl($login);
-    $idade = CalcularIdadeCtrl($dados);
     ?>
 
     <h1>Seus dados</h1>
