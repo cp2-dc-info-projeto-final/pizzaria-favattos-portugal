@@ -292,7 +292,7 @@ Para o administrador o sistema deve ficar acessível a qualquer hora do dia.
 
 ## Manual de Utilização
 
-- [Manual](manual.md)
+- [Manual](/manual%20do%20usuario/manual.md)
 
 ## Código Final
 
