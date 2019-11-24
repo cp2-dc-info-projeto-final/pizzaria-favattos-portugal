@@ -98,34 +98,36 @@ nav{
 <body>
 
 <!-- Barra de navegação -->
-<nav class="navbar navbar-expand-sm bg navbar border-bottom fixed-top">
-<!-- Logo -->
-<a class="navbar-brand" href="../Inicial/index.php">
+<nav class="navbar navbar-expand-sm bg navbar fixed-top border-bottom">
+  <!-- Logo -->
+  <a class="navbar-brand" href="../Inicial/index.php">
               <img src="../Imagens/favatto.png" alt="Logo" style="width: 50px">
               Favatto`s Portugal
-</a>
-<div class="collapse navbar-collapse" id="collapsibleNavbar">
-<!-- Links -->
-<ul class="navbar-nav">
-  <li class="nav-item dropdown">
-    <a class="nav-link" href="../Inicial/index.php">Menu</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a> 
-  </li>
-<!-- Dropdown -->
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-    Usuário
   </a>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
-    <a class="dropdown-item" href="#">Histórico de compras</a>
-    <a class="dropdown-item" href="#">Link 3</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <img src="../Imagens/menu.png" class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item dropdown">
+      <a class="nav-link" href="../Inicial/index.php">Menu</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a> 
+    </li>
+  <!-- Dropdown -->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+      Usuário
+    </a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="../PagUsuario/PerfilView.php">Seu perfil</a>
+      <a class="dropdown-item" href="../PaHistorico/HistoricoViewA.php">Lista de Pedidos</a>
+    </div>
+  </li>  
   </div>
-</li>  
-</div>
-</nav> 
+  </nav>  
 
 <div class="container" style="margin-top: 110px">
 

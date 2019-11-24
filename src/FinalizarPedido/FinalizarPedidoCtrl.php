@@ -11,7 +11,7 @@ function ReceberCarrinho(){
 
 function FecharCompra($request) {
   if(!isset($_SESSION["logi"])){
-    header('Location: FinalizarPedidoView.php?erros='.urlencode("O login precisa ser efetuado para finalizar o pedido"));
+    header('Location: ../Login/LoginView.php?erros='.urlencode("O login precisa ser efetuado para finalizar o pedido"));
     exit();
   }
   else{
@@ -27,7 +27,9 @@ function FecharCompra($request) {
   $formaPag = $request["formaPag"];
   $comentario = $request["comentario"];
   $precoTotal = 0;
-  $datahora = date('Y-m-d H:i:s');
+  date_default_timezone_set('America/Sao_Paulo');
+  $datahora = date('d-m-Y H:i:s');
+  
   foreach ($carrinho as $item) {
     $precoTotal += $item['preco'] * $item['quantidade'];
   }

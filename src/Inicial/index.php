@@ -125,9 +125,6 @@ session_start();
         <li class="nav-item">
           <a class="nav-link" href="../Fotos/pagfotosView.php">Fotos</a>
         </li>
-        <li class="nav-item">
-        <a class="nav-link" href="../CriarProd/CriarProdView.php" style="color:green">Criar novo produto</a>
-        </li>
         <!-- O carrinho de compras popover -->
         <li class="nav-item">
           <img src="../Imagens/carrinho.png" style="width:40px" class="carrinho" data-toggle="popover" data-popover-content="#a1" data-placement="top">
@@ -201,7 +198,8 @@ session_start();
       require_once("../PagUsuario/PerfilCtrl.php");
       $dados = PegardadosCtrl($login);
       if($dados['adm']){
-        echo '<a class="dropdown-item" href="../PagHistorico/HistoricoViewA.php">Lista de Pedidos</a>';
+        echo '<a class="dropdown-item" href="../PagHistorico/HistoricoViewA.php">Lista de Pedidos</a>
+              <a class="dropdown-item" style="color:green" href="../CriarProd/CriarProdView.php">Criar novo produto</a>';
       }else{    
         echo '<a class="dropdown-item" href="../PagHistorico/HistoricoViewC.php">Histórico de compras</a>';
       }
