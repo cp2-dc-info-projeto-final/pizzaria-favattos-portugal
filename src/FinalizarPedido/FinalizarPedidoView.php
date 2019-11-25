@@ -226,7 +226,12 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-5">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id felis in justo blandit egestas blandit nec nibh. Donec pellentesque nulla vel quam aliquam, sed posuere augue euismod. Quisque iaculis sit amet lectus eu accumsan. Nulla mattis mattis mauris, sed rutrum nulla molestie non. Mauris non interdum lacus, a varius lacus. Ut iaculis aliquet purus sed congue. Suspendisse egestas placerat arcu ut mattis. Cras mollis felis lorem, ac euismod justo sodales sit amet.</p>
+            Endereço: Av. Getúlio de Moura, 152 - Jardim Metropole, São João de Meriti - RJ<br> Telefone: 21 98186-7762<br><br>
+          <div class="row">
+            <div class="col">
+                <a href="https://www.facebook.com/favattosportugal">Facebook</a>
+            </div>
+          </div>
           </div>
           <div class="col-md-2">
                 <h5 class="text-md-right">Fale conosco</h5>
