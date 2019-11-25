@@ -245,7 +245,7 @@ session_start();
           ?>
           <div class="col-md-4" style="max-width: 777px;">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="<?php echo $produto[$i]['imagem']; ?>" alt="<?php echo $produto[$i]['nome']; ?>">
+            <img class="card-img-top" style="height: 300px" src="<?php echo $produto[$i]['imagem']; ?>" alt="<?php echo $produto[$i]['nome']; ?>">
             <div class="card-body">
               <h6> <?php echo $produto[$i]['nome']; ?> </h6>
               <p class="card-text"><?php echo $produto[$i]['descricao']; ?></p>
@@ -315,7 +315,7 @@ session_start();
         ?>
         <div class="col-md-4" style="max-width: 777px;">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
+            <img class="card-img-top" style="height: 300px" src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
             <div class="card-body">
               <h6> <?php echo $produto['nome']; ?> </h6>
               <p class="card-text"><?php echo $produto['descricao']; ?></p>
@@ -373,7 +373,7 @@ session_start();
         ?>
         <div class="col-md-4" style="max-width: 777px;">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
+            <img class="card-img-top" style="height: 300px" src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
             <div class="card-body">
               <h6> <?php echo $produto['nome']; ?> </h6>
               <p class="card-text"><?php echo $produto['descricao']; ?></p>
@@ -425,7 +425,7 @@ session_start();
         ?>
         <div class="col-md-4" style="max-width: 777px;">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
+            <img class="card-img-top" style="height: 300px" src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
             <div class="card-body">
               <h6> <?php echo $produto['nome']; ?> </h6>
               <p class="card-text"><?php echo $produto['descricao']; ?></p>
@@ -470,7 +470,7 @@ session_start();
         ?>
         <div class="col-md-4" style="max-width: 777px;">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
+            <img class="card-img-top" style="height: 300px" src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
             <div class="card-body">
               <h6> <?php echo $produto['nome']; ?> </h6>
               <p class="card-text"><?php echo $produto['descricao']; ?></p>
@@ -513,7 +513,7 @@ session_start();
         ?>
         <div class="col-md-4" style="max-width: 777px;">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
+            <img class="card-img-top" style="height: 300px" src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
             <div class="card-body">
               <h6> <?php echo $produto['nome']; ?> </h6>
               <p class="card-text"><?php echo $produto['descricao']; ?></p>
