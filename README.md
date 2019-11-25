@@ -284,7 +284,7 @@ Para o administrador o sistema deve ficar acessível a qualquer hora do dia.
 
 ## Diagrama de Classes
 
-![Diagrama de Classes](https://github.com/cp2-dc-info-projeto-final/pizzaria-favattos-portugal/blob/master/diagrama%20de%20classe%20favatto.png)
+![Diagrama de Classes](https://github.com/cp2-dc-info-projeto-final/pizzaria-favattos-portugal/blob/master/diagrama%20dos%20casos%20de%20uso%20favatto.png)
 
 ## Modelagem do Banco de Dados
 
@@ -296,4 +296,4 @@ Para o administrador o sistema deve ficar acessível a qualquer hora do dia.
 
 ## Código Final
 
-- [Código](src)
+- [Código](/src)
