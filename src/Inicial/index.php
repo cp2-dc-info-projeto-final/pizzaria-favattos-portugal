@@ -499,50 +499,7 @@ session_start();
       }
       ?>
     </div>
-
-    <!-- Listagem das bebidas organizados em cards por meio da função php listarProdutos() e a chamada da função javascript adicionar_carrinho dentro do botão que contem o preço-->
-    <h1 style="text-align: center">Bebidas</h1>
-    <hr>
-    <div class="row justify-content-center">
-      <?php
-      
-      $produtos = listarProdutos(5);
-
-      foreach ($produtos as $produto) {
-
-        ?>
-        <div class="col-md-4" style="max-width: 777px;">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" style="height: 300px" src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
-            <div class="card-body">
-              <h6> <?php echo $produto['nome']; ?> </h6>
-              <p class="card-text"><?php echo $produto['descricao']; ?></p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn">
-                  <?php
-                    if (isset($login) && $dados['adm']) {
-                  ?>
-                      <a class="btn btn-bg btn-outline-success" href="../EditarProduto/EditarPView.php?id=<?php echo $produto["id"]?>&categoria=1">Editar</a>
-                      <button class="btn btn-bg btn-outline-danger" onclick="excluir_prod(<?php echo $produto['id']?>)">Excluir</button>                        
-                  <?php
-                    } elseif (!isset($login) || !$dados['adm']) {
-                  ?>
-                    <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id'] ?>,'<?php echo $produto['nome'] ?>', '', <?php echo $produto['preco_normal'] ?>, '<?php echo $produto['descricao'] ?>' );"><?php echo "Preço: R$" . $produto['preco_normal'] ?></button>
-                  <?php } else { ?>
-                    <button type="button" class="btn btn-bg btn-outline-danger" onclick="adicionar_carrinho(<?php echo $produto['id'] ?>,'<?php echo $produto['nome'] ?>', '', <?php echo $produto['preco_normal'] ?>, '<?php echo $produto['descricao'] ?>' );"><?php echo "Preço: R$" . $produto['preco_normal'] ?></button>
-                  <?php  
-                    }
-                  ?>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <?php
-      }
-      ?>
-    </div>
-
+    
   </div>
 
   <!--Rodapé no final da página-->

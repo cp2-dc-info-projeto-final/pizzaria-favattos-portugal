@@ -68,12 +68,12 @@ INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria, ima
 /*Combos*/
 
 INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria, imagem) VALUES
-('Combo Veneza 1', 'Veneza + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 1 sachê de molho', 0, '10.99', 3,'../Imagens/combos.jpg'),
-('Combo Veneza 2', 'Veneza duplo + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '15.99', 3,'../Imagens/combod.jpg'), 
-('Combo Veneza 3', '2 Veneza Duplo + Batata frita (porção) + 2 Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '38.99', 3,'../Imagens/combot.jpg'),
-('Combo Viana 1', 'Viana + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 1 sachê de molho', 0, '10.99', 3,'../Imagens/combov1.jpg'), 
-('Combo Viana 2', 'Viana duplo + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '15.99', 3,'../Imagens/combov2.jpg'),
-('Combo Viana 3', '2 Viana duplo + Batata frita (porção) + 2 Rfefrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '38.99', 3,'../Imagens/combov3.png');
+('Combo Veneza 1', 'Veneza + Batata frita 50g + Refrigerante 350ml + 1 sachê de molho', 0, '10.99', 3,'../Imagens/combos.jpg'),
+('Combo Veneza 2', 'Veneza duplo + Batata frita 50g + Refrigerante 350ml + 2 sachês de molho', 0, '15.99', 3,'../Imagens/combod.jpg'), 
+('Combo Veneza 3', '2 Veneza Duplo + Batata frita (porção) + 2 Refrigerante 350ml + 2 sachês de molho', 0, '38.99', 3,'../Imagens/combot.jpg'),
+('Combo Viana 1', 'Viana + Batata frita 50g + Refrigerante 350ml + 1 sachê de molho', 0, '10.99', 3,'../Imagens/combov1.jpg'), 
+('Combo Viana 2', 'Viana duplo + Batata frita 50g + Refrigerante 350ml + 2 sachês de molho', 0, '15.99', 3,'../Imagens/combov2.jpg'),
+('Combo Viana 3', '2 Viana duplo + Batata frita (porção) + 2 Rfefrigerante 350ml + 2 sachês de molho', 0, '38.99', 3,'../Imagens/combov3.png');
 
 /*Pizzas*/
 
@@ -136,3 +136,16 @@ CREATE TABLE produtopedido(
     foreign key (idPedido) references pedido(id),
     foreign key (idProduto) references produto(id)
 );
+
+INSERT INTO `pedido` (`id`, `comentario`, `formaPag`, `precototal`, `diahora`, `estado`, `usuarioId`) VALUES 
+(NULL, 'nada a dizer', 'dinheiro', '35.98', '26-11-2019 20:42:53', '0', '3'),
+(NULL, 'nada a dizer', 'dinheiro', '137.96‬', '26-11-2019 20:58:53', '0', '3'),
+(NULL, 'tudo a dizer', 'cartao', '54.98', '26-11-2019 21:38:53', '0', '3');
+
+INSERT INTO `produtopedido` (`idPedido`, `idProduto`, `tamanho`, `qtd`) VALUES 
+('1', '3', '', '2'),
+('2', '13', 'gigante', '1'),
+('2', '16', 'grande', '2'),
+('3', '6', '', '1'),
+('3', '13', 'gigante', '1');
+
