@@ -58,12 +58,12 @@ CREATE TABLE produto(
 /*Hamburguers*/
 
 INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria, imagem) VALUES
-('Veneza', 'Pão, carne, cheddar, presunto, calabresa, bacon, alface, tomate, cebola roxa', 0, '7.99', 2,'../Imagens/simples.jpg'),
-('Veneza duplo', 'Pão, duas carnes, dois cheddar, dois presuntos, calabresa, bacon, alface, tomate, cebola roxa', 0, '12.99', 2,'../Imagens/veduplo.jpg'),
-('Veneza triplo', 'Pão, três carnes, três cheddar, três presuntos, calabresa, bacon, alface, tomate, cebola roxa', 0, '17.99', 2,'../Imagens/vetriplo.jpg'),
-('Viana', 'Pão, carne, dois cheddar, bacon, calabresa', 0, '7.99', 2,'../Imagens/visimples.jpg'),
-('Viana duplo', 'Pão, carne, duplo cheddar, carne, duplo cheddar, bacon, calabresa', 0, '11.99', 2,'../Imagens/viduplo.jpg'),
-('Viana triplo', 'Pão, carne, duplo cheddar, carne, duplo cheddar, carne, duplo cheddar, bacon, calabresa', 0, '15.99', 2,'../Imagens/triplo.png');
+('Veneza', 'Pão, carne, cheddar, presunto, calabresa, bacon, alface, tomate, cebola roxa', 0, '7.99', 2,'../Imagens/veneza1.jpg'),
+('Veneza duplo', 'Pão, duas carnes, dois cheddar, dois presuntos, calabresa, bacon, alface, tomate, cebola roxa', 0, '12.99', 2,'../Imagens/veneza2.jpg'),
+('Veneza triplo', 'Pão, três carnes, três cheddar, três presuntos, calabresa, bacon, alface, tomate, cebola roxa', 0, '17.99', 2,'../Imagens/veneza3.jpg'),
+('Viana', 'Pão, carne, dois cheddar, bacon, calabresa', 0, '7.99', 2,'../Imagens/viana1.jpg'),
+('Viana duplo', 'Pão, carne, duplo cheddar, carne, duplo cheddar, bacon, calabresa', 0, '11.99', 2,'../Imagens/viana2.jpg'),
+('Viana triplo', 'Pão, carne, duplo cheddar, carne, duplo cheddar, carne, duplo cheddar, bacon, calabresa', 0, '15.99', 2,'../Imagens/viana3.jpg');
 
 /*Combos*/
 
@@ -71,9 +71,9 @@ INSERT INTO produto (nome, descricao, qtdd_vendida, preco_normal, categoria, ima
 ('Combo Veneza 1', 'Veneza + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 1 sachê de molho', 0, '10.99', 3,'../Imagens/combos.jpg'),
 ('Combo Veneza 2', 'Veneza duplo + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '15.99', 3,'../Imagens/combod.jpg'), 
 ('Combo Veneza 3', '2 Veneza Duplo + Batata frita (porção) + 2 Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '38.99', 3,'../Imagens/combot.jpg'),
-('Combo Viana 1', 'Viana + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 1 sachê de molho', 0, '10.99', 3,'../Imagens/imgfundo.jpg'), 
-('Combo Viana 2', 'Viana duplo + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '15.99', 3,'../Imagens/imgfundo.jpg'),
-('Combo Viana 3', '2 Viana duplo + Batata frita (porção) + 2 Rfefrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '38.99', 3,'../Imagens/imgfundo.jpg');
+('Combo Viana 1', 'Viana + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 1 sachê de molho', 0, '10.99', 3,'../Imagens/combov1.jpg'), 
+('Combo Viana 2', 'Viana duplo + Batata frita 50g + Refrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '15.99', 3,'../Imagens/combov2.jpg'),
+('Combo Viana 3', '2 Viana duplo + Batata frita (porção) + 2 Rfefrigerante 350ml (Coca + 0.50 C) + 2 sachês de molho', 0, '38.99', 3,'../Imagens/combov3.png');
 
 /*Pizzas*/
 
@@ -83,7 +83,7 @@ INSERT INTO produto (nome, descricao, qtdd_vendida, preco_grande, preco_gigante,
 ('Pizza Muçarela', 'Muçarela, orégano', 0, '27.99', '37.99', 1, '../Imagens/mucarela.png'),
 ('Pizza Mista', 'Muçarela, orégano, calabresa, presunto, bacon, ovo, tomate, cebola', 0, '29.99', '39.99', 1, '../Imagens/mista.jpg'),
 ('Pizza Bacon com ovos', 'Muçarela, orégano, bacon, ovo', 2, '30.99', '40.99', 1, '../Imagens/baconovo.jpg'),
-('Pizza Favatto`s Portugal', 'Muçarela, orégano, calabresa, presunto, ovo, azeitona, cebola', 0, '29.99', '39.99', 1, '../Imagens/imgfundo.jpg'),
+('Pizza Favatto`s Portugal', 'Muçarela, orégano, calabresa, presunto, ovo, azeitona, cebola', 0, '29.99', '39.99', 1, '../Imagens/pizzafav.jpg'),
 ('Pizza Salame', 'Muçarela, orégano, manjericão, queijo prato, queijo parmesão, salame', 0, '34.99', '44.99', 1,'../Imagens/salame.jpg'),
 ('Pizza Frango c/ catupiry', 'Muçarela, orégano, frango, catupiry', 0, '29.99', '39.99', 1,'../Imagens/francatupiry.jpg'),
 ('Pizza Hot dog', 'Muçarela, orégano, molho, salsicha, batata palha, azeitona', 0, '29.99', '39.99', 1,'../Imagens/hotdog.jpg'),
